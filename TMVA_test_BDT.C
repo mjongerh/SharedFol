@@ -165,7 +165,7 @@ int TMVA_test_BDT( TString myMethodList = "" )
    // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
    TFile *input(0);
    TString fname = "./tmva_class_example.root";
-   if (!gSystem->AccessPathName( fname )) {
+      if (!gSystem->AccessPathName( fname )) {
       input = TFile::Open( fname ); // check if file in local directory exists
    }
    else {
@@ -210,10 +210,10 @@ int TMVA_test_BDT( TString myMethodList = "" )
    // Define the input variables that shall be used for the MVA training
    // note that you may also use variable expressions, such as: "3*var1/var2*abs(var3)"
    // [all types of expressions that can also be parsed by TTree::Draw( "expression" )]
-   dataloader->AddVariable( "var1", "Variable 1", "A", 'F' );
-   dataloader->AddVariable( "var2", "Variable 2", "A", 'F' );
-   dataloader->AddVariable( "var3", "Variable 3", "A", 'F' );
-   dataloader->AddVariable( "var4", "Variable 4", "A", 'F' );
+   dataloader->AddVariable( "myvar1 := var1+var2", 'F' );
+   dataloader->AddVariable( "myvar2 := var1-var2", "Expression 2", "", 'F' );
+   dataloader->AddVariable( "var3",                "Variable 3", "units", 'F' );
+   dataloader->AddVariable( "var4",                "Variable 4", "units", 'F' );
 
    // You can add so-called "Spectator variables", which are not used in the MVA training,
    // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
@@ -274,7 +274,7 @@ int TMVA_test_BDT( TString myMethodList = "" )
    // Set individual event weights (the variables must exist in the original TTree)
    // -  for signal    : `dataloader->SetSignalWeightExpression    ("weight1*weight2");`
    // -  for background: `dataloader->SetBackgroundWeightExpression("weight1*weight2");`
-   //dataloader->SetBackgroundWeightExpression( "var1" );
+   dataloader->SetBackgroundWeightExpression( "weight" );
 
    // Apply additional cuts on the signal and background samples (can be different)
    TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
