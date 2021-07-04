@@ -164,7 +164,7 @@
     // Read training and test data
     // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
     TFile *input(0);
-    TString fname = "./tmva_class_example.root";
+    TString fname = "./data.root";
     if (!gSystem->AccessPathName( fname )) {
        input = TFile::Open( fname ); // check if file in local directory exists
     }
@@ -219,8 +219,8 @@
     // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
     // input variables, the response values of all trained MVAs, and the spectator variables
 
-    dataloader->AddSpectator( "spec1 := var1*2",  "Spectator 1", "units", 'F' );
-    dataloader->AddSpectator( "spec2 := var1*3",  "Spectator 2", "units", 'F' );
+    //dataloader->AddSpectator( "spec1 := var1*2",  "Spectator 1", "units", 'F' );
+    //dataloader->AddSpectator( "spec2 := var1*3",  "Spectator 2", "units", 'F' );
 
 
     // global event weights per tree (see below for setting event-wise weights)
