@@ -433,5 +433,5 @@ int main( int argc, char** argv )
       if (!methodList.IsNull()) methodList += TString(",");
       methodList += regMethod;
    }
-   return TMVAClassification(methodList);
+   return TMVA_test_BDT(methodList);
 }
