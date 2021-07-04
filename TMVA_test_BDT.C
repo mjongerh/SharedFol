@@ -59,7 +59,7 @@
 #include "TMVA/Tools.h"
 #include "TMVA/TMVAGui.h"
 
-int TMVAClassification( TString myMethodList = "" )
+int TMVA_test_BDT( TString myMethodList = "" )
 {
    // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
    // if you use your private .rootrc, or run from a different directory, please copy the
@@ -560,5 +560,5 @@ int main( int argc, char** argv )
       if (!methodList.IsNull()) methodList += TString(",");
       methodList += regMethod;
    }
-   return TMVAClassification(methodList);
+   return TMVA_test_BDT(methodList);
 }
