@@ -210,10 +210,10 @@ int TMVA_test_BDT( TString myMethodList = "" )
    // Define the input variables that shall be used for the MVA training
    // note that you may also use variable expressions, such as: "3*var1/var2*abs(var3)"
    // [all types of expressions that can also be parsed by TTree::Draw( "expression" )]
-   dataloader->AddVariable( "myvar1 := var1+var2", 'F' );
-   dataloader->AddVariable( "myvar2 := var1-var2", "Expression 2", "", 'F' );
-   dataloader->AddVariable( "var3",                "Variable 3", "units", 'F' );
-   dataloader->AddVariable( "var4",                "Variable 4", "units", 'F' );
+   dataloader->AddVariable( "var1", "Variable 1", "units", 'F' );
+   dataloader->AddVariable( "var2", "Variable 2", "units", 'F' );
+   dataloader->AddVariable( "var3", "Variable 3", "units", 'F' );
+   dataloader->AddVariable( "var4", "Variable 4", "units", 'F' );
 
    // You can add so-called "Spectator variables", which are not used in the MVA training,
    // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
