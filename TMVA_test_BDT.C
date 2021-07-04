@@ -219,8 +219,8 @@ int TMVA_test_BDT( TString myMethodList = "" )
    // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
    // input variables, the response values of all trained MVAs, and the spectator variables
 
-   dataloader->AddSpectator( "spec1 := var1*2",  "Spectator 1", "units", 'F' );
-   dataloader->AddSpectator( "spec2 := var1*3",  "Spectator 2", "units", 'F' );
+   //dataloader->AddSpectator( "spec1 := var1*2",  "Spectator 1", "units", 'F' );
+   //dataloader->AddSpectator( "spec2 := var1*3",  "Spectator 2", "units", 'F' );
 
 
    // global event weights per tree (see below for setting event-wise weights)
@@ -274,7 +274,7 @@ int TMVA_test_BDT( TString myMethodList = "" )
    // Set individual event weights (the variables must exist in the original TTree)
    // -  for signal    : `dataloader->SetSignalWeightExpression    ("weight1*weight2");`
    // -  for background: `dataloader->SetBackgroundWeightExpression("weight1*weight2");`
-   dataloader->SetBackgroundWeightExpression( "1.0" );
+   dataloader->SetBackgroundWeightExpression( "var1" );
 
    // Apply additional cuts on the signal and background samples (can be different)
    TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
