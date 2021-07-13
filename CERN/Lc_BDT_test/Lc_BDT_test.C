@@ -59,6 +59,8 @@
  #include "TMVA/Tools.h"
  #include "TMVA/TMVAGui.h"
 
+R__LOAD_LIBRARY($ROOTSYS/test/libEvent.so)
+
  int TMVA_test_BDT( TString myMethodList = "" )
  {
     // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
