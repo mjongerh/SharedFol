@@ -53,13 +53,12 @@
  #include "TObjString.h"
  #include "TSystem.h"
  #include "TROOT.h"
+ #include "TEvent.h"
 
  #include "TMVA/Factory.h"
  #include "TMVA/DataLoader.h"
  #include "TMVA/Tools.h"
  #include "TMVA/TMVAGui.h"
-
-R__LOAD_LIBRARY($ROOTSYS/test/libEvent.so)
 
  int TMVA_test_BDT( TString myMethodList = "" )
  {
