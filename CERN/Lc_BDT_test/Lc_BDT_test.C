@@ -53,7 +53,6 @@
  #include "TObjString.h"
  #include "TSystem.h"
  #include "TROOT.h"
- #include "TEvent.h"
 
  #include "TMVA/Factory.h"
  #include "TMVA/DataLoader.h"
@@ -181,15 +180,15 @@
 
     // Register the training and test trees
     TTree* inputTree = (TTree*)input->Get("T");
-    Long64_t nentries = inputTree->GetEntries();
-    Event* event = 0;
+    //Long64_t nentries = inputTree->GetEntries();
+    //Event* event = 0;
     inputTree->SetBranchAddress("event", &event);
 
     TFile* newfile = new TFile("/home/mjongerh/alice/LcBDTtest/output/Lc_BDT_test1_split.root", "recreate");
     TTree* signalTree = inputTree->CloneTree(0);
     TTree* background = inputTree->CloneTree(0);
 
-    for (Long64_t i = 0; i < nentries; i++) {
+    for (auto& candidate : candidates) {
       inputTree->GetEntry(i);
       if (event->flagMCMatchRec() == 1)
         signalTree->Fill();
