@@ -53,6 +53,8 @@
  #include "TObjString.h"
  #include "TSystem.h"
  #include "TROOT.h"
+ #include "$ROOTSYS/test/Event.h"
+ //#include "$ROOTSYS/test/EventMT.h"
 
  #include "TMVA/Factory.h"
  #include "TMVA/DataLoader.h"
@@ -181,8 +183,8 @@
     // Register the training and test trees
     TTree* inputTree = (TTree*)input->Get("DF_0/O2hfcandp3full");
     Long64_t nentries = inputTree->GetEntries();
-    //Event* event = 0;
-    //inputTree->SetBranchAddress("event", &event);
+    Event* event = 0;
+    inputTree->SetBranchAddress("event", &event);
 
     TFile* newfile = new TFile("/home/mjongerh/alice/LcBDTtest/output/Lc_BDT_test1_split.root", "recreate");
     TTree* signalTree = inputTree->CloneTree(0);
