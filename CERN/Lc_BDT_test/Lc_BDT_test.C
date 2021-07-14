@@ -188,8 +188,8 @@
     TTree* signalTree = inputTree->CloneTree(0);
     TTree* background = inputTree->CloneTree(0);
 
-    for (auto& candidate : candidates) {
-      inputTree->GetEntry(i);
+    for (Long64_t i = 0; i < nentries; i++) {
+      inputTree->GetEntry(i); //GetEvent() is also something
       if (event->flagMCMatchRec() == 1)
         signalTree->Fill();
       else
