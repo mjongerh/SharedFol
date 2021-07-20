@@ -575,5 +575,5 @@
        if (!methodList.IsNull()) methodList += TString(",");
        methodList += regMethod;
     }
-    return TMVA_test_BDT(methodList);
+    return Lc_BDT_test(methodList);
  }
