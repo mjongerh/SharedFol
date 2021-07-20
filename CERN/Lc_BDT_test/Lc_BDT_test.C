@@ -53,7 +53,7 @@
  #include "TObjString.h"
  #include "TSystem.h"
  #include "TROOT.h"
- #include "/home/mjongerh/alice/sw/ubuntu2004_x86-64/ROOT/v6-20-08-alice1-local2/test/Event.h"
+ //#include "/home/mjongerh/alice/sw/ubuntu2004_x86-64/ROOT/v6-20-08-alice1-local2/test/Event.h"
 
  #include "TMVA/Factory.h"
  #include "TMVA/DataLoader.h"
