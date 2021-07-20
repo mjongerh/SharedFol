@@ -164,39 +164,32 @@
 
     // Read training and test data
     // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
-    TFile *input(0);
-    TString fname = "/home/mjongerh/alice/LcBDTtest/input/Lc_BDT_test1.root";
-    if (!gSystem->AccessPathName( fname )) {
-       input = TFile::Open( fname ); // check if file in local directory exists
+    TFile *inputSignal(0);
+    TString fnamesig = "/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_50files.root";
+    if (!gSystem->AccessPathName( fnamesig )) {
+       inputSignal = TFile::Open( fnamesig ); // check if file in local directory exists
     }
-    /*else {
-       TFile::SetCacheFileDir(".");
-       input = TFile::Open("http://root.cern.ch/files/tmva_class_example.root", "CACHEREAD");
-    }*/
-    if (!input) {
+    if (!inputSignal) {
        std::cout << "ERROR: could not open data file" << std::endl;
        exit(1);
     }
-    std::cout << "--- TMVAClassification       : Using input file: " << input->GetName() << std::endl;
+    std::cout << "--- TMVAClassification       : Using input file: " << inputSignal->GetName() << std::endl;
+
+    TFile* inputBackground(0);
+    TString fnamebkg = "/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_50files.root";
+    if (!gSystem->AccessPathName(fnamebkg)) {
+      inputBackground = TFile::Open(fnamebkg); // check if file in local directory exists
+    }
+    if (!inputBackground) {
+      std::cout << "ERROR: could not open data file" << std::endl;
+      exit(1);
+    }
+    std::cout << "--- TMVAClassification       : Using input file: " << inputBackground->GetName() << std::endl;
 
     // Register the training and test trees
-    TTree* inputTree = (TTree*)input->Get("DF_0/O2hfcandp3full");
-    Long64_t nentries = inputTree->GetEntries();
-    Event* event = 0;
-    inputTree->SetBranchAddress("event", &event);
+    TTree* signalTree = (TTree*)inputSignal->Get("DF_0/O2hfcandp3full");
+    TTree* background = (TTree*)inputBackground->Get("DF_0/O2hfcandp3full");
 
-    TFile* newfile = new TFile("/home/mjongerh/alice/LcBDTtest/output/Lc_BDT_test1_split.root", "recreate");
-    TTree* signalTree = inputTree->CloneTree(0);
-    TTree* background = inputTree->CloneTree(0);
-
-    for (Long64_t i = 0; i < nentries; i++) {
-      inputTree->GetEntry(i); //GetEvent() is also something
-      if (event->flagMCMatchRec() == 1)
-        signalTree->Fill();
-      else
-        background->Fill();
-      event->Clear();
-    }
     signalTree->Print();
     background->Print();
     signalTree->AutoSave();
@@ -229,7 +222,12 @@
     // Define the input variables that shall be used for the MVA training
     // note that you may also use variable expressions, such as: "3*var1/var2*abs(var3)"
     // [all types of expressions that can also be parsed by TTree::Draw( "expression" )]
-    dataloader->AddVariable( "var4", "Variable 4", "units", 'F' );
+    dataloader->AddVariable("fCPA", "fCPA", "units", 'F' );
+    dataloader->AddVariable("fDecayLength", "fDecayLength", "units", 'F');
+    dataloader->AddVariable("fImpactParameter0", "fImpactParameter0", "units", 'F');
+    dataloader->AddVariable("fImpactParameter1", "fImpactParameter1", "units", 'F');
+    dataloader->AddVariable("fImpactParameter2", "fImpactParameter2", "units", 'F');
+    dataloader->AddVariable("fCPAXY", "fCPAXY", "units", 'F');
 
     // You can add so-called "Spectator variables", which are not used in the MVA training,
     // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
