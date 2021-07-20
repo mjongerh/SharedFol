@@ -60,7 +60,7 @@
  #include "TMVA/Tools.h"
  #include "TMVA/TMVAGui.h"
 
- int TMVA_test_BDT( TString myMethodList = "" )
+ int Lc_BDT_test( TString myMethodList = "" )
  {
     // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
     // if you use your private .rootrc, or run from a different directory, please copy the
