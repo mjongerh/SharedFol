@@ -307,7 +307,7 @@
     //    dataloader->PrepareTrainingAndTestTree( mycut,
     //         "NSigTrain=3000:NBkgTrain=3000:NSigTest=3000:NBkgTest=3000:SplitMode=Random:!V" );
     dataloader->PrepareTrainingAndTestTree( mycuts, mycutb,
-                                         "SplitMode=Random:NormMode=NumEvents:!V" );
+                                         "NSigTrain=905:NBkgTrain=30000:NSigTest=905:NBkgTest=30000:SplitMode=Random:NormMode=NumEvents:!V" );
 
     // ### Book MVA methods
     //
