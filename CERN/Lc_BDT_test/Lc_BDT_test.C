@@ -176,7 +176,7 @@
     std::cout << "--- TMVAClassification       : Using input file: " << inputSignal->GetName() << std::endl;
 
     TFile *inputBackground(0);
-    TString fnamebkg = "/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_50files.root";
+    TString fnamebkg = "/home/mjongerh/alice/LcBDTtest/input/Lc_background_nocuts_50files.root";
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg); // check if file in local directory exists
     }
