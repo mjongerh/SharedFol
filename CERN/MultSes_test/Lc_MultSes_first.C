@@ -167,7 +167,7 @@ int Lc_BDT_test(TString myMethodList = "")
   //         "NSigTrain=3000:NBkgTrain=3000:NSigTest=3000:NBkgTest=3000:SplitMode=Random:!V" ); SEEMS OUTDATED, use the following instead:
   // PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V")
   int NsigTrain = signalTree->GetEntries();
-  int NbkgTrain = min(30000,backgroundTree->GetEntries());
+  int NbkgTrain = (((30000) < (backgroundTree->GetEntries())) ? (30000) : (backgroundTree->GetEntries()));
   int NsigTest = 0;
   int NbkgTest = 0;
   dataloader->PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V");
