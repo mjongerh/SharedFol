@@ -89,9 +89,9 @@ int Lc_MultSes_trainer(TString myMethodList = "")
 
   // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
   TString outfileName("TMVA_Lc_BDTfactory.root");
-  TString temporaryfName("TEMPORARYFILE.root")
-  TString cmd = "cp " + outputFile + " " + temporaryfName;
-  std::cout << "cmd exit status = " << gSystem->Exec(cmd) << std::endl;
+  //TString temporaryfName("TEMPORARYFILE.root")
+  //TString cmd = "cp " + outputFile + " " + temporaryfName;
+  //std::cout << "cmd exit status = " << gSystem->Exec(cmd) << std::endl;
   TFile* outputFile = TFile::Open(outfileName, "RECREATE");
 
   if (!gSystem->AccessPathName(fnamesig)) {
@@ -184,7 +184,8 @@ int Lc_MultSes_trainer(TString myMethodList = "")
   // "...:CutRangeMin[2]=-1:CutRangeMax[2]=1"...", where [2] is the third input variable
 
   // Boosted Decision Trees
-  factory->BookMethodWeightFile(dataloader, TMVA::Types::kBDT, "BDT", temporaryfName); //Uses the weightfile/factory from previous sessions
+  TString weightfName("dataset/weights/TMVAClassification_BDT.weights.xml");
+  factory->BookMethodWeightFile(dataloader, TMVA::Types::kBDT, "BDT", weightfName); //Uses the weightfile/factory from previous sessions
 
   // For an example of the category classifier usage, see: TMVAClassificationCategory
   //
@@ -216,8 +217,8 @@ int Lc_MultSes_trainer(TString myMethodList = "")
   std::cout << "==> Wrote root file: " << outputFile->GetName() << std::endl;
   std::cout << "==> TMVAClassification is done!" << std::endl;
 
-  TString cmdrm = "rm " + temporaryfName;
-  std::cout << "cmd exit status = " << gSystem->Exec(cmd) << std::endl;
+  //TString cmdrm = "rm " + temporaryfName;
+  //std::cout << "cmd exit status = " << gSystem->Exec(cmd) << std::endl;
   delete factory;
   delete dataloader;
   // Launch the GUI for the root macros
