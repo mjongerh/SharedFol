@@ -166,11 +166,11 @@ int Lc_MultSes_trainer(TString myMethodList = "")
   //    dataloader->PrepareTrainingAndTestTree( mycut,
   //         "NSigTrain=3000:NBkgTrain=3000:NSigTest=3000:NBkgTest=3000:SplitMode=Random:!V" ); SEEMS OUTDATED, use the following instead:
   // PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V")
-  int NsigTrain = signalTree->GetEntries();
+  int NsigTrain = 0;
   long long Nmaxbkg = 30000;
-  int NbkgTrain = min(Nmaxbkg, backgroundTree->GetEntries());
-  int NsigTest = 0;
-  int NbkgTest = 0;
+  int NbkgTrain = 0;
+  int NsigTest = signalTree->GetEntries();
+  int NbkgTest = min(Nmaxbkg, backgroundTree->GetEntries());
   dataloader->PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V");
 
   // ### Book MVA methods
@@ -198,13 +198,13 @@ int Lc_MultSes_trainer(TString myMethodList = "")
   // Now you can tell the factory to train, test, and evaluate the MVAs
   //
   // Train MVAs using the set of training events
-  factory->TrainAllMethods();
+  //factory->TrainAllMethods();
 
   // Evaluate all MVAs using the set of test events
-  //factory->TestAllMethods();
+  factory->TestAllMethods();
 
   // Evaluate and compare performance of all configured MVAs
-  //factory->EvaluateAllMethods();
+  factory->EvaluateAllMethods();
 
   // --------------------------------------------------------------
 
@@ -214,11 +214,13 @@ int Lc_MultSes_trainer(TString myMethodList = "")
   std::cout << "==> Wrote root file: " << outputFile->GetName() << std::endl;
   std::cout << "==> TMVAClassification is done!" << std::endl;
 
+  //TString cmdrm = "rm " + temporaryfName;
+  //std::cout << "cmd exit status = " << gSystem->Exec(cmd) << std::endl;
   delete factory;
   delete dataloader;
-  // Launch the GUI for the root macros
-  //if (!gROOT->IsBatch())
-  //  TMVA::TMVAGui(outfileName);
+   Launch the GUI for the root macros
+  if (!gROOT->IsBatch())
+    TMVA::TMVAGui(outfileName);
 
   return 0;
 }
