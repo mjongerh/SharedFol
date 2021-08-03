@@ -239,5 +239,5 @@ int main(int argc, char** argv)
       methodList += TString(",");
     methodList += regMethod;
   }
-  return Lc_BDT_test(methodList);
+  return Lc_MultSes_trainer(methodList);
 }
