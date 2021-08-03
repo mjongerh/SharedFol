@@ -218,7 +218,7 @@ int Lc_MultSes_test(TString myMethodList = "")
   //std::cout << "cmd exit status = " << gSystem->Exec(cmd) << std::endl;
   delete factory;
   delete dataloader;
-   Launch the GUI for the root macros
+  // Launch the GUI for the root macros
   if (!gROOT->IsBatch())
     TMVA::TMVAGui(outfileName);
 
