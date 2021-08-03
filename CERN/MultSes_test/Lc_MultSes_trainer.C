@@ -76,26 +76,6 @@ int Lc_BDT_test(TString myMethodList = "")
   std::cout << std::endl;
   std::cout << "==> Start TMVAClassification" << std::endl;
 
-  // Select methods (don't look at this code - not of interest)
-  if (myMethodList != "") {
-    for (std::map<std::string, int>::iterator it = Use.begin(); it != Use.end(); it++)
-      it->second = 0;
-
-    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
-    for (UInt_t i = 0; i < mlist.size(); i++) {
-      std::string regMethod(mlist[i]);
-
-      if (Use.find(regMethod) == Use.end()) {
-        std::cout << "Method \"" << regMethod << "\" not known in TMVA under this name. Choose among the following:" << std::endl;
-        for (std::map<std::string, int>::iterator it = Use.begin(); it != Use.end(); it++)
-          std::cout << it->first << " ";
-        std::cout << std::endl;
-        return 1;
-      }
-      Use[regMethod] = 1;
-    }
-  }
-
   // --------------------------------------------------------------------------------------------------
 
   // Here the preparation phase begins
