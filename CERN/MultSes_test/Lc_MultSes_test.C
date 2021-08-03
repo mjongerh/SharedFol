@@ -182,7 +182,7 @@ int Lc_MultSes_test(TString myMethodList = "")
 
   // Boosted Decision Trees
   TString weightfName("dataset/weights/TMVAClassification_BDT.weights.xml");
-  factory->BookMethodWeightfile(dataloader, TMVA::Types::kBDT, "BDT", weightfName); //Uses the weightfile/factory from previous sessions
+  factory->BookMethodWeightfile(dataloader, TMVA::Types::kBDT, weightfName); //Uses the weightfile/factory from previous sessions
 
   // For an example of the category classifier usage, see: TMVAClassificationCategory
   //
