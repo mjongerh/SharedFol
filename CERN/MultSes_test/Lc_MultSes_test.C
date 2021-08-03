@@ -59,7 +59,7 @@
 #include "TMVA/Tools.h"
 #include "TMVA/TMVAGui.h"
 
-int Lc_MultSes_trainer(TString myMethodList = "")
+int Lc_MultSes_test(TString myMethodList = "")
 {
   // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
   // if you use your private .rootrc, or run from a different directory, please copy the
@@ -237,5 +237,5 @@ int main(int argc, char** argv)
       methodList += TString(",");
     methodList += regMethod;
   }
-  return Lc_MultSes_trainer(methodList);
+  return Lc_MultSes_test(methodList);
 }
