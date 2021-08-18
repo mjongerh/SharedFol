@@ -188,12 +188,12 @@
 
     // Register the training and test trees
     TTree* signalTree = (TTree*)inputSignal->Get("DF_0/O2hfcandp3full");
-    TTree* background = (TTree*)inputBackground->Get("DF_0/O2hfcandp3full");
+    TTree* backgroundTree = (TTree*)inputBackground->Get("DF_0/O2hfcandp3full");
 
     signalTree->Print();
-    background->Print();
+    backgroundTree->Print();
     signalTree->AutoSave();
-    background->AutoSave();
+    backgroundTree->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
     TString outfileName( "TMVA.root" );
@@ -243,7 +243,7 @@
 
     // You can add an arbitrary number of signal or background trees
     dataloader->AddSignalTree    ( signalTree,     signalWeight );
-    dataloader->AddBackgroundTree( background, backgroundWeight );
+    dataloader->AddBackgroundTree( backgroundTree, backgroundWeight );
 
     // To give different trees for training and testing, do as follows:
     //
