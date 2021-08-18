@@ -165,7 +165,7 @@
     // Read training and test data
     // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
     TFile *inputSignal(0);
-    TString fnamesig = "/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_200files.root";
+    TString fnamesig = "/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_4000files.root";
     if (!gSystem->AccessPathName( fnamesig )) {
        inputSignal = TFile::Open( fnamesig ); // check if file in local directory exists
     }
@@ -176,7 +176,7 @@
     std::cout << "--- TMVAClassification       : Using input file: " << inputSignal->GetName() << std::endl;
 
     TFile *inputBackground(0);
-    TString fnamebkg = "/home/mjongerh/alice/LcBDTtest/input/Lc_background_nocuts_200files.root";
+    TString fnamebkg = "/home/mjongerh/alice/LcBDTtest/input/Lc_background_nocuts_50files.root";
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg); // check if file in local directory exists
     }
@@ -306,7 +306,12 @@
     //
     //    dataloader->PrepareTrainingAndTestTree( mycut,
     //         "NSigTrain=3000:NBkgTrain=3000:NSigTest=3000:NBkgTest=3000:SplitMode=Random:!V" );
-    dataloader->PrepareTrainingAndTestTree(mycuts, 1500, 300000, 1500, 300000, "SplitMode=Random:NormMode=NumEvents:!V" );
+    int NsigTrain = signalTree->GetEntries()/2;
+    long long Nmaxbkg = 1000000;
+    int NbkgTrain = min(Nmaxbkg, backgroundTree->GetEntries()/2);
+    int NsigTest = signalTree->GetEntries() / 2;
+    int NbkgTest = min(Nmaxbkg, backgroundTree->GetEntries()/2);
+    dataloader->PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V");
 
     // ### Book MVA methods
     //
