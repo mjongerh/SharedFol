@@ -10,6 +10,16 @@
  #include "TObjString.h"
  #include "TSystem.h"
  #include "TROOT.h"
+ #include "TClass.h"
+/*
+#include "/home/mjongerh/alice/Run3Analysisvalidation/Framework/runDataProcessing.h"
+#include "/home/mjongerh/alice/Run3Analysisvalidation/Framework/AnalysisTask.h"
+#include "DetectorsVertexing/DCAFitterN.h"
+#include "AnalysisDataModel/HFSecondaryVertex.h"
+#include "AnalysisDataModel/HFCandidateSelectionTables.h"
+#include "AnalysisCore/trackUtilities.h"
+#include "ReconstructionDataFormats/DCA.h"
+*/
 
 void TreeDataStripper() {
   TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2.root";
