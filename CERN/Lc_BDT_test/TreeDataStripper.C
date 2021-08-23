@@ -20,7 +20,7 @@ void TreeDataStripper() {
   TTree* oldtree;
   oldFile.GetObject("T", oldtree);
 
-  TFile newFile(newfilename);
+  TFile newFile(newfilename, "recreate");
   auto newtree = oldtree->CloneTree();
 
   newtree->Print();
