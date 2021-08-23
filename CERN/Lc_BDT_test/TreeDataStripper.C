@@ -15,12 +15,12 @@ void TreeDataStripper() {
   TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2.root";
   TString newfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_stripped.root";
 
-  TFile oldFile(oldfilename);
+  TFile oldFile(oldfileName);
   oldFile->cd("DF_0");
   TTree* oldtree;
   oldFile.GetObject("T", oldtree);
 
-  TFile newFile(newfilename, "recreate");
+  TFile newFile(newfileName, "recreate");
   auto newtree = oldtree->CloneTree();
 
   newtree->Print();
