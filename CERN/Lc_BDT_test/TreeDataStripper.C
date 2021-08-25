@@ -31,15 +31,11 @@ void TreeDataStripper() {
 
   TFile newFile(newfileName, "RECREATE");
   auto newtree = oldtree->CloneTree();
-
   newtree->Print();
-  newFile.Write();
 
   oldFile.GetObject("DF_0/O2hfcandp3fullp", oldtree);
   newtree = oldtree->CloneTree();
-
   newtree->Print();
-  newFile.Write();
 
   oldFile.GetObject("DF_0/O2hfcandp3fulle", oldtree);
   newtree = oldtree->CloneTree();
