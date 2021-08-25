@@ -27,13 +27,13 @@ void TreeDataStripper() {
   TFile oldFile(oldfileName);
   //oldFile.cd("DF_0");
   TTree* oldtree;
-  oldFile.GetObject("DF_0", oldtree);
+  oldFile.GetObject("DF_0/O2hfcandp3full", oldtree);
 
   // Deactivate all branches
-  oldtree->SetBranchStatus("DF_0*", 0);
+  //oldtree->SetBranchStatus("DF_0*", 0);
 
-  for (auto activeBranchName : {"DF_0/O2hfcandp3full", "DF_0/O2hfcandp3fulle", "DF_0/O2hfcandp3fullp"})
-    oldtree->SetBranchStatus(activeBranchName, 1);
+  //for (auto activeBranchName : {"DF_0/O2hfcandp3full", "DF_0/O2hfcandp3fulle", "DF_0/O2hfcandp3fullp"})
+  //  oldtree->SetBranchStatus(activeBranchName, 1);
 
   TFile newFile(newfileName, "recreate");
   auto newtree = oldtree->CloneTree();
