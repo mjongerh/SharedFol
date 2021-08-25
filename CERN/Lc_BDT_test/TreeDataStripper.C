@@ -30,7 +30,7 @@ void TreeDataStripper() {
   oldFile.GetObject("T", oldtree);
   
   // Deactivate all branches
-  oldtree->SetBranchStatus("*", 0);
+  oldtree->SetBranchStatus("DF_0*", 0);
 
   for (auto activeBranchName : {"DF_0/O2hfcandp3full", "DF_0/O2hfcandp3fulle", "DF_0/O2hfcandp3fullp"})
     oldtree->SetBranchStatus(activeBranchName, 1);
