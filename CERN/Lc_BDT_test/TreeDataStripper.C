@@ -27,8 +27,8 @@ void TreeDataStripper() {
   TFile oldFile(oldfileName);
   //oldFile.cd("DF_0");
   TTree* oldtree;
-  oldFile.GetObject("T", oldtree);
-  std::cout oldtree << std::endl;
+  oldFile.GetObject("DF_0", oldtree);
+
   // Deactivate all branches
   oldtree->SetBranchStatus("DF_0*", 0);
 
