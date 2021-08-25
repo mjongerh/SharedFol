@@ -39,7 +39,7 @@ void TreeDataStripper() {
 
   oldFile.GetObject("DF_0/O2hfcandp3fulle", oldtree);
   newtree = oldtree->CloneTree();
-
   newtree->Print();
+
   newFile.Write();
 }
