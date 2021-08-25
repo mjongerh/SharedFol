@@ -35,17 +35,15 @@ void TreeDataStripper() {
   newtree->Print();
   newFile.Write();
 
-  TFile oldFile(oldfileName);
   oldFile.GetObject("DF_0/O2hfcandp3fullp", oldtree);
+  newtree = oldtree->CloneTree();
 
-  TFile newFile(newfileName, "UPDATE");
   newtree->Print();
   newFile.Write();
 
-  TFile oldFile(oldfileName);
   oldFile.GetObject("DF_0/O2hfcandp3fulle", oldtree);
+  newtree = oldtree->CloneTree();
 
-  TFile newFile(newfileName, "UPDATE");
   newtree->Print();
   newFile.Write();
 }
