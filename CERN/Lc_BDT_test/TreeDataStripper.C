@@ -26,25 +26,26 @@ void TreeDataStripper() {
 
   TFile oldFile(oldfileName);
   //oldFile.cd("DF_0");
-  TTree* oldtree1;
-  TTree* oldtree2;
-  TTree* oldtree3;
+  TTree* oldtree;
+  oldFile.GetObject("DF_0/O2hfcandp3full", oldtree);
 
-  oldFile.GetObject("DF_0/O2hfcandp3full", oldtree1);
-  oldFile.GetObject("DF_0/O2hfcandp3fulle", oldtree2);
-  oldFile.GetObject("DF_0/O2hfcandp3fullp", oldtree3);
+  TFile newFile(newfileName, "RECREATE");
+  auto newtree = oldtree->CloneTree();
 
-  // Deactivate all branches
-  //oldtree->SetBranchStatus("DF_0*", 0);
+  newtree->Print();
+  newFile.Write();
 
-  //for (auto activeBranchName : {"DF_0/O2hfcandp3full", "DF_0/O2hfcandp3fulle", "DF_0/O2hfcandp3fullp"})
-  //  oldtree->SetBranchStatus(activeBranchName, 1);
+  TFile oldFile(oldfileName);
+  oldFile.GetObject("DF_0/O2hfcandp3fullp", oldtree);
 
-  TFile newFile(newfileName, "recreate");
-  auto newtree = oldtree1->CloneTree();
-  newtree += oldtree2->CloneTree();
-  newtree += oldtree3->CloneTree();
+  TFile newFile(newfileName, "UPDATE");
+  newtree->Print();
+  newFile.Write();
 
+  TFile oldFile(oldfileName);
+  oldFile.GetObject("DF_0/O2hfcandp3fulle", oldtree);
+
+  TFile newFile(newfileName, "UPDATE");
   newtree->Print();
   newFile.Write();
 }
