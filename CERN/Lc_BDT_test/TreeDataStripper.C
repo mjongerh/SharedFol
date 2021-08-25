@@ -42,8 +42,8 @@ void TreeDataStripper() {
 
   TFile newFile(newfileName, "recreate");
   auto newtree = oldtree1->CloneTree();
-  auto newtree += oldtree2->CloneTree();
-  auto newtree += oldtree3->CloneTree();
+  newtree += oldtree2->CloneTree();
+  newtree += oldtree3->CloneTree();
 
   newtree->Print();
   newFile.Write();
