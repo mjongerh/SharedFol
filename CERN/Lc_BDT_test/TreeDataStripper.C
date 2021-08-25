@@ -25,9 +25,15 @@ void TreeDataStripper() {
   TString newfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_stripped.root";
 
   TFile oldFile(oldfileName);
-  oldFile.cd("DF_0");
+  //oldFile.cd("DF_0");
   TTree* oldtree;
   oldFile.GetObject("T", oldtree);
+  
+  // Deactivate all branches
+  oldtree->SetBranchStatus("*", 0);
+
+  for (auto activeBranchName : {"DF_0/O2hfcandp3full", "DF_0/O2hfcandp3fulle", "DF_0/O2hfcandp3fullp"})
+    oldtree->SetBranchStatus(activeBranchName, 1);
 
   TFile newFile(newfileName, "recreate");
   auto newtree = oldtree->CloneTree();
