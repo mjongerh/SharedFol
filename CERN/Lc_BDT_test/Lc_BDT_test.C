@@ -229,12 +229,25 @@
     dataloader->AddVariable("fImpactParameter2", "fImpactParameter2", "units", 'F');
     dataloader->AddVariable("fCPAXY", "fCPAXY", "units", 'F');
 
+
+    dataloader->AddVariable("fNSigTOFPi0", "fNSigTOFPi0", "units", 'F');
+    dataloader->AddVariable("fNSigTOFPi2", "fNSigTOFPi1", "units", 'F');
+    dataloader->AddVariable("fNSigTOFPi2", "fNSigTOFPi2", "units", 'F');
+    dataloader->AddVariable("fNSigTOFKa0", "fNSigTOFKa0", "units", 'F');
+    //dataloader->AddVariable("fNSigTOFKa1", "fNSigTOFKa1", "units", 'F');
+    //dataloader->AddVariable("fNSigTOFKa2", "fNSigTOFKa2", "units", 'F');
+    dataloader->AddVariable("fNSigTOFPr0", "fNSigTOFPr0", "units", 'F');
+    dataloader->AddVariable("fNSigTOFPr1", "fNSigTOFPr1", "units", 'F');
+    dataloader->AddVariable("fNSigTOFPr2", "fNSigTOFPr2", "units", 'F');
+
     // You can add so-called "Spectator variables", which are not used in the MVA training,
     // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
     // input variables, the response values of all trained MVAs, and the spectator variables
 
     //dataloader->AddSpectator( "spec1 := var1*2",  "Spectator 1", "units", 'F' );
     //dataloader->AddSpectator( "spec2 := var1*3",  "Spectator 2", "units", 'F' );
+    dataloader->AddSpectator("fM", "fM", "units", 'F');
+    dataloader->AddSpectator("fPt", "fPt", "Gev", 'F');
 
 
     // global event weights per tree (see below for setting event-wise weights)
@@ -292,8 +305,8 @@
     //dataloader->SetBackgroundWeightExpression( "weight" );
 
     // Apply additional cuts on the signal and background samples (can be different)
-    TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-    TCut mycutb = ""; // for example: TCut mycutb = "abs(var1)<0.5";
+    TCut mycuts = "fPt > 2.0 && fPt < 5.0"; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
+    TCut mycutb = "fPt > 2.0 && fPt < 5.0"; // for example: TCut mycutb = "abs(var1)<0.5";
 
     // Tell the dataloader how to use the training and testing events
     //
