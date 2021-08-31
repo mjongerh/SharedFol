@@ -319,10 +319,10 @@
     //
     //    dataloader->PrepareTrainingAndTestTree( mycut,
     //         "NSigTrain=3000:NBkgTrain=3000:NSigTest=3000:NBkgTest=3000:SplitMode=Random:!V" );
-    int NsigTrain = signalTree->GetEntries()/2;
+    int NsigTrain = 300; //signalTree->GetEntries() / 2;
     long long Nmaxbkg = 30000;
     int NbkgTrain = min(Nmaxbkg, backgroundTree->GetEntries()/2);
-    int NsigTest = signalTree->GetEntries() / 2;
+    int NsigTest = 300; //signalTree->GetEntries() / 2;
     int NbkgTest = min(Nmaxbkg, backgroundTree->GetEntries()/2);
     dataloader->PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V");
 
