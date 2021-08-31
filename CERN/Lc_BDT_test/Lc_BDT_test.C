@@ -165,7 +165,7 @@
     // Read training and test data
     // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
     TFile *inputSignal(0);
-    TString fnamesig = "/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_4000files.root";
+    TString fnamesig = "/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_50files.root";
     if (!gSystem->AccessPathName( fnamesig )) {
        inputSignal = TFile::Open( fnamesig ); // check if file in local directory exists
     }
