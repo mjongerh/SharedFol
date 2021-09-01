@@ -28,10 +28,10 @@ void TreeDataStripper() {
   //oldFile.cd("DF_0");
   TTree* oldtree;
 
-   for (size_t i = 0; i < 6000; i++) {
+   for (int i = 0; i < 6000; i++) {
     TString objectstring = Form("DF_%d/O2hfcandp3full", i);
- 
-    if (oldFile.GetObject(objectstring, oldtree) == nullptr) {
+     oldFile.GetObject(objectstring, oldtree);
+    if (oldtree == nullptr) {
       continue;
     }
 
