@@ -27,7 +27,6 @@ void TreeDataStripper()
   TString newfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_stripped.root";
 
   TFile oldFile(oldfileName);
-  //oldFile.cd("DF_0");
   TTree* oldtree;
   TList* list = new TList;
 
@@ -44,14 +43,32 @@ void TreeDataStripper()
  
     auto newtree = TTree::MergeTrees(list);
   newtree->SetName("O2hfcandp3full");
-  /* newtree->Print();
 
-    oldFile.GetObject("DF_0/O2hfcandp3fullp", oldtree);
-    newtree = oldtree->CloneTree();
-    newtree->Print();
-
-    oldFile.GetObject("DF_0/O2hfcandp3fulle", oldtree);
-    newtree = oldtree->CloneTree();
-    newtree->Print();*/
   newFile.Write();
 }
+
+/* Old version
+void TreeDataStripper() {
+  TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2.root";
+  TString newfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_stripped.root";
+
+  TFile oldFile(oldfileName);
+  //oldFile.cd("DF_0");
+  TTree* oldtree;
+  oldFile.GetObject("DF_0/O2hfcandp3full", oldtree);
+
+  TFile newFile(newfileName, "RECREATE");
+  auto newtree = oldtree->CloneTree();
+  newtree->Print();
+
+  oldFile.GetObject("DF_0/O2hfcandp3fullp", oldtree);
+  newtree = oldtree->CloneTree();
+  newtree->Print();
+
+  oldFile.GetObject("DF_0/O2hfcandp3fulle", oldtree);
+  newtree = oldtree->CloneTree();
+  newtree->Print();
+
+  newFile.Write();
+}
+*/
