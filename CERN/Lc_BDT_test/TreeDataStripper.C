@@ -27,19 +27,25 @@ void TreeDataStripper() {
   TFile oldFile(oldfileName);
   //oldFile.cd("DF_0");
   TTree* oldtree;
-  oldFile.GetObject("DF_1/O2hfcandp3full", oldtree);
 
-  TFile newFile(newfileName, "RECREATE");
-  auto newtree = oldtree->CloneTree();
-  newtree->Print();
+   for (size_t i = 0; i < 6000; i++) {
+    TString objectstring = Form("DF_%d/O2hfcandp3full", i);
+ 
+    if (oldFile.GetObject(objectstring, oldtree) == nullptr) {
+      continue;
+    }
 
-  oldFile.GetObject("DF_1/O2hfcandp3fullp", oldtree);
-  newtree = oldtree->CloneTree();
-  newtree->Print();
+    auto newtree = oldtree->CloneTree();
+    newtree->Print();
 
-  oldFile.GetObject("DF_1/O2hfcandp3fulle", oldtree);
-  newtree = oldtree->CloneTree();
-  newtree->Print();
+    /*oldFile.GetObject("DF_0/O2hfcandp3fullp", oldtree);
+    newtree = oldtree->CloneTree();
+    newtree->Print();
+
+    oldFile.GetObject("DF_0/O2hfcandp3fulle", oldtree);
+    newtree = oldtree->CloneTree();
+    newtree->Print();*/
+  }
 
   newFile.Write();
 }
