@@ -27,6 +27,7 @@ void TreeDataStripper() {
   TFile oldFile(oldfileName);
   //oldFile.cd("DF_0");
   TTree* oldtree;
+  TFile newFile(newfileName, "RECREATE");
 
    for (int i = 0; i < 6000; i++) {
     TString objectstring = Form("DF_%d/O2hfcandp3full", i);
