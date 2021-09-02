@@ -37,7 +37,7 @@ for (int i = 0; i < nPtBins; i++) {
   Float_t PtLow = ptBins[i];
   Float_t PtHigh = ptBins[i + 1];
 
-    TString newfileName = newfileDir + form("Lc_binTest_Pt%d.root", PtLow);
+    TString newfileName = newfileDir + Form("Lc_binTest_Pt%d.root", PtLow);
     TFile newFile(newfileName, "RECREATE");
     TTree* newtree = oldtree->CloneTree(0);
     newtree->SetName("O2hfcandp3full");
