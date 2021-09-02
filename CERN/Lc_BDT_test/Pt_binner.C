@@ -14,7 +14,7 @@
 
 void Pt_binner()
 {
-  TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_stripped.root";
+  TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/Lc_background_NEW_100files.root";
   TString newfileDir = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/PtBinTest/";
 
   // PtBins - settings
@@ -37,7 +37,7 @@ for (int i = 0; i < nPtBins; i++) {
   Float_t PtLow = ptBins[i];
   Float_t PtHigh = ptBins[i + 1];
 
-    TString newfileName = newfileDir + form("Lc_binTest_Pt%d", PtLow);
+    TString newfileName = newfileDir + form("Lc_binTest_Pt%d.root", PtLow);
     TFile newFile(newfileName, "RECREATE");
     TTree* newtree = oldtree->CloneTree(0);
     newtree->SetName("O2hfcandp3full");
