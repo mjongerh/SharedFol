@@ -19,8 +19,8 @@ void Pt_binner()
   TString newfileNamePrefix = "Lc_binTest_background"
 
   // PtBins - settings
-  const Int_t nPtBins = 6;
-  Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12.};
+  const Int_t nPtBins = 7;
+  Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12., 100.};
 
   TFile oldFile(oldfileName);
   TTree* oldtree;
