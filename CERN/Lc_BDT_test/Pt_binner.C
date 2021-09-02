@@ -14,9 +14,9 @@
 
 void Pt_binner()
 {
-  TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/Lc_background_NEW_100files.root";
+  TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/Lc_signal_NEW_100files.root";
   TString newfileDir = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/PtBinTest/";
-  TString newfileNamePrefix = "Lc_binTest_background";
+  TString newfileNamePrefix = "Lc_binTest_signal";
 
   // PtBins - settings
   const Int_t nPtBins = 7;
