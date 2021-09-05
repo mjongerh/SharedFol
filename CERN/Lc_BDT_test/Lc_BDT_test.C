@@ -165,7 +165,7 @@
     // Read training and test data
     // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
     TFile *inputSignal(0);
-    TString fnamesig = "/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_50files.root";
+    TString fnamesig = "~/Desktop/SharedFol/CERN/Lc_BDT_test/PtBinTest/Lc_binTest_signal_Pt0.root"; //"/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_50files.root";
     if (!gSystem->AccessPathName( fnamesig )) {
        inputSignal = TFile::Open( fnamesig ); // check if file in local directory exists
     }
@@ -176,7 +176,7 @@
     std::cout << "--- TMVAClassification       : Using input file: " << inputSignal->GetName() << std::endl;
 
     TFile *inputBackground(0);
-    TString fnamebkg = "/home/mjongerh/alice/LcBDTtest/input/Lc_background_nocuts_50files.root";
+    TString fnamebkg = "~/Desktop/SharedFol/CERN/Lc_BDT_test/PtBinTest/Lc_binTest_background_Pt0.root"; //"/home/mjongerh/alice/LcBDTtest/input/Lc_background_nocuts_50files.root";
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg); // check if file in local directory exists
     }
@@ -187,8 +187,8 @@
     std::cout << "--- TMVAClassification       : Using input file: " << inputBackground->GetName() << std::endl;
 
     // Register the training and test trees
-    TTree* signalTree = (TTree*)inputSignal->Get("DF_0/O2hfcandp3full");
-    TTree* backgroundTree = (TTree*)inputBackground->Get("DF_0/O2hfcandp3full");
+    TTree* signalTree = (TTree*)inputSignal->Get("O2hfcandp3full"); //Get("DF_0/O2hfcandp3full")
+    TTree* backgroundTree = (TTree*)inputBackground->Get("O2hfcandp3full");
 
     signalTree->Print();
     backgroundTree->Print();
@@ -230,15 +230,15 @@
     dataloader->AddVariable("fCPAXY", "fCPAXY", "units", 'F');
 
 
-    dataloader->AddVariable("fNSigTOFPi0", "fNSigTOFPi0", "units", 'F');
-    dataloader->AddVariable("fNSigTOFPi2", "fNSigTOFPi1", "units", 'F');
+    //dataloader->AddVariable("fNSigTOFPi0", "fNSigTOFPi0", "units", 'F');
+    //dataloader->AddVariable("fNSigTOFPi1", "fNSigTOFPi1", "units", 'F');
     dataloader->AddVariable("fNSigTOFPi2", "fNSigTOFPi2", "units", 'F');
-    dataloader->AddVariable("fNSigTOFKa0", "fNSigTOFKa0", "units", 'F');
-    //dataloader->AddVariable("fNSigTOFKa1", "fNSigTOFKa1", "units", 'F');
+    //dataloader->AddVariable("fNSigTOFKa0", "fNSigTOFKa0", "units", 'F');
+    dataloader->AddVariable("fNSigTOFKa1", "fNSigTOFKa1", "units", 'F');
     //dataloader->AddVariable("fNSigTOFKa2", "fNSigTOFKa2", "units", 'F');
     dataloader->AddVariable("fNSigTOFPr0", "fNSigTOFPr0", "units", 'F');
-    dataloader->AddVariable("fNSigTOFPr1", "fNSigTOFPr1", "units", 'F');
-    dataloader->AddVariable("fNSigTOFPr2", "fNSigTOFPr2", "units", 'F');
+    //dataloader->AddVariable("fNSigTOFPr1", "fNSigTOFPr1", "units", 'F');
+    //dataloader->AddVariable("fNSigTOFPr2", "fNSigTOFPr2", "units", 'F');
 
     // You can add so-called "Spectator variables", which are not used in the MVA training,
     // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
@@ -305,8 +305,8 @@
     //dataloader->SetBackgroundWeightExpression( "weight" );
 
     // Apply additional cuts on the signal and background samples (can be different)
-    TCut mycuts = "fPt > 2.0 && fPt < 5.0"; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-    TCut mycutb = "fPt > 2.0 && fPt < 5.0"; // for example: TCut mycutb = "abs(var1)<0.5";
+    TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
+    TCut mycutb = ""; // for example: TCut mycutb = "abs(var1)<0.5";
 
     // Tell the dataloader how to use the training and testing events
     //
@@ -319,10 +319,10 @@
     //
     //    dataloader->PrepareTrainingAndTestTree( mycut,
     //         "NSigTrain=3000:NBkgTrain=3000:NSigTest=3000:NBkgTest=3000:SplitMode=Random:!V" );
-    int NsigTrain = 300; //signalTree->GetEntries() / 2;
-    long long Nmaxbkg = 30000;
+    int NsigTrain = signalTree->GetEntries() / 2;
+    long long Nmaxbkg = 300000;
     int NbkgTrain = min(Nmaxbkg, backgroundTree->GetEntries()/2);
-    int NsigTest = 300; //signalTree->GetEntries() / 2;
+    int NsigTest = signalTree->GetEntries() / 2;
     int NbkgTest = min(Nmaxbkg, backgroundTree->GetEntries()/2);
     dataloader->PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V");
 
