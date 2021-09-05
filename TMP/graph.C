@@ -25,5 +25,5 @@ void graph() {
   h->GetXaxis()->SetTitle("P_{T} (GeV/c)");
   h->GetYaxis()->SetTitle("S/#sqrt{S+B}");
 
-  h->Draw("hist p");
+  h->Draw("hist");
 }
