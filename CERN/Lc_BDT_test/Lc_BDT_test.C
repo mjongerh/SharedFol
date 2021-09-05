@@ -165,7 +165,7 @@
     // Read training and test data
     // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
     TFile *inputSignal(0);
-    TString fnamesig = "/home/mjongerh/alice/SharedFol/CERN/Lc_BDT_test/PtBinTest/Lc_binTest_signal_Pt8.root"; //"/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_50files.root";
+    TString fnamesig = "/home/mjongerh/alice/SharedFol/CERN/Lc_BDT_test/PtBinTest/Lc_binTest_signal_Pt12.root"; //"/home/mjongerh/alice/LcBDTtest/input/Lc_signal_nocuts_50files.root";
     if (!gSystem->AccessPathName( fnamesig )) {
        inputSignal = TFile::Open( fnamesig ); // check if file in local directory exists
     }
@@ -176,7 +176,7 @@
     std::cout << "--- TMVAClassification       : Using input file: " << inputSignal->GetName() << std::endl;
 
     TFile *inputBackground(0);
-    TString fnamebkg = "/home/mjongerh/alice/SharedFol/CERN/Lc_BDT_test/PtBinTest/Lc_binTest_background_Pt8.root"; //"/home/mjongerh/alice/LcBDTtest/input/Lc_background_nocuts_50files.root";
+    TString fnamebkg = "/home/mjongerh/alice/SharedFol/CERN/Lc_BDT_test/PtBinTest/Lc_binTest_background_Pt12.root"; //"/home/mjongerh/alice/LcBDTtest/input/Lc_background_nocuts_50files.root";
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg); // check if file in local directory exists
     }
