@@ -16,7 +16,7 @@ void Pt_binner()
 {
   TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_stripped.root";
   TString newfileDir = "/home/mjongerh/Lc_data/Trees/";
-  TString newfileNamePrefix = "Lc_binned_background";
+  TString newfileNamePrefix = "Lc_binned_signal";
 
   // PtBins - settings
   const Int_t nPtBins = 7;
