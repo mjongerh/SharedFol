@@ -270,7 +270,7 @@ int Lc_BDT_bins(TString myMethodList = "")
 
     std::cout << "==> Wrote root file: " << outputFile->GetName() << std::endl;
     std::cout << "==> TMVAClassification is done!" << std::endl;
-    TSting command = Form("mv dataset " + DataDir + "dataset");
+    TString command = Form("mv dataset " + DataDir + "dataset");
     gSystem->Exec(command);
     delete factory;
     delete dataloader;
