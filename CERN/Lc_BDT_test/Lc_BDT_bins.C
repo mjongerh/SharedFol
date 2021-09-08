@@ -158,7 +158,7 @@ int Lc_BDT_bins(TString myMethodList = "")
     TMVA::Factory* factory = new TMVA::Factory("TMVAClassification", outputFile,
                                                "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification");
     TString DataDir = Form("/home/mjongerh/Lc_data/output/Pt%.0f/dataset", ptBins[i]);
-    TMVA::DataLoader* dataloader = new TMVA::DataLoader("dataset");
+    TMVA::DataLoader* dataloader = new TMVA::DataLoader(DataDir);
 
     // Define the input variables that shall be used for the MVA training
     // note that you may also use variable expressions, such as: "3*var1/var2*abs(var3)"
