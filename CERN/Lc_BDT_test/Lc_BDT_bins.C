@@ -203,9 +203,9 @@ int Lc_BDT_test(TString myMethodList = "")
 
     int NsigTrain = 10; //signalTree->GetEntries() * TrainFraction;
     long long Nmaxbkg = 300;
-    int NbkgTrain = min(Nmaxbkg, int(backgroundTree->GetEntries() * TrainFraction));
+    int NbkgTrain = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * TrainFraction));
     int NsigTest = 10; //signalTree->GetEntries() * (1.0 - TrainFraction);
-    int NbkgTest = min(Nmaxbkg, int(backgroundTree->GetEntries() * (1.0 - TrainFraction)));
+    int NbkgTest = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * (1.0 - TrainFraction)));
     dataloader->PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V");
 
     // ### Book MVA methods
