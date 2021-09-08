@@ -152,7 +152,7 @@ int Lc_BDT_test(TString myMethodList = "")
     backgroundTree->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-    TString outfileName = Form("/home/mjongerh/Lc_data/output/Pt%.0f/TMVA.root", ptBin[i]);
+    TString outfileName = Form("/home/mjongerh/Lc_data/output/Pt%.0f/TMVA.root", ptBins[i]);
     TFile* outputFile = TFile::Open(outfileName, "RECREATE");
 
     TMVA::Factory* factory = new TMVA::Factory("TMVAClassification", outputFile,
@@ -203,9 +203,9 @@ int Lc_BDT_test(TString myMethodList = "")
 
     int NsigTrain = 10; //signalTree->GetEntries() * TrainFraction;
     long long Nmaxbkg = 300;
-    int NbkgTrain = min(Nmaxbkg, backgroundTree->GetEntries() * TrainFraction);
+    int NbkgTrain = min(Nmaxbkg, (backgroundTree->GetEntries() * TrainFraction));
     int NsigTest = 10; //signalTree->GetEntries() * (1.0 - TrainFraction);
-    int NbkgTest = min(Nmaxbkg, backgroundTree->GetEntries() * (1.0 - TrainFraction));
+    int NbkgTest = min(Nmaxbkg, (backgroundTree->GetEntries() * (1.0 - TrainFraction)));
     dataloader->PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V");
 
     // ### Book MVA methods
