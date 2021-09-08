@@ -157,7 +157,7 @@ int Lc_BDT_bins(TString myMethodList = "")
 
     TMVA::Factory* factory = new TMVA::Factory("TMVAClassification", outputFile,
                                                "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification");
-
+    TString DataDir = Form("/home/mjongerh/Lc_data/output/Pt%.0f/dataset", ptBins[i]);
     TMVA::DataLoader* dataloader = new TMVA::DataLoader("dataset");
 
     // Define the input variables that shall be used for the MVA training
@@ -274,8 +274,8 @@ int Lc_BDT_bins(TString myMethodList = "")
     delete factory;
     delete dataloader;
     // Launch the GUI for the root macros
-    if (!gROOT->IsBatch())
-      TMVA::TMVAGui(outfileName);
+    //if (!gROOT->IsBatch())
+    //  TMVA::TMVAGui(outfileName);
   }
   return 0;
 }
