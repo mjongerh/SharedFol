@@ -58,7 +58,7 @@
 #include "TMVA/Tools.h"
 #include "TMVA/TMVAGui.h"
 
-int Lc_BDT_test(TString myMethodList = "")
+int Lc_BDT_bins(TString myMethodList = "")
 {
   // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
   // if you use your private .rootrc, or run from a different directory, please copy the
@@ -292,5 +292,5 @@ int main(int argc, char** argv)
       methodList += TString(",");
     methodList += regMethod;
   }
-  return Lc_BDT_test(methodList);
+  return Lc_BDT_bins(methodList);
 }
