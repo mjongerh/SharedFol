@@ -76,7 +76,7 @@ void Lc_BDT_cut_testTree()
     gPad->SetGrid();
     TString name = Form("Pt %.0f up to %0.f", PtLow, PtHigh);
     hs->Draw();
-    //hBkg->Reset("ICESM");
-    //hSig->Reset("ICESM");
+    hBkg->Reset("ICESM");
+    hSig->Reset("ICESM");
   }
 }
