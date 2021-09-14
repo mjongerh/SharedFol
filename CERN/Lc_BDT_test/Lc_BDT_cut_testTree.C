@@ -67,8 +67,8 @@ void Lc_BDT_cut_testTree( Int_t input)
     gPad->SetGrid();
     hs->Draw();
     hs->GetXaxis()->SetTitle("Invariant mass [GeV]");
-    hs->GetYaxis()->SetTitle("Entries");
-    hs->GetYaxis()->SetTitleOffset(-0.5);
+    //hs->GetYaxis()->SetTitle("Entries");
+    //hs->GetYaxis()->SetTitleOffset(-0.5);
 
     TLegend* legend = new TLegend(0.8,0.8,0.95,0.95);
     legend->AddEntry(hSig, "Signal", "f");
