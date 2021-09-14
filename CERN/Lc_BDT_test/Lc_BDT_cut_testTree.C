@@ -18,11 +18,11 @@ void Lc_BDT_cut_testTree()
 
   THStack* hs = new THStack("hs", "Stacked 1D histograms");
   //create two 1-d histograms
-  TH1F* hSig = new TH1F("hSig", "Signal events", 100, 1.8, 3.);
+  TH1F* hSig = new TH1F("hSig", "Signal events", 100, 2.1, 2.7);
   hSig->SetFillColor(kRed);
   hSig->SetMarkerStyle(21);
   hSig->SetMarkerColor(kRed);
-  TH1F* hBkg = new TH1F("hBkg", "Bkg events", 100, 1.8, 3.);
+  TH1F* hBkg = new TH1F("hBkg", "Bkg events", 100, 2.1,2.7);
   hBkg->SetFillColor(kBlue);
   hBkg->SetMarkerStyle(21);
   hBkg->SetMarkerColor(kBlue);
@@ -60,8 +60,8 @@ void Lc_BDT_cut_testTree()
     }
   }
 
-  hs->Add(hSig);
   hs->Add(hBkg);
-  TCanvas* cst = new TCanvas("cst", "stacked hists", 10, 10, 700, 700);
+  hs->Add(hSig);
+  TCanvas* cst = new TCanvas("cst", "stacked hists", 10, 10, 1400, 1400);
   hs->Draw();
 }
