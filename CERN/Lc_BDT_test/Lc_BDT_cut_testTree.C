@@ -33,9 +33,9 @@ void Lc_BDT_cut_testTree()
   const Int_t nPtBins = 7;
   Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12., 100.};
   
-  for (int i = 0; i < nPtBins; i++) {
-    Float_t PtLow = ptBins[i];
-    Float_t PtHigh = ptBins[i + 1];
+  for (int n = 0; n < nPtBins; n++) {
+    Float_t PtLow = ptBins[n];
+    Float_t PtHigh = ptBins[n + 1];
 
     TString oldfileName = oldfileDir + Form("Pt%.0f/TMVA.root", PtLow);
     TFile oldFile(oldfileName);
@@ -63,10 +63,10 @@ void Lc_BDT_cut_testTree()
     
     hs->Add(hBkg);
     hs->Add(hSig);
-    cst->cd(i);
+    cst->cd(n);
     gPad->SetGrid();
     TString name = Form("Pt %.0f up to %0.f", PtLow, PtHigh);
-    hs->Draw(name);
+    hs->Draw();
     //hBkg->Reset("ICESM");
     //hSig->Reset("ICESM");
   }
