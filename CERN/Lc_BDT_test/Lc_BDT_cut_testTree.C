@@ -52,7 +52,7 @@ void Lc_BDT_cut_testTree( Int_t input)
     float fM, fBDT;
     oldtree->SetBranchAddress("classID", &classID);
     oldtree->SetBranchAddress("fM", &fM);
-    oldtree->SetBranchAddress("fBDT", &fBDT);
+    oldtree->SetBranchAddress("BDT", &fBDT);
 
     for (Long64_t i = 0; i < nentries; i++) {
         oldtree->GetEntry(i);
