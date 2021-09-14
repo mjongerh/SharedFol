@@ -33,7 +33,7 @@ void Lc_BDT_cut_testTree()
   const Int_t nPtBins = 7;
   Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12., 100.};
   
-  for (int i = 0; i < 1; i++) {
+  for (int i = 0; i < nPtBins; i++) {
     Float_t PtLow = ptBins[i];
     Float_t PtHigh = ptBins[i + 1];
 
