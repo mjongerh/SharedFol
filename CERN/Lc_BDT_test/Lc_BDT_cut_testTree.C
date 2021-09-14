@@ -25,7 +25,7 @@ void Lc_BDT_cut_testTree( Int_t input)
     TString name = Form("Pt %.0f up to %0.f;Invariant mass [GeV];Entries", PtLow, PtHigh); //global name ; x-asix title ; y-axis title
     THStack* hs = new THStack("hs", name);
     TCanvas* cst = new TCanvas("cst", "stacked hists", 1400, 1400);
-    cst->GetXaxis()->SetTitle("Invariant mass [GeV]");
+    //cst->GetXaxis()->SetTitle("Invariant mass [GeV]");
     //create two 1-d histograms
     TH1F* hSig = new TH1F("hSig", "Signal events", 100, 1.9, 2.7);
     hSig->SetFillColor(kRed);
