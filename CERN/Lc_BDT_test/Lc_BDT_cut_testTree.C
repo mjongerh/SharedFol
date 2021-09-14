@@ -22,7 +22,7 @@ void Lc_BDT_cut_testTree( Int_t input)
   Float_t PtHigh = ptBins[input + 1];
 
     TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
-    TString name = Form("Pt %.0f up to %0.f;Invariant mass [GeV];Entries", PtLow, PtHigh); //global name ; x-asix title ; y-axis title
+    TString name = Form("Pt %.0f up to %0.f", PtLow, PtHigh); //global name ; x-asix title ; y-axis title
     THStack* hs = new THStack("hs", name);
     TCanvas* cst = new TCanvas("cst", "stacked hists", 1400, 1400);
     //cst->GetXaxis()->SetTitle("Invariant mass [GeV]");
@@ -66,4 +66,9 @@ void Lc_BDT_cut_testTree( Int_t input)
     hs->Add(hSig);
     gPad->SetGrid();
     hs->Draw();
+    hs->GetXaxis()->SetTitle("My X Axis Title");
+    hs->GetYaxis()->SetTitle("My Y Axis Title");
+    gPad->Modified();
+    gPad->Update(); 
+
 }
