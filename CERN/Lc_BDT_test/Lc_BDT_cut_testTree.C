@@ -18,7 +18,7 @@ void Lc_BDT_cut_testTree()
 
   THStack* hs = new THStack("hs", "Stacked 1D histograms");
   TCanvas* cst = new TCanvas("cst", "stacked hists", 1400, 1400);
-  cst->Divide(4,4);
+  cst->Divide(3,3);
   //create two 1-d histograms
   TH1F* hSig = new TH1F("hSig", "Signal events", 100, 1.9, 2.7);
   hSig->SetFillColor(kRed);
@@ -33,7 +33,7 @@ void Lc_BDT_cut_testTree()
   const Int_t nPtBins = 7;
   Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12., 100.};
   
-  for (int n = 0; n < nPtBins; n++) {
+  for (Int_t n = 0; n < nPtBins; n++) {
     Float_t PtLow = ptBins[n];
     Float_t PtHigh = ptBins[n + 1];
 
@@ -63,7 +63,7 @@ void Lc_BDT_cut_testTree()
     
     hs->Add(hBkg);
     hs->Add(hSig);
-    cst->cd(2);
+    cst->cd(n);
     gPad->SetGrid();
     TString name = Form("Pt %.0f up to %0.f", PtLow, PtHigh);
     hs->Draw();
