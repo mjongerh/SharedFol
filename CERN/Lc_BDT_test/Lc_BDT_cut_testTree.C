@@ -68,8 +68,8 @@ void Lc_BDT_cut_testTree( Int_t input)
     hs->Draw();
     hs->GetXaxis()->SetTitle("My X Axis Title");
     hs->GetYaxis()->SetTitle("My Y Axis Title");
-    hs->GetYaxis()->SetTitleOffset(10);
-    TLegend* legend = new TLegend();
+    hs->GetYaxis()->SetTitleOffset(-10);
+    TLegend* legend = new TLegend(900,900,1400,1400);
     legend->AddEntry(hSig, "Signal", "f");
     legend->AddEntry(hBkg, "Background", "f");
     legend->Draw();
