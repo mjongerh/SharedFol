@@ -17,7 +17,7 @@ void Lc_BDT_cut_testTree( Int_t input)
   // PtBins - settings
   const Int_t nPtBins = 7;
   Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12., 100.};
-  Float_t BDTcut[nPtBins] = {0.0915, 0.962, 0.1386, 0.0344, 0.0196, 0.0241, -0.0284};
+  Float_t BDTcut[nPtBins] = {0.0915, 0.0962, 0.1386, 0.0344, 0.0196, 0.0241, -0.0284};
 
   Float_t PtLow = ptBins[input];
   Float_t PtHigh = ptBins[input + 1];
