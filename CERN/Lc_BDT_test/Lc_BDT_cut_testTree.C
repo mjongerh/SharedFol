@@ -17,7 +17,7 @@ void Lc_BDT_cut_testTree()
   TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
 
   THStack* hs = new THStack("hs", "Stacked 1D histograms");
-  TCanvas* cst = new TCanvas("cst", "stacked hists", 10, 10, 1400, 1400);
+  TCanvas* cst = new TCanvas("cst", "stacked hists", 1400, 1400);
   cst->Divide(2,2);
   //create two 1-d histograms
   TH1F* hSig = new TH1F("hSig", "Signal events", 100, 1.9, 2.7);
