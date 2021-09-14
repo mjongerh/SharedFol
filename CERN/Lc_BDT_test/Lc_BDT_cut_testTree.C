@@ -17,6 +17,7 @@ void Lc_BDT_cut_testTree( Int_t input)
   // PtBins - settings
   const Int_t nPtBins = 7;
   Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12., 100.};
+  Float_t BDTcut[nPtBins] = {0.0915, 0.962, 0.1386, 0.0344, 0.0196, 0.0241, -0.0284};
 
   Float_t PtLow = ptBins[input];
   Float_t PtHigh = ptBins[input + 1];
@@ -48,18 +49,21 @@ void Lc_BDT_cut_testTree( Int_t input)
 
     Long64_t nentries = oldtree->GetEntries();
     Int_t classID;
-    float fM;
+    float fM, fBDT;
     oldtree->SetBranchAddress("classID", &classID);
     oldtree->SetBranchAddress("fM", &fM);
+    oldtree->SetBranchAddress("fBDT", &fBDT);
 
     for (Long64_t i = 0; i < nentries; i++) {
         oldtree->GetEntry(i);
+      if (fBDT > BDTCut[input]) {
         if (classID == 0)
-        hSig->Fill(fM);
+          hSig->Fill(fM);
         else if (classID == 1)
-        hBkg->Fill(fM);
+          hBkg->Fill(fM);
         else
-        printf("error, event is not signal or background\n");
+          printf("error, event is not signal or background\n");
+      }
     }
     
     hs->Add(hBkg);
