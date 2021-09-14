@@ -64,6 +64,7 @@ void Lc_BDT_cut_testTree()
     hs->Add(hBkg);
     hs->Add(hSig);
     cst->cd(i);
+    gPad->SetGrid();
     hs->Draw();
     //hBkg->Reset("ICESM");
     //hSig->Reset("ICESM");
