@@ -18,7 +18,7 @@ void Lc_BDT_cut_testTree()
 
   THStack* hs = new THStack("hs", "Stacked 1D histograms");
   TCanvas* cst = new TCanvas("cst", "stacked hists", 10, 10, 1400, 1400);
-  cst->Divide(3, 3);
+  cst->Divide(3,3);
   //create two 1-d histograms
   TH1F* hSig = new TH1F("hSig", "Signal events", 100, 1.9, 2.7);
   hSig->SetFillColor(kRed);
@@ -60,9 +60,10 @@ void Lc_BDT_cut_testTree()
       else
         printf("error, event is not signal or background\n");
     }
-    cst->cd(i);
+    
     hs->Add(hBkg);
     hs->Add(hSig);
+    cst->cd(i);
     hs->Draw();
     //hBkg->Reset("ICESM");
     //hSig->Reset("ICESM");
