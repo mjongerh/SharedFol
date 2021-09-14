@@ -14,7 +14,7 @@
 
 void Lc_BDT_cut_testTree()
 {
-  TString oldfileDir = "/home/mjongerh/Lc_data/output/";
+  TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
 
   THStack* hs = new THStack("hs", "Stacked 1D histograms");
   //create two 1-d histograms
