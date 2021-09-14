@@ -12,32 +12,32 @@
 #include "TROOT.h"
 #include "TClass.h"
 
-void Lc_BDT_cut_testTree()
+void Lc_BDT_cut_testTree( Int_t input)
 {
-  TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
-
-  THStack* hs = new THStack("hs", "Stacked 1D histograms");
-  TCanvas* cst = new TCanvas("cst", "stacked hists", 1400, 1400);
-  cst->Divide(3,3);
-  //create two 1-d histograms
-  TH1F* hSig = new TH1F("hSig", "Signal events", 100, 1.9, 2.7);
-  hSig->SetFillColor(kRed);
-  hSig->SetMarkerStyle(21);
-  hSig->SetMarkerColor(kRed);
-  TH1F* hBkg = new TH1F("hBkg", "Bkg events", 100, 1.9,2.7);
-  hBkg->SetFillColor(kBlue);
-  hBkg->SetMarkerStyle(21);
-  hBkg->SetMarkerColor(kBlue);
-
   // PtBins - settings
   const Int_t nPtBins = 7;
   Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12., 100.};
-  
-  for (Int_t n = 0; n < nPtBins; n++) {
-    Float_t PtLow = ptBins[n];
-    Float_t PtHigh = ptBins[n + 1];
 
-    TString oldfileName = oldfileDir + Form("Pt%.0f/TMVA.root", PtLow);
+  Float_t PtLow = ptBins[input];
+  Float_t PtHigh = ptBins[input + 1];
+
+    TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
+    TString name = Form("Pt %.0f up to %0.f", PtLow, PtHigh);
+    THStack* hs = new THStack("hs", "Stacked 1D histograms");
+    TCanvas* cst = new TCanvas("cst", "stacked hists", 1400, 1400);
+    //create two 1-d histograms
+    TH1F* hSig = new TH1F("hSig", "Signal events", 100, 1.9, 2.7);
+    hSig->SetFillColor(kRed);
+    hSig->SetMarkerStyle(21);
+    hSig->SetMarkerColor(kRed);
+    TH1F* hBkg = new TH1F("hBkg", "Bkg events", 100, 1.9,2.7);
+    hBkg->SetFillColor(kBlue);
+    hBkg->SetMarkerStyle(21);
+    hBkg->SetMarkerColor(kBlue);
+
+
+
+    TString oldfileName = oldfileDir + Form("Pt%.0f/TMVA.root", input);
     TFile oldFile(oldfileName);
     TTree* oldtree;
 
@@ -52,31 +52,17 @@ void Lc_BDT_cut_testTree()
     oldtree->SetBranchAddress("fM", &fM);
 
     for (Long64_t i = 0; i < nentries; i++) {
-      oldtree->GetEntry(i);
-      if (classID == 0)
+        oldtree->GetEntry(i);
+        if (classID == 0)
         hSig->Fill(fM);
-      else if (classID == 1)
+        else if (classID == 1)
         hBkg->Fill(fM);
-      else
+        else
         printf("error, event is not signal or background\n");
     }
     
     hs->Add(hBkg);
     hs->Add(hSig);
-    switch (n) {
-      case 0:
-        cst->cd(1);
-      case 1:
-        cst->cd(2);
-      case 2:
-        cst->cd(3);
-      case 3:
-        cst->cd(4);
-    }
     gPad->SetGrid();
-    TString name = Form("Pt %.0f up to %0.f", PtLow, PtHigh);
     hs->Draw();
-    hBkg->Reset("ICESM");
-    hSig->Reset("ICESM");
-  }
 }
