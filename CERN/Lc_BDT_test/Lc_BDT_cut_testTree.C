@@ -38,7 +38,7 @@ void Lc_BDT_cut_testTree( Int_t input)
 
 
 
-    TString oldfileName = oldfileDir + Form("Pt%d/TMVA.root", input);
+    TString oldfileName = oldfileDir + Form("Pt%d/TMVA.root", (Int_t)PtLow);
     TFile oldFile(oldfileName);
     TTree* oldtree;
 
