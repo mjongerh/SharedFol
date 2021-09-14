@@ -23,8 +23,9 @@ void Lc_BDT_cut_testTree( Int_t input)
 
     TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
     TString name = Form("Pt %.0f up to %0.f", PtLow, PtHigh);
-    THStack* hs = new THStack("hs", "Stacked 1D histograms");
+    THStack* hs = new THStack("hs", name);
     TCanvas* cst = new TCanvas("cst", "stacked hists", 1400, 1400);
+    hs->GetXaxis()->SetTitle("Invariant mass [GeV]");
     //create two 1-d histograms
     TH1F* hSig = new TH1F("hSig", "Signal events", 100, 1.9, 2.7);
     hSig->SetFillColor(kRed);
@@ -37,7 +38,7 @@ void Lc_BDT_cut_testTree( Int_t input)
 
 
 
-    TString oldfileName = oldfileDir + Form("Pt%.0f/TMVA.root", input);
+    TString oldfileName = oldfileDir + Form("Pt%d/TMVA.root", input);
     TFile oldFile(oldfileName);
     TTree* oldtree;
 
