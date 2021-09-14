@@ -56,7 +56,7 @@ void Lc_BDT_cut_testTree( Int_t input)
 
     for (Long64_t i = 0; i < nentries; i++) {
         oldtree->GetEntry(i);
-      if (fBDT > BDTCut[input]) {
+      if (fBDT > BDTcut[input]) {
         if (classID == 0)
           hSig->Fill(fM);
         else if (classID == 1)
