@@ -63,7 +63,16 @@ void Lc_BDT_cut_testTree()
     
     hs->Add(hBkg);
     hs->Add(hSig);
-    cst->cd(n);
+    switch (n) {
+      case 0:
+        cst->cd(1);
+      case 1:
+        cst->cd(2);
+      case 2:
+        cst->cd(3);
+      case 3:
+        cst->cd(4);
+    }
     gPad->SetGrid();
     TString name = Form("Pt %.0f up to %0.f", PtLow, PtHigh);
     hs->Draw();
