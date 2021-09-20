@@ -27,7 +27,7 @@ void HistoMaker() {
   }
   x[100] = 1.0;
   y[100] = 1.0;
-  TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 5000, 5000);
+  TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 7000, 5000);
   c1->Divide(5, 5);
   c1->cd(1);
   TGraph* gr = new TGraph(n+1, x, y);
@@ -76,10 +76,10 @@ void HistoMaker() {
   TH2D* hImpactParameter1B = new TH2D("hImpactParameter1B", "BACKGROUND Impact para1 vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
   TH2D* hImpactParameter2S = new TH2D("hImpactParameter2S", "SIGNAL Impact param2 vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
   TH2D* hImpactParameter2B = new TH2D("hImpactParameter2B", "BACKGROUND Impact param2 vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hCPAS = new TH2D("hCPAS", "SIGNAL CPA vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
-  TH2D* hCPAB = new TH2D("hCPAB", "BACKGROUND CPA vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
-  TH2D* hCPAXYS = new TH2D("hCPAXYS", "SIGNAL CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hCPAXYB = new TH2D("hCPAXYB", "BACKGROUND CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hCPAS = new TH2D("hCPAS", "SIGNAL CPA vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.1);
+  TH2D* hCPAB = new TH2D("hCPAB", "BACKGROUND CPA vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.1);
+  TH2D* hCPAXYS = new TH2D("hCPAXYS", "SIGNAL CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.1);
+  TH2D* hCPAXYB = new TH2D("hCPAXYB", "BACKGROUND CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.1);
   TH2D* hNSigTOFPi2S = new TH2D("hNSigTOFPi2S", "SIGNAL NSigTOF Pi vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
   TH2D* hNSigTOFPi2B = new TH2D("hNSigTOFPi2B", "BACKGROUND NSigTOF Pi vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
   TH2D* hNSigTOFKa1S = new TH2D("hNSigTOFKa1B", "SIGNAL NSigTOF Ka vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
