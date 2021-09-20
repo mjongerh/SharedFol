@@ -80,10 +80,10 @@ void HistoMaker() {
   TH2D* hCPAB = new TH2D("hCPAB", "BACKGROUND CPA vs BDT response", 50, -0.8, 0.5, 50, 0.7, 1.05);
   TH2D* hCPAXYS = new TH2D("hCPAXYS", "SIGNAL CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.1);
   TH2D* hCPAXYB = new TH2D("hCPAXYB", "BACKGROUND CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.1);
-  TH2D* hNSigTOFPi2S = new TH2D("hNSigTOFPi2S", "SIGNAL NSigTOF Pi vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
-  TH2D* hNSigTOFPi2B = new TH2D("hNSigTOFPi2B", "BACKGROUND NSigTOF Pi vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
-  TH2D* hNSigTOFKa1S = new TH2D("hNSigTOFKa1B", "SIGNAL NSigTOF Ka vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
-  TH2D* hNSigTOFKa1B = new TH2D("hNSigTOFKa1B", "BACKGROUND NSigTOF Ka vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
+  TH2D* hNSigTOFPi2S = new TH2D("hNSigTOFPi2S", "SIGNAL NSigTOF Pi vs BDT response", 50, -0.8, 0.5, 50, -5.0, 5.0);
+  TH2D* hNSigTOFPi2B = new TH2D("hNSigTOFPi2B", "BACKGROUND NSigTOF Pi vs BDT response", 50, -0.8, 0.5, 50, -5.0, 5.0);
+  TH2D* hNSigTOFKa1S = new TH2D("hNSigTOFKa1B", "SIGNAL NSigTOF Ka vs BDT response", 50, -0.8, 0.5, 50, -20.0, 5.0);
+  TH2D* hNSigTOFKa1B = new TH2D("hNSigTOFKa1B", "BACKGROUND NSigTOF Ka vs BDT response", 50, -0.8, 0.5, 50, -20.0, 5.0);
   TH2D* hNSigTOFPr0S = new TH2D("hNSigTOFPr0S", "SIGNAL NSigTOF Pr vs BDT response", 50, -0.8, 0.5, 50, -80.0, 20.0);
   TH2D* hNSigTOFPr0B = new TH2D("hNSigTOFPr0B", "BACKGROUND NSigTOF Pr vs BDT response", 50, -0.8, 0.5, 50, -80.0, 20.0);
 
