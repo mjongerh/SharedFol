@@ -30,5 +30,5 @@ void HistoMaker() {
   TGraph* gr = new TGraph(n+1, x, y);
   gr->GetXaxis()->SetTitle("False positive rate (bkg eff.)");
   gr->GetYaxis()->SetTitle("True positive rate (signal eff.)");
-  gr->Draw("AC");
+  gr->Draw("AL");
 }
