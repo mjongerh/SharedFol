@@ -26,9 +26,95 @@ void HistoMaker() {
   }
   x[100] = 1.0;
   y[100] = 1.0;
-  TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 500, 300);
+  TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 5000, 3000);
+  c1->Divide(5, 3);
+  c1->cd(1);
   TGraph* gr = new TGraph(n+1, x, y);
   gr->GetXaxis()->SetTitle("False positive rate (bkg eff.)");
   gr->GetYaxis()->SetTitle("True positive rate (signal eff.)");
   gr->Draw("AL");
+
+  TTree* oldtree;
+  TString objectstring = "dataset/TestTree";
+  oldFile.GetObject(objectstring, oldtree);
+  if (oldtree == nullptr) {
+      printf("tree not found");
+  }
+  Long64_t nentries = oldtree->GetEntries();
+  float PtEntry, BDT, fDecayLength, fimpactParameter0, fimpactParameter1, fimpactParameter2, fCPA, fCPAXY,classID, fNSigTOFPi2, fNSigTOFKa1, fNSigTOFPr0;
+
+  oldtree->SetBranchAddress("fPt", &PtEntry);
+  oldtree->SetBranchAddress("BDT", &BDT);
+  oldtree->SetBranchAddress("fDecayLength", &fDecayLength);
+  oldtree->SetBranchAddress("fimpactParameter0", &fimpactParameter0);
+  oldtree->SetBranchAddress("fimpactParameter1", &fimpactParameter1);
+  oldtree->SetBranchAddress("fimpactParameter2", &fimpactParameter2);
+  oldtree->SetBranchAddress("fCPA", &fCPA);
+  oldtree->SetBranchAddress("fCPAXY", &fCPAXY);
+  oldtree->SetBranchAddress("classID", &classID);
+  oldtree->SetBranchAddress("fNSigTOFPi2", &fNSigTOFPi2);
+  oldtree->SetBranchAddress("fNSigTOFKa1", &fNSigTOFKa1);
+  oldtree->SetBranchAddress("fNSigTOFPr0", &fNSigTOFPr0);
+  
+  
+  Float_t weight;
+  Int_t Nsig, Nbkg;
+  for (Int_t i = 0; i < nentries; i++) {
+    oldtree->GetEntry(i);
+    if (classID == 0)
+      Nsig++;
+  }
+  else Nbkg++;
+  weight = Nbkg / Nsig;
+
+  TH2D* hDecayLengthS = new TH1D("hDecayLengthS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
+  TH2D* hDecayLengthB = new TH1D("hDecayLengthB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
+  TH2D* himpactParameter0S = new TH1D("himpactParameter0S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter0B = new TH1D("himpactParameter0B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter1S = new TH1D("himpactParameter1S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter1B = new TH1D("himpactParameter1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter2S = new TH1D("himpactParameter2S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter2B = new TH1D("himpactParameter2B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hCPAS = new TH1D("hCPAS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
+  TH2D* hCPAB = new TH1D("hCPAB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
+  TH2D* hCPAXYS = new TH1D("hCPAXYS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hCPAXYB = new TH1D("hCPAXYB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hNSigTOFPi2S = new TH1D("hNSigTOFPi2S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
+  TH2D* hNSigTOFPi2B = new TH1D("hNSigTOFPi2B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
+  TH2D* hNSigTOFKa1S = new TH1D("hNSigTOFKa1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
+  TH2D* hNSigTOFKa1B = new TH1D("hNSigTOFKa1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
+  TH2D* hNSigTOFPr0S = new TH1D("hNSigTOFPr0S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -80.0, 20.0);
+  TH2D* hNSigTOFPr0B = new TH1D("hNSigTOFPr0B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -80.0, 20.0);
+
+    for (Int_t i = 0; i < nentries; i++) {
+        oldtree->GetEntry(i);
+      if (classID == 0) {
+        hDecayLengthS->Fill(BDT, fDecayLength, weight);
+        himpactParameter0S->Fill(BDT, fimpactParameter0, weight);
+        himpactParameter1S->Fill(BDT, fimpactParameter1, weight);
+        himpactParameter2S->Fill(BDT, fimpactParameter2, weight);
+        hCPAS->Fill(BDT, fCPA, weight);
+        hCPAXYS->Fill(BDT, fCPAXY, weight);
+        hNSigTOFPi2S->Fill(BDT, fNSigTOFPi2, weight);
+        hNSigTOFKa1S->Fill(BDT, fNSigTOFKa1, weight);
+        hNSigTOFPr0S->Fill(BDT, fNSigTOFPr0, weight);
+      }
+        else {
+        hDecayLengthB->Fill(BDT, fDecayLength);
+        himpactParameter0B->Fill(BDT, fimpactParameter0);
+        himpactParameter1B->Fill(BDT, fimpactParameter1);
+        himpactParameter2B->Fill(BDT, fimpactParameter2);
+        hCPAB->Fill(BDT, fCPA);
+        hCPAXYB->Fill(BDT, fCPAXY);
+        hNSigTOFPi2B->Fill(BDT, fNSigTOFPi2);
+        hNSigTOFKa1B->Fill(BDT, fNSigTOFKa1);
+        hNSigTOFPr0B->Fill(BDT, fNSigTOFPr0);
+        }
+    }
+    c1->cd(2);
+    hDecayLengthS->SetPalette(30);
+    hDecayLengthB->SetPalette(40);
+    hDecayLengthS->Draw();
+    hDecayLengthB->Draw("SAME");
+
 }
