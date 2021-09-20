@@ -70,12 +70,12 @@ void HistoMaker() {
 
   TH2D* hDecayLengthS = new TH2D("hDecayLengthS", "SIGNAL Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 0.03);
   TH2D* hDecayLengthB = new TH2D("hDecayLengthB", "BACKGROUND Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 0.03);
-  TH2D* hImpactParameter0S = new TH2D("hImpactParameter0S", "SIGNAL Impact param0 vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hImpactParameter0B = new TH2D("hImpactParameter0B", "BACKGROUND Impact param0 vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hImpactParameter1S = new TH2D("hImpactParameter1S", "SIGNAL Impact param1 vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hImpactParameter1B = new TH2D("hImpactParameter1B", "BACKGROUND Impact para1 vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hImpactParameter2S = new TH2D("hImpactParameter2S", "SIGNAL Impact param2 vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hImpactParameter2B = new TH2D("hImpactParameter2B", "BACKGROUND Impact param2 vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hImpactParameter0S = new TH2D("hImpactParameter0S", "SIGNAL Impact param0 vs BDT response", 50, -0.8, 0.5, 50, -0.4, 0.4);
+  TH2D* hImpactParameter0B = new TH2D("hImpactParameter0B", "BACKGROUND Impact param0 vs BDT response", 50, -0.8, 0.5, 50, -0.4, 0.4);
+  TH2D* hImpactParameter1S = new TH2D("hImpactParameter1S", "SIGNAL Impact param1 vs BDT response", 50, -0.8, 0.5, 50, -0.4, 0.4);
+  TH2D* hImpactParameter1B = new TH2D("hImpactParameter1B", "BACKGROUND Impact para1 vs BDT response", 50, -0.8, 0.5, 50, -0.4, 0.4);
+  TH2D* hImpactParameter2S = new TH2D("hImpactParameter2S", "SIGNAL Impact param2 vs BDT response", 50, -0.8, 0.5, 50, -0.4, 0.4);
+  TH2D* hImpactParameter2B = new TH2D("hImpactParameter2B", "BACKGROUND Impact param2 vs BDT response", 50, -0.8, 0.5, 50, -0.4, 0.4);
   TH2D* hCPAS = new TH2D("hCPAS", "SIGNAL CPA vs BDT response", 50, -0.8, 0.5, 50, 0.7, 1.05);
   TH2D* hCPAB = new TH2D("hCPAB", "BACKGROUND CPA vs BDT response", 50, -0.8, 0.5, 50, 0.7, 1.05);
   TH2D* hCPAXYS = new TH2D("hCPAXYS", "SIGNAL CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.1);
