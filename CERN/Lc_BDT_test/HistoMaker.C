@@ -18,13 +18,13 @@ void HistoMaker() {
   TH1D* oldhist = (TH1D*)oldFile->Get("dataset/Method_BDT/DBT/MVA_BDT_effBvsS");
 
 
-  TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 500, 300);
   Double_t x[100], y[100]; //x: false positive (background eff), y: True positive (signal eff)
   Int_t n = 100;
   for (Int_t i = 0; i < n; i++) {
     x[i] = oldhist->GetBinContent(i+1);
     y[i] = oldhist->GetBinCenter(i+1);
   }
+  TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 500, 300);
   TGraph* gr = new TGraph(n, x, y);
   gr->GetXaxis()->SetTitle("False positive rate (bkg eff.)");
   gr->GetYaxis()->SetTitle("True positive rate (signal eff.)");
