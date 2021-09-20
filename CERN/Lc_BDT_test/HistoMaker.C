@@ -62,9 +62,9 @@ void HistoMaker() {
   for (Int_t i = 0; i < nentries; i++) {
     oldtree->GetEntry(i);
     if (classID == 0)
-      Nsig++;
+      Nsig++;  
+    else Nbkg++;
   }
-  else Nbkg++;
   weight = Nbkg / Nsig;
 
   TH2D* hDecayLengthS = new TH2D("hDecayLengthS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
