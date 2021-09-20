@@ -15,7 +15,7 @@ void HistoMaker() {
   TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
   TString filename = oldfileDir + "Pt1/TMVA.root";
   TFile* oldFile = new TFile(filename);
-  TH1D* oldhist = (TH1D*)oldFile->Get("dataset/Method_BDT/DBT/MVA_BDT_effBvsS");
+  TH1D* oldhist = (TH1D*)oldFile->Get("dataset/Method_BDT/BDT/MVA_BDT_effBvsS");
 
 
   Double_t x[100], y[100]; //x: false positive (background eff), y: True positive (signal eff)
