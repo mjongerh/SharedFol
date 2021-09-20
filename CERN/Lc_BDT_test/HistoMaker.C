@@ -36,7 +36,7 @@ void HistoMaker() {
 
   TTree* oldtree;
   TString objectstring = "dataset/TestTree";
-  oldFile.GetObject(objectstring, oldtree);
+  oldFile->GetObject(objectstring, oldtree);
   if (oldtree == nullptr) {
       printf("tree not found");
   }
