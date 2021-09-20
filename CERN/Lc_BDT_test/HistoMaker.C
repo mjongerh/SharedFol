@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 
+#include "TClass.h"
 #include "TChain.h"
 #include "TFile.h"
 #include "TTree.h"
