@@ -22,8 +22,8 @@ void HistoMaker() {
   Double_t x[100], y[100]; //x: false positive (background eff), y: True positive (signal eff)
   Int_t n = 100;
   for (Int_t i = 0; i < n; i++) {
-    x[i] = oldhist->GetBinContent(i);
-    y[i] = oldhist->GetBinCenter(i);
+    x[i] = oldhist->GetBinContent(i+1);
+    y[i] = oldhist->GetBinCenter(i+1);
   }
   TGraph* gr = new TGraph(n, x, y);
   gr->GetXaxis()->SetTitle("False positive rate (bkg eff.)");
