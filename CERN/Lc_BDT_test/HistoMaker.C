@@ -42,14 +42,14 @@ void HistoMaker() {
       printf("tree not found");
   }
   Long64_t nentries = oldtree->GetEntries();
-  float PtEntry, BDT, fDecayLength, fimpactParameter0, fimpactParameter1, fimpactParameter2, fCPA, fCPAXY,classID, fNSigTOFPi2, fNSigTOFKa1, fNSigTOFPr0;
-
+  float PtEntry, BDT, fDecayLength, fImpactParameter0, fImpactParameter1, fImpactParameter2, fCPA, fCPAXY, fNSigTOFPi2, fNSigTOFKa1, fNSigTOFPr0;
+  Int_t classID;
   oldtree->SetBranchAddress("fPt", &PtEntry);
   oldtree->SetBranchAddress("BDT", &BDT);
   oldtree->SetBranchAddress("fDecayLength", &fDecayLength);
-  oldtree->SetBranchAddress("fimpactParameter0", &fimpactParameter0);
-  oldtree->SetBranchAddress("fimpactParameter1", &fimpactParameter1);
-  oldtree->SetBranchAddress("fimpactParameter2", &fimpactParameter2);
+  oldtree->SetBranchAddress("fImpactParameter0", &fImpactParameter0);
+  oldtree->SetBranchAddress("fImpactParameter1", &fImpactParameter1);
+  oldtree->SetBranchAddress("fImpactParameter2", &fImpactParameter2);
   oldtree->SetBranchAddress("fCPA", &fCPA);
   oldtree->SetBranchAddress("fCPAXY", &fCPAXY);
   oldtree->SetBranchAddress("classID", &classID);
@@ -70,12 +70,12 @@ void HistoMaker() {
 
   TH2D* hDecayLengthS = new TH2D("hDecayLengthS", "Decay length vs BDT response", 20, 1.0, 0.0, 20, 1.0, 0.0); // 50, -0.8, 0.5, 50, 0, 30);
   TH2D* hDecayLengthB = new TH2D("hDecayLengthB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
-  TH2D* himpactParameter0S = new TH2D("himpactParameter0S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter0B = new TH2D("himpactParameter0B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter1S = new TH2D("himpactParameter1S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter1B = new TH2D("himpactParameter1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter2S = new TH2D("himpactParameter2S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter2B = new TH2D("himpactParameter2B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hImpactParameter0S = new TH2D("hImpactParameter0S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hImpactParameter0B = new TH2D("hImpactParameter0B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hImpactParameter1S = new TH2D("hImpactParameter1S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hImpactParameter1B = new TH2D("hImpactParameter1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hImpactParameter2S = new TH2D("hImpactParameter2S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hImpactParameter2B = new TH2D("hImpactParameter2B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
   TH2D* hCPAS = new TH2D("hCPAS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
   TH2D* hCPAB = new TH2D("hCPAB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
   TH2D* hCPAXYS = new TH2D("hCPAXYS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
@@ -91,9 +91,9 @@ void HistoMaker() {
         oldtree->GetEntry(i);
       if (classID == 0) {
         hDecayLengthS->Fill(BDT, fDecayLength, weight);
-        himpactParameter0S->Fill(BDT, fimpactParameter0, weight);
-        himpactParameter1S->Fill(BDT, fimpactParameter1, weight);
-        himpactParameter2S->Fill(BDT, fimpactParameter2, weight);
+        hImpactParameter0S->Fill(BDT, fImpactParameter0, weight);
+        hImpactParameter1S->Fill(BDT, fImpactParameter1, weight);
+        hImpactParameter2S->Fill(BDT, fImpactParameter2, weight);
         hCPAS->Fill(BDT, fCPA, weight);
         hCPAXYS->Fill(BDT, fCPAXY, weight);
         hNSigTOFPi2S->Fill(BDT, fNSigTOFPi2, weight);
@@ -102,9 +102,9 @@ void HistoMaker() {
       }
         else {
         hDecayLengthB->Fill(BDT, fDecayLength);
-        himpactParameter0B->Fill(BDT, fimpactParameter0);
-        himpactParameter1B->Fill(BDT, fimpactParameter1);
-        himpactParameter2B->Fill(BDT, fimpactParameter2);
+        hImpactParameter0B->Fill(BDT, fImpactParameter0);
+        hImpactParameter1B->Fill(BDT, fImpactParameter1);
+        hImpactParameter2B->Fill(BDT, fImpactParameter2);
         hCPAB->Fill(BDT, fCPA);
         hCPAXYB->Fill(BDT, fCPAXY);
         hNSigTOFPi2B->Fill(BDT, fNSigTOFPi2);
