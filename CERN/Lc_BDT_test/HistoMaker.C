@@ -112,9 +112,9 @@ void HistoMaker() {
         }
     }
     c1->cd(2);
-    hDecayLengthS->SetPalette(30);
-    hDecayLengthB->SetPalette(40);
-    hDecayLengthS->Draw();
-    hDecayLengthB->Draw("SAME");
+    gStyle->SetPalette(30);
+    hDecayLengthS->Draw("col");
+    gStyle->SetPalette(20);
+    hDecayLengthB->Draw("colSAME");
 
 }
