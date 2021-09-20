@@ -67,24 +67,24 @@ void HistoMaker() {
   else Nbkg++;
   weight = Nbkg / Nsig;
 
-  TH2D* hDecayLengthS = new TH1D("hDecayLengthS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
-  TH2D* hDecayLengthB = new TH1D("hDecayLengthB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
-  TH2D* himpactParameter0S = new TH1D("himpactParameter0S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter0B = new TH1D("himpactParameter0B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter1S = new TH1D("himpactParameter1S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter1B = new TH1D("himpactParameter1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter2S = new TH1D("himpactParameter2S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* himpactParameter2B = new TH1D("himpactParameter2B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hCPAS = new TH1D("hCPAS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
-  TH2D* hCPAB = new TH1D("hCPAB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
-  TH2D* hCPAXYS = new TH1D("hCPAXYS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hCPAXYB = new TH1D("hCPAXYB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
-  TH2D* hNSigTOFPi2S = new TH1D("hNSigTOFPi2S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
-  TH2D* hNSigTOFPi2B = new TH1D("hNSigTOFPi2B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
-  TH2D* hNSigTOFKa1S = new TH1D("hNSigTOFKa1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
-  TH2D* hNSigTOFKa1B = new TH1D("hNSigTOFKa1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
-  TH2D* hNSigTOFPr0S = new TH1D("hNSigTOFPr0S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -80.0, 20.0);
-  TH2D* hNSigTOFPr0B = new TH1D("hNSigTOFPr0B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -80.0, 20.0);
+  TH2D* hDecayLengthS = new TH2D("hDecayLengthS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
+  TH2D* hDecayLengthB = new TH2D("hDecayLengthB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
+  TH2D* himpactParameter0S = new TH2D("himpactParameter0S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter0B = new TH2D("himpactParameter0B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter1S = new TH2D("himpactParameter1S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter1B = new TH2D("himpactParameter1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter2S = new TH2D("himpactParameter2S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* himpactParameter2B = new TH2D("himpactParameter2B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hCPAS = new TH2D("hCPAS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
+  TH2D* hCPAB = new TH2D("hCPAB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0.8, 1.0);
+  TH2D* hCPAXYS = new TH2D("hCPAXYS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hCPAXYB = new TH2D("hCPAXYB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
+  TH2D* hNSigTOFPi2S = new TH2D("hNSigTOFPi2S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
+  TH2D* hNSigTOFPi2B = new TH2D("hNSigTOFPi2B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
+  TH2D* hNSigTOFKa1S = new TH2D("hNSigTOFKa1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
+  TH2D* hNSigTOFKa1B = new TH2D("hNSigTOFKa1B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -40.0, 80.0);
+  TH2D* hNSigTOFPr0S = new TH2D("hNSigTOFPr0S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -80.0, 20.0);
+  TH2D* hNSigTOFPr0B = new TH2D("hNSigTOFPr0B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -80.0, 20.0);
 
     for (Int_t i = 0; i < nentries; i++) {
         oldtree->GetEntry(i);
