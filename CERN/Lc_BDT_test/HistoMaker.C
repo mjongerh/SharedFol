@@ -68,7 +68,7 @@ void HistoMaker() {
   }
   weight = Nbkg / Nsig;
 
-  TH2D* hDecayLengthS = new TH2D("hDecayLengthS", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
+  TH2D* hDecayLengthS = new TH2D("hDecayLengthS", "Decay length vs BDT response", 20, 1.0, 0.0, 20, 1.0, 0.0); // 50, -0.8, 0.5, 50, 0, 30);
   TH2D* hDecayLengthB = new TH2D("hDecayLengthB", "Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 30);
   TH2D* himpactParameter0S = new TH2D("himpactParameter0S", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
   TH2D* himpactParameter0B = new TH2D("himpactParameter0B", "Decay length vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.0);
