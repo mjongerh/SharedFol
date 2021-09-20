@@ -113,10 +113,8 @@ void HistoMaker() {
         }
     }
     c1->cd(2);
-    gPad->SetPalette(57);
     hDecayLengthS->Draw("colz");
     c1->cd(3);
-    gPad->SetPalette(58);
     hDecayLengthB->Draw("colz");
 
 }
