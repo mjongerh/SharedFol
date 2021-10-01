@@ -81,7 +81,7 @@ void Lc_significanceHistos(){
 
   Float_t BkgRatio = 0.0; //Ratio for bkg events to bkgevent/Nevent
   for (int i = 0; i < nbins; i++) BkgRatio += Nbackground3S[i];
-  BkgRatio = BkgRatio / 30000000; // /total events
+  BkgRatio = 1 / 30000000; // /total events
   TH1D* NbackgroundEvents = new TH1D("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
   for (Int_t i = 0; i < nbins; i++) {
     NbackgroundEvents->Fill(edges[i] + 0.001, BkgRatio * Nbackground3S[i]);
