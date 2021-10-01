@@ -85,5 +85,7 @@ void Lc_significanceHistos(){
     NbackgroundEvents->Fill(edges[i] + 0.001, BkgRatio * Nbackground3S[i]);
   }
   c1->cd(8);
+  gPad.SetLogy();
+  NbackgroundEvents->GetYAxis().SetTitle("bkgevents / Nevents")
   NbackgroundEvents->Draw("hist");
 }
