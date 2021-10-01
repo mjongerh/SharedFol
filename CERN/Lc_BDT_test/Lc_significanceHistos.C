@@ -32,8 +32,8 @@ void Lc_significance_Histos(){
     oldFile->GetObject(objectstring, testtree);
     Long64_t nentriesTest = testtree->GetEntries();
     TTree* traintree;
-    TString objectstring = "dataset/TrainTree";
-    oldFile->GetObject(objectstring, traintree);
+    TString objectstring2 = "dataset/TrainTree";
+    oldFile->GetObject(objectstring2, traintree);
     Long64_t nentriesTrain = traintree->GetEntries();
 
     Int_t classIDtest;
@@ -71,14 +71,14 @@ void Lc_significance_Histos(){
         if (fMassTrain >= SigMean - 3 * SigRMS && fMassTrain < SigMean + 3 * SigRMS)
           Nbackground3S[nPtBin]++;
     }
-    c1.cd(nPtBin+1);
+    c1->cd(nPtBin+1);
     hSigMass->Draw();
   }
 
-  TH1D* NbackgroundEvents = new TH1F("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
+  TH1D* NbackgroundEvents = new TH1D("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
   for (Int_t i = 0; i < nbins; i++) {
     NbackgroundEvents->Fill(edges[i] + 0.001, Nbackground3S[i]);
   }
-  c1.cd(8);
+  c1->cd(8);
   NbackgroundEvents->Draw();
 }
