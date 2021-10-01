@@ -77,7 +77,7 @@ void Lc_significanceHistos(){
     }
     c1->cd(nPtBin+1);
     hSigMass->Draw();
-    printf("Nentries=%d+%d"\n, nentriesTest, nentriesTrain);
+    printf("Nentries=%d+%d\n", nentriesTest, nentriesTrain);
   }
 
   Float_t BkgRatio = 0.0; //Ratio for bkg events to bkgevent/Nevent
