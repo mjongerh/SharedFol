@@ -60,7 +60,7 @@ void Lc_significanceHistos(){
     for (Int_t i = 0; i < nentriesTest; i++) {
       testtree->GetEntry(i);
       if (classIDtest == 1) {
-        if (fMassTest > (SigMean - 3 * SigRMS) && fMassTest < (SigMean + 3 * SigRMS)) {
+        if ((fMassTest > (SigMean - 3 * SigRMS)) && (fMassTest < (SigMean + 3 * SigRMS))) {
           Nbackground3S[nPtBin]++;
         }
       }
@@ -68,7 +68,7 @@ void Lc_significanceHistos(){
     for (Int_t i = 0; i < nentriesTrain; i++) {
       traintree->GetEntry(i);
       if (classIDtrain == 1) {
-        if (fMassTrain > (SigMean - 3 * SigRMS) && fMassTrain < (SigMean + 3 * SigRMS)) {
+        if ((fMassTrain > (SigMean - 3 * SigRMS)) && (fMassTrain < (SigMean + 3 * SigRMS))) {
           Nbackground3S[nPtBin]++;
         }
       }
@@ -79,7 +79,7 @@ void Lc_significanceHistos(){
 
   Float_t BkgRatio = 0.0; //Ratio for bkg events to bkgevent/Nevent
   for (int i = 0; i < nbins; i++) BkgRatio += Nbackground3S[i];
-  BkgRatio /= 30000000;
+  BkgRatio = BkgRatio / 30000000; // /total events
   TH1D* NbackgroundEvents = new TH1D("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
   for (Int_t i = 0; i < nbins; i++) {
     NbackgroundEvents->Fill(edges[i] + 0.001, BkgRatio * Nbackground3S[i]);
