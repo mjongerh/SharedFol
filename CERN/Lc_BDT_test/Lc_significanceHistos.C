@@ -63,7 +63,7 @@ void Lc_significanceHistos(){
       if (classIDtest == 1) {
         if ((fMassTest > (SigMean - (3 * SigRMS))) && (fMassTest < (SigMean + (3 * SigRMS)))) {
           Nbackground3S[nPtBin]++;
-          //printf("mean= %.2f, RMS= %.2f\nMass=%.2f\n", SigMean, SigRMS, fMassTest);
+          printf("mean= %.2f, RMS= %.2f\nMass=%.2f\n", SigMean, SigRMS, fMassTest);
         }
       }
     }
