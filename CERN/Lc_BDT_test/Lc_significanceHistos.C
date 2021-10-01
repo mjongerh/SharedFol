@@ -59,15 +59,19 @@ void Lc_significanceHistos(){
 
     for (Int_t i = 0; i < nentriesTest; i++) {
       testtree->GetEntry(i);
-      if (classIDtest == 1)
-        if (fMassTest >= SigMean - 3 * SigRMS && fMassTest < SigMean + 3 * SigRMS)
+      if (classIDtest == 1) {
+        if (fMassTest > (SigMean - 3 * SigRMS) && fMassTest < (SigMean + 3 * SigRMS)) {
           Nbackground3S[nPtBin]++;
+        }
+      }
     }
     for (Int_t i = 0; i < nentriesTrain; i++) {
       traintree->GetEntry(i);
-      if (classIDtrain == 1)
-        if (fMassTrain >= SigMean - 3 * SigRMS && fMassTrain < SigMean + 3 * SigRMS)
+      if (classIDtrain == 1) {
+        if (fMassTrain > (SigMean - 3 * SigRMS) && fMassTrain < (SigMean + 3 * SigRMS)) {
           Nbackground3S[nPtBin]++;
+        }
+      }
     }
     c1->cd(nPtBin+1);
     hSigMass->Draw();
