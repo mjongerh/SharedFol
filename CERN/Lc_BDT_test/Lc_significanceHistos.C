@@ -56,8 +56,8 @@ void Lc_significanceHistos(){
     }
     hSigMass->Fit("gaus");
     TF1* FitFunc = (TF1*)hSigMass->GetListOfFunctions()->FindObject("gaus");
-    Float_t SigMean = FitFunc->GetParamter(1);
-    Float_t SigRMS = FitFunc->GetParamter(2);
+    Float_t SigMean = FitFunc->GetParameter(1);
+    Float_t SigRMS = FitFunc->GetParameter(2);
     for (Int_t i = 0; i < nentriesTest; i++) {
       testtree->GetEntry(i);
       if (classIDtest == 1) {
