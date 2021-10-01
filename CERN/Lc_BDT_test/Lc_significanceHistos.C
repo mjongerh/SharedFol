@@ -82,6 +82,8 @@ void Lc_significanceHistos(){
   c1->cd(8);
   gPad->SetLogy();
   TH1F* NbackgroundEvents = new TH1F("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
+  NbackgroundEvents->SetMinimum(0.000001);
+  NbackgroundEvents->SetMaximum(0.01);
   for (Int_t i = 0; i < nbins; i++) {
     NbackgroundEvents->Fill(edges[i] + 0.001, Nbackground3S[i]/30000000); //correct for Nevents
   }
