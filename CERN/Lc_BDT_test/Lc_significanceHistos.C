@@ -77,10 +77,14 @@ void Lc_significanceHistos(){
     }
     c1->cd(nPtBin+1);
     hSigMass->Draw();
+    printf("Nentries=%d+%d"\n, nentriesTest, nentriesTrain);
   }
 
   Float_t BkgRatio = 0.0; //Ratio for bkg events to bkgevent/Nevent
-  for (int i = 0; i < nbins; i++) BkgRatio += Nbackground3S[i];
+  for (int i = 0; i < nbins; i++) {
+    BkgRatio += Nbackground3S[i];
+    printf("Nbkg = %d\n", Nbackground3S[i]);
+  }
   BkgRatio = BkgRatio / 30000000; // /total events
   TH1D* NbackgroundEvents = new TH1D("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
   for (Int_t i = 0; i < nbins; i++) {
