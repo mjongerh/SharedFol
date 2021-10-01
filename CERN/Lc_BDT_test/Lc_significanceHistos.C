@@ -54,7 +54,7 @@ void Lc_significanceHistos(){
       traintree->GetEntry(i);
       if (classIDtrain == 0) hSigMass->Fill(fMassTrain);
     }
-    hSigMass->Fit("gaus","","",2.25,2.31);
+    hSigMass->Fit("gaus","","",2.25,2.31); //Fit and get values
     TF1* FitFunc = (TF1*)hSigMass->GetListOfFunctions()->FindObject("gaus");
     Float_t SigMean = FitFunc->GetParameter(1);
     Float_t SigRMS = FitFunc->GetParameter(2);
@@ -79,19 +79,12 @@ void Lc_significanceHistos(){
     hSigMass->Draw();
     printf("Nentries=%d+%d\n", nentriesTest, nentriesTrain);
   }
-
-  Float_t BkgRatio = 0.0; //Ratio for bkg events to bkgevent/Nevent
-  for (int i = 0; i < nbins; i++) {
-    BkgRatio += Nbackground3S[i];
-    printf("Nbkg = %d\n", Nbackground3S[i]);
-  }
-  BkgRatio = BkgRatio / 30000000; // /total events
-  TH1F* NbackgroundEvents = new TH1F("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
-  for (Int_t i = 0; i < nbins; i++) {
-    NbackgroundEvents->Fill(edges[i] + 0.001, Nbackground3S[i]/30000000);
-  }
   c1->cd(8);
   gPad->SetLogy();
+  TH1F* NbackgroundEvents = new TH1F("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
+  for (Int_t i = 0; i < nbins; i++) {
+    NbackgroundEvents->Fill(edges[i] + 0.001, Nbackground3S[i]/30000000); //correct for Nevents
+  }
   //NbackgroundEvents->GetYAxis().SetTitle("bkgevents / Nevents")
   NbackgroundEvents->Draw("hist");
 }
