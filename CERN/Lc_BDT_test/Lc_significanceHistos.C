@@ -54,7 +54,7 @@ void Lc_significanceHistos(){
       traintree->GetEntry(i);
       if (classIDtrain == 0) hSigMass->Fill(fMassTrain);
     }
-    hSigMass->Fit("gaus",2.7,3.0);
+    hSigMass->Fit("gaus","","",2.25,2.3);
     TF1* FitFunc = (TF1*)hSigMass->GetListOfFunctions()->FindObject("gaus");
     Float_t SigMean = FitFunc->GetParameter(1);
     Float_t SigRMS = FitFunc->GetParameter(2);
@@ -89,5 +89,5 @@ void Lc_significanceHistos(){
   //c1->cd(8);
   //gPad->SetLogy();
   //NbackgroundEvents->GetYAxis().SetTitle("bkgevents / Nevents")
-  NbackgroundEvents->Draw("hist");
+  //NbackgroundEvents->Draw("hist");
 }
