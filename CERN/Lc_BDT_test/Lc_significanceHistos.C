@@ -13,7 +13,7 @@
 #include "TROOT.h"
 
 //Makes histograms of the significance for Lc test
-void Lc_significance_Histos(){
+void Lc_significanceHistos(){
 
   const Int_t nbins = 7;
   Double_t edges[nbins + 1] = {0.0, 1.0, 2.0, 4.0, 6.0, 8.0, 12.0, 30.0};
