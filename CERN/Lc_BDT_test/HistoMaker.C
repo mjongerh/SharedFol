@@ -12,6 +12,8 @@
 #include "TSystem.h"
 #include "TROOT.h"
 
+
+//Makes histograms of each parameter with respect to the BDT response of that event
 void HistoMaker() {
   TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
   TString filename = oldfileDir + "Pt1/TMVA.root";
