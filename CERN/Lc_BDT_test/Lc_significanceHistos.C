@@ -54,14 +54,16 @@ void Lc_significanceHistos(){
       traintree->GetEntry(i);
       if (classIDtrain == 0) hSigMass->Fill(fMassTrain);
     }
-    Float_t SigMean = hSigMass->GetMean();
-    Float_t SigRMS = hSigMass->GetRMS();
+    hSigMass->Fit("gaus");
+    TF1* FitFunc = (TF1*)hSigMass->GetListOfFunctions()->FindObject("gaus");
+    Float_t SigMean = FitFunc->GetParamter(1);
+    Float_t SigRMS = FitFunc->GetParamter(2);
     for (Int_t i = 0; i < nentriesTest; i++) {
       testtree->GetEntry(i);
       if (classIDtest == 1) {
         if ((fMassTest > (SigMean - (3 * SigRMS))) && (fMassTest < (SigMean + (3 * SigRMS)))) {
           Nbackground3S[nPtBin]++;
-          printf("mean= %.2f, RMS= %.2f\nMass=%.2f\n", SigMean, SigRMS, fMassTest);
+          //printf("mean= %.2f, RMS= %.2f\nMass=%.2f\n", SigMean, SigRMS, fMassTest);
         }
       }
     }
