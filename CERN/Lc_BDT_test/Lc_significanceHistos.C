@@ -86,9 +86,9 @@ void Lc_significanceHistos(){
     printf("Nbkg = %d\n", Nbackground3S[i]);
   }
   BkgRatio = BkgRatio / 30000000; // /total events
-  TH1D* NbackgroundEvents = new TH1D("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
+  TH1F* NbackgroundEvents = new TH1F("NbackgroundEvents", "NbackgroundEvents", nbins, edges);
   for (Int_t i = 0; i < nbins; i++) {
-    NbackgroundEvents->Fill(edges[i] + 0.001, Nbackground3S[i]);
+    NbackgroundEvents->Fill(edges[i] + 0.001, Nbackground3S[i]/30000000);
   }
   c1->cd(8);
   //gPad->SetLogy();
