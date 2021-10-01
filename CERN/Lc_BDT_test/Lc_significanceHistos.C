@@ -48,13 +48,11 @@ void Lc_significanceHistos(){
     TH1D* hSigMass = new TH1D("hSigMass", "hSigMass", 100, 1.9, 2.6);
     for (Int_t i = 0; i < nentriesTest; i++) {
       testtree->GetEntry(i);
-      if (classIDtest == 0)
-        hSigMass->Fill(fMassTest);
+      if (classIDtest == 0) hSigMass->Fill(fMassTest);
     }
     for (Int_t i = 0; i < nentriesTrain; i++) {
       traintree->GetEntry(i);
-      if (classIDtest == 0)
-        hSigMass->Fill(fMassTrain);
+      if (classIDtrain == 0) hSigMass->Fill(fMassTrain);
     }
     Float_t SigMean = hSigMass->GetMean();
     Float_t SigRMS = hSigMass->GetRMS();
@@ -67,7 +65,7 @@ void Lc_significanceHistos(){
     }
     for (Int_t i = 0; i < nentriesTrain; i++) {
       traintree->GetEntry(i);
-      if (classIDtest == 1)
+      if (classIDtrain == 1)
         if (fMassTrain >= SigMean - 3 * SigRMS && fMassTrain < SigMean + 3 * SigRMS)
           Nbackground3S[nPtBin]++;
     }
@@ -80,5 +78,5 @@ void Lc_significanceHistos(){
     NbackgroundEvents->Fill(edges[i] + 0.001, Nbackground3S[i]);
   }
   c1->cd(8);
-  NbackgroundEvents->Draw();
+  NbackgroundEvents->Draw("hist");
 }
