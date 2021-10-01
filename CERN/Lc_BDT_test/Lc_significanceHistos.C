@@ -56,12 +56,12 @@ void Lc_significanceHistos(){
     }
     Float_t SigMean = hSigMass->GetMean();
     Float_t SigRMS = hSigMass->GetRMS();
-    printf("mean= %.2f, RMS= %.2f\n", SigMean, SigRMS);
     for (Int_t i = 0; i < nentriesTest; i++) {
       testtree->GetEntry(i);
       if (classIDtest == 1) {
         if ((fMassTest > (SigMean - (3 * SigRMS))) && (fMassTest < (SigMean + (3 * SigRMS)))) {
           Nbackground3S[nPtBin]++;
+          printf("mean= %.2f, RMS= %.2f\nMass=%.2f\n", SigMean, SigRMS, fMassTest);
         }
       }
     }
