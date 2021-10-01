@@ -17,7 +17,7 @@ void Lc_significanceHistos(){
 
   const Int_t nbins = 7;
   Double_t edges[nbins + 1] = {0.0, 1.0, 2.0, 4.0, 6.0, 8.0, 12.0, 30.0};
-  Int_t Nbackground3S[nbins] = {0};
+  Float_t Nbackground3S[nbins] = {0.0};
   TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 7000, 5000);
   c1->Divide(4, 2);
   TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
