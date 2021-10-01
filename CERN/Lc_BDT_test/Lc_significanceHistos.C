@@ -63,7 +63,7 @@ void Lc_significanceHistos(){
       if (classIDtest == 1) {
         if ((fMassTest > (SigMean - (3 * SigRMS))) && (fMassTest < (SigMean + (3 * SigRMS)))) {
           Nbackground3S[nPtBin]++;
-          printf("mean= %.2f, RMS= %.2f\nMass=%.2f\n", SigMean, SigRMS, fMassTest);
+          //printf("mean= %.2f, RMS= %.2f\nMass=%.2f\n", SigMean, SigRMS, fMassTest);
         }
       }
     }
@@ -87,7 +87,7 @@ void Lc_significanceHistos(){
     NbackgroundEvents->Fill(edges[i] + 0.001, Nbackground3S[i]);
   }
   c1->cd(8);
-  gPad->SetLogy();
+  //gPad->SetLogy();
   //NbackgroundEvents->GetYAxis().SetTitle("bkgevents / Nevents")
   NbackgroundEvents->Draw("hist");
 }
