@@ -50,13 +50,13 @@ void Lc_significanceHistos() {
   OldSignificance->Draw("same");
   c1->BuildLegend();
 
-  t_a = TLatex();
+  auto t_a = TLatex();
   t_a.SetNDC();
   t_a.SetTextFont(42);
   t_a.SetTextColor(1);
   t_a.SetTextSize(0.035);
   t_a.SetTextAlign(12);
-  t_a.DrawLatex(0.2, 0.75, "N_{ev} = 3.8 \cdot 10 ^ {12}, PbPb \sqrt{s}=5.02TeV, |y| <1");
+  t_a.DrawLatex(0.2, 0.75, "N_{ev} = 3.8 #cdot 10 ^ {12}, PbPb #sqrt{s}=5.02TeV, |y| <1");
 }
 
 // OLD half-working version, to be applied on TMVA output
