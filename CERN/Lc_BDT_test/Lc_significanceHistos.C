@@ -12,6 +12,7 @@
 #include "TObjString.h"
 #include "TSystem.h"
 #include "TROOT.h"
+#include "TLatex.h"
 
 //Makes histograms of the significance for Lc test
 void Lc_significanceHistos() {
@@ -39,7 +40,7 @@ void Lc_significanceHistos() {
     SignfAfterBDT->SetBinContent(i + 1, BDTSignf);
   }
   TCanvas* c1 = new TCanvas("c1", "significance comparison", 200, 10, 1000, 1000);
-  SignfAfterBDT->GetYaxis()->SetTitleOffset(1.35);
+  SignfAfterBDT->GetYaxis()->SetTitleOffset(1.28);
   SignfAfterBDT->GetYaxis()->SetTitle("significance S/sqrt(S+B)");
   SignfAfterBDT->SetLineColor(kBlue);
   SignfAfterBDT->SetTitle("Significance after BDT cut");
@@ -48,6 +49,14 @@ void Lc_significanceHistos() {
   OldSignificance->SetLineColor(kRed);
   OldSignificance->Draw("same");
   c1->BuildLegend();
+
+  t_a = TLatex();
+  t_a.SetNDC();
+  t_a.SetTextFont(42);
+  t_a.SetTextColor(1);
+  t_a.SetTextSize(0.035);
+  t_a.SetTextAlign(12);
+  t_a.DrawLatex(0.2, 0.75, "N_{ev} = 3.8 \cdot 10 ^ {12}, PbPb \sqrt{s}=5.02TeV, |y| <1");
 }
 
 // OLD half-working version, to be applied on TMVA output
