@@ -28,7 +28,7 @@ void Lc_significanceHistos() {
   TH2F* signal = (TH2F*)input_file->Get("histosignal");
   TH2F* bkgperevent = (TH2F*)input_file->Get("hBkgPerEvent");
   TH2F* OldSignificance = (TH2F*)input_file->Get("histosignf");
-  TH2F* SignfAfterBDT = OldSignificance->Clone("SignfAfterBDT");
+  TH2F* SignfAfterBDT = (TH2F*)OldSignificance->Clone("SignfAfterBDT");
 
   for (Int_t i = 1; i < nbins; i++) {
     auto Nsig = signal->GetBinContent(i+1);
@@ -39,8 +39,8 @@ void Lc_significanceHistos() {
     SignfAfterBDT->SetBincontent(i + 1, BDTSignf);
   }
   TCanvas* c1 = new TCanvas("c1", "significance comparison", 200, 10, 1000, 1000);
-  OldSignificance.Draw();
-  SignfAfterBDT.Draw("same");
+  OldSignificance->Draw();
+  SignfAfterBDT->Draw("same");
 }
 
 // OLD half-working version, to be applied on TMVA output
