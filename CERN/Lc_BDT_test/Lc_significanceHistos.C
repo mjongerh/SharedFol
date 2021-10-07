@@ -23,12 +23,12 @@ void Lc_significanceHistos() {
   Double_t BkgeffBDT[nbins] = {0.0, 0.006161, 0.009599, 0.0108, 0.01984, 0.01984, 0.04362, 0.06736, 0.06736, 0.06736};
 
 
-  Int_t Nevent = 38376000000;
+  long Nevent = 38376000000;
   TFile* input_file = new TFile("./foutputLambda_c.root", "read");
-  TH2F* signal = (TH2F*)input_file.Get("histosignal");
-  TH2F* bkgperevent = (TH2F*)input_file.Get("hBkgPerEvent");
-  TH2F* OldSignificance = (TH2F*)input_file.Get("histosignf");
-  TH2F* SignfAfterBDT = OldSignificance.Clone("SignfAfterBDT");
+  TH2F* signal = (TH2F*)input_file->Get("histosignal");
+  TH2F* bkgperevent = (TH2F*)input_file->Get("hBkgPerEvent");
+  TH2F* OldSignificance = (TH2F*)input_file->Get("histosignf");
+  TH2F* SignfAfterBDT = OldSignificance->Clone("SignfAfterBDT");
 
   for (Int_t i = 1; i < nbins; i++) {
     auto Nsig = signal->GetBinContent(i+1);
@@ -38,7 +38,7 @@ void Lc_significanceHistos() {
     Float_t BDTSignf = NsigBDT / (sqrt(NsigBDT + NbkgBDT));
     SignfAfterBDT->SetBincontent(i + 1, BDTSignf);
   }
-  TCanvas* c1 = new TCanvas("c1", "significance comparison", 200, 10, 7000, 5000);
+  TCanvas* c1 = new TCanvas("c1", "significance comparison", 200, 10, 1000, 1000);
   OldSignificance.Draw();
   SignfAfterBDT.Draw("same");
 }
