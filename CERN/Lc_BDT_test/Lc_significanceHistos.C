@@ -39,6 +39,8 @@ void Lc_significanceHistos() {
     SignfAfterBDT->SetBinContent(i + 1, BDTSignf);
   }
   TCanvas* c1 = new TCanvas("c1", "significance comparison", 200, 10, 1000, 1000);
+  SignfAfterBDT->GetYaxis()->SetTitleOffset(1.35);
+  SignfAfterBDT->GetYaxis()->SetTitle("significance S/sqrt(S+B)");
   SignfAfterBDT->SetLineColor(kBlue);
   SignfAfterBDT->SetTitle("Significance after BDT cut");
   SignfAfterBDT->Draw();
