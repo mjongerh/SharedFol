@@ -40,9 +40,9 @@ void Lc_significanceHistos() {
   }
   TCanvas* c1 = new TCanvas("c1", "significance comparison", 200, 10, 1000, 1000);
   SignfAfterBDT->SetLineColor(kBlue);
-  SignfAfterBDT->SetTitle("Significance after BDT cut")
+  SignfAfterBDT->SetTitle("Significance after BDT cut");
   SignfAfterBDT->Draw();
-  OldSignificance->SetTitle("Significance before BDT cut")
+  OldSignificance->SetTitle("Significance before BDT cut");
   OldSignificance->SetLineColor(kRed);
   OldSignificance->Draw("same");
   c1->BuildLegend();
