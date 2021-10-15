@@ -1,0 +1,563 @@
+/home/mjongerh/alice/Run3Analysisvalidation/codeHF/script_o2.sh: line 9: o2-analysis-hf-lb-candidate-selector: command not found
+[INFO] Initialising O2 Data Processing Layer. Driver PID: 2945595.
+[INFO] Rate limiting set up at 2000MB distributed over 1 readers
+[INFO] O2 Data Processing Layer initialised. We brake for nobody.
+[INFO] Optimised build. O2DEBUG / LOG(DEBUG) / LOGF(DEBUG) / assert statement will not be shown.
+[INFO] Redeployment of configuration asked.
+[INFO] Starting internal-dpl-clock on pid 2945716
+[INFO] Starting internal-dpl-aod-reader on pid 2945717
+[INFO] Starting internal-dpl-aod-spawner on pid 2945718
+[INFO] Starting alice3-pidTOF-task on pid 2945719
+[INFO] Starting tpc-pid-full on pid 2945720
+[INFO] Starting alice3-tof-signal-task on pid 2945721
+[INFO] Starting hf-task-lb on pid 2945722
+[INFO] Starting hf-task-lb-mc on pid 2945723
+[INFO] Starting internal-dpl-aod-global-analysis-file-sink on pid 2945724
+[INFO] Starting internal-dpl-aod-writer on pid 2945725
+[INFO] Redeployment of configuration done.
+[2945719:alice3-pidTOF-task]: [INFO] Spawing new device alice3-pidTOF-task in process with pid 2945719
+[2945721:alice3-tof-signal-task]: [INFO] Spawing new device alice3-tof-signal-task in process with pid 2945721
+[2945719:alice3-pidTOF-task]: [15:52:15][INFO] 
+[2945719:alice3-pidTOF-task]:       ______      _    _______  _________ 
+[2945719:alice3-pidTOF-task]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945719:alice3-pidTOF-task]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945719:alice3-pidTOF-task]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945719:alice3-pidTOF-task]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945719:alice3-pidTOF-task]: 
+[2945719:alice3-pidTOF-task]: [15:52:15][STATE] Starting FairMQ state machine --> IDLE
+[2945720:tpc-pid-full]: [INFO] Spawing new device tpc-pid-full in process with pid 2945720
+[2945721:alice3-tof-signal-task]: [15:52:15][INFO] 
+[2945721:alice3-tof-signal-task]:       ______      _    _______  _________ 
+[2945721:alice3-tof-signal-task]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945721:alice3-tof-signal-task]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945721:alice3-tof-signal-task]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945721:alice3-tof-signal-task]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945721:alice3-tof-signal-task]: 
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] Starting FairMQ state machine --> IDLE
+[2945720:tpc-pid-full]: [15:52:15][INFO] 
+[2945720:tpc-pid-full]:       ______      _    _______  _________ 
+[2945720:tpc-pid-full]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945720:tpc-pid-full]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945720:tpc-pid-full]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945720:tpc-pid-full]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945720:tpc-pid-full]: 
+[2945720:tpc-pid-full]: [15:52:15][STATE] Starting FairMQ state machine --> IDLE
+[2945719:alice3-pidTOF-task]: [15:52:15][STATE] IDLE ---> INITIALIZING DEVICE
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] IDLE ---> INITIALIZING DEVICE
+[2945720:tpc-pid-full]: [15:52:15][STATE] IDLE ---> INITIALIZING DEVICE
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] INITIALIZED ---> BINDING
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] BINDING ---> BOUND
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] BOUND ---> CONNECTING
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] CONNECTING ---> DEVICE READY
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] INITIALIZING TASK ---> READY
+[2945721:alice3-tof-signal-task]: [15:52:15][STATE] READY ---> RUNNING
+[2945721:alice3-tof-signal-task]: [15:52:15][INFO] DEVICE: Running...
+[2945721:alice3-tof-signal-task]: [15:52:15][INFO] No expired offers
+[2945721:alice3-tof-signal-task]: [15:52:15][INFO] Correctly handshaken websocket connection.
+[INFO] Offering 100MB out of 2000 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:100 = offered:100 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 1900 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:200 = offered:200 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 1800 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:300 = offered:300 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 1700 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:400 = offered:400 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 1600 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:500 = offered:500 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 1500 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:600 = offered:600 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 1400 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:700 = offered:700 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 1300 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:800 = offered:800 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 1200 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:900 = offered:900 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 1100 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1000 = offered:1000 - (expired:0 + consumed:0) / 1000000
+[INFO] Controller for internal-dpl-aod-reader not yet available.
+[INFO] Offering 100MB out of 1000 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1100 = offered:1100 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 900 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1200 = offered:1200 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 800 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1300 = offered:1300 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 700 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1400 = offered:1400 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 600 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1500 = offered:1500 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 500 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1600 = offered:1600 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 400 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1700 = offered:1700 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 300 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1800 = offered:1800 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 200 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:1900 = offered:1900 - (expired:0 + consumed:0) / 1000000
+[INFO] Offering 100MB out of 100 to internal-dpl-aod-reader
+[INFO] unusedOfferedMemory:2000 = offered:2000 - (expired:0 + consumed:0) / 1000000
+[INFO] We do not have enough shared memory (0MB) to offer 50MB
+[2945719:alice3-pidTOF-task]: [15:52:16][INFO] Is alien token present?: 0
+[2945720:tpc-pid-full]: [15:52:16][INFO] Is alien token present?: 0
+[2945719:alice3-pidTOF-task]: [15:52:16][INFO] Is alien token present?: 0
+[2945720:tpc-pid-full]: [15:52:16][INFO] Is alien token present?: 0
+[2945720:tpc-pid-full]: [15:52:16][INFO] Loading exp. signal parametrization from CCDB, using path: Analysis/PID/TPC/BetheBloch for timestamp -1
+[2945720:tpc-pid-full]: [15:52:16][WARN] CCDB: Did not find an alien token; Cannot serve objects located on alien://
+[2945719:alice3-pidTOF-task]: [15:52:16][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945719:alice3-pidTOF-task]: [15:52:16][STATE] INITIALIZED ---> BINDING
+[2945719:alice3-pidTOF-task]: [15:52:16][STATE] BINDING ---> BOUND
+[2945719:alice3-pidTOF-task]: [15:52:16][STATE] BOUND ---> CONNECTING
+[2945719:alice3-pidTOF-task]: [15:52:16][STATE] CONNECTING ---> DEVICE READY
+[2945719:alice3-pidTOF-task]: [15:52:16][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945719:alice3-pidTOF-task]: [15:52:16][STATE] INITIALIZING TASK ---> READY
+[2945719:alice3-pidTOF-task]: [15:52:16][STATE] READY ---> RUNNING
+[2945719:alice3-pidTOF-task]: [15:52:16][INFO] DEVICE: Running...
+[2945719:alice3-pidTOF-task]: [15:52:16][INFO] No expired offers
+[2945719:alice3-pidTOF-task]: [15:52:16][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[2945719:alice3-pidTOF-task]: [15:52:16][INFO] Correctly handshaken websocket connection.
+[2945719:alice3-pidTOF-task]: [15:52:16][WARN] DriverClient connected successfully. Flushing message backlog of 2018 messages. All is good.
+[2945720:tpc-pid-full]: [15:52:16][INFO] Loading exp. sigma parametrization from CCDB, using path: Analysis/PID/TPC/TPCReso for timestamp -1
+[2945720:tpc-pid-full]: [15:52:16][WARN] CCDB: Did not find an alien token; Cannot serve objects located on alien://
+[2945720:tpc-pid-full]: [15:52:16][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945720:tpc-pid-full]: [15:52:16][STATE] INITIALIZED ---> BINDING
+[2945720:tpc-pid-full]: [15:52:16][STATE] BINDING ---> BOUND
+[2945720:tpc-pid-full]: [15:52:16][STATE] BOUND ---> CONNECTING
+[2945720:tpc-pid-full]: [15:52:16][STATE] CONNECTING ---> DEVICE READY
+[2945720:tpc-pid-full]: [15:52:16][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945720:tpc-pid-full]: [15:52:16][STATE] INITIALIZING TASK ---> READY
+[2945720:tpc-pid-full]: [15:52:16][STATE] READY ---> RUNNING
+[2945720:tpc-pid-full]: [15:52:16][INFO] DEVICE: Running...
+[2945720:tpc-pid-full]: [15:52:16][INFO] No expired offers
+[2945720:tpc-pid-full]: [15:52:16][INFO] Correctly handshaken websocket connection.
+[2945718:internal-dpl-aod-spawner]: [INFO] Spawing new device internal-dpl-aod-spawner in process with pid 2945718
+[2945718:internal-dpl-aod-spawner]: [15:52:16][INFO] 
+[2945718:internal-dpl-aod-spawner]:       ______      _    _______  _________ 
+[2945718:internal-dpl-aod-spawner]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945718:internal-dpl-aod-spawner]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945718:internal-dpl-aod-spawner]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945718:internal-dpl-aod-spawner]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945718:internal-dpl-aod-spawner]: 
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] Starting FairMQ state machine --> IDLE
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] IDLE ---> INITIALIZING DEVICE
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] INITIALIZED ---> BINDING
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] BINDING ---> BOUND
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] BOUND ---> CONNECTING
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] CONNECTING ---> DEVICE READY
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] INITIALIZING TASK ---> READY
+[2945718:internal-dpl-aod-spawner]: [15:52:16][STATE] READY ---> RUNNING
+[2945718:internal-dpl-aod-spawner]: [15:52:16][INFO] DEVICE: Running...
+[2945718:internal-dpl-aod-spawner]: [15:52:16][INFO] No expired offers
+[2945718:internal-dpl-aod-spawner]: [15:52:16][INFO] Correctly handshaken websocket connection.
+[2945716:internal-dpl-clock]: [INFO] Spawing new device internal-dpl-clock in process with pid 2945716
+[2945723:hf-task-lb-mc]: [INFO] Spawing new device hf-task-lb-mc in process with pid 2945723
+[2945717:internal-dpl-aod-reader]: [INFO] Spawing new device internal-dpl-aod-reader in process with pid 2945717
+[2945716:internal-dpl-clock]: [15:52:16][INFO] 
+[2945716:internal-dpl-clock]:       ______      _    _______  _________ 
+[2945716:internal-dpl-clock]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945716:internal-dpl-clock]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945716:internal-dpl-clock]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945716:internal-dpl-clock]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945716:internal-dpl-clock]: 
+[2945723:hf-task-lb-mc]: [15:52:16][INFO] 
+[2945723:hf-task-lb-mc]:       ______      _    _______  _________ 
+[2945723:hf-task-lb-mc]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945723:hf-task-lb-mc]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945723:hf-task-lb-mc]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945723:hf-task-lb-mc]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945723:hf-task-lb-mc]: 
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] 
+[2945717:internal-dpl-aod-reader]:       ______      _    _______  _________ 
+[2945717:internal-dpl-aod-reader]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945717:internal-dpl-aod-reader]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945717:internal-dpl-aod-reader]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945717:internal-dpl-aod-reader]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945717:internal-dpl-aod-reader]: 
+[2945716:internal-dpl-clock]: [15:52:16][STATE] Starting FairMQ state machine --> IDLE
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] Starting FairMQ state machine --> IDLE
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] Starting FairMQ state machine --> IDLE
+[2945716:internal-dpl-clock]: [15:52:16][STATE] IDLE ---> INITIALIZING DEVICE
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] IDLE ---> INITIALIZING DEVICE
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] IDLE ---> INITIALIZING DEVICE
+[2945716:internal-dpl-clock]: [15:52:16][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945716:internal-dpl-clock]: [15:52:16][STATE] INITIALIZED ---> BINDING
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] INITIALIZED ---> BINDING
+[2945716:internal-dpl-clock]: [15:52:16][STATE] BINDING ---> BOUND
+[2945716:internal-dpl-clock]: [15:52:16][STATE] BOUND ---> CONNECTING
+[2945716:internal-dpl-clock]: [15:52:16][STATE] CONNECTING ---> DEVICE READY
+[2945716:internal-dpl-clock]: [15:52:16][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945716:internal-dpl-clock]: [15:52:16][STATE] INITIALIZING TASK ---> READY
+[2945716:internal-dpl-clock]: [15:52:16][STATE] READY ---> RUNNING
+[2945716:internal-dpl-clock]: [15:52:16][INFO] DEVICE: Running...
+[2945725:internal-dpl-aod-writer]: [INFO] Spawing new device internal-dpl-aod-writer in process with pid 2945725
+[2945716:internal-dpl-clock]: [15:52:16][INFO] No expired offers
+[2945716:internal-dpl-clock]: [15:52:16][INFO] Correctly handshaken websocket connection.
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] BINDING ---> BOUND
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] BOUND ---> CONNECTING
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] CONNECTING ---> DEVICE READY
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] INITIALIZING TASK ---> READY
+[2945717:internal-dpl-aod-reader]: [15:52:16][STATE] READY ---> RUNNING
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] DEVICE: Running...
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] No offer was selected
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO]   The following offers were invalid: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] No expired offers
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] No offer was selected
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO]   The following offers were invalid: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] INITIALIZED ---> BINDING
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] BINDING ---> BOUND
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] BOUND ---> CONNECTING
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] CONNECTING ---> DEVICE READY
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] INITIALIZING TASK ---> READY
+[2945723:hf-task-lb-mc]: [15:52:16][STATE] READY ---> RUNNING
+[2945723:hf-task-lb-mc]: [15:52:16][INFO] DEVICE: Running...
+[2945725:internal-dpl-aod-writer]: [15:52:16][INFO] 
+[2945725:internal-dpl-aod-writer]:       ______      _    _______  _________ 
+[2945725:internal-dpl-aod-writer]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945725:internal-dpl-aod-writer]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945725:internal-dpl-aod-writer]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945725:internal-dpl-aod-writer]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945725:internal-dpl-aod-writer]: 
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] Starting FairMQ state machine --> IDLE
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] IDLE ---> INITIALIZING DEVICE
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] INITIALIZED ---> BINDING
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] BINDING ---> BOUND
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] BOUND ---> CONNECTING
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] CONNECTING ---> DEVICE READY
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] INITIALIZING TASK ---> READY
+[2945725:internal-dpl-aod-writer]: [15:52:16][STATE] READY ---> RUNNING
+[2945725:internal-dpl-aod-writer]: [15:52:16][INFO] DEVICE: Running...
+[2945725:internal-dpl-aod-writer]: [15:52:16][INFO] No expired offers
+[2945725:internal-dpl-aod-writer]: [15:52:16][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[INFO] Controller for internal-dpl-aod-reader now available.
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Correctly handshaken websocket connection.
+[2945722:hf-task-lb]: [INFO] Spawing new device hf-task-lb in process with pid 2945722
+[2945722:hf-task-lb]: [15:52:16][INFO] 
+[2945722:hf-task-lb]:       ______      _    _______  _________ 
+[2945722:hf-task-lb]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945722:hf-task-lb]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945722:hf-task-lb]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945722:hf-task-lb]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945722:hf-task-lb]: 
+[2945722:hf-task-lb]: [15:52:16][STATE] Starting FairMQ state machine --> IDLE
+[2945723:hf-task-lb-mc]: [15:52:16][INFO] No expired offers
+[2945723:hf-task-lb-mc]: [15:52:16][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[2945723:hf-task-lb-mc]: [15:52:16][INFO] Correctly handshaken websocket connection.
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [INFO] Spawing new device internal-dpl-aod-global-analysis-file-sink in process with pid 2945724
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][INFO] 
+[2945724:internal-dpl-aod-global-analysis-file-sink]:       ______      _    _______  _________ 
+[2945724:internal-dpl-aod-global-analysis-file-sink]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.4.42
+[2945724:internal-dpl-aod-global-analysis-file-sink]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[2945724:internal-dpl-aod-global-analysis-file-sink]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[2945724:internal-dpl-aod-global-analysis-file-sink]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2021 GSI
+[2945724:internal-dpl-aod-global-analysis-file-sink]: 
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] Starting FairMQ state machine --> IDLE
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] IDLE ---> INITIALIZING DEVICE
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] INITIALIZED ---> BINDING
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] BINDING ---> BOUND
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] BOUND ---> CONNECTING
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] CONNECTING ---> DEVICE READY
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] INITIALIZING TASK ---> READY
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][STATE] READY ---> RUNNING
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][INFO] DEVICE: Running...
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][INFO] No expired offers
+[2945723:hf-task-lb-mc]: [15:52:16][WARN] DriverClient connected successfully. Flushing message backlog of 2667 messages. All is good.
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] No offer was selected
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO]   The following offers were invalid: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Received 100MB shared memory offer
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Offer 1 still valid for 10000 milliseconds, providing 100MB
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] Offer 2 still valid for 10000 milliseconds, providing 100MB
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO] 2 offers were selected for a total of: cpu 0, memory 0, shared memory 200000000
+[2945717:internal-dpl-aod-reader]: [15:52:16][INFO]   The following offers were selected for computation: 1,2 
+[2945722:hf-task-lb]: [15:52:16][STATE] IDLE ---> INITIALIZING DEVICE
+[2945722:hf-task-lb]: [15:52:16][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[2945722:hf-task-lb]: [15:52:16][STATE] INITIALIZED ---> BINDING
+[2945722:hf-task-lb]: [15:52:16][STATE] BINDING ---> BOUND
+[2945722:hf-task-lb]: [15:52:16][STATE] BOUND ---> CONNECTING
+[2945722:hf-task-lb]: [15:52:16][STATE] CONNECTING ---> DEVICE READY
+[2945722:hf-task-lb]: [15:52:16][STATE] DEVICE READY ---> INITIALIZING TASK
+[2945722:hf-task-lb]: [15:52:16][STATE] INITIALIZING TASK ---> READY
+[2945722:hf-task-lb]: [15:52:16][STATE] READY ---> RUNNING
+[2945722:hf-task-lb]: [15:52:16][INFO] DEVICE: Running...
+[2945722:hf-task-lb]: [15:52:16][INFO] No expired offers
+[2945722:hf-task-lb]: [15:52:16][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:16][INFO] Correctly handshaken websocket connection.
+[2945725:internal-dpl-aod-writer]: [15:52:16][INFO] Correctly handshaken websocket connection.
+[2945725:internal-dpl-aod-writer]: [15:52:16][WARN] DriverClient connected successfully. Flushing message backlog of 3249 messages. All is good.
+[2945722:hf-task-lb]: [15:52:16][INFO] Correctly handshaken websocket connection.
+[2945722:hf-task-lb]: [15:52:16][WARN] DriverClient connected successfully. Flushing message backlog of 2407 messages. All is good.
+[2945717:internal-dpl-aod-reader]: [15:52:18][ERROR] Exception caught: Couldn't get TTree "DF_0/O2hfcandlbbase" from "/home/mmazzill/pp14TeV_bbbar_10M_2T_13102021/AODRun5.0.root". Please check https://aliceo2group.github.io/analysis-framework/docs/troubleshooting/treenotfound.html for more information. 
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/lib/libO2FrameworkFoundation.so(_ZN2o29framework13runtime_errorEPKc+0x6f)[0x7fa830fb938f]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/lib/libO2Framework.so(+0x14768f)[0x7fa83136b68f]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/lib/libO2Framework.so(_ZN2o29framework20DataProcessingDevice5doRunERNS0_20DataProcessorContextE+0xce)[0x7fa83148692e]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/lib/libO2Framework.so(_ZN2o29framework20DataProcessingDevice3RunEv+0x28e)[0x7fa83148704e]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-local2/lib/libFairMQ.so.1.4(_ZN4fair2mq6Device10RunWrapperEv+0x372)[0x7fa82c6c50d2]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-local2/lib/libFairMQStateMachine.so.1.4(_ZN5boost6detail8function26void_function_obj_invoker1ISt8functionIFvN4fair2mq5StateEEEvS6_E6invokeERNS1_15function_bufferES6_+0x1d)[0x7fa82c346ffd]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-local2/lib/libFairMQStateMachine.so.1.4(_ZN5boost8signals26detail11signal_implIFvN4fair2mq5StateEENS0_19optional_last_valueIvEEiSt4lessIiENS_8functionIS6_EENSB_IFvRKNS0_10connectionES5_EEENS0_5mutexEEclES5_+0x309)[0x7fa82c34e889]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-local2/lib/libFairMQStateMachine.so.1.4(_ZN4fair2mq3fsm8Machine_11ProcessWorkEv+0x460)[0x7fa82c350550]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-local2/lib/libFairMQStateMachine.so.1.4(_ZN4fair2mq12StateMachine11ProcessWorkEv+0x49)[0x7fa82c3458c9]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-local2/lib/libFairMQ.so.1.4(_ZN4fair2mq12DeviceRunner3RunEv+0xa97)[0x7fa82c6d5677]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/lib/libO2Framework.so(_Z7doChildiPPcRN2o29framework15ServiceRegistryERKNS2_19RunningWorkflowInfoENS2_16RunningDeviceRefENS2_18ProcessingPoliciesERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEP9uv_loop_s+0x231)[0x7fa8315b4041]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/lib/libO2Framework.so(_Z15runStateMachineRKSt6vectorIN2o29framework17DataProcessorSpecESaIS2_EERK12WorkflowInfoRKS_INS1_17DataProcessorInfoESaISA_EERKNS1_11CommandInfoERNS1_13DriverControlERNS1_10DriverInfoERS_INS1_17DeviceMetricsInfoESaISM_EERN5boost15program_options13variables_mapENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0xc0c)[0x7fa8315b509c]
+[2945717:internal-dpl-aod-reader]: /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/lib/libO2Framework.so(_Z6doMainiPPcRKSt6vectorIN2o29framework17DataProcessorSpecESaIS4_EERKS1_INS3_26ChannelConfigurationPolicyESaIS9_EERKS1_INS3_16CompletionPolicyESaISE_EERKS1_INS3_14DispatchPolicyESaISJ_EERKS1_INS3_14ResourcePolicyESaISO_EERKS1_INS3_15ConfigParamSpecESaIST_EERNS3_13ConfigContextE+0x3138)[0x7fa8315bea98]
+[2945717:internal-dpl-aod-reader]: o2-analysis-hf-task-lb[0x4490f6]
+[2945717:internal-dpl-aod-reader]: o2-analysis-hf-task-lb[0x439662]
+[2945717:internal-dpl-aod-reader]: /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7fa82a87b0b3]
+[2945717:internal-dpl-aod-reader]: o2-analysis-hf-task-lb[0x4397be]
+[2945717:internal-dpl-aod-reader]: [15:52:18][STATE] Exiting FairMQ state machine
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]:  *** Break *** segmentation violation
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]: ===========================================================
+[2945717:internal-dpl-aod-reader]: There was a crash.
+[2945717:internal-dpl-aod-reader]: This is the entire stack trace of all threads:
+[2945717:internal-dpl-aod-reader]: ===========================================================
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]: Thread 3 (Thread 0x7fa813d3e700 (LWP 2946058) "o2-analysis-hf-"):
+[2945717:internal-dpl-aod-reader]: #0  0x00007fa82a9343bf in clock_nanosleep () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: #1  0x00007fa82a93a047 in nanosleep () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: #2  0x00007fa82a96c9bf in usleep () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: #3  0x00007fa8310f9633 in InfoLoggerClient::reconnect() () from /home/mjongerh/alice/sw/ubuntu2004_x86-64/libInfoLogger/v2.2.0-2/lib/libO2Infologger.so
+[2945717:internal-dpl-aod-reader]: #4  0x00007fa82ac85bf0 in std::execute_native_thread_routine (__p=0x302b940) at ../../../../../gcc/libstdc++-v3/src/c++11/thread.cc:80
+[2945717:internal-dpl-aod-reader]: #5  0x00007fa8310c4609 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+[2945717:internal-dpl-aod-reader]: #6  0x00007fa82a976293 in clone () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]: Thread 2 (Thread 0x7fa81453f700 (LWP 2946055) "o2-analysis-hf-"):
+[2945717:internal-dpl-aod-reader]: #0  0x00007fa82a9343bf in clock_nanosleep () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: #1  0x00007fa82a93a047 in nanosleep () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: #2  0x00007fa82a96c9bf in usleep () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: #3  0x00007fa8310f9633 in InfoLoggerClient::reconnect() () from /home/mjongerh/alice/sw/ubuntu2004_x86-64/libInfoLogger/v2.2.0-2/lib/libO2Infologger.so
+[2945717:internal-dpl-aod-reader]: #4  0x00007fa82ac85bf0 in std::execute_native_thread_routine (__p=0x302e7d0) at ../../../../../gcc/libstdc++-v3/src/c++11/thread.cc:80
+[2945717:internal-dpl-aod-reader]: #5  0x00007fa8310c4609 in start_thread () from /lib/x86_64-linux-gnu/libpthread.so.0
+[2945717:internal-dpl-aod-reader]: #6  0x00007fa82a976293 in clone () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]: Thread 1 (Thread 0x7fa829554fc0 (LWP 2945717) "o2-analysis-hf-"):
+[2945717:internal-dpl-aod-reader]: #0  0x00007fa82a939dff in wait4 () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: #1  0x00007fa82a8a90e7 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+[2945717:internal-dpl-aod-reader]: #2  0x00007fa82b0c75bc in TUnixSystem::Exec (shellcmd=<optimized out>, this=0x56b2a0) at /home/mjongerh/alice/sw/SOURCES/ROOT/DevMaurice/0/core/unix/src/TUnixSystem.cxx:2120
+[2945717:internal-dpl-aod-reader]: #3  TUnixSystem::StackTrace (this=0x56b2a0) at /home/mjongerh/alice/sw/SOURCES/ROOT/DevMaurice/0/core/unix/src/TUnixSystem.cxx:2411
+[2945717:internal-dpl-aod-reader]: #4  0x00007fa82b0c4bb5 in TUnixSystem::DispatchSignals (this=0x56b2a0, sig=kSigSegmentationViolation) at /home/mjongerh/alice/sw/SOURCES/ROOT/DevMaurice/0/core/unix/src/TUnixSystem.cxx:3649
+[2945717:internal-dpl-aod-reader]: #5  <signal handler called>
+[2945717:internal-dpl-aod-reader]: #6  boost::unordered::unordered_map<unsigned short, fair::mq::shmem::SegmentInfo, boost::hash<unsigned short>, std::equal_to<unsigned short>, boost::interprocess::allocator<std::pair<unsigned short const, fair::mq::shmem::SegmentInfo>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::mutex_family, boost::interprocess::offset_ptr<void, long, unsigned long, 0ul>, 0ul>, boost::interprocess::iset_index> > >::at (k=
+[2945717:internal-dpl-aod-reader]: 0x7fff04a6083c: 0, this=0x7fa811efc118) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/unordered/unordered_map.hpp:1878
+[2945717:internal-dpl-aod-reader]: #7  fair::mq::shmem::Manager::GetSegment (this=0x14142d0, id=0) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Manager.h:669
+[2945717:internal-dpl-aod-reader]: #8  0x00007fa82c7949e5 in fair::mq::shmem::Message::Deallocate (this=0x36599a0) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Message.h:337
+[2945717:internal-dpl-aod-reader]: #9  fair::mq::shmem::Message::CloseMessage (this=0x36599a0) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Message.h:378
+[2945717:internal-dpl-aod-reader]: #10 0x00007fa82c794d07 in fair::mq::shmem::Message::~Message (this=0x36599a0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Message.h:310
+[2945717:internal-dpl-aod-reader]: #11 fair::mq::shmem::Message::~Message (this=0x36599a0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Message.h:310
+[2945717:internal-dpl-aod-reader]: #12 0x00007fa82c7a09c3 in std::default_delete<fair::mq::Message>::operator() (__ptr=<optimized out>, this=0x334e2b8) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unique_ptr.h:79
+[2945717:internal-dpl-aod-reader]: #13 std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> >::~unique_ptr (this=0x334e2b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unique_ptr.h:361
+[2945717:internal-dpl-aod-reader]: #14 boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >::~pair (this=0x334e2b0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/detail/pair.hpp:218
+[2945717:internal-dpl-aod-reader]: #15 boost::container::allocator_traits<boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > >::priv_destroy<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > (p=0x334e2b0) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/allocator_traits.hpp:394
+[2945717:internal-dpl-aod-reader]: #16 boost::container::allocator_traits<boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > >::destroy<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > (p=0x334e2b0, a=...) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/allocator_traits.hpp:322
+[2945717:internal-dpl-aod-reader]: #17 boost::container::destroy_alloc_n<boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > >, boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >*, unsigned long> (n=0, f=0x334e2b0, a=...) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/detail/copy_move_algo.hpp:987
+[2945717:internal-dpl-aod-reader]: #18 boost::container::vector<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >, boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > >, void>::~vector (this=0x30831b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/vector.hpp:1099
+[2945717:internal-dpl-aod-reader]: #19 boost::container::dtl::flat_tree<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >, boost::container::dtl::select1st<void*>, std::less<void*>, boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > >::Data::~Data (this=0x30831b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/detail/flat_tree.hpp:475
+[2945717:internal-dpl-aod-reader]: #20 boost::container::dtl::flat_tree<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >, boost::container::dtl::select1st<void*>, std::less<void*>, boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > >::~flat_tree (this=0x30831b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/detail/flat_tree.hpp:699
+[2945717:internal-dpl-aod-reader]: #21 boost::container::flat_map<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> >, std::less<void*>, void>::~flat_map (this=0x30831b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/flat_map.hpp:112
+[2945717:internal-dpl-aod-reader]: #22 fair::mq::ChannelResource::~ChannelResource (this=0x30831a8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/MemoryResources.h:54
+[2945717:internal-dpl-aod-reader]: #23 fair::mq::TransportFactory::~TransportFactory (this=0x3083180, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/TransportFactory.h:157
+[2945717:internal-dpl-aod-reader]: #24 fair::mq::shmem::TransportFactory::~TransportFactory (this=0x3083180, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/TransportFactory.h:181
+[2945717:internal-dpl-aod-reader]: #25 0x00007fa82c6ccbf6 in std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release (this=0x3083170) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/shared_ptr_base.h:158
+[2945717:internal-dpl-aod-reader]: #26 std::__shared_count<(__gnu_cxx::_Lock_policy)2>::~__shared_count (this=0x3027ed8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/shared_ptr_base.h:733
+[2945717:internal-dpl-aod-reader]: #27 std::__shared_ptr<fair::mq::TransportFactory, (__gnu_cxx::_Lock_policy)2>::~__shared_ptr (this=0x3027ed0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/shared_ptr_base.h:1183
+[2945717:internal-dpl-aod-reader]: #28 std::shared_ptr<fair::mq::TransportFactory>::~shared_ptr (this=0x3027ed0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/shared_ptr.h:121
+[2945717:internal-dpl-aod-reader]: #29 std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >::~pair (this=0x3027ec8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/stl_pair.h:211
+[2945717:internal-dpl-aod-reader]: #30 __gnu_cxx::new_allocator<std::__detail::_Hash_node<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, false> >::destroy<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > > (__p=0x3027ec8, this=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/ext/new_allocator.h:156
+[2945717:internal-dpl-aod-reader]: #31 std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, false> > >::destroy<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > > (__p=0x3027ec8, __a=...) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/alloc_traits.h:531
+[2945717:internal-dpl-aod-reader]: #32 std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, false> > >::_M_deallocate_node (this=0x3079438, __n=0x3027ec0) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/hashtable_policy.h:2053
+[2945717:internal-dpl-aod-reader]: #33 std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, false> > >::_M_deallocate_nodes (__n=0x319b990, this=0x3079438) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/hashtable_policy.h:2075
+[2945717:internal-dpl-aod-reader]: #34 std::_Hashtable<fair::mq::Transport, std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, std::allocator<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > >, std::__detail::_Select1st, std::equal_to<fair::mq::Transport>, std::hash<fair::mq::Transport>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear (this=this
+[2945717:internal-dpl-aod-reader]: entry=0x3079438) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/hashtable.h:2030
+[2945717:internal-dpl-aod-reader]: #35 0x00007fa82c6c8d05 in std::_Hashtable<fair::mq::Transport, std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, std::allocator<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > >, std::__detail::_Select1st, std::equal_to<fair::mq::Transport>, std::hash<fair::mq::Transport>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable (this=0x3079438, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/hashtable.h:1387
+[2945717:internal-dpl-aod-reader]: #36 std::unordered_map<fair::mq::Transport, std::shared_ptr<fair::mq::TransportFactory>, std::hash<fair::mq::Transport>, std::equal_to<fair::mq::Transport>, std::allocator<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > > >::~unordered_map (this=0x3079438, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unordered_map.h:102
+[2945717:internal-dpl-aod-reader]: #37 fair::mq::Device::~Device (this=0x3079420, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/Device.cxx:788
+[2945717:internal-dpl-aod-reader]: #38 0x00007fa831488ec9 in o2::framework::DataProcessingDevice::~DataProcessingDevice (this=0x3079420, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/O2/dev/0/Framework/Core/include/Framework/DataProcessingDevice.h:117
+[2945717:internal-dpl-aod-reader]: #39 0x00007fa8315d6fa5 in std::default_delete<fair::mq::Device>::operator() (__ptr=<optimized out>, this=0x7fff04a62838) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unique_ptr.h:79
+[2945717:internal-dpl-aod-reader]: #40 std::unique_ptr<fair::mq::Device, std::default_delete<fair::mq::Device> >::~unique_ptr (this=0x7fff04a62838, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unique_ptr.h:361
+[2945717:internal-dpl-aod-reader]: #41 fair::mq::DeviceRunner::~DeviceRunner (this=0x7fff04a62620, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-local2/include/fairmq/DeviceRunner.h:50
+[2945717:internal-dpl-aod-reader]: #42 0x00007fa83137f0a7 in doChild (argc=<optimized out>, argv=0x7fff04a62910, serviceRegistry=..., runningWorkflow=..., ref=..., processingPolicies=..., defaultDriverClient=..., loop=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/ext/new_allocator.h:89
+[2945717:internal-dpl-aod-reader]: #43 0x00007fa8315b509c in runStateMachine (workflow=..., workflowInfo=..., previousDataProcessorInfos=..., commandInfo=..., driverControl=..., driverInfo=..., metricsInfos=..., varmap=..., frameworkId=...) at /home/mjongerh/alice/sw/SOURCES/O2/dev/0/Framework/Core/src/runDataProcessing.cxx:1567
+[2945717:internal-dpl-aod-reader]: #44 0x00007fa8315bea98 in doMain (argc=argc
+[2945717:internal-dpl-aod-reader]: entry=98, argv=argv
+[2945717:internal-dpl-aod-reader]: entry=0x7fff04a66f38, workflow=..., channelPolicies=..., completionPolicies=..., dispatchPolicies=..., resourcePolicies=..., currentWorkflowOptions=..., configContext=...) at /home/mjongerh/alice/sw/SOURCES/O2/dev/0/Framework/Core/src/runDataProcessing.cxx:2550
+[2945717:internal-dpl-aod-reader]: #45 0x00000000004490f6 in mainNoCatch (argc=98, argv=0x7fff04a66f38) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/include/Framework/runDataProcessing.h:201
+[2945717:internal-dpl-aod-reader]: #46 0x0000000000439662 in main (argc=98, argv=0x7fff04a66f38) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/include/Framework/runDataProcessing.h:219
+[2945717:internal-dpl-aod-reader]: ===========================================================
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]: The lines below might hint at the cause of the crash.
+[2945717:internal-dpl-aod-reader]: You may get help by asking at the ROOT forum https://root.cern.ch/forum
+[2945717:internal-dpl-aod-reader]: Only if you are really convinced it is a bug in ROOT then please submit a
+[2945717:internal-dpl-aod-reader]: report at https://root.cern.ch/bugs Please post the ENTIRE stack trace
+[2945717:internal-dpl-aod-reader]: from above as an attachment in addition to anything else
+[2945717:internal-dpl-aod-reader]: that might help us fixing this issue.
+[2945717:internal-dpl-aod-reader]: ===========================================================
+[2945717:internal-dpl-aod-reader]: #6  boost::unordered::unordered_map<unsigned short, fair::mq::shmem::SegmentInfo, boost::hash<unsigned short>, std::equal_to<unsigned short>, boost::interprocess::allocator<std::pair<unsigned short const, fair::mq::shmem::SegmentInfo>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::mutex_family, boost::interprocess::offset_ptr<void, long, unsigned long, 0ul>, 0ul>, boost::interprocess::iset_index> > >::at (k=
+[2945717:internal-dpl-aod-reader]: 0x7fff04a6083c: 0, this=0x7fa811efc118) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/unordered/unordered_map.hpp:1878
+[2945717:internal-dpl-aod-reader]: #7  fair::mq::shmem::Manager::GetSegment (this=0x14142d0, id=0) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Manager.h:669
+[2945717:internal-dpl-aod-reader]: #8  0x00007fa82c7949e5 in fair::mq::shmem::Message::Deallocate (this=0x36599a0) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Message.h:337
+[2945717:internal-dpl-aod-reader]: #9  fair::mq::shmem::Message::CloseMessage (this=0x36599a0) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Message.h:378
+[2945717:internal-dpl-aod-reader]: #10 0x00007fa82c794d07 in fair::mq::shmem::Message::~Message (this=0x36599a0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Message.h:310
+[2945717:internal-dpl-aod-reader]: #11 fair::mq::shmem::Message::~Message (this=0x36599a0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/Message.h:310
+[2945717:internal-dpl-aod-reader]: #12 0x00007fa82c7a09c3 in std::default_delete<fair::mq::Message>::operator() (__ptr=<optimized out>, this=0x334e2b8) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unique_ptr.h:79
+[2945717:internal-dpl-aod-reader]: #13 std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> >::~unique_ptr (this=0x334e2b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unique_ptr.h:361
+[2945717:internal-dpl-aod-reader]: #14 boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >::~pair (this=0x334e2b0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/detail/pair.hpp:218
+[2945717:internal-dpl-aod-reader]: #15 boost::container::allocator_traits<boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > >::priv_destroy<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > (p=0x334e2b0) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/allocator_traits.hpp:394
+[2945717:internal-dpl-aod-reader]: #16 boost::container::allocator_traits<boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > >::destroy<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > (p=0x334e2b0, a=...) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/allocator_traits.hpp:322
+[2945717:internal-dpl-aod-reader]: #17 boost::container::destroy_alloc_n<boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > >, boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >*, unsigned long> (n=0, f=0x334e2b0, a=...) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/detail/copy_move_algo.hpp:987
+[2945717:internal-dpl-aod-reader]: #18 boost::container::vector<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >, boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > >, void>::~vector (this=0x30831b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/vector.hpp:1099
+[2945717:internal-dpl-aod-reader]: #19 boost::container::dtl::flat_tree<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >, boost::container::dtl::select1st<void*>, std::less<void*>, boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > >::Data::~Data (this=0x30831b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/detail/flat_tree.hpp:475
+[2945717:internal-dpl-aod-reader]: #20 boost::container::dtl::flat_tree<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > >, boost::container::dtl::select1st<void*>, std::less<void*>, boost::container::new_allocator<boost::container::dtl::pair<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> > > > >::~flat_tree (this=0x30831b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/detail/flat_tree.hpp:699
+[2945717:internal-dpl-aod-reader]: #21 boost::container::flat_map<void*, std::unique_ptr<fair::mq::Message, std::default_delete<fair::mq::Message> >, std::less<void*>, void>::~flat_map (this=0x30831b8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include/boost/container/flat_map.hpp:112
+[2945717:internal-dpl-aod-reader]: #22 fair::mq::ChannelResource::~ChannelResource (this=0x30831a8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/MemoryResources.h:54
+[2945717:internal-dpl-aod-reader]: #23 fair::mq::TransportFactory::~TransportFactory (this=0x3083180, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/TransportFactory.h:157
+[2945717:internal-dpl-aod-reader]: #24 fair::mq::shmem::TransportFactory::~TransportFactory (this=0x3083180, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/shmem/TransportFactory.h:181
+[2945717:internal-dpl-aod-reader]: #25 0x00007fa82c6ccbf6 in std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release (this=0x3083170) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/shared_ptr_base.h:158
+[2945717:internal-dpl-aod-reader]: #26 std::__shared_count<(__gnu_cxx::_Lock_policy)2>::~__shared_count (this=0x3027ed8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/shared_ptr_base.h:733
+[2945717:internal-dpl-aod-reader]: #27 std::__shared_ptr<fair::mq::TransportFactory, (__gnu_cxx::_Lock_policy)2>::~__shared_ptr (this=0x3027ed0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/shared_ptr_base.h:1183
+[2945717:internal-dpl-aod-reader]: #28 std::shared_ptr<fair::mq::TransportFactory>::~shared_ptr (this=0x3027ed0, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/shared_ptr.h:121
+[2945717:internal-dpl-aod-reader]: #29 std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >::~pair (this=0x3027ec8, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/stl_pair.h:211
+[2945717:internal-dpl-aod-reader]: #30 __gnu_cxx::new_allocator<std::__detail::_Hash_node<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, false> >::destroy<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > > (__p=0x3027ec8, this=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/ext/new_allocator.h:156
+[2945717:internal-dpl-aod-reader]: #31 std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, false> > >::destroy<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > > (__p=0x3027ec8, __a=...) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/alloc_traits.h:531
+[2945717:internal-dpl-aod-reader]: #32 std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, false> > >::_M_deallocate_node (this=0x3079438, __n=0x3027ec0) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/hashtable_policy.h:2053
+[2945717:internal-dpl-aod-reader]: #33 std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, false> > >::_M_deallocate_nodes (__n=0x319b990, this=0x3079438) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/hashtable_policy.h:2075
+[2945717:internal-dpl-aod-reader]: #34 std::_Hashtable<fair::mq::Transport, std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, std::allocator<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > >, std::__detail::_Select1st, std::equal_to<fair::mq::Transport>, std::hash<fair::mq::Transport>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear (this=this
+[2945717:internal-dpl-aod-reader]: entry=0x3079438) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/hashtable.h:2030
+[2945717:internal-dpl-aod-reader]: #35 0x00007fa82c6c8d05 in std::_Hashtable<fair::mq::Transport, std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> >, std::allocator<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > >, std::__detail::_Select1st, std::equal_to<fair::mq::Transport>, std::hash<fair::mq::Transport>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable (this=0x3079438, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/hashtable.h:1387
+[2945717:internal-dpl-aod-reader]: #36 std::unordered_map<fair::mq::Transport, std::shared_ptr<fair::mq::TransportFactory>, std::hash<fair::mq::Transport>, std::equal_to<fair::mq::Transport>, std::allocator<std::pair<fair::mq::Transport const, std::shared_ptr<fair::mq::TransportFactory> > > >::~unordered_map (this=0x3079438, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unordered_map.h:102
+[2945717:internal-dpl-aod-reader]: #37 fair::mq::Device::~Device (this=0x3079420, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/FairMQ/v1.4.42/v1.4.42/fairmq/Device.cxx:788
+[2945717:internal-dpl-aod-reader]: #38 0x00007fa831488ec9 in o2::framework::DataProcessingDevice::~DataProcessingDevice (this=0x3079420, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/SOURCES/O2/dev/0/Framework/Core/include/Framework/DataProcessingDevice.h:117
+[2945717:internal-dpl-aod-reader]: #39 0x00007fa8315d6fa5 in std::default_delete<fair::mq::Device>::operator() (__ptr=<optimized out>, this=0x7fff04a62838) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unique_ptr.h:79
+[2945717:internal-dpl-aod-reader]: #40 std::unique_ptr<fair::mq::Device, std::default_delete<fair::mq::Device> >::~unique_ptr (this=0x7fff04a62838, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/bits/unique_ptr.h:361
+[2945717:internal-dpl-aod-reader]: #41 fair::mq::DeviceRunner::~DeviceRunner (this=0x7fff04a62620, __in_chrg=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-local2/include/fairmq/DeviceRunner.h:50
+[2945717:internal-dpl-aod-reader]: #42 0x00007fa83137f0a7 in doChild (argc=<optimized out>, argv=0x7fff04a62910, serviceRegistry=..., runningWorkflow=..., ref=..., processingPolicies=..., defaultDriverClient=..., loop=<optimized out>) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/include/c++/10.2.0/ext/new_allocator.h:89
+[2945717:internal-dpl-aod-reader]: #43 0x00007fa8315b509c in runStateMachine (workflow=..., workflowInfo=..., previousDataProcessorInfos=..., commandInfo=..., driverControl=..., driverInfo=..., metricsInfos=..., varmap=..., frameworkId=...) at /home/mjongerh/alice/sw/SOURCES/O2/dev/0/Framework/Core/src/runDataProcessing.cxx:1567
+[2945717:internal-dpl-aod-reader]: #44 0x00007fa8315bea98 in doMain (argc=argc
+[2945717:internal-dpl-aod-reader]: entry=98, argv=argv
+[2945717:internal-dpl-aod-reader]: entry=0x7fff04a66f38, workflow=..., channelPolicies=..., completionPolicies=..., dispatchPolicies=..., resourcePolicies=..., currentWorkflowOptions=..., configContext=...) at /home/mjongerh/alice/sw/SOURCES/O2/dev/0/Framework/Core/src/runDataProcessing.cxx:2550
+[2945717:internal-dpl-aod-reader]: #45 0x00000000004490f6 in mainNoCatch (argc=98, argv=0x7fff04a66f38) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/include/Framework/runDataProcessing.h:201
+[2945717:internal-dpl-aod-reader]: #46 0x0000000000439662 in main (argc=98, argv=0x7fff04a66f38) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local6/include/Framework/runDataProcessing.h:219
+[2945717:internal-dpl-aod-reader]: ===========================================================
+[2945717:internal-dpl-aod-reader]: 
+[2945717:internal-dpl-aod-reader]: 
+[INFO] QUIT_REQUESTED
+[2945719:alice3-pidTOF-task]: [15:52:31][INFO] Received device shutdown request (signal 15).
+[2945719:alice3-pidTOF-task]: [15:52:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[2945720:tpc-pid-full]: [15:52:31][INFO] Received device shutdown request (signal 15).
+[2945720:tpc-pid-full]: [15:52:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[2945721:alice3-tof-signal-task]: [15:52:31][INFO] Received device shutdown request (signal 15).
+[2945721:alice3-tof-signal-task]: [15:52:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[2945721:alice3-tof-signal-task]: [15:52:31][STATE] RUNNING ---> READY
+[2945721:alice3-tof-signal-task]: [15:52:31][STATE] READY ---> RESETTING TASK
+[2945721:alice3-tof-signal-task]: [15:52:31][STATE] RESETTING TASK ---> DEVICE READY
+[2945721:alice3-tof-signal-task]: [15:52:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[2945721:alice3-tof-signal-task]: [15:52:31][STATE] RESETTING DEVICE ---> IDLE
+[2945721:alice3-tof-signal-task]: [15:52:31][STATE] IDLE ---> EXITING
+[2945721:alice3-tof-signal-task]: [15:52:31][STATE] Exiting FairMQ state machine
+[2945718:internal-dpl-aod-spawner]: [15:52:31][INFO] Received device shutdown request (signal 15).
+[2945718:internal-dpl-aod-spawner]: [15:52:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[2945720:tpc-pid-full]: [15:52:31][STATE] RUNNING ---> READY
+[2945720:tpc-pid-full]: [15:52:31][STATE] READY ---> RESETTING TASK
+[2945720:tpc-pid-full]: [15:52:31][STATE] RESETTING TASK ---> DEVICE READY
+[2945720:tpc-pid-full]: [15:52:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[2945720:tpc-pid-full]: [15:52:31][STATE] RESETTING DEVICE ---> IDLE
+[2945720:tpc-pid-full]: [15:52:31][STATE] IDLE ---> EXITING
+[2945720:tpc-pid-full]: [15:52:31][STATE] Exiting FairMQ state machine
+[2945719:alice3-pidTOF-task]: [15:52:31][STATE] RUNNING ---> READY
+[2945719:alice3-pidTOF-task]: [15:52:31][STATE] READY ---> RESETTING TASK
+[2945719:alice3-pidTOF-task]: [15:52:31][STATE] RESETTING TASK ---> DEVICE READY
+[2945719:alice3-pidTOF-task]: [15:52:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[2945719:alice3-pidTOF-task]: [15:52:31][STATE] RESETTING DEVICE ---> IDLE
+[2945719:alice3-pidTOF-task]: [15:52:31][STATE] IDLE ---> EXITING
+[2945719:alice3-pidTOF-task]: [15:52:31][STATE] Exiting FairMQ state machine
+[2945716:internal-dpl-clock]: [15:52:31][INFO] Received device shutdown request (signal 15).
+[2945716:internal-dpl-clock]: [15:52:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[2945723:hf-task-lb-mc]: [15:52:31][INFO] Received device shutdown request (signal 15).
+[2945723:hf-task-lb-mc]: [15:52:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[2945718:internal-dpl-aod-spawner]: [15:52:31][STATE] RUNNING ---> READY
+[2945718:internal-dpl-aod-spawner]: [15:52:31][STATE] READY ---> RESETTING TASK
+[2945718:internal-dpl-aod-spawner]: [15:52:31][STATE] RESETTING TASK ---> DEVICE READY
+[2945718:internal-dpl-aod-spawner]: [15:52:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[2945718:internal-dpl-aod-spawner]: [15:52:31][STATE] RESETTING DEVICE ---> IDLE
+[2945718:internal-dpl-aod-spawner]: [15:52:31][STATE] IDLE ---> EXITING
+[2945718:internal-dpl-aod-spawner]: [15:52:31][STATE] Exiting FairMQ state machine
+[2945725:internal-dpl-aod-writer]: [15:52:31][INFO] Received device shutdown request (signal 15).
+[2945725:internal-dpl-aod-writer]: [15:52:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:31][INFO] Received device shutdown request (signal 15).
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[2945722:hf-task-lb]: [15:52:31][INFO] Received device shutdown request (signal 15).
+[2945722:hf-task-lb]: [15:52:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[2945716:internal-dpl-clock]: [15:52:31][STATE] RUNNING ---> READY
+[2945716:internal-dpl-clock]: [15:52:31][STATE] READY ---> RESETTING TASK
+[2945716:internal-dpl-clock]: [15:52:31][STATE] RESETTING TASK ---> DEVICE READY
+[2945716:internal-dpl-clock]: [15:52:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[2945716:internal-dpl-clock]: [15:52:31][STATE] RESETTING DEVICE ---> IDLE
+[2945716:internal-dpl-clock]: [15:52:31][STATE] IDLE ---> EXITING
+[2945716:internal-dpl-clock]: [15:52:31][STATE] Exiting FairMQ state machine
+[2945723:hf-task-lb-mc]: [15:52:31][STATE] RUNNING ---> READY
+[2945723:hf-task-lb-mc]: [15:52:31][STATE] READY ---> RESETTING TASK
+[2945723:hf-task-lb-mc]: [15:52:31][STATE] RESETTING TASK ---> DEVICE READY
+[2945723:hf-task-lb-mc]: [15:52:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[2945723:hf-task-lb-mc]: [15:52:31][STATE] RESETTING DEVICE ---> IDLE
+[2945723:hf-task-lb-mc]: [15:52:31][STATE] IDLE ---> EXITING
+[2945723:hf-task-lb-mc]: [15:52:31][STATE] Exiting FairMQ state machine
+[2945725:internal-dpl-aod-writer]: [15:52:31][STATE] RUNNING ---> READY
+[2945725:internal-dpl-aod-writer]: [15:52:31][STATE] READY ---> RESETTING TASK
+[2945725:internal-dpl-aod-writer]: [15:52:31][STATE] RESETTING TASK ---> DEVICE READY
+[2945725:internal-dpl-aod-writer]: [15:52:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[2945725:internal-dpl-aod-writer]: [15:52:31][STATE] RESETTING DEVICE ---> IDLE
+[2945725:internal-dpl-aod-writer]: [15:52:31][STATE] IDLE ---> EXITING
+[2945725:internal-dpl-aod-writer]: [15:52:31][STATE] Exiting FairMQ state machine
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:31][STATE] RUNNING ---> READY
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:31][STATE] READY ---> RESETTING TASK
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:31][STATE] RESETTING TASK ---> DEVICE READY
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:31][STATE] RESETTING DEVICE ---> IDLE
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:31][STATE] IDLE ---> EXITING
+[2945724:internal-dpl-aod-global-analysis-file-sink]: [15:52:31][STATE] Exiting FairMQ state machine
+[2945722:hf-task-lb]: [15:52:31][STATE] RUNNING ---> READY
+[2945722:hf-task-lb]: [15:52:31][STATE] READY ---> RESETTING TASK
+[2945722:hf-task-lb]: [15:52:31][STATE] RESETTING TASK ---> DEVICE READY
+[2945722:hf-task-lb]: [15:52:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[2945722:hf-task-lb]: [15:52:31][INFO] Cleaning up for shared memory id '8e8869cd'...
+[2945722:hf-task-lb]: [15:52:31][INFO] No region counter found. No regions to cleanup.
+[2945722:hf-task-lb]: [15:52:31][INFO] Successfully removed 'fmq_8e8869cd_m_0'.
+[2945722:hf-task-lb]: [15:52:31][INFO] Successfully removed 'fmq_8e8869cd_mng'.
+[2945722:hf-task-lb]: [15:52:31][INFO] Successfully removed 'fmq_8e8869cd_mtx'.
+[2945722:hf-task-lb]: [15:52:31][INFO] Successfully removed 'fmq_8e8869cd_cv'.
+[2945722:hf-task-lb]: [15:52:31][STATE] RESETTING DEVICE ---> IDLE
+[2945722:hf-task-lb]: [15:52:31][STATE] IDLE ---> EXITING
+[2945722:hf-task-lb]: [15:52:31][STATE] Exiting FairMQ state machine
+[INFO] Dumping used configuration in dpl-config.json
+[ERROR] SEVERE: Device internal-dpl-aod-reader (2945717) had at least one message above severity error: Exception caught: Couldn't get TTree "DF_0/O2hfcandlbbase" from "/home/mmazzill/pp14TeV_bbbar_10M_2T_13102021/AODRun5.0.root". Please check https://aliceo2group.github.io/analysis-framework/docs/troubleshooting/treenotfound.html for more information. 
