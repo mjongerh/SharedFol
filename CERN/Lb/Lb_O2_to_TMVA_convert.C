@@ -12,10 +12,10 @@
 #include "TROOT.h"
 #include "TClass.h"
 
-void TreeDataStripper()
+void Lb_O2_to_TMVA_convert()
 {
   TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2.root";
-  TString newfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_stripped.root";
+  TString newfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_converted.root";
 
   TFile oldFile(oldfileName);
   TTree* oldtree;
