@@ -1,0 +1,396 @@
+++ cmake /home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0 -DCMAKE_INSTALL_PREFIX=/home/mjongerh/alice/sw/ubuntu2004_x86-64/O2Physics/LbDev2-local2 -G Ninja -DCMAKE_BUILD_TYPE=RELWITHDEBINFO -DCMAKE_CXX_STANDARD=17 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DONNXRuntime_DIR=/home/mjongerh/alice/sw/ubuntu2004_x86-64/ONNXRuntime/v1.7.2-alice1-local4 -DlibjalienO2_ROOT=/home/mjongerh/alice/sw/ubuntu2004_x86-64/libjalienO2/0.1.3-4
+-- Limiting workflow compilations in parallel to: 187
+CMake Warning (dev) at /home/mjongerh/alice/sw/ubuntu2004_x86-64/CMake/v3.19.2-2/share/cmake-3.19/Modules/FindPackageHandleStandardArgs.cmake:426 (message):
+  The package name passed to `find_package_handle_standard_args` (Threads)
+  does not match the name of the calling package (O2).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /home/mjongerh/alice/sw/ubuntu2004_x86-64/CMake/v3.19.2-2/share/cmake-3.19/Modules/FindThreads.cmake:234 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+  /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/lib/cmake/O2/O2Dependencies.cmake:30 (include)
+  /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/lib/cmake/O2/O2Config.cmake:12 (include)
+  CMakeLists.txt:40 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Deprecation Warning at /home/mjongerh/alice/sw/ubuntu2004_x86-64/Vc/1.4.1-3/lib/cmake/Vc/VcMacros.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  /home/mjongerh/alice/sw/ubuntu2004_x86-64/Vc/1.4.1-3/lib/cmake/Vc/VcConfig.cmake:36 (include)
+  /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/lib/cmake/O2/O2Dependencies.cmake:35 (find_package)
+  /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/lib/cmake/O2/O2Config.cmake:12 (include)
+  CMakeLists.txt:40 (find_package)
+
+
+-- Detected Compiler: GCC 10.2.0
+-- Detected CPU: skylake-avx512
+CMake Warning at /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/lib/cmake/O2/O2Dependencies.cmake:41 (find_package):
+  By not providing "FindVMC.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "VMC", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "VMC" with any of
+  the following names:
+
+    VMCConfig.cmake
+    vmc-config.cmake
+
+  Add the installation prefix of "VMC" to CMAKE_PREFIX_PATH or set "VMC_DIR"
+  to a directory containing one of the above files.  If "VMC" provides a
+  separate development package or SDK, be sure it has been installed.
+Call Stack (most recent call first):
+  /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/lib/cmake/O2/O2Config.cmake:12 (include)
+  CMakeLists.txt:40 (find_package)
+
+
+-- Found Boost: /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/lib/cmake/Boost-1.75.0/BoostConfig.cmake (found suitable version "1.75.0", minimum required is "1.70") found components: container thread system timer program_options random filesystem chrono exception regex serialization log log_setup unit_test_framework date_time iostreams 
+-- InfoLogger found - using cmake targets in /home/mjongerh/alice/sw/ubuntu2004_x86-64/libInfoLogger/v2.4.1-1/lib/cmake/InfoLogger
+-- Found Boost: /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/lib/cmake/Boost-1.75.0/BoostConfig.cmake (found version "1.75.0")  
+-- Configuration 2.6.3 found
+-- Monitoring 3.8.11 found
+-- Found Boost: /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/lib/cmake/Boost-1.75.0/BoostConfig.cmake (found suitable version "1.75.0", minimum required is "1.56") found components: unit_test_framework program_options filesystem 
+-- Common-O2 1.5.0 found
+-- RapidJSON found. Headers: /home/mjongerh/alice/sw/ubuntu2004_x86-64/RapidJSON/v1.1.0-alice2-3/lib/cmake/RapidJSON/../../../include
+-- Input BUILD_SIMULATION=OFF
+-- Could NOT find FlukaVMC (missing: FlukaVMC_DIR)
+-- Output BUILD_SIMULATION=OFF
+-- DebugGUI 0.1.0 found
+-- Could NOT find GLEW (missing: GLEW_INCLUDE_DIRS GLEW_LIBRARIES) 
+-- Could NOT find GLUT (missing: GLUT_glut_LIBRARY GLUT_INCLUDE_DIR) 
+-- Could NOT find OpenCL (missing: OpenCL_LIBRARY OpenCL_INCLUDE_DIR) 
+-- Could NOT find OpenCL (missing: OpenCL_LIBRARY OpenCL_INCLUDE_DIR) 
+-- adding FastJet contrib
+-- The following OPTIONAL packages have been found:
+
+ * pythia, the Pythia8 generator
+ * pythia6, the Pythia6 legacy generator
+ * Geant3, the legacy but not slow MC transport engine
+ * Geant4, more recent and more complete MC transport engine
+ * Geant4VMC
+ * VGM
+ * HepMC3, the HepMC3 event record package
+ * benchmark
+ * OpenMP
+ * X11
+ * OpenGL
+ * ZLIB
+ * LibXml2
+ * Clang
+ * O2GPU
+ * FastJet
+
+-- The following RECOMMENDED packages have been found:
+
+ * DDS
+ * GLFW
+ * DebugGUI
+
+-- The following REQUIRED packages have been found:
+
+ * O2arrow
+ * Vc
+ * ROOT (required version >= 6.20.02)
+ * fmt
+ * FairLogger
+ * FairRoot
+ * Microsoft.GSL
+   Mainly for its span
+ * FairMQ
+ * InfoLogger
+ * Configuration
+ * Monitoring
+ * boost_headers (required version == 1.75.0)
+ * boost_unit_test_framework (required version == 1.75.0)
+ * boost_program_options (required version == 1.75.0)
+ * boost_filesystem (required version == 1.75.0)
+ * Boost (required version >= 1.56)
+ * Common
+ * RapidJSON
+ * CURL
+ * libjalienO2
+   For CCDB API
+ * Threads
+ * LibUV
+ * LLVM
+ * FFTW3f
+
+-- The following OPTIONAL packages have not been found:
+
+ * VMC
+ * FlukaVMC
+ * AliRoot
+   For very specific use cases only
+ * GLEW
+ * GLUT
+ * OpenCL
+
+-- The following RECOMMENDED packages have not been found:
+
+ * JAliEnROOT
+ * XRootD
+
+-- !!! Using new O2 targets. That's a good thing.
+-- The following OPTIONAL packages have been found:
+
+ * pythia, the Pythia8 generator
+ * pythia6, the Pythia6 legacy generator
+ * Geant3, the legacy but not slow MC transport engine
+ * Geant4, more recent and more complete MC transport engine
+ * Geant4VMC
+ * VGM
+ * HepMC3, the HepMC3 event record package
+ * benchmark
+ * OpenMP
+ * X11
+ * OpenGL
+ * ZLIB
+ * LibXml2
+ * Clang
+ * O2GPU
+ * FastJet
+
+-- The following RECOMMENDED packages have been found:
+
+ * DDS
+ * GLFW
+ * DebugGUI
+
+-- The following REQUIRED packages have been found:
+
+ * O2arrow
+ * Vc
+ * ROOT (required version >= 6.20.02)
+ * fmt
+ * FairLogger
+ * FairRoot
+ * Microsoft.GSL
+   Mainly for its span
+ * FairMQ
+ * InfoLogger
+ * Configuration
+ * Monitoring
+ * boost_headers (required version == 1.75.0)
+ * boost_unit_test_framework (required version == 1.75.0)
+ * boost_program_options (required version == 1.75.0)
+ * boost_filesystem (required version == 1.75.0)
+ * Boost (required version >= 1.56)
+ * Common
+ * RapidJSON
+ * CURL
+ * libjalienO2
+   For CCDB API
+ * Threads
+ * LibUV
+ * LLVM
+ * FFTW3f
+ * O2
+ * ONNXRuntime::ONNXRuntime
+
+-- The following OPTIONAL packages have not been found:
+
+ * VMC
+ * FlukaVMC
+ * AliRoot
+   For very specific use cases only
+ * GLEW
+ * GLUT
+ * OpenCL
+
+-- The following RECOMMENDED packages have not been found:
+
+ * JAliEnROOT
+ * XRootD
+
+-- Using build type: RELWITHDEBINFO - CXXFLAGS: -fPIC -O2 -std=c++17 -O2 -g -DNDEBUG
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/mjongerh/alice/sw/BUILD/1db7b347732b834d859fd95c566d649630756a73/O2Physics
+++ cmake --build . -- -j 96 install
+[1/262] Linking CXX executable stage/bin/o2-aod-data-model-graph
+[2/262] Linking CXX shared library stage/lib/libO2PhysicsPWGDQCore.so
+[3/262] Linking CXX executable stage/bin/o2-analysis-cf-filter-correlations
+[4/262] Linking CXX executable stage/bin/o2-analysis-lf-spectra-tof-tiny
+[5/262] Linking CXX executable stage/bin/o2-analysis-cf-correlations
+[6/262] Linking CXX executable stage/bin/o2-analysis-je-emcal-correction-task
+[7/262] Linking CXX executable stage/bin/o2-analysis-lf-spectra-tpc
+[8/262] Linking CXX executable stage/bin/o2-analysis-lf-spectra-tpc-tiny-pikapr
+[9/262] Linking CXX executable stage/bin/o2-analysis-lf-spectra-charged
+[10/262] Linking CXX executable stage/bin/o2-analysis-lf-spectra-tpc-tiny
+[11/262] Linking CXX executable stage/bin/o2-analysis-lf-mc-spectra-efficiency
+[12/262] Linking CXX executable stage/bin/o2-analysis-lf-nuclei-spectra
+[13/262] Linking CXX executable stage/bin/o2-analysis-lf-spectra-tof
+[14/262] Linking CXX executable stage/bin/o2-analysis-lf-id-raa
+[15/262] Linking CXX executable stage/bin/o2-analysis-lf-nuclei-efficiencylight
+[16/262] Linking CXX executable stage/bin/o2-analysis-lf-nuclei-efficiency
+[17/262] Linking CXX executable stage/bin/o2-analysis-lf-track-checks
+[18/262] Linking CXX executable stage/bin/o2-analysis-pp-qa-impact-parameter
+[19/262] Linking CXX executable stage/bin/o2-analysis-pp-qa-efficiency
+[20/262] Linking CXX executable stage/bin/o2-analysis-lf-cascadeanalysis
+[21/262] Linking CXX executable stage/bin/o2-analysis-lf-cascadebuilder
+[22/262] Linking CXX executable stage/bin/o2-analysis-cf-dptdptcorrelations
+[23/262] Linking CXX executable stage/bin/o2-analysis-pp-qa-event-track
+[24/262] Linking CXX executable stage/bin/o2-analysis-hf-qa-rejection
+[25/262] Linking CXX executable stage/bin/o2-analysis-cf-match-reco-gen
+[26/262] Linking CXX executable stage/bin/o2-analysis-mm-dndeta
+[27/262] Linking CXX executable stage/bin/o2-analysis-mm-run2-dndeta
+[28/262] Linking CXX executable stage/bin/o2-analysistutorial-track-iteration
+[29/262] Linking CXX executable stage/bin/o2-analysis-lf-cascadefinder
+[30/262] Linking CXX executable stage/bin/o2-analysistutorial-multiplicity-event-track-selection
+[31/262] Linking CXX executable stage/bin/o2-analysistutorial-using-pdg
+[32/262] Linking CXX executable stage/bin/o2-analysistutorial-conditional-expressions
+[33/262] Linking CXX executable stage/bin/o2-analysistutorial-tableio-write
+[34/262] Linking CXX executable stage/bin/o2-analysis-ud-upc
+[35/262] Linking CXX executable stage/bin/o2-analysis-pp-pid-ml-producer
+[36/262] Linking CXX executable stage/bin/o2-analysistutorial-zdc-vzero-iteration
+[37/262] Linking CXX executable stage/bin/o2-analysistutorial-event-mixing
+[38/262] Linking CXX executable stage/bin/o2-analysistutorial-filters
+[39/262] Linking CXX executable stage/bin/o2-analysis-hf-candidate-creator-cascade
+[40/262] Linking CXX executable stage/bin/o2-analysis-hf-candidate-creator-2prong
+[41/262] Linking CXX executable stage/bin/o2-analysis-hf-candidate-creator-3prong
+[42/262] Linking CXX executable stage/bin/o2-analysis-dq-filter-pp
+[43/262] Linking CXX executable stage/bin/o2-analysis-dq-filter-pp-tiny
+[44/262] Linking CXX executable stage/bin/o2-analysis-em-gammaconversionsmc
+[45/262] Linking CXX executable stage/bin/o2-analysis-em-gammaconversions
+[46/262] Building CXX object PWGJE/Core/CMakeFiles/O2Physicslib-PWGJECore.dir/G__O2PhysicsPWGJECore.cxx.o
+[47/262] Linking CXX executable stage/bin/o2-analysis-lf-lambdakzerobuilder
+[48/262] Linking CXX executable stage/bin/o2-analysis-lf-lambdakzeroanalysisMC
+[49/262] Linking CXX executable stage/bin/o2-analysis-hf-track-index-skims-creator
+[50/262] Linking CXX executable stage/bin/o2-analysistutorial-compatible-bcs
+[51/262] Linking CXX executable stage/bin/o2-analysis-lf-lambdakzerofinder
+[52/262] Linking CXX executable stage/bin/o2-analysis-dq-v0-selector
+[53/262] Linking CXX shared library stage/lib/libO2PhysicsPWGJECore.so
+[54/262] Generating G__O2PhysicsConfigurableCut.cxx, ../stage/lib/G__O2PhysicsConfigurableCut_rdict.pcm, ../stage/lib/libO2PhysicsConfigurableCut.rootmap
+[55/262] Building CXX object Tutorials/CMakeFiles/O2Physicslib-ConfigurableCut.dir/src/configurableCut.cxx.o
+[56/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-tableio-read.dir/src/tableIOin.cxx.o
+[57/262] Linking CXX executable stage/bin/o2-analysistutorial-tableio-read
+[58/262] Building CXX object Tutorials/CMakeFiles/O2Physicslib-ConfigurableCut.dir/G__O2PhysicsConfigurableCut.cxx.o
+[59/262] Building CXX object PWGJE/TableProducer/CMakeFiles/O2Physicsexe-analysis-je-jet-skimmer.dir/jetskimming.cxx.o
+[60/262] Linking CXX shared library stage/lib/libO2PhysicsConfigurableCut.so
+[61/262] Linking CXX executable stage/bin/o2-analysis-je-jet-skimmer
+[62/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-histogram-track-selection.dir/src/histogramTrackSelection.cxx.o
+[63/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-dynamic-columns.dir/src/dynamicColumns.cxx.o
+[64/262] Linking CXX executable stage/bin/o2-analysistutorial-histogram-track-selection
+[65/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-extended-columns.dir/src/extendedColumns.cxx.o
+[66/262] Building CXX object PWGJE/Tasks/CMakeFiles/O2Physicsexe-analysis-je-jet-substructure.dir/jetsubstructure.cxx.o
+[67/262] Linking CXX executable stage/bin/o2-analysistutorial-dynamic-columns
+[68/262] Linking CXX executable stage/bin/o2-analysistutorial-extended-columns
+[69/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-histograms-full-tracks.dir/src/histogramsFullTracks.cxx.o
+[70/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-tree-creator-lb-tolcpi.dir/HFTreeCreatorLbToLcPi.cxx.o
+FAILED: PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-tree-creator-lb-tolcpi.dir/HFTreeCreatorLbToLcPi.cxx.o 
+/home/mjongerh/alice/sw/ubuntu2004_x86-64/GCC-Toolchain/v10.2.0-alice2-1/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SERIALIZATION_DYN_LINK -DDPL_ENABLE_BACKTRACE -DFAIRMQ_HAS_STD_FILESYSTEM=1 -DFMT_LOCALE -I/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0 -I/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/Common/Core -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/Common-O2/v1.6.0-6/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/boost/v1.75.0-6/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/Configuration/v2.6.3-3/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/libInfoLogger/v2.4.1-1/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/Monitoring/v3.8.11-3/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/curl/7.70.0-3/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-6/include/fairmq -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairMQ/v1.4.42-6/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairLogger/v1.10.1-3/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/fmt/7.1.0-2/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/ROOT/DevMaurice-local8/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/include/GPU -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/FairRoot/v18.4.2-local10/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/arrow/v5.0.0-alice3-1/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/Vc/1.4.1-3/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/ms_gsl/3.1.0-2/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/libjalienO2/0.1.3-4/include -isystem /home/mjongerh/alice/sw/ubuntu2004_x86-64/RapidJSON/v1.1.0-alice2-3/include -fPIC -O2 -std=c++17 -O2 -g -DNDEBUG -pthread -std=gnu++17 -MD -MT PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-tree-creator-lb-tolcpi.dir/HFTreeCreatorLbToLcPi.cxx.o -MF PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-tree-creator-lb-tolcpi.dir/HFTreeCreatorLbToLcPi.cxx.o.d -o PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-tree-creator-lb-tolcpi.dir/HFTreeCreatorLbToLcPi.cxx.o -c /home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/TableProducer/HFTreeCreatorLbToLcPi.cxx
+In file included from /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/include/Framework/TableBuilder.h:15,
+                 from /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/include/Framework/AnalysisHelpers.h:15,
+                 from /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/include/Framework/AnalysisManagers.h:14,
+                 from /home/mjongerh/alice/sw/ubuntu2004_x86-64/O2/dev-local10/include/Framework/AnalysisTask.h:15,
+                 from /home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/TableProducer/HFTreeCreatorLbToLcPi.cxx:20:
+/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/DataModel/HFSecondaryVertex.h: In instantiation of 'o2::aod::hf_cand_prong3::M<Bindings>::type o2::aod::hf_cand_prong3::M<Bindings>::boundGetter(std::integer_sequence<long unsigned int, __var_indices ...>&&, FreeArgs ...) const [with long unsigned int ...Is = {0, 1, 2, 3, 4, 5, 6, 7, 8}; FreeArgs = {std::array<double, 2>}; Bindings = {o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2}; o2::aod::hf_cand_prong3::M<Bindings>::type = float]':
+/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/DataModel/HFSecondaryVertex.h:593:1:   required from 'o2::aod::hf_cand_prong3::M<Bindings>::type o2::aod::hf_cand_prong3::M<Bindings>::m(FreeArgs ...) const [with FreeArgs = {std::array<double, 2>}; Bindings = {o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2}; o2::aod::hf_cand_prong3::M<Bindings>::type = float]'
+/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/DataModel/HFSecondaryVertex.h:1161:21:   required from 'auto o2::aod::hf_cand_lb::InvMassLbToLcPi(const T&) [with T = o2::soa::Table<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz, o2::soa::Index<0, -1>, o2::aod::hf_cand::CollisionId, o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand::ErrorDecayLength, o2::aod::hf_cand::ErrorDecayLengthXY, o2::aod::hf_cand::Chi2PCA, o2::aod::hf_cand::RSecondaryVertex<o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex>, o2::aod::hf_cand::DecayLength<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex>, o2::aod::hf_cand::DecayLengthXY<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex>, o2::aod::hf_cand::DecayLengthNormalised<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand::ErrorDecayLength>, o2::aod::hf_cand::DecayLengthXYNormalised<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ErrorDecayLengthXY>, o2::aod::hf_cand::ImpactParameterNormalised0<o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ErrorImpactParameter0>, o2::aod::hf_cand::PtProng0<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0>, o2::aod::hf_cand::Pt2Prong0<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0>, o2::aod::hf_cand::PVectorProng0<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0>, o2::aod::hf_cand::ImpactParameterNormalised1<o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ErrorImpactParameter1>, o2::aod::hf_cand::PtProng1<o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1>, o2::aod::hf_cand::Pt2Prong1<o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1>, o2::aod::hf_cand::PVectorProng1<o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1>, o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2, o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ImpactParameter2, o2::aod::hf_cand::ErrorImpactParameter0, o2::aod::hf_cand::ErrorImpactParameter1, o2::aod::hf_cand::ErrorImpactParameter2, o2::aod::hf_track_index::Index0Id, o2::aod::hf_track_index::Index1Id, o2::aod::hf_track_index::Index2Id, o2::aod::hf_track_index::HFflag, o2::aod::hf_cand_prong3::M<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2>, o2::aod::hf_cand_prong3::M2<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2>, o2::aod::hf_cand_prong3::ImpactParameterProngSqSum<o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ImpactParameter2>, o2::aod::hf_cand::ImpactParameterNormalised2<o2::aod::hf_cand::ImpactParameter2, o2::aod::hf_cand::ErrorImpactParameter2>, o2::aod::hf_cand::PtProng2<o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2>, o2::aod::hf_cand::Pt2Prong2<o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2>, o2::aod::hf_cand::PVectorProng2<o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2>, o2::aod::hf_cand::Pt<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::Pt2<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::P<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::P2<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::PVector<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::CPA<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::CPAXY<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::Ct<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::ImpactParameterXY<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand_prong3::MaxNormalisedDeltaIP<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ErrorDecayLengthXY, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ErrorImpactParameter0, o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ErrorImpactParameter1, o2::aod::hf_cand::ImpactParameter2, o2::aod::hf_cand::ErrorImpactParameter2, o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2>, o2::aod::hf_cand::Eta<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::Phi<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::Y<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::E<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::E2<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand_prong3::FlagMCMatchRec, o2::aod::hf_cand_prong3::OriginMCRec, o2::aod::hf_cand_prong3::IsCandidateSwapped, o2::aod::hf_cand_prong3::FlagMCDecayChanRec, o2::aod::hf_selcandidate_lb::IsSelLbToLcPi>::RowViewBase<o2::soa::DefaultIndexPolicy, o2::soa::Table<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz, o2::soa::Index<0, -1>, o2::aod::hf_cand::CollisionId, o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand::ErrorDecayLength, o2::aod::hf_cand::ErrorDecayLengthXY, o2::aod::hf_cand::Chi2PCA, o2::aod::hf_cand::RSecondaryVertex<o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex>, o2::aod::hf_cand::DecayLength<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex>, o2::aod::hf_cand::DecayLengthXY<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex>, o2::aod::hf_cand::DecayLengthNormalised<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand::ErrorDecayLength>, o2::aod::hf_cand::DecayLengthXYNormalised<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ErrorDecayLengthXY>, o2::aod::hf_cand::ImpactParameterNormalised0<o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ErrorImpactParameter0>, o2::aod::hf_cand::PtProng0<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0>, o2::aod::hf_cand::Pt2Prong0<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0>, o2::aod::hf_cand::PVectorProng0<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0>, o2::aod::hf_cand::ImpactParameterNormalised1<o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ErrorImpactParameter1>, o2::aod::hf_cand::PtProng1<o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1>, o2::aod::hf_cand::Pt2Prong1<o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1>, o2::aod::hf_cand::PVectorProng1<o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1>, o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2, o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ImpactParameter2, o2::aod::hf_cand::ErrorImpactParameter0, o2::aod::hf_cand::ErrorImpactParameter1, o2::aod::hf_cand::ErrorImpactParameter2, o2::aod::hf_track_index::Index0Id, o2::aod::hf_track_index::Index1Id, o2::aod::hf_track_index::Index2Id, o2::aod::hf_track_index::HFflag, o2::aod::hf_cand_prong3::M<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2>, o2::aod::hf_cand_prong3::M2<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2>, o2::aod::hf_cand_prong3::ImpactParameterProngSqSum<o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ImpactParameter2>, o2::aod::hf_cand::ImpactParameterNormalised2<o2::aod::hf_cand::ImpactParameter2, o2::aod::hf_cand::ErrorImpactParameter2>, o2::aod::hf_cand::PtProng2<o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2>, o2::aod::hf_cand::Pt2Prong2<o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2>, o2::aod::hf_cand::PVectorProng2<o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2>, o2::aod::hf_cand::Pt<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::Pt2<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::P<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::P2<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::PVector<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::CPA<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::CPAXY<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::Ct<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::ImpactParameterXY<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand_prong3::MaxNormalisedDeltaIP<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ErrorDecayLengthXY, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ErrorImpactParameter0, o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ErrorImpactParameter1, o2::aod::hf_cand::ImpactParameter2, o2::aod::hf_cand::ErrorImpactParameter2, o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2>, o2::aod::hf_cand::Eta<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::Phi<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::Y<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::E<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::E2<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand_prong3::FlagMCMatchRec, o2::aod::hf_cand_prong3::OriginMCRec, o2::aod::hf_cand_prong3::IsCandidateSwapped, o2::aod::hf_cand_prong3::FlagMCDecayChanRec, o2::aod::hf_selcandidate_lb::IsSelLbToLcPi>, o2::soa::Table<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz, o2::soa::Index<0, -1>, o2::aod::hf_cand::CollisionId, o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand::ErrorDecayLength, o2::aod::hf_cand::ErrorDecayLengthXY, o2::aod::hf_cand::Chi2PCA, o2::aod::hf_cand::RSecondaryVertex<o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex>, o2::aod::hf_cand::DecayLength<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex>, o2::aod::hf_cand::DecayLengthXY<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex>, o2::aod::hf_cand::DecayLengthNormalised<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand::ErrorDecayLength>, o2::aod::hf_cand::DecayLengthXYNormalised<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ErrorDecayLengthXY>, o2::aod::hf_cand::ImpactParameterNormalised0<o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ErrorImpactParameter0>, o2::aod::hf_cand::PtProng0<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0>, o2::aod::hf_cand::Pt2Prong0<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0>, o2::aod::hf_cand::PVectorProng0<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0>, o2::aod::hf_cand::ImpactParameterNormalised1<o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ErrorImpactParameter1>, o2::aod::hf_cand::PtProng1<o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1>, o2::aod::hf_cand::Pt2Prong1<o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1>, o2::aod::hf_cand::PVectorProng1<o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1>, o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2, o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ImpactParameter2, o2::aod::hf_cand::ErrorImpactParameter0, o2::aod::hf_cand::ErrorImpactParameter1, o2::aod::hf_cand::ErrorImpactParameter2, o2::aod::hf_track_index::Index0Id, o2::aod::hf_track_index::Index1Id, o2::aod::hf_track_index::Index2Id, o2::aod::hf_track_index::HFflag, o2::aod::hf_cand_prong3::M<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2>, o2::aod::hf_cand_prong3::M2<o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PzProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PzProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2>, o2::aod::hf_cand_prong3::ImpactParameterProngSqSum<o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ImpactParameter2>, o2::aod::hf_cand::ImpactParameterNormalised2<o2::aod::hf_cand::ImpactParameter2, o2::aod::hf_cand::ErrorImpactParameter2>, o2::aod::hf_cand::PtProng2<o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2>, o2::aod::hf_cand::Pt2Prong2<o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2>, o2::aod::hf_cand::PVectorProng2<o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2, o2::aod::hf_cand::PzProng2>, o2::aod::hf_cand::Pt<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::Pt2<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::P<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::P2<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::PVector<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::CPA<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::CPAXY<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::Ct<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::ImpactParameterXY<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::collision::PosZ, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ZSecondaryVertex, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand_prong3::MaxNormalisedDeltaIP<o2::aod::collision::PosX, o2::aod::collision::PosY, o2::aod::hf_cand::XSecondaryVertex, o2::aod::hf_cand::YSecondaryVertex, o2::aod::hf_cand::ErrorDecayLengthXY, o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand::ImpactParameter0, o2::aod::hf_cand::ErrorImpactParameter0, o2::aod::hf_cand::ImpactParameter1, o2::aod::hf_cand::ErrorImpactParameter1, o2::aod::hf_cand::ImpactParameter2, o2::aod::hf_cand::ErrorImpactParameter2, o2::aod::hf_cand::PxProng0, o2::aod::hf_cand::PyProng0, o2::aod::hf_cand::PxProng1, o2::aod::hf_cand::PyProng1, o2::aod::hf_cand::PxProng2, o2::aod::hf_cand::PyProng2>, o2::aod::hf_cand::Eta<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::Phi<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py>, o2::aod::hf_cand::Y<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::E<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand::E2<o2::aod::hf_cand_prong3::Px, o2::aod::hf_cand_prong3::Py, o2::aod::hf_cand_prong3::Pz>, o2::aod::hf_cand_prong3::FlagMCMatchRec, o2::aod::hf_cand_prong3::OriginMCRec, o2::aod::hf_cand_prong3::IsCandidateSwapped, o2::aod::hf_cand_prong3::FlagMCDecayChanRec, o2::aod::hf_selcandidate_lb::IsSelLbToLcPi> >]'
+/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/TableProducer/HFTreeCreatorLbToLcPi.cxx:220:72:   required from here
+/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/DataModel/HFSecondaryVertex.h:593:1: error: no match for call to '(o2::aod::hf_cand_prong3::M<Bindings>::boundGetter<{0, 1, 2, 3, 4, 5, 6, 7, 8}, {std::array<double, 2>}>::<lambda(float, float, float, float, float, float, float, float, float, const std::array<double, 3>&)>) (o2::soa::unwrap_t<float>&, o2::soa::unwrap_t<float>&, o2::soa::unwrap_t<float>&, o2::soa::unwrap_t<float>&, o2::soa::unwrap_t<float>&, o2::soa::unwrap_t<float>&, o2::soa::unwrap_t<float>&, o2::soa::unwrap_t<float>&, o2::soa::unwrap_t<float>&, std::array<double, 2>&)'
+  593 | DECLARE_SOA_DYNAMIC_COLUMN(M, m, //!
+      | ^
+/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/DataModel/HFSecondaryVertex.h:593:1: note: candidate: 'float (*)(float, float, float, float, float, float, float, float, float, const std::array<double, 3>&)' (conversion)
+/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/DataModel/HFSecondaryVertex.h:593:1: note:   candidate expects 11 arguments, 11 provided
+/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/DataModel/HFSecondaryVertex.h:594:28: note: candidate: 'o2::aod::hf_cand_prong3::M<Bindings>::boundGetter<{0, 1, 2, 3, 4, 5, 6, 7, 8}, {std::array<double, 2>}>::<lambda(float, float, float, float, float, float, float, float, float, const std::array<double, 3>&)>'
+  594 |                            [](float px0, float py0, float pz0, float px1, float py1, float pz1, float px2, float py2, float pz2, const array<double, 3>& m) -> float { return RecoDecay::M(array{array{px0, py0, pz0}, array{px1, py1, pz1}, array{px2, py2, pz2}}, m); });
+      |                            ^
+/home/mjongerh/alice/sw/SOURCES/O2Physics/LbDev2/0/PWGHF/DataModel/HFSecondaryVertex.h:594:28: note:   no known conversion for argument 10 from 'std::array<double, 2>' to 'const std::array<double, 3>&'
+[71/262] Linking CXX executable stage/bin/o2-analysis-je-jet-substructure
+[72/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-jet-analysis.dir/src/jetAnalysis.cxx.o
+[73/262] Linking CXX executable stage/bin/o2-analysistutorial-histograms-full-tracks
+[74/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-efficiency-global.dir/src/efficiencyGlobal.cxx.o
+[75/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-histograms.dir/src/histograms.cxx.o
+[76/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-tpcspectra-task-skim-analyser.dir/spectraTPCAnalyser.cxx.o
+[77/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-full-track-iteration.dir/src/fullTrackIteration.cxx.o
+[78/262] Building CXX object PWGJE/TableProducer/CMakeFiles/O2Physicsexe-analysis-je-jet-finder-hadron-recoil.dir/jetfinderhadronrecoil.cxx.o
+[79/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-schema-evolution.dir/src/schemaEvolution.cxx.o
+[80/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-new-collections.dir/src/newCollections.cxx.o
+[81/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-ccdbaccess.dir/src/ccdbaccess.cxx.o
+[82/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-collision-tracks-iteration.dir/src/collisionTracksIteration.cxx.o
+[83/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-tracks-combinations.dir/src/tracksCombinations.cxx.o
+[84/262] Generating G__O2PhysicsCutHolder.cxx, ../stage/lib/G__O2PhysicsCutHolder_rdict.pcm, ../stage/lib/libO2PhysicsCutHolder.rootmap
+[85/262] Building CXX object EventFiltering/CMakeFiles/O2Physicsexe-analysis-cf-threebodyfemto-filter.dir/PWGCF/CFFilter.cxx.o
+[86/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-jet-task-skim-provider.dir/jetProvider.cxx.o
+[87/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-efficiency-per-run.dir/src/efficiencyPerRun.cxx.o
+[88/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-upcspectra-task-skim-analyser.dir/spectraUPCAnalyser.cxx.o
+[89/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-muon-iteration.dir/src/muonIteration.cxx.o
+[90/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-nucleispectra-task-skim-analyser.dir/spectraNucleiAnalyser.cxx.o
+[91/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-jetspectra-task-skim-analyser.dir/jetSpectraAnalyser.cxx.o
+[92/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-jetspectra-task-skim-reference.dir/jetSpectraReference.cxx.o
+[93/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-weak-decay-iteration.dir/src/weakDecayIteration.cxx.o
+[94/262] Building CXX object PWGJE/TableProducer/CMakeFiles/O2Physicsexe-analysis-je-jet-matching.dir/jetmatching.cxx.o
+[95/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-partitions.dir/src/partitions.cxx.o
+[96/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-upcspectra-task-skim-reference.dir/spectraUPCReference.cxx.o
+[97/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-extended-tables.dir/src/extendedTables.cxx.o
+[98/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-mc-histograms.dir/src/mcHistograms.cxx.o
+[99/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-multiprocess-example.dir/src/multiProcess.cxx.o
+[100/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-tpcspectra-task-skim-reference.dir/spectraTPCReference.cxx.o
+[101/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-upcspectra-task-skim-provider.dir/spectraUPCProvider.cxx.o
+[102/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-configurable-objects.dir/src/configurableObjects.cxx.o
+[103/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-associated-derived.dir/src/associatedExample.cxx.o
+[104/262] Building CXX object EventFiltering/CMakeFiles/O2Physicsexe-analysis-central-event-filter-task.dir/cefpTask.cxx.o
+[105/262] Building CXX object Tutorials/CMakeFiles/O2Physicsexe-analysistutorial-histogram-registry.dir/src/histogramRegistry.cxx.o
+[106/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-nucleispectra-task-skim-provider.dir/spectraNucleiProvider.cxx.o
+[107/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-nucleispectra-task-skim-reference.dir/spectraNucleiReference.cxx.o
+[108/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-correlation-ddbar.dir/taskCorrelationDDbar.cxx.o
+[109/262] Building CXX object PWGDQ/Tasks/CMakeFiles/O2Physicsexe-analysis-dq-dilepton-mumu.dir/dileptonMuMu.cxx.o
+[110/262] Building CXX object Tutorials/Skimming/CMakeFiles/O2Physicsexe-analysistutorial-tpcspectra-task-skim-provider.dir/spectraTPCProvider.cxx.o
+[111/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-d0-candidate-selector.dir/HFD0CandidateSelector.cxx.o
+[112/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-dplus-topikpi-candidate-selector.dir/HFDplusToPiKPiCandidateSelector.cxx.o
+[113/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-xic-topkpi-candidate-selector.dir/HFXicToPKPiCandidateSelector.cxx.o
+[114/262] Building CXX object PWGJE/TableProducer/CMakeFiles/O2Physicsexe-analysis-je-jet-finder-hf.dir/jetfinderhf.cxx.o
+[115/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-lc-candidate-selector.dir/HFLcCandidateSelector.cxx.o
+[116/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-lc-tok0sp-candidate-selector.dir/HFLcK0sPCandidateSelector.cxx.o
+[117/262] Building CXX object PWGJE/TableProducer/CMakeFiles/O2Physicsexe-analysis-je-jet-finder.dir/jetfinder.cxx.o
+[118/262] Building CXX object PWGDQ/Tasks/CMakeFiles/O2Physicsexe-analysis-dq-dilepton-ee.dir/dileptonEE.cxx.o
+[119/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-d0-ALICE3-Barrel-mc.dir/taskD0ALICE3Barrel.cxx.o
+[120/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-lc-parametrizedPID-mc.dir/taskLcparametrizedPID.cxx.o
+[121/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-sel-optimisation.dir/HFSelOptimisation.cxx.o
+[122/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-d0-parametrizedPID-mc.dir/taskD0parametrizedPID.cxx.o
+[123/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-d0-ALICE3-Forward-mc.dir/taskD0ALICE3Forward.cxx.o
+[124/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-lc-ALICE3-mc.dir/taskLcALICE3.cxx.o
+[125/262] Building CXX object PWGDQ/Tasks/CMakeFiles/O2Physicsexe-analysis-dq-efficiency.dir/dqEfficiency.cxx.o
+[126/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-mc-validation.dir/HFMCValidation.cxx.o
+[127/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-xicc-topkpipi-candidate-selector.dir/HFXiccToPKPiPiCandidateSelector.cxx.o
+[128/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-bplus-tod0pi-candidate-selector.dir/HFBPlusToD0PiCandidateSelector.cxx.o
+[129/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-x-tojpsipipi-candidate-selector.dir/HFXToJpsiPiPiCandidateSelector.cxx.o
+[130/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-tree-creator-xicc-topkpipi.dir/HFTreeCreatorXiccToPKPiPi.cxx.o
+[131/262] Building CXX object EventFiltering/CMakeFiles/O2Physicsexe-analysis-nuclei-filter.dir/nucleiFilter.cxx.o
+[132/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-jpsi.dir/taskJpsi.cxx.o
+[133/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-d0-candidate-selector-parametrizedPID.dir/HFD0CandidateSelectorparametrizedPID.cxx.o
+[134/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-lc-tok0sp.dir/taskLcK0sP.cxx.o
+[135/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-chic.dir/taskChic.cxx.o
+[136/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-xicc.dir/taskXicc.cxx.o
+[137/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-x.dir/taskX.cxx.o
+[138/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-xic.dir/taskXic.cxx.o
+[139/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-dplus.dir/taskDPlus.cxx.o
+[140/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-d0.dir/taskD0.cxx.o
+[141/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-lc-candidate-selector-ALICE3.dir/HFLcCandidateSelectorALICE3.cxx.o
+[142/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-jpsi-candidate-selector.dir/HFJpsiCandidateSelector.cxx.o
+[143/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-d0-candidate-selector-ALICE3-Barrel.dir/HFD0CandidateSelectorALICE3Barrel.cxx.o
+[144/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-tree-creator-x-tojpsipipi.dir/HFTreeCreatorXToJpsiPiPi.cxx.o
+[145/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-d0-candidate-selector-ALICE3-Forward.dir/HFD0CandidateSelectorALICE3Forward.cxx.o
+[146/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-lc-candidate-selector-parametrizedPID.dir/HFLcCandidateSelectorparametrizedPID.cxx.o
+[147/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-lc.dir/taskLc.cxx.o
+[148/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-lc-centrality.dir/taskLcCentrality.cxx.o
+[149/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-candidate-creator-bplus.dir/HFCandidateCreatorBPlus.cxx.o
+[150/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-bplus.dir/taskBPlus.cxx.o
+[151/262] Building CXX object PWGDQ/Tasks/CMakeFiles/O2Physicsexe-analysis-dq-table-reader.dir/tableReader.cxx.o
+[152/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-tree-creator-d0-tokpi.dir/HFTreeCreatorD0ToKPi.cxx.o
+[153/262] Building CXX object PWGDQ/TableProducer/CMakeFiles/O2Physicsexe-analysis-dq-table-maker-inpbpb.dir/tableMaker_PbPb.cxx.o
+[154/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-candidate-creator-chic.dir/HFCandidateCreatorChic.cxx.o
+[155/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-candidate-creator-xicc.dir/HFCandidateCreatorXicc.cxx.o
+[156/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-candidate-creator-x.dir/HFCandidateCreatorX.cxx.o
+[157/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-correlator-d0d0bar.dir/HFCorrelatorD0D0bar.cxx.o
+[158/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-task-lb.dir/taskLb.cxx.o
+[159/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-correlator-d0d0bar-barrel-full-pid.dir/HFCorrelatorD0D0barBarrelFullPID.cxx.o
+[160/262] Building CXX object PWGDQ/TableProducer/CMakeFiles/O2Physicsexe-analysis-dq-table-maker-mc.dir/tableMakerMC.cxx.o
+[161/262] Building CXX object PWGHF/TableProducer/CMakeFiles/O2Physicsexe-analysis-hf-tree-creator-lc-topkpi.dir/HFTreeCreatorLcToPKPi.cxx.o
+[162/262] Building CXX object PWGHF/Tasks/CMakeFiles/O2Physicsexe-analysis-hf-correlator-dplusdminus.dir/HFCorrelatorDplusDminus.cxx.o
+[163/262] Building CXX object EventFiltering/CMakeFiles/O2Physicsexe-analysis-hf-filter.dir/PWGHF/HFFilter.cxx.o
+[164/262] Building CXX object PWGDQ/TableProducer/CMakeFiles/O2Physicsexe-analysis-dq-table-maker.dir/tableMaker.cxx.o
+ninja: build stopped: subcommand failed.
