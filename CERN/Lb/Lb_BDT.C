@@ -153,3 +153,18 @@ int Lb_BDT_(TString myMethodList = ""){
   }
 
 }
+
+int main(int argc, char** argv)
+{
+  // Select methods (don't look at this code - not of interest)
+  TString methodList;
+  for (int i = 1; i < argc; i++) {
+    TString regMethod(argv[i]);
+    if (regMethod == "-b" || regMethod == "--batch")
+      continue;
+    if (!methodList.IsNull())
+      methodList += TString(",");
+    methodList += regMethod;
+  }
+  return Lb_BDT(methodList);
+}
