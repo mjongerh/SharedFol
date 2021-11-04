@@ -1,0 +1,170 @@
+#include <cstdlib>
+#include <iostream>
+#include <map>
+#include <string>
+
+#include "TChain.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TString.h"
+#include "TObjString.h"
+#include "TSystem.h"
+#include "TROOT.h"
+
+#include "TMVA/Factory.h"
+#include "TMVA/DataLoader.h"
+#include "TMVA/Tools.h"
+#include "TMVA/TMVAGui.h"
+
+int Lb_BDT_(TString myMethodList = ""){
+  TMVA::Tools::Instance();
+
+  // Default MVA methods to be trained + tested
+  std::map<std::string, int> Use;
+
+  // Boosted Decision Trees
+  Use["BDT"] = 1;  // uses Adaptive Boost
+  Use["BDTG"] = 0; // uses Gradient Boost
+  Use["BDTB"] = 0; // uses Bagging
+  Use["BDTD"] = 0; // decorrelation + Adaptive Boost
+  Use["BDTF"] = 0; // allow usage of fisher discriminant for node splitting
+  std::cout << std::endl;
+  std::cout << "==> Start TMVAClassification" << std::endl;
+
+  // Select methods (don't look at this code - not of interest)
+  if (myMethodList != "") {
+    for (std::map<std::string, int>::iterator it = Use.begin(); it != Use.end(); it++)
+      it->second = 0;
+
+    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
+    for (UInt_t i = 0; i < mlist.size(); i++) {
+      std::string regMethod(mlist[i]);
+
+      if (Use.find(regMethod) == Use.end()) {
+        std::cout << "Method \"" << regMethod << "\" not known in TMVA under this name. Choose among the following:" << std::endl;
+        for (std::map<std::string, int>::iterator it = Use.begin(); it != Use.end(); it++)
+          std::cout << it->first << " ";
+        std::cout << std::endl;
+        return 1;
+      }
+      Use[regMethod] = 1;
+    }
+  }
+  
+  // Here the preparation phase begins
+  // PtBins - settings
+  const Int_t nPtBins = 7;
+  Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12., 100.};
+  Float_t TrainFraction = 0.7; //fraction of training and testing. 0.7 is 70% training 30% testing
+
+  for (Int_t i = 0; i < nPtBins; i++) { //master loop
+    TFile* inputSignal(0);
+    TString fnamesig = Form("/home/mjongerh/Lc_data/Trees/Lc_binned_signal_Pt%.0f.root", ptBins[i]);
+    if (!gSystem->AccessPathName(fnamesig)) {
+      inputSignal = TFile::Open(fnamesig); // check if file in local directory exists
+    }
+    if (!inputSignal) {
+      std::cout << "ERROR: could not open data file" << std::endl;
+      exit(1);
+    }
+    std::cout << "--- TMVAClassification       : Using input file: " << inputSignal->GetName() << std::endl;
+
+    TFile* inputBackground(0);
+    TString fnamebkg = Form("/home/mjongerh/Lc_data/Trees/Lc_binned_background_Pt%.0f.root", ptBins[i]);
+    if (!gSystem->AccessPathName(fnamebkg)) {
+      inputBackground = TFile::Open(fnamebkg); // check if file in local directory exists
+    }
+    if (!inputBackground) {
+      std::cout << "ERROR: could not open data file" << std::endl;
+      exit(1);
+    }
+    std::cout << "--- TMVAClassification       : Using input file: " << inputBackground->GetName() << std::endl;
+
+    // Register the training and test trees
+    TTree* signalTree = (TTree*)inputSignal->Get("O2hfcandp3full"); //Get("DF_0/O2hfcandp3full")
+    TTree* backgroundTree = (TTree*)inputBackground->Get("O2hfcandp3full");
+
+    signalTree->Print();
+    backgroundTree->Print();
+    signalTree->AutoSave();
+    backgroundTree->AutoSave();
+
+    // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
+    TString outfileName = Form("/home/mjongerh/Lc_data/output/Pt%.0f/TMVA.root", ptBins[i]);
+    TFile* outputFile = TFile::Open(outfileName, "RECREATE");
+
+    TMVA::Factory* factory = new TMVA::Factory("TMVAClassification", outputFile,
+                                               "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification");
+    TString DataDir = Form("/home/mjongerh/Lc_data/output/Pt%.0f/", ptBins[i]);
+    TMVA::DataLoader* dataloader = new TMVA::DataLoader("dataset");
+
+    // Define the input variables that shall be used for the MVA training
+    dataloader->AddVariable("fCPA", "fCPA", "units", 'F');
+    dataloader->AddVariable("fchi2PCA", "fchi2PCA", "units", 'F');
+    dataloader->AddVariable("fDecayLength", "fDecayLength", "units", 'F');
+    dataloader->AddVariable("fdecayLengthXY", "fdecayLengthXY", "units", 'F');
+    dataloader->AddVariable("fImpactParameter0", "fImpactParameter0", "units", 'F');
+    dataloader->AddVariable("fImpactParameter1", "fImpactParameter1", "units", 'F');
+    dataloader->AddVariable("fCPAXY", "fCPAXY", "units", 'F');
+
+    //Spectator variables
+    dataloader->AddSpectator("fM", "fM", "units", 'F');
+    dataloader->AddSpectator("fPt", "fPt", "Gev", 'F');
+
+    // global event weights per tree (see below for setting event-wise weights)
+    Double_t signalWeight = 1.0;
+    Double_t backgroundWeight = 1.0;
+
+    // You can add an arbitrary number of signal or background trees
+    dataloader->AddSignalTree(signalTree, signalWeight);
+    dataloader->AddBackgroundTree(backgroundTree, backgroundWeight);
+
+    // Apply additional cuts on the signal and background samples (can be different)
+    TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
+    TCut mycutb = ""; // for example: TCut mycutb = "abs(var1)<0.5";
+
+    int NsigTrain = signalTree->GetEntries() * TrainFraction;
+    long long Nmaxbkg = 500000;
+    int NbkgTrain = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * TrainFraction));
+    int NsigTest = signalTree->GetEntries() * (1.0 - TrainFraction);
+    int NbkgTest = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * (1.0 - TrainFraction)));
+    dataloader->PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V");
+
+    // Boosted Decision Trees
+    if (Use["BDT"]) // Adaptive Boost
+      factory->BookMethod(dataloader, TMVA::Types::kBDT, "BDT",
+                          "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20");
+
+    // Now you can tell the factory to train, test, and evaluate the MVAs
+    factory->TrainAllMethods();
+    factory->TestAllMethods();
+    factory->EvaluateAllMethods();
+    outputFile->Close();    // Save the output
+
+    std::cout << "==> Wrote root file: " << outputFile->GetName() << std::endl;
+    std::cout << "==> TMVAClassification is done!" << std::endl;
+    TString command = Form("mv dataset " + DataDir + "dataset");
+    gSystem->Exec(command);
+    delete factory;
+    delete dataloader;
+    // Launch the GUI for the root macros
+    //if (!gROOT->IsBatch())
+    //  TMVA::TMVAGui(outfileName);
+  }
+
+}
+
+int main(int argc, char** argv)
+{
+  // Select methods (don't look at this code - not of interest)
+  TString methodList;
+  for (int i = 1; i < argc; i++) {
+    TString regMethod(argv[i]);
+    if (regMethod == "-b" || regMethod == "--batch")
+      continue;
+    if (!methodList.IsNull())
+      methodList += TString(",");
+    methodList += regMethod;
+  }
+  return Lb_BDT(methodList);
+}
