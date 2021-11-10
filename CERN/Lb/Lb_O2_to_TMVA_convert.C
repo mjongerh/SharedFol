@@ -56,7 +56,7 @@ void Lb_O2_to_TMVA_convert()
   
   Long64_t nentries = tmptree->GetEntries();
   float PtEntry;
-  oldtree->SetBranchAddress("fPt", &PtEntry);
+  tmptree->SetBranchAddress("fPt", &PtEntry);
 
   for (int i = 0; i < nPtBins; i++) {
     Float_t PtLow = ptBins[i];
