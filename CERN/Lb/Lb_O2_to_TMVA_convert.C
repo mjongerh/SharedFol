@@ -57,7 +57,7 @@ void Lb_O2_to_TMVA_convert()
   Long64_t nentries = tmptree->GetEntries();
   float PtEntry;
   tmptree->SetBranchAddress("fPt", &PtEntry);
-  float MCflagEntry;
+  Char_t MCflagEntry;
   tmptree->SetBranchAddress("fMCflag", &MCflagEntry);
 
   for (int i = 0; i < nPtBins; i++) { //Split all events into different Pt bins TODO: add background/signal seperation
@@ -74,7 +74,7 @@ void Lb_O2_to_TMVA_convert()
 
       for (Long64_t i = 0; i < nentries; i++) {
         tmptree->GetEntry(i);
-        if (MCflagEntry != j) continue; //skip if not correct sig/bkg
+        if ((Float_t)MCflagEntry != j) continue; //skip if not correct sig/bkg
         if (PtEntry >= PtLow && PtEntry < PtHigh)
           newtree->Fill();
       }
