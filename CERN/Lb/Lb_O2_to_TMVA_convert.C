@@ -18,7 +18,7 @@ void Lb_O2_to_TMVA_convert()
   TString tempfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_TMP.root";
   //TString newfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_converted.root";
   TString newfileDir = "/home/mjongerh/Lb_data/Trees/";
-  TString newfileNamePrefix = "Lb_binned_signal";
+  TString newfileNamePrefix = "Lb_binned";
   
   TString createdir = "mkdir -p " + newfileDir; //create directory if it doesn't exist yet
   gSystem->Exec(createdir);
@@ -48,7 +48,7 @@ void Lb_O2_to_TMVA_convert()
 
   TTree* tmptree;
 
-  TString objectstring = "O2hfcandlbfull"; //will probably complain, since object does not exist. only the leaves are placed in the tmpfile
+  TString objectstring = "O2hfcandlbfull";
   TMPFile.GetObject(objectstring, tmptree);
   if (tmptree == nullptr) {
     printf("tree not found");
@@ -57,22 +57,29 @@ void Lb_O2_to_TMVA_convert()
   Long64_t nentries = tmptree->GetEntries();
   float PtEntry;
   tmptree->SetBranchAddress("fPt", &PtEntry);
+  float MCflagEntry;
+  tmptree->SetBranchAddress("fMCflag", &MCflagEntry);
 
-  for (int i = 0; i < nPtBins; i++) {
+  for (int i = 0; i < nPtBins; i++) { //Split all events into different Pt bins TODO: add background/signal seperation
     Float_t PtLow = ptBins[i];
     Float_t PtHigh = ptBins[i + 1];
+    TString SB = "_bkg" 
+    for (Int_t j = 0; j < 2; j++){ //j==1 signal, j==0 bkg
+      if (j == 1) SB = "_signal";
 
-    TString newfileName = newfileDir + newfileNamePrefix + Form("_Pt%.0f.root", PtLow);
-    TFile newFile(newfileName, "RECREATE");
-    TTree* newtree = tmptree->CloneTree(0);
-    newtree->SetName("O2hfcandlbfull");
+      TString newfileName = newfileDir + newfileNamePrefix + SB + Form("_Pt%.0f.root", PtLow);
+      TFile newFile(newfileName, "RECREATE");
+      TTree* newtree = tmptree->CloneTree(0);
+      newtree->SetName("O2hfcandlbfull");
 
-    for (Long64_t i = 0; i < nentries; i++) {
-      tmptree->GetEntry(i);
-      if (PtEntry >= PtLow && PtEntry < PtHigh)
-        newtree->Fill();
+      for (Long64_t i = 0; i < nentries; i++) {
+        tmptree->GetEntry(i);
+        if (MCflagEntry != j) continue;
+        if (PtEntry >= PtLow && PtEntry < PtHigh)
+          newtree->Fill();
+      }
+      newFile.Write();
     }
-    newFile.Write();
   }
 
   TString DelTMPFile = "rm " + tempfileName;
