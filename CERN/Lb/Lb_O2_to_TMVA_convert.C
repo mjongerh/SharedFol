@@ -63,7 +63,7 @@ void Lb_O2_to_TMVA_convert()
   for (int i = 0; i < nPtBins; i++) { //Split all events into different Pt bins TODO: add background/signal seperation
     Float_t PtLow = ptBins[i];
     Float_t PtHigh = ptBins[i + 1];
-    TString SB = "_bkg" 
+    TString SB = "_bkg";
     for (Int_t j = 0; j < 2; j++){ //j==1 signal, j==0 bkg
       if (j == 1) SB = "_signal";
 
@@ -74,7 +74,7 @@ void Lb_O2_to_TMVA_convert()
 
       for (Long64_t i = 0; i < nentries; i++) {
         tmptree->GetEntry(i);
-        if (MCflagEntry != j) continue;
+        if (MCflagEntry != j) continue; //skip if not correct sig/bkg
         if (PtEntry >= PtLow && PtEntry < PtHigh)
           newtree->Fill();
       }
