@@ -21,7 +21,7 @@ void Lb_O2_to_TMVA_convert()
   TString newfileNamePrefix = "Lb_binned_signal";
   
   TString createdir = "mkdir -p " + newfileDir; //create directory if it doesn't exist yet
-  gSystem->Exec(function);
+  gSystem->Exec(createdir);
   
   // PtBins - settings
   const Int_t nPtBins = 12;
@@ -45,14 +45,15 @@ void Lb_O2_to_TMVA_convert()
   newtree->SetName("O2hfcandlbfull");
 
   TMPFile.Write();
-  TFile oldFile(oldfileName);
+
   TTree* tmptree;
 
   TString objectstring = "O2hfcandlbfull"; //will probably complain, since object does not exist. only the leaves are placed in the tmpfile
-  tempfileName.GetObject(objectstring, tmptree);
+  TMPFile.GetObject(objectstring, tmptree);
   if (tmptree == nullptr) {
     printf("tree not found");
   }
+  
   Long64_t nentries = tmptree->GetEntries();
   float PtEntry;
   oldtree->SetBranchAddress("fPt", &PtEntry);
@@ -74,6 +75,6 @@ void Lb_O2_to_TMVA_convert()
     newFile.Write();
   }
 
-  TString function = "rm " + tempfileName;
-  gSystem->Exec(function);
+  TString DelTMPFile = "rm " + tempfileName;
+  gSystem->Exec(DelTMPFile);
 }
