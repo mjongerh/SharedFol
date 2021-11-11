@@ -32,7 +32,7 @@ void TEMP() {
   oldtree->SetBranchAddress("fChi2PCA", &chi2PCAEntry);
 
   TCanvas* c1 = new TCanvas("c1", "Histogram Drawing Options", 200, 10, 700, 900);
-  auto Histo = new TH1D("Histo", "Chi2PCA",100, 0.0, 0.0000012);
+  auto Histo = new TH1F("Histo", "Chi2PCA",100, 0.0, 0.0000012);
   for (int i = 0; i < entries; i++) {
     oldtree->GetEntry(i);
     Histo->Fill(chi2PCAEntry);
@@ -41,4 +41,7 @@ void TEMP() {
   
   c1->Modified();
   c1->Update();
+  TFile myfile("temp.root", "RECREATE");
+  Histo->Write();
+  gBenchmark->Show("temp");
 }
