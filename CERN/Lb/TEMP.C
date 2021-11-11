@@ -28,7 +28,7 @@ void TEMP() {
   TTree* oldtree;
   TString objectstring = Form("O2hfcandlbfull", i);
   oldFile.GetObject(objectstring, oldtree);
-  int entries = oldtree.GetEntries();
+  int entries = oldtree->GetEntries();
   float chi2PCAEntry;
   oldtree->SetBranchAddress("fChi2PCA", &chi2PCAEntry);
 
@@ -36,9 +36,9 @@ void TEMP() {
   auto Histo = new TH1D("Histo", "Chi2PCA",100, 0.0, 0.0000012);
   for (int i = 0; i < entries; i++) {
     oldtree->GetEntry(i);
-    Histo.Fill(chi2PCAEntry);
+    Histo->Fill(chi2PCAEntry);
   }
-  Histo.Draw();
+  Histo->Draw();
   
   c1->Modified();
   c1->Update();
