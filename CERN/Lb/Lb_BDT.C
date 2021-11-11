@@ -147,7 +147,7 @@ int Lb_BDT_(TString myMethodList = ""){
 
     std::cout << "==> Wrote root file: " << outputFile->GetName() << std::endl;
     std::cout << "==> TMVAClassification is done!" << std::endl;
-    TString mvdataset = Form("mv dataset " + outfileDir + "dataset");
+    TString mvdataset = "mv dataset " + outfileDir + "/dataset";
     gSystem->Exec(mvdataset);
     delete factory;
     delete dataloader;
