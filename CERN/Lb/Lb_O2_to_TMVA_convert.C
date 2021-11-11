@@ -69,7 +69,7 @@ void Lb_O2_to_TMVA_convert()
     for (Int_t j = 0; j < 2; j++){ //j==1 signal, j==0 bkg
       if (j == 1) SB = "_signal";
 
-      TString newfileName = newfileDir + newfileNamePrefix + SB + Form("_Pt%.2f.root", PtLow);
+      TString newfileName = newfileDir + newfileNamePrefix + SB + Form("_Pt%.1f.root", PtLow);
       TFile newFile(newfileName, "RECREATE");
       TTree* newtree = tmptree->CloneTree(0);
       newtree->SetName("O2hfcandlbfull");
