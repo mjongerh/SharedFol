@@ -16,7 +16,7 @@
 #include "TMVA/Tools.h"
 #include "TMVA/TMVAGui.h"
 
-void Lb_BDT(TString myMethodList = ""){
+int Lb_BDT(TString myMethodList = ""){
   TMVA::Tools::Instance();
 
   // Default MVA methods to be trained + tested
@@ -155,7 +155,7 @@ void Lb_BDT(TString myMethodList = ""){
     //if (!gROOT->IsBatch())
     //  TMVA::TMVAGui(outfileName);
   }
-
+  return 0;
 }
 
 int main(int argc, char** argv)
