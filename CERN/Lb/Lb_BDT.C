@@ -16,7 +16,7 @@
 #include "TMVA/Tools.h"
 #include "TMVA/TMVAGui.h"
 
-int Lb_BDT_(TString myMethodList = ""){
+int Lb_BDT(TString myMethodList = ""){
   TMVA::Tools::Instance();
 
   // Default MVA methods to be trained + tested
