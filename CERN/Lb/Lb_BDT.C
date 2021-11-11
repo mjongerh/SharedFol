@@ -57,9 +57,9 @@ int Lb_BDT(TString myMethodList = ""){
   Float_t ptBins[nPtBins + 1] = {0., 0.5, 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
   Float_t TrainFraction = 0.7; //fraction of training and testing. 0.7 is 70% training 30% testing
 
-  for (Int_t i = 2; i < nPtBins; i++) { //master loop over all ptbins
+  for (Int_t i = 0; i < nPtBins; i++) { //master loop over all ptbins
     TFile* inputSignal(0);
-    TString fnamesig = Form("./Trees/Lb_binned_signal_Pt%.0f.root", ptBins[i]); //Signal Input folder
+    TString fnamesig = Form("./Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder
     if (!gSystem->AccessPathName(fnamesig)) {
       inputSignal = TFile::Open(fnamesig); // check if file in local directory exists
     }
@@ -70,7 +70,7 @@ int Lb_BDT(TString myMethodList = ""){
     std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal->GetName() << std::endl;
 
     TFile* inputBackground(0);
-    TString fnamebkg = Form("./Trees/Lb_binned_bkg_Pt%.0f.root", ptBins[i]); //Background Input folder
+    TString fnamebkg = Form("./Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg);
     }
