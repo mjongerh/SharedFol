@@ -105,11 +105,11 @@ int Lb_BDT(TString myMethodList = ""){
     dataloader->AddVariable("fCPAXY", "fCPAXY", "units", 'F');
     //dataloader->AddVariable("fchi2PCA", "fchi2PCA", "units", 'F');
     dataloader->AddVariable("fDecayLength", "fDecayLength", "units", 'F');
-    dataloader->AddVariable("fdecayLengthXY", "fdecayLengthXY", "units", 'F');
+    dataloader->AddVariable("fDecayLengthXY", "fDecayLengthXY", "units", 'F');
     dataloader->AddVariable("fImpactParameter0", "fImpactParameter0", "units", 'F');
     dataloader->AddVariable("fImpactParameter1", "fImpactParameter1", "units", 'F');
-    dataloader->AddVariable("fpTProng0", "fpTProng0", "units", 'F');
-    dataloader->AddVariable("fpTProng1", "fpTProng1", "units", 'F');
+    dataloader->AddVariable("fPtProng0", "fPtProng0", "units", 'F');
+    dataloader->AddVariable("fPtProng1", "fPtProng1", "units", 'F');
 
     //Spectator variables
     dataloader->AddSpectator("fM", "fM", "units", 'F');
