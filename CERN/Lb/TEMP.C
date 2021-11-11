@@ -26,8 +26,7 @@
 void TEMP() {
   TFile oldFile("./Trees/Trees/Lb_binned_bkg_Pt5.00.root");
   TTree* oldtree;
-  TString objectstring = Form("O2hfcandlbfull", i);
-  oldFile.GetObject(objectstring, oldtree);
+  oldFile.GetObject("O2hfcandlbfull", oldtree);
   int entries = oldtree->GetEntries();
   float chi2PCAEntry;
   oldtree->SetBranchAddress("fChi2PCA", &chi2PCAEntry);
