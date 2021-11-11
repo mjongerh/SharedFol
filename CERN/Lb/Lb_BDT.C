@@ -16,7 +16,7 @@
 #include "TMVA/Tools.h"
 #include "TMVA/TMVAGui.h"
 
-int Lb_BDT(TString myMethodList = ""){
+void Lb_BDT(TString myMethodList = ""){
   TMVA::Tools::Instance();
 
   // Default MVA methods to be trained + tested
@@ -59,23 +59,23 @@ int Lb_BDT(TString myMethodList = ""){
 
   for (Int_t i = 2; i < nPtBins; i++) { //master loop over all ptbins
     TFile* inputSignal(0);
-    TString fnamesig = Form("/home/mjongerh/Lb_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder
+    TString fnamesig = Form("./Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder
     if (!gSystem->AccessPathName(fnamesig)) {
       inputSignal = TFile::Open(fnamesig); // check if file in local directory exists
     }
     if (!inputSignal) {
-      std::cout << "ERROR: could not open data file" << std::endl;
+      std::cout << "ERROR: could not open signal file" << std::endl;
       exit(1);
     }
     std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal->GetName() << std::endl;
 
     TFile* inputBackground(0);
-    TString fnamebkg = Form("/home/mjongerh/Lb_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
+    TString fnamebkg = Form("./Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg);
     }
     if (!inputBackground) {
-      std::cout << "ERROR: could not open data file" << std::endl;
+      std::cout << "ERROR: could not open bkg file" << std::endl;
       exit(1);
     }
     std::cout << "--- TMVAClassification       : Using input background file: " << inputBackground->GetName() << std::endl;
