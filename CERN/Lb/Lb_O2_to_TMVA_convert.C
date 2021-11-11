@@ -12,6 +12,9 @@
 #include "TROOT.h"
 #include "TClass.h"
 
+/// <summary>
+/// Macro to convert the output of an O2 task, to split root files for Pt bins and sig/bkg, to be used for TMVA
+/// </summary>
 void Lb_O2_to_TMVA_convert()
 {
   TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2.root";
@@ -48,8 +51,7 @@ void Lb_O2_to_TMVA_convert()
 
   TTree* tmptree;
 
-  TString objectstring = "O2hfcandlbfull";
-  TMPFile.GetObject(objectstring, tmptree);
+  TMPFile.GetObject("O2hfcandlbfull", tmptree);
   if (tmptree == nullptr) {
     printf("tree not found");
   }
@@ -67,7 +69,7 @@ void Lb_O2_to_TMVA_convert()
     for (Int_t j = 0; j < 2; j++){ //j==1 signal, j==0 bkg
       if (j == 1) SB = "_signal";
 
-      TString newfileName = newfileDir + newfileNamePrefix + SB + Form("_Pt%.0f.root", PtLow);
+      TString newfileName = newfileDir + newfileNamePrefix + SB + Form("_Pt%.1f.root", PtLow);
       TFile newFile(newfileName, "RECREATE");
       TTree* newtree = tmptree->CloneTree(0);
       newtree->SetName("O2hfcandlbfull");

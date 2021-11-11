@@ -53,13 +53,13 @@ int Lb_BDT_(TString myMethodList = ""){
   
   // Here the preparation phase begins
   // PtBins - settings
-  const Int_t nPtBins = 7;
-  Float_t ptBins[nPtBins + 1] = {0., 1., 2., 4., 6., 8., 12., 100.};
+  const Int_t nPtBins = 12;
+  Float_t ptBins[nPtBins + 1] = {0., 0.5, 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
   Float_t TrainFraction = 0.7; //fraction of training and testing. 0.7 is 70% training 30% testing
 
-  for (Int_t i = 0; i < nPtBins; i++) { //master loop
+  for (Int_t i = 2; i < nPtBins; i++) { //master loop over all ptbins
     TFile* inputSignal(0);
-    TString fnamesig = Form("/home/mjongerh/Lc_data/Trees/Lc_binned_signal_Pt%.0f.root", ptBins[i]);
+    TString fnamesig = Form("/home/mjongerh/Lb_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder
     if (!gSystem->AccessPathName(fnamesig)) {
       inputSignal = TFile::Open(fnamesig); // check if file in local directory exists
     }
@@ -67,22 +67,22 @@ int Lb_BDT_(TString myMethodList = ""){
       std::cout << "ERROR: could not open data file" << std::endl;
       exit(1);
     }
-    std::cout << "--- TMVAClassification       : Using input file: " << inputSignal->GetName() << std::endl;
+    std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal->GetName() << std::endl;
 
     TFile* inputBackground(0);
-    TString fnamebkg = Form("/home/mjongerh/Lc_data/Trees/Lc_binned_background_Pt%.0f.root", ptBins[i]);
+    TString fnamebkg = Form("/home/mjongerh/Lb_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
     if (!gSystem->AccessPathName(fnamebkg)) {
-      inputBackground = TFile::Open(fnamebkg); // check if file in local directory exists
+      inputBackground = TFile::Open(fnamebkg);
     }
     if (!inputBackground) {
       std::cout << "ERROR: could not open data file" << std::endl;
       exit(1);
     }
-    std::cout << "--- TMVAClassification       : Using input file: " << inputBackground->GetName() << std::endl;
+    std::cout << "--- TMVAClassification       : Using input background file: " << inputBackground->GetName() << std::endl;
 
     // Register the training and test trees
-    TTree* signalTree = (TTree*)inputSignal->Get("O2hfcandp3full"); //Get("DF_0/O2hfcandp3full")
-    TTree* backgroundTree = (TTree*)inputBackground->Get("O2hfcandp3full");
+    TTree* signalTree = (TTree*)inputSignal->Get("O2hfcandlbfull");
+    TTree* backgroundTree = (TTree*)inputBackground->Get("O2hfcandlbfull");
 
     signalTree->Print();
     backgroundTree->Print();
@@ -90,22 +90,26 @@ int Lb_BDT_(TString myMethodList = ""){
     backgroundTree->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-    TString outfileName = Form("/home/mjongerh/Lc_data/output/Pt%.0f/TMVA.root", ptBins[i]);
+    TString outfileDir = Form("./output/Pt%.1f", ptBins[i]);
+    TString createdir = "mkdir -p " + outfileDir; //create directory if it doesn't exist yet
+    gSystem->Exec(createdir);
+    TString outfileName = outfileDir + "/TMVA.root";
     TFile* outputFile = TFile::Open(outfileName, "RECREATE");
 
     TMVA::Factory* factory = new TMVA::Factory("TMVAClassification", outputFile,
                                                "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification");
-    TString DataDir = Form("/home/mjongerh/Lc_data/output/Pt%.0f/", ptBins[i]);
     TMVA::DataLoader* dataloader = new TMVA::DataLoader("dataset");
 
     // Define the input variables that shall be used for the MVA training
     dataloader->AddVariable("fCPA", "fCPA", "units", 'F');
-    dataloader->AddVariable("fchi2PCA", "fchi2PCA", "units", 'F');
+    dataloader->AddVariable("fCPAXY", "fCPAXY", "units", 'F');
+    //dataloader->AddVariable("fchi2PCA", "fchi2PCA", "units", 'F');
     dataloader->AddVariable("fDecayLength", "fDecayLength", "units", 'F');
     dataloader->AddVariable("fdecayLengthXY", "fdecayLengthXY", "units", 'F');
     dataloader->AddVariable("fImpactParameter0", "fImpactParameter0", "units", 'F');
     dataloader->AddVariable("fImpactParameter1", "fImpactParameter1", "units", 'F');
-    dataloader->AddVariable("fCPAXY", "fCPAXY", "units", 'F');
+    dataloader->AddVariable("fpTProng0", "fpTProng0", "units", 'F');
+    dataloader->AddVariable("fpTProng1", "fpTProng1", "units", 'F');
 
     //Spectator variables
     dataloader->AddSpectator("fM", "fM", "units", 'F');
@@ -143,8 +147,8 @@ int Lb_BDT_(TString myMethodList = ""){
 
     std::cout << "==> Wrote root file: " << outputFile->GetName() << std::endl;
     std::cout << "==> TMVAClassification is done!" << std::endl;
-    TString command = Form("mv dataset " + DataDir + "dataset");
-    gSystem->Exec(command);
+    TString mvdataset = Form("mv dataset " + outfileDir + "dataset");
+    gSystem->Exec(mvdataset);
     delete factory;
     delete dataloader;
     // Launch the GUI for the root macros
