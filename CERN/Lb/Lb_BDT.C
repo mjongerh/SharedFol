@@ -59,7 +59,7 @@ int Lb_BDT(TString myMethodList = ""){
 
   for (Int_t i = 0; i < nPtBins; i++) { //master loop over all ptbins
     TFile* inputSignal(0);
-    TString fnamesig = Form("./Trees/Lb_binned_signal_Pt%.2f.root", ptBins[i]); //Signal Input folder
+    TString fnamesig = Form("/home/mjongerh/Lb_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder
     if (!gSystem->AccessPathName(fnamesig)) {
       inputSignal = TFile::Open(fnamesig); // check if file in local directory exists
     }
@@ -70,7 +70,7 @@ int Lb_BDT(TString myMethodList = ""){
     std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal->GetName() << std::endl;
 
     TFile* inputBackground(0);
-    TString fnamebkg = Form("./Trees/Lb_binned_bkg_Pt%.2f.root", ptBins[i]); //Background Input folder
+    TString fnamebkg = Form("/home/mjongerh/Lb_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg);
     }
@@ -90,7 +90,7 @@ int Lb_BDT(TString myMethodList = ""){
     backgroundTree->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-    TString outfileDir = Form("./output/Pt%.1f", ptBins[i]);
+    TString outfileDir = Form("/home/mjongerh/Lb_data/output/Pt%.1f", ptBins[i]);
     TString createdir = "mkdir -p " + outfileDir; //create directory if it doesn't exist yet
     gSystem->Exec(createdir);
     TString outfileName = outfileDir + "/TMVA.root";
