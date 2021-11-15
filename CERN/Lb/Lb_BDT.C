@@ -103,7 +103,7 @@ int Lb_BDT(TString myMethodList = ""){
     // Define the input variables that shall be used for the MVA training
     dataloader->AddVariable("fCPA", "fCPA", "units", 'F');
     dataloader->AddVariable("fCPAXY", "fCPAXY", "units", 'F');
-    //dataloader->AddVariable("fchi2PCA", "fchi2PCA", "units", 'F');
+    dataloader->AddVariable("fchi2PCA", "fchi2PCA", "units", 'F');
     dataloader->AddVariable("fDecayLength", "fDecayLength", "units", 'F');
     dataloader->AddVariable("fDecayLengthXY", "fDecayLengthXY", "units", 'F');
     dataloader->AddVariable("fImpactParameter0", "fImpactParameter0", "units", 'F');
