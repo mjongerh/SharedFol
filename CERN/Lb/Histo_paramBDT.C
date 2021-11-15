@@ -70,7 +70,7 @@ void Histo_paramBDT()
   const int logbins = 100;
   Double_t xlogbins[logbins + 1];
   Double_t xmin = 1e-9;
-  double dx = 3. / nbins;
+  double dx = 3. / logbins;
   double l10 = TMath::Log(10);
   for (int i = 0; i <= logbins; i++) {
     xlogbins[i] = xmin + TMath::Exp(l10 * i * dx);
