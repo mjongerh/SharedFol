@@ -40,7 +40,7 @@ void Histo_paramBDT()
   oldtree->SetBranchAddress("fImpactParameter1", &fImpactParameter1);
   oldtree->SetBranchAddress("fCPA", &fCPA);
   oldtree->SetBranchAddress("fCPAXY", &fCPAXY);
-  //oldtree->SetBranchAddress("fChi2PCA", &fChi2PCA);
+  oldtree->SetBranchAddress("fChi2PCA", &fChi2PCA);
   oldtree->SetBranchAddress("classID", &classID);
 
   Float_t weight;
@@ -75,8 +75,8 @@ void Histo_paramBDT()
   for (int i = 0; i <= logbins; i++) {
     xlogbins[i] = xmin + TMath::Exp(l10 * i * dx);
   }
-  //TH2D* hChi2PCAS = new TH2D("hChi2PCAS", "SIGNAL Chi2PCA vs BDT response", 50, -0.8, 0.5, logbins, xlogbins);
-  //TH2D* hChi2PCAB = new TH2D("hChi2PCAB", "BACKGROUND Chi2PCA vs BDT response", 50, -0.8, 0.5, logbins, xlogbins);
+  TH2D* hChi2PCAS = new TH2D("hChi2PCAS", "SIGNAL Chi2PCA vs BDT response", 50, -0.8, 0.5, logbins, xlogbins);
+  TH2D* hChi2PCAB = new TH2D("hChi2PCAB", "BACKGROUND Chi2PCA vs BDT response", 50, -0.8, 0.5, logbins, xlogbins);
 
   for (Int_t i = 0; i < nentries; i++) {
     oldtree->GetEntry(i);
@@ -87,7 +87,7 @@ void Histo_paramBDT()
       hImpactParameter1S->Fill(BDT, fImpactParameter1, weight);
       hCPAS->Fill(BDT, fCPA, weight);
       hCPAXYS->Fill(BDT, fCPAXY, weight);
-     // hChi2PCAS->Fill(BDT, fChi2PCA, weight);
+      hChi2PCAS->Fill(BDT, fChi2PCA, weight);
     } else {
       hDecayLengthB->Fill(BDT, fDecayLength);
       hDecayLengthXYB->Fill(BDT, fDecayLengthXY);
@@ -95,7 +95,7 @@ void Histo_paramBDT()
       hImpactParameter1B->Fill(BDT, fImpactParameter1);
       hCPAB->Fill(BDT, fCPA);
       hCPAXYB->Fill(BDT, fCPAXY);
-      //hChi2PCAB->Fill(BDT, fChi2PCA);
+      hChi2PCAB->Fill(BDT, fChi2PCA);
     }
   }
   c1->cd(2);
@@ -125,17 +125,17 @@ void Histo_paramBDT()
   hImpactParameter1B->GetXaxis()->SetTitle("BDT response");
   hImpactParameter1B->GetYaxis()->SetTitle("Impact param1 bkg");
 
-  //c1->cd(8);
-  //hChi2PCAS->Draw("colz");
-  //hChi2PCAS->GetXaxis()->SetTitle("BDT response");
-  //hChi2PCAS->GetYaxis()->SetTitle("Chi2BDT sig");
-  //hChi2PCAS->SetLogxy();
+  c1->cd(8);
+  hChi2PCAS->Draw("colz");
+  hChi2PCAS->GetXaxis()->SetTitle("BDT response");
+  hChi2PCAS->GetYaxis()->SetTitle("Chi2BDT sig");
+  hChi2PCAS->SetLogxy();
 
-  //c1->cd(9);
-  //hChi2PCAB->Draw("colz");
-  //hChi2PCAB->GetXaxis()->SetTitle("BDT response");
-  //hChi2PCAB->GetYaxis()->SetTitle("Chi2BDT bkg");
-  //hChi2PCAB->SetLogxy();
+  c1->cd(9);
+  hChi2PCAB->Draw("colz");
+  hChi2PCAB->GetXaxis()->SetTitle("BDT response");
+  hChi2PCAB->GetYaxis()->SetTitle("Chi2BDT bkg");
+  hChi2PCAB->SetLogxy();
 
   c1->cd(11);
   hCPAS->Draw("colz");
@@ -155,11 +155,11 @@ void Histo_paramBDT()
   hCPAXYB->GetXaxis()->SetTitle("BDT response");
   hCPAXYB->GetYaxis()->SetTitle("CPAXY bkg");
 
-  c1->cd(15);
+  c1->cd(16);
   hDecayLengthXYS->Draw("colz");
   hDecayLengthXYS->GetXaxis()->SetTitle("BDT response");
   hDecayLengthXYS->GetYaxis()->SetTitle("decay lengthXY sig");
-  c1->cd(16);
+  c1->cd(17);
   hDecayLengthXYB->Draw("colz");
   hDecayLengthXYB->GetXaxis()->SetTitle("BDT response");
   hDecayLengthXYB->GetYaxis()->SetTitle("decay lengthXY bkg");
