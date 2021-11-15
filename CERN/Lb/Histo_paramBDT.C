@@ -30,15 +30,17 @@ void Histo_paramBDT()
     printf("tree not found");
   }
   Long64_t nentries = oldtree->GetEntries();
-  float PtEntry, BDT, fDecayLength, fImpactParameter0, fImpactParameter1, fCPA, fCPAXY;
+  float PtEntry, BDT, fDecayLength, fDecayLengthXY, fImpactParameter0, fImpactParameter1, fCPA, fCPAXY, fChi2PCA;
   Int_t classID;
   oldtree->SetBranchAddress("fPt", &PtEntry);
   oldtree->SetBranchAddress("BDT", &BDT);
   oldtree->SetBranchAddress("fDecayLength", &fDecayLength);
+  oldtree->SetBranchAddress("fDecayLengthXY", &fDecayLengthXY);
   oldtree->SetBranchAddress("fImpactParameter0", &fImpactParameter0);
   oldtree->SetBranchAddress("fImpactParameter1", &fImpactParameter1);
   oldtree->SetBranchAddress("fCPA", &fCPA);
   oldtree->SetBranchAddress("fCPAXY", &fCPAXY);
+  //oldtree->SetBranchAddress("fChi2PCA", &fChi2PCA);
   oldtree->SetBranchAddress("classID", &classID);
 
   Float_t weight;
@@ -54,6 +56,8 @@ void Histo_paramBDT()
 
   TH2D* hDecayLengthS = new TH2D("hDecayLengthS", "SIGNAL Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 0.03);
   TH2D* hDecayLengthB = new TH2D("hDecayLengthB", "BACKGROUND Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 0.03);
+  TH2D* hDecayLengthXYS = new TH2D("hDecayLengthXYS", "SIGNAL Decay lengthXY vs BDT response", 50, -0.8, 0.5, 50, 0, 0.03);
+  TH2D* hDecayLengthXYB = new TH2D("hDecayLengthXYB", "BACKGROUND Decay lengthXY vs BDT response", 50, -0.8, 0.5, 50, 0, 0.03);
   TH2D* hImpactParameter0S = new TH2D("hImpactParameter0S", "SIGNAL Impact param0 vs BDT response", 50, -0.8, 0.5, 50, -0.1, 0.1);
   TH2D* hImpactParameter0B = new TH2D("hImpactParameter0B", "BACKGROUND Impact param0 vs BDT response", 50, -0.8, 0.5, 50, -0.1, 0.1);
   TH2D* hImpactParameter1S = new TH2D("hImpactParameter1S", "SIGNAL Impact param1 vs BDT response", 50, -0.8, 0.5, 50, -0.1, 0.1);
@@ -62,75 +66,101 @@ void Histo_paramBDT()
   TH2D* hCPAB = new TH2D("hCPAB", "BACKGROUND CPA vs BDT response", 50, -0.8, 0.5, 50, 0.7, 1.05);
   TH2D* hCPAXYS = new TH2D("hCPAXYS", "SIGNAL CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.1);
   TH2D* hCPAXYB = new TH2D("hCPAXYB", "BACKGROUND CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.1);
+  
+  const int logbins = 100;
+  Double_t xlogbins[logbins + 1];
+  Double_t xmin = 1e-9;
+  double dx = 3. / nbins;
+  double l10 = TMath::Log(10);
+  for (int i = 0; i <= logbins; i++) {
+    xlogbins[i] = xmin + TMath::Exp(l10 * i * dx);
+  }
+  //TH2D* hChi2PCAS = new TH2D("hChi2PCAS", "SIGNAL Chi2PCA vs BDT response", 50, -0.8, 0.5, logbins, xlogbins);
+  //TH2D* hChi2PCAB = new TH2D("hChi2PCAB", "BACKGROUND Chi2PCA vs BDT response", 50, -0.8, 0.5, logbins, xlogbins);
 
   for (Int_t i = 0; i < nentries; i++) {
     oldtree->GetEntry(i);
     if (classID == 0) {
       hDecayLengthS->Fill(BDT, fDecayLength, weight);
+      hDecayLengthXYS->Fill(BDT, fDecayLengthXY, weight);
       hImpactParameter0S->Fill(BDT, fImpactParameter0, weight);
       hImpactParameter1S->Fill(BDT, fImpactParameter1, weight);
       hCPAS->Fill(BDT, fCPA, weight);
       hCPAXYS->Fill(BDT, fCPAXY, weight);
+     // hChi2PCAS->Fill(BDT, fChi2PCA, weight);
     } else {
       hDecayLengthB->Fill(BDT, fDecayLength);
+      hDecayLengthXYB->Fill(BDT, fDecayLengthXY);
       hImpactParameter0B->Fill(BDT, fImpactParameter0);
       hImpactParameter1B->Fill(BDT, fImpactParameter1);
       hCPAB->Fill(BDT, fCPA);
       hCPAXYB->Fill(BDT, fCPAXY);
+      //hChi2PCAB->Fill(BDT, fChi2PCA);
     }
   }
   c1->cd(2);
   hDecayLengthS->Draw("colz");
   hDecayLengthS->GetXaxis()->SetTitle("BDT response");
-  hDecayLengthS->GetYaxis()->SetTitle("decay length");
+  hDecayLengthS->GetYaxis()->SetTitle("decay length sig");
   c1->cd(3);
   hDecayLengthB->Draw("colz");
   hDecayLengthB->GetXaxis()->SetTitle("BDT response");
-  hDecayLengthB->GetYaxis()->SetTitle("decay length");
+  hDecayLengthB->GetYaxis()->SetTitle("decay length bkg");
 
   c1->cd(4);
   hImpactParameter0S->Draw("colz");
   hImpactParameter0S->GetXaxis()->SetTitle("BDT response");
-  hImpactParameter0S->GetYaxis()->SetTitle("Impact param0");
+  hImpactParameter0S->GetYaxis()->SetTitle("Impact param0 sig");
   c1->cd(5);
   hImpactParameter0B->Draw("colz");
   hImpactParameter0B->GetXaxis()->SetTitle("BDT response");
-  hImpactParameter0B->GetYaxis()->SetTitle("Impact param0");
+  hImpactParameter0B->GetYaxis()->SetTitle("Impact param0 bkg");
 
   c1->cd(6);
   hImpactParameter1S->Draw("colz");
   hImpactParameter1S->GetXaxis()->SetTitle("BDT response");
-  hImpactParameter1S->GetYaxis()->SetTitle("Impact param1");
+  hImpactParameter1S->GetYaxis()->SetTitle("Impact param1 sig");
   c1->cd(7);
   hImpactParameter1B->Draw("colz");
   hImpactParameter1B->GetXaxis()->SetTitle("BDT response");
-  hImpactParameter1B->GetYaxis()->SetTitle("Impact param1");
+  hImpactParameter1B->GetYaxis()->SetTitle("Impact param1 bkg");
 
-  c1->cd(8);
+  //c1->cd(8);
+  //hChi2PCAS->Draw("colz");
+  //hChi2PCAS->GetXaxis()->SetTitle("BDT response");
+  //hChi2PCAS->GetYaxis()->SetTitle("Chi2BDT sig");
+  //hChi2PCAS->SetLogxy();
 
-
-
-  c1->cd(9);
-
-
-
+  //c1->cd(9);
+  //hChi2PCAB->Draw("colz");
+  //hChi2PCAB->GetXaxis()->SetTitle("BDT response");
+  //hChi2PCAB->GetYaxis()->SetTitle("Chi2BDT bkg");
+  //hChi2PCAB->SetLogxy();
 
   c1->cd(11);
   hCPAS->Draw("colz");
   hCPAS->GetXaxis()->SetTitle("BDT response");
-  hCPAS->GetYaxis()->SetTitle("CPA");
+  hCPAS->GetYaxis()->SetTitle("CPA sig");
   c1->cd(12);
   hCPAB->Draw("colz");
   hCPAB->GetXaxis()->SetTitle("BDT response");
-  hCPAB->GetYaxis()->SetTitle("CPA");
+  hCPAB->GetYaxis()->SetTitle("CPA bkg");
 
   c1->cd(13);
   hCPAXYS->Draw("colz");
   hCPAXYS->GetXaxis()->SetTitle("BDT response");
-  hCPAXYS->GetYaxis()->SetTitle("CPAXY");
+  hCPAXYS->GetYaxis()->SetTitle("CPAXY sig");
   c1->cd(14);
   hCPAXYB->Draw("colz");
   hCPAXYB->GetXaxis()->SetTitle("BDT response");
-  hCPAXYB->GetYaxis()->SetTitle("CPAXY");
+  hCPAXYB->GetYaxis()->SetTitle("CPAXY bkg");
 
+  c1->cd(15);
+  hDecayLengthXYS->Draw("colz");
+  hDecayLengthXYS->GetXaxis()->SetTitle("BDT response");
+  hDecayLengthXYS->GetYaxis()->SetTitle("decay lengthXY sig");
+  c1->cd(16);
+  hDecayLengthXYB->Draw("colz");
+  hDecayLengthXYB->GetXaxis()->SetTitle("BDT response");
+  hDecayLengthXYB->GetYaxis()->SetTitle("decay lengthXY bkg");
 }
