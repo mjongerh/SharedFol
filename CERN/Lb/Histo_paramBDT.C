@@ -129,13 +129,13 @@ void Histo_paramBDT()
   hChi2PCAS->Draw("colz");
   hChi2PCAS->GetXaxis()->SetTitle("BDT response");
   hChi2PCAS->GetYaxis()->SetTitle("Chi2BDT sig");
-  hChi2PCAS->SetLogy();
+  gPad->SetLogy();
 
   c1->cd(9);
   hChi2PCAB->Draw("colz");
   hChi2PCAB->GetXaxis()->SetTitle("BDT response");
   hChi2PCAB->GetYaxis()->SetTitle("Chi2BDT bkg");
-  hChi2PCAB->SetLogy();
+  gPad->SetLogy();
 
   c1->cd(11);
   hCPAS->Draw("colz");
