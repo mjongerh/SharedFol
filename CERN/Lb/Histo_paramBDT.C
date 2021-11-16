@@ -72,10 +72,10 @@ void Histo_paramBDT()
   Double_t xmax = 1e-6;
   Double_t logxmin = TMath::log10(xmin);
   Double_t logxmax = TMath::log10(xmax);
-  Double_t binwidth = (logxmax - logxmin) / nbins;
+  Double_t binwidth = (logxmax - logxmin) / logbins;
   Double_t xlogbins[logbins + 1];
   xlogbins[0] = xmin;
-  for (Int_t i = 1; i <= nbins; i++) {
+  for (Int_t i = 1; i <= logbins; i++) {
     xbins[i] = xmin + TMath::Power(10, logxmin + i * binwidth);
   }
 
