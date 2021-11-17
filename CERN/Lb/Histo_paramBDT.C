@@ -68,7 +68,7 @@ void Histo_paramBDT()
   TH2D* hCPAXYB = new TH2D("hCPAXYB", "BACKGROUND CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.1);
   
   const Int_t logbins = 100;
-  Double_t xmin = 1e-5;
+  Double_t xmin = 1e-7;
   Double_t xmax = 1e-3;
   Double_t logxmin = TMath::Log10(xmin);
   Double_t logxmax = TMath::Log10(xmax);
