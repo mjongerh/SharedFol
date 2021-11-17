@@ -68,8 +68,8 @@ void Histo_paramBDT()
   TH2D* hCPAXYB = new TH2D("hCPAXYB", "BACKGROUND CPAXY vs BDT response", 50, -0.8, 0.5, 50, -1.0, 1.1);
   
   const Int_t logbins = 100;
-  Double_t xmin = 1e-10;
-  Double_t xmax = 1e-6;
+  Double_t xmin = 1e-5;
+  Double_t xmax = 1e-3;
   Double_t logxmin = TMath::Log10(xmin);
   Double_t logxmax = TMath::Log10(xmax);
   Double_t binwidth = (logxmax - logxmin) / logbins;
@@ -91,7 +91,7 @@ void Histo_paramBDT()
       hImpactParameter1S->Fill(BDT, fImpactParameter1, weight);
       hCPAS->Fill(BDT, fCPA, weight);
       hCPAXYS->Fill(BDT, fCPAXY, weight);
-      hChi2PCAS->Fill(BDT, fChi2PCA, weight);
+      hChi2PCAS->Fill(BDT, TMath::Sqrt(fChi2PCA), weight);
     } else {
       hDecayLengthB->Fill(BDT, fDecayLength);
       hDecayLengthXYB->Fill(BDT, fDecayLengthXY);
@@ -99,7 +99,7 @@ void Histo_paramBDT()
       hImpactParameter1B->Fill(BDT, fImpactParameter1);
       hCPAB->Fill(BDT, fCPA);
       hCPAXYB->Fill(BDT, fCPAXY);
-      hChi2PCAB->Fill(BDT, fChi2PCA);
+      hChi2PCAB->Fill(BDT, TMath::Sqrt(fChi2PCA));
     }
   }
   c1->cd(2);
@@ -132,13 +132,13 @@ void Histo_paramBDT()
   c1->cd(8);
   hChi2PCAS->Draw("colz");
   hChi2PCAS->GetXaxis()->SetTitle("BDT response");
-  hChi2PCAS->GetYaxis()->SetTitle("Chi2BDT sig");
+  hChi2PCAS->GetYaxis()->SetTitle("Chi2PCA sig [cm]");
   gPad->SetLogy();
 
   c1->cd(9);
   hChi2PCAB->Draw("colz");
   hChi2PCAB->GetXaxis()->SetTitle("BDT response");
-  hChi2PCAB->GetYaxis()->SetTitle("Chi2BDT bkg");
+  hChi2PCAB->GetYaxis()->SetTitle("Chi2PCA bkg [cm]");
   gPad->SetLogy();
 
   c1->cd(11);
