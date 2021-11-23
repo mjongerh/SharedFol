@@ -12,8 +12,10 @@
 #include "TROOT.h"
 
 void Test() {
-  gROOT->SetBatch(1);
-    TFile oldFile("./output/Pt5.0/TMVA.root");
+    gROOT->SetBatch(kTRUE);
+    //TFile oldFile("./output/Pt5.0/TMVA.root");
+    TMVA::mvas("./output/Pt5.0/dataset/dataset", "./output/Pt5.0/TMVA.root", static_cast<TMVA::HistType>(3));
+    gROOT->SetBatch(kTRUE);
     //void TMVA::mvaeffs(TString dataset, TString fin, Float_t nsignal, Float_t nbackground, Bool_t useTMVAStyle, TString formula)
     TMVA::mvaeffs("./output/Pt5.0/dataset/dataset", "./output/Pt5.0/TMVA.root", 100.0, 1000.0, kTRUE, "S/sqrt(S+B)");
   
