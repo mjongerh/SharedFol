@@ -37,15 +37,23 @@ void Lb_significanceHistos() {
   t_b.SetNDC();
   t_b.SetTextFont(42);
   t_b.SetTextColor(1);
-  t_b.SetTextSize(0.035);
+  t_b.SetTextSize(0.04);
   t_b.SetTextAlign(12);
-  t_b.DrawLatex(0.3, 0.75, "#Lambda_{b}^{0} #rightarrow #Lambda_{c}^{+} #pi^{-} #rightarrow p K^{-} #pi^{+} #pi^{-}");
+  t_b.DrawLatex(0.3, 0.53, "#Lambda_{b}^{0} #rightarrow #Lambda_{c}^{+} #pi^{-} #rightarrow p K^{-} #pi^{+} #pi^{-}");
 
   auto t_a = TLatex();
   t_a.SetNDC();
   t_a.SetTextFont(42);
   t_a.SetTextColor(1);
-  t_a.SetTextSize(0.035);
+  t_a.SetTextSize(0.03);
   t_a.SetTextAlign(12);
-  t_a.DrawLatex(0.2, 0.75, "N_{ev} = 210 * 10^{12}, PP #sqrt{s}=14.0TeV, |y| <1.44, BR=0.03%");
+  t_a.DrawLatex(0.24, 0.44, "N_{ev} = 210 * 10^{12}, PP #sqrt{s}=14.0TeV, |y| <1.44, BR=0.03%");
+  
+  auto t_c = TLatex();
+  t_c.SetNDC();
+  t_c.SetTextFont(42);
+  t_c.SetTextColor(1);
+  t_c.SetTextSize(0.03);
+  t_c.SetTextAlign(12);
+  t_c.DrawLatex(0.24, 0.44, "No cuts on any parameter other than BDT response");
 }
