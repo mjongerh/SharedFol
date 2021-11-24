@@ -28,6 +28,7 @@ void Lb_significanceHistos() {
   TCanvas* c1 = new TCanvas("c1", "significance", 200, 10, 1000, 1000);
   SignfAfterBDT->GetYaxis()->SetTitleOffset(1.28);
   SignfAfterBDT->GetYaxis()->SetTitle("significance S/sqrt(S+B)");
+  SignfAfterBDT->GetXaxis()->SetTitle("Pt [GeV]");
   gPad->SetLogy();
   SignfAfterBDT->SetLineColor(kBlue);
   SignfAfterBDT->SetTitle("Significance after BDT cut");
@@ -55,5 +56,5 @@ void Lb_significanceHistos() {
   t_c.SetTextColor(1);
   t_c.SetTextSize(0.03);
   t_c.SetTextAlign(12);
-  t_c.DrawLatex(0.24, 0.44, "No cuts on any parameter other than BDT response");
+  t_c.DrawLatex(0.24, 0.39, "No cuts on any parameter other than BDT response");
 }
