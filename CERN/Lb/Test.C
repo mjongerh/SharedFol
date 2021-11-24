@@ -15,7 +15,7 @@ void Test() {
   TFile finput("~/Desktop/ALICE3_HFperformance/analysis/foutputLambda_b.root"); 
   TH1F* hbkg = (TH1F*)finput.Get("hBkgPerEvent");
   TH1F* hsig = (TH1F*)finput.Get("histosignal");
-  Double_t PtBins[11] = {0., 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
+  Double_t PtBins[12] = {0., 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
   long Nevents = 210000000000000;
   for (Int_t i = 0; i < 11; i++) {
     cout << "Pt " << PtBins[i] << endl
