@@ -20,7 +20,7 @@ void Lb_O2_to_TMVA_convert()
   TString oldfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2.root";
   TString tempfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_TMP.root";
   //TString newfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_converted.root";
-  TString newfileDir = "/home/mjongerh/Lb_data/Trees/";
+  TString newfileDir = "/home/mjongerh/Lbgun_data/Trees/";
   TString newfileNamePrefix = "Lb_binned";
   
   TString createdir = "mkdir -p " + newfileDir; //create directory if it doesn't exist yet
@@ -62,7 +62,7 @@ void Lb_O2_to_TMVA_convert()
   Char_t MCflagEntry;
   tmptree->SetBranchAddress("fMCflag", &MCflagEntry);
 
-  for (int i = 0; i < nPtBins; i++) { //Split all events into different Pt bins TODO: add background/signal seperation
+  for (int i = 0; i < nPtBins; i++) { //Split all events into different Pt bins
     Float_t PtLow = ptBins[i];
     Float_t PtHigh = ptBins[i + 1];
     TString SB = "_bkg";
