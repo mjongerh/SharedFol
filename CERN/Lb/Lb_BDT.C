@@ -80,7 +80,7 @@ int Lb_BDT(TString myMethodList = ""){
     }
     // Second set of data files
     TFile* inputSignal2(0);
-    TString fnamesig2 = Form("/home/mjongerh/Lbgun_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder      /home/mjongerh/Lb_data/Trees/
+    TString fnamesig2 = Form("/home/mjongerh/Lbcut_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder      /home/mjongerh/Lb_data/Trees/
     if (!gSystem->AccessPathName(fnamesig2)) {
       inputSignal2 = TFile::Open(fnamesig2); // check if file in local directory exists
     }
@@ -91,7 +91,7 @@ int Lb_BDT(TString myMethodList = ""){
     std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal->GetName() << std::endl;
 
     TFile* inputBackground2(0);
-    TString fnamebkg2 = Form("/home/mjongerh/Lbgun_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
+    TString fnamebkg2 = Form("/home/mjongerh/Lbcut_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
     if (!gSystem->AccessPathName(fnamebkg2)) {
       inputBackground2 = TFile::Open(fnamebkg2);
     }
