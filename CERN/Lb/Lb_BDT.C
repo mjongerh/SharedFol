@@ -147,10 +147,10 @@ int Lb_BDT(TString myMethodList = ""){
     Double_t backgroundWeight = 1.0;
 
     // You can add an arbitrary number of signal or background trees
-    dataloader->AddSignalTree(signalTree, signalWeight);
-    dataloader->AddBackgroundTree(backgroundTree, backgroundWeight);
-    dataloader->AddSignalTree(signalTree2, signalWeight);
-    dataloader->AddBackgroundTree(backgroundTree2, backgroundWeight);
+    if (signalTree->GetEntries() != 0) dataloader->AddSignalTree(signalTree, signalWeight);
+    if (backgroundTree->GetEntries() != 0) dataloader->AddBackgroundTree(backgroundTree, backgroundWeight);
+    if (signalTree2->GetEntries() != 0) dataloader->AddSignalTree(signalTree2, signalWeight);
+    if (backgroundTree2->GetEntries() != 0) dataloader->AddBackgroundTree(backgroundTree2, backgroundWeight);
 
     // Apply additional cuts on the signal and background samples (can be different)
     TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
