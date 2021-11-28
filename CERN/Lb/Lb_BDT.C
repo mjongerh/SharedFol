@@ -157,7 +157,7 @@ int Lb_BDT(TString myMethodList = ""){
     TCut mycutb = ""; // for example: TCut mycutb = "abs(var1)<0.5";
 
     int NsigTrain = (signalTree->GetEntries() + signalTree2->GetEntries()) * TrainFraction;
-    long long Nmaxbkg = 300000;
+    long long Nmaxbkg = 500000;
     int NbkgTrain = min(Nmaxbkg, (long long)((backgroundTree->GetEntries() + backgroundTree2->GetEntries()) * TrainFraction));
     int NsigTest = (signalTree->GetEntries() + signalTree2->GetEntries()) * (1.0 - TrainFraction);
     int NbkgTest = min(Nmaxbkg, (long long)((backgroundTree->GetEntries() + backgroundTree2->GetEntries()) * (1.0 - TrainFraction)));
