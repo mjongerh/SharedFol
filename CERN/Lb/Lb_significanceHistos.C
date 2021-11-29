@@ -18,21 +18,33 @@
 void Lb_significanceHistos() {
   const Int_t nbins = 11;
   Double_t edges[nbins + 1] = {0., 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
-  Double_t BDTSignf[nbins] = {0.0, 0.0, 0.0, 0.828, 6.532, 15.0891, 54.7563, 67.9376, 45.325, 31.4128, 30.2179};
+  Double_t BDTSignfRaw[nbins] = {0.0, 0.0, 0.0, 0.828, 6.532, 15.0891, 54.7563, 67.9376, 45.325, 31.4128, 30.2179};
+  Double_t BDTSignfLooseCut[nbins] = {0.0, 0.0, 0.0, 4.1501, 10.3881, 11.7034, 35.6596, 38.8595, 24.7777, 18.6049, 18.8128};
 
   long Nevent = 210000000000000;
-  TH1F* SignfAfterBDT = new TH1F("SignfAfterBDT", "Significance after BDT cut. NO traditional cuts", nbins, edges);
+  TH1F* SignfAfterBDTRaw = new TH1F("SignfAfterBDTRaw", "Significance after BDT cut. NO traditional cuts", nbins, edges);
+  TH1F* SignfAfterBDTLooseCut = new TH1F("SignfAfterBDTLooseCut", "Significance after BDT cut. loose cuts", nbins, edges);
   for (Int_t i = 0; i < nbins; i++) {
-    SignfAfterBDT->SetBinContent(i+1, BDTSignf[i]);
+    SignfAfterBDTRaw->SetBinContent(i+1, BDTSignfRaw[i]);
+    SignfAfterBDTLooseCut->SetBinContent(i + 1, BDTSignfLooseCut[i]);
   }
   TCanvas* c1 = new TCanvas("c1", "significance", 200, 10, 1000, 1000);
-  SignfAfterBDT->GetYaxis()->SetTitleOffset(1.28);
-  SignfAfterBDT->GetYaxis()->SetTitle("significance S/sqrt(S+B)");
-  SignfAfterBDT->GetXaxis()->SetTitle("Pt [GeV]");
+
+  SignfAfterBDTRaw->GetYaxis()->SetTitleOffset(1.28);
+  SignfAfterBDTRaw->GetYaxis()->SetTitle("significance S/sqrt(S+B)");
+  SignfAfterBDTRaw->GetXaxis()->SetTitle("Pt [GeV]");
   gPad->SetLogy();
-  SignfAfterBDT->SetLineColor(kBlue);
-  SignfAfterBDT->SetTitle("Significance after BDT cut");
-  SignfAfterBDT->Draw();
+  SignfAfterBDTRaw->SetLineColor(kBlue);
+  SignfAfterBDTRaw->SetTitle("Significance after BDT cut");
+  SignfAfterBDTRaw->Draw();
+
+  SignfAfterBDTLooseCut->GetYaxis()->SetTitleOffset(1.28);
+  SignfAfterBDTLooseCut->GetYaxis()->SetTitle("significance S/sqrt(S+B)");
+  SignfAfterBDTLooseCut->GetXaxis()->SetTitle("Pt [GeV]");
+  gPad->SetLogy();
+  SignfAfterBDTLooseCut->SetLineColor(kRed);
+  SignfAfterBDTLooseCut->SetTitle("Significance after BDT cut");
+  SignfAfterBDTLooseCut->Draw("same");
 
   auto t_b = TLatex();
   t_b.SetNDC();
