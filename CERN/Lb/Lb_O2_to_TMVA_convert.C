@@ -44,7 +44,7 @@ void Lb_O2_to_TMVA_convert()
   }
   TFile TMPFile(tempfileName, "RECREATE");
 
-  auto newtree = (TTree*)TTree::MergeTrees(list);
+  auto newtree = TTree::MergeTrees(list);
   newtree->SetName("O2hfcandlbfull");
 
   TMPFile.Write();
