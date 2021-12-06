@@ -158,9 +158,9 @@ int Lb_BDT(TString myMethodList = ""){
 
     int NsigTrain = (signalTree->GetEntries()) * TrainFraction;
     long long Nmaxbkg = 500000;
-    int NbkgTrain = min(Nmaxbkg, (long long)((backgroundTree->GetEntries() +) * TrainFraction));
+    int NbkgTrain = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * TrainFraction));
     int NsigTest = (signalTree->GetEntries()) * (1.0 - TrainFraction);
-    int NbkgTest = min(Nmaxbkg, (long long)((backgroundTree->GetEntries()) * (1.0 - TrainFraction)));
+    int NbkgTest = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * (1.0 - TrainFraction)));
     //int NsigTrain = (signalTree->GetEntries() + signalTree2->GetEntries()) * TrainFraction;
     //long long Nmaxbkg = 500000;
     //int NbkgTrain = min(Nmaxbkg, (long long)((backgroundTree->GetEntries() + backgroundTree2->GetEntries()) * TrainFraction));
