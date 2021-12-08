@@ -16,7 +16,7 @@
 //Makes histograms of each parameter with respect to the BDT response of that event
 void HistoMaker() {
   TString oldfileDir = "~/Desktop/SharedFol/CERN/Lc_BDT_test/output/";
-  TString filename = oldfileDir + "Pt1/TMVA.root";
+  TString filename = oldfileDir + "Pt2/TMVA.root";
   TFile* oldFile = new TFile(filename);
   TH1D* oldhist = (TH1D*)oldFile->Get("dataset/Method_BDT/BDT/MVA_BDT_effBvsS");
 
