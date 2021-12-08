@@ -30,7 +30,7 @@ void HistoMaker() {
   x[100] = 1.0;
   y[100] = 1.0;
   TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 7000, 5000);
-  c1->Divide(5, 5);
+  c1->Divide(4, 4);
   c1->cd(1);
   TGraph* gr = new TGraph(n+1, x, y);
   gr->GetXaxis()->SetTitle("False positive rate (bkg eff.)");
@@ -168,29 +168,32 @@ void HistoMaker() {
     hCPAXYB->GetXaxis()->SetTitle("BDT response");
     hCPAXYB->GetYaxis()->SetTitle("CPAXY");
 
-    c1->cd(16);
+
+    TCanvas* c2 = new TCanvas("c2", "A Simple Graph Example", 200, 10, 7000, 5000);
+    c2->Divide(2, 3);
+    c1->cd(1);
     hNSigTOFPi2S->Draw("colz");
     hNSigTOFPi2S->GetXaxis()->SetTitle("BDT response");
     hNSigTOFPi2S->GetYaxis()->SetTitle("NSig TOF Pi");
-    c1->cd(17);
+    c1->cd(2);
     hNSigTOFPi2B->Draw("colz");
     hNSigTOFPi2B->GetXaxis()->SetTitle("BDT response");
     hNSigTOFPi2B->GetYaxis()->SetTitle("NSig TOF Pi");
 
-    c1->cd(18);
+    c1->cd(3);
     hNSigTOFKa1S->Draw("colz");
     hNSigTOFKa1S->GetXaxis()->SetTitle("BDT response");
     hNSigTOFKa1S->GetYaxis()->SetTitle("NSig TOF Ka");
-    c1->cd(19);
+    c1->cd(4);
     hNSigTOFKa1B->Draw("colz");
     hNSigTOFKa1B->GetXaxis()->SetTitle("BDT response");
     hNSigTOFKa1B->GetYaxis()->SetTitle("NSig TOF Ka");
 
-    c1->cd(21);
+    c1->cd(5);
     hNSigTOFPr0S->Draw("colz");
     hNSigTOFPr0S->GetXaxis()->SetTitle("BDT response");
     hNSigTOFPr0S->GetYaxis()->SetTitle("NSig TOF Pr");
-    c1->cd(22);
+    c1->cd(6);
     hNSigTOFPr0B->Draw("colz");
     hNSigTOFPr0B->GetXaxis()->SetTitle("BDT response");
     hNSigTOFPr0B->GetYaxis()->SetTitle("NSig TOF Pr");
