@@ -276,8 +276,8 @@ void TEMP() {
     histosignf__1->SetEntries(100011);
     
     TH1F* histosignf__2 = new TH1F("histosignf__2", "", 12, xAxis1);
-    histosignf__2->SetBinContent(3, 0.0);
-    histosignf__2->SetBinContent(4, 0.0);
+    //histosignf__2->SetBinContent(3, 0.0);
+    //histosignf__2->SetBinContent(4, 0.0);
     histosignf__2->SetBinContent(5, 14.2821);
     histosignf__2->SetBinContent(6, 59.323);
     histosignf__2->SetBinContent(7, 100.125);
@@ -291,7 +291,7 @@ void TEMP() {
     histosignf__1->SetLineColor(ci);
     histosignf__1->SetLineWidth(2);
     histosignf__1->GetXaxis()->SetTitle("p_{T} (GeV)");
-    histosignf__1->GetXaxis()->SetRange(1, 100);
+    histosignf__1->GetXaxis()->SetRange(1, 1000);
     histosignf__1->GetXaxis()->SetLabelFont(42);
     histosignf__1->GetXaxis()->SetTitleOffset(1);
     histosignf__1->GetXaxis()->SetTitleFont(42);
