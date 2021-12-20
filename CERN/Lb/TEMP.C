@@ -132,6 +132,7 @@ void TEMP() {
     Canvas_2->SetFrameBorderMode(0);
 
     TH1D* hBkgPerEvent__1 = new TH1D("hBkgPerEvent__1", "", 12, xAxis1);
+    hBkgPerEvent__1->GetYaxis()->SetRange(1e-10, 1.0e-6);
     hBkgPerEvent__1->SetBinContent(2, 2.10095e-06);
     hBkgPerEvent__1->SetBinContent(3, 1.39038e-06);
     hBkgPerEvent__1->SetBinContent(4, 2.174787e-06);
@@ -253,7 +254,7 @@ void TEMP() {
     Canvas_3->SetSelected(Canvas_3);
 
     TCanvas* Canvas_4 = new TCanvas("Canvas_4", "Canvas_4", 422, 161, 944, 763);
-    Canvas_4->SetLogy();
+    //Canvas_4->SetLogy();
     Canvas_4->SetFillColor(0);
     Canvas_4->SetBorderMode(0);
     Canvas_4->SetBorderSize(2);
