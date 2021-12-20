@@ -124,7 +124,7 @@ void TEMP() {
     Canvas_1->SetSelected(Canvas_1);
 
     TCanvas* Canvas_2 = new TCanvas("Canvas_2", "Canvas_2", 422, 161, 944, 763);
-    Canvas_2->Range(-3, 1.0e-08, 27, 2.594066e-06);
+    Canvas_2->Range(-3, 1.0e-010, 27, 2.594066e-06);
     Canvas_2->SetLogy();
     Canvas_2->SetFillColor(0);
     Canvas_2->SetBorderMode(0);
@@ -272,7 +272,7 @@ void TEMP() {
     histosignf__1->SetBinContent(9, 18.81654);
     histosignf__1->SetBinContent(10, 9.412499);
     histosignf__1->SetBinContent(11, 3.197298);
-    histosignf__1->SetBinContent(12, 1.019512e-09);
+    histosignf__1->SetBinContent(12, 1.019512);
     histosignf__1->SetEntries(100011);
     
     TH1F* histosignf__2 = new TH1F("histosignf__2", "", 12, xAxis1);
