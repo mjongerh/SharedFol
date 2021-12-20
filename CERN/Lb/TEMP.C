@@ -111,13 +111,13 @@ void TEMP() {
     eff__2->SetLineColor(ci2);
     eff__2->SetLineWidth(2);
 
-    auto legend = new TLegend(0.1, 0.7, 0.48, 0.9);
-    legend->AddEntry(eff__1, "Panos' cuts", "f");
-    legend->AddEntry(eff__2, "+BDT", "f");
-    legend->Draw();
-
     eff__1->Draw("");
     eff__2->Draw("same");
+    auto legend = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend->AddEntry(eff__1, "Panos' cuts", "f");
+    legend->AddEntry(eff__2, "+BDT cut", "f");
+    legend->Draw("");
+
     Canvas_1->Modified();
     Canvas_1->cd();
     Canvas_1->SetSelected(Canvas_1);
