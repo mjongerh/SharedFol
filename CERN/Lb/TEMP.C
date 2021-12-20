@@ -147,9 +147,9 @@ void TEMP() {
     hBkgPerEvent__1->SetStats(0);
 
     TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "", 12, xAxis1);
-    hBkgPerEvent__2->SetBinContent(2, 2.10095e-06*0.0);
-    hBkgPerEvent__2->SetBinContent(3, 1.39038e-06*0.0);
-    hBkgPerEvent__2->SetBinContent(4, 2.174787e-06*0.0);
+    //hBkgPerEvent__2->SetBinContent(2, 2.10095e-06*0.0);
+    //hBkgPerEvent__2->SetBinContent(3, 1.39038e-06*0.0);
+    //hBkgPerEvent__2->SetBinContent(4, 2.174787e-06*0.0);
     hBkgPerEvent__2->SetBinContent(5, 1.964767e-06*0.00028);
     hBkgPerEvent__2->SetBinContent(6, 1.324055e-06*0.000802);
     hBkgPerEvent__2->SetBinContent(7, 1.859376e-06*0.002942);
@@ -253,7 +253,6 @@ void TEMP() {
     Canvas_3->SetSelected(Canvas_3);
 
     TCanvas* Canvas_4 = new TCanvas("Canvas_4", "Canvas_4", 422, 161, 944, 763);
-    Canvas_4->Range(-3, 1, 27, 1000);
     Canvas_4->SetLogy();
     Canvas_4->SetFillColor(0);
     Canvas_4->SetBorderMode(0);
@@ -275,8 +274,8 @@ void TEMP() {
     histosignf__1->SetEntries(100011);
     
     TH1F* histosignf__2 = new TH1F("histosignf__2", "", 12, xAxis1);
-    histosignf__2->SetBinContent(3, 0.0);
-    histosignf__2->SetBinContent(4, 0.0);
+    //histosignf__2->SetBinContent(3, 0.0);
+    //histosignf__2->SetBinContent(4, 0.0);
     histosignf__2->SetBinContent(5, 14.2821);
     histosignf__2->SetBinContent(6, 59.323);
     histosignf__2->SetBinContent(7, 100.125);
