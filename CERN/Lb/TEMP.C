@@ -106,6 +106,7 @@ void TEMP() {
     eff__1->GetZaxis()->SetTitleOffset(1);
     eff__1->GetZaxis()->SetTitleFont(42);
     
+    Int_t ci2;
     ci2 = TColor::GetColor("#00ff00");
     eff__2->SetLineColor(ci2);
     eff__2->SetLineWidth(2);
