@@ -125,7 +125,7 @@ void TEMP() {
 
     TCanvas* Canvas_2 = new TCanvas("Canvas_2", "Canvas_2", 422, 161, 944, 763);
     Canvas_2->Range(-3, -1.0e-08, 27, 2.594066e-06);
-    Canvas_2->SetLogy()
+    Canvas_2->SetLogy();
     Canvas_2->SetFillColor(0);
     Canvas_2->SetBorderMode(0);
     Canvas_2->SetBorderSize(2);
