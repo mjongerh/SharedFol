@@ -124,7 +124,8 @@ void TEMP() {
     Canvas_1->SetSelected(Canvas_1);
 
     TCanvas* Canvas_2 = new TCanvas("Canvas_2", "Canvas_2", 422, 161, 944, 763);
-    Canvas_2->Range(-3, -2.882296e-07, 27, 2.594066e-06);
+    Canvas_2->Range(-3, -1.0e-08, 27, 2.594066e-06);
+    Canvas_2->SetLogy()
     Canvas_2->SetFillColor(0);
     Canvas_2->SetBorderMode(0);
     Canvas_2->SetBorderSize(2);
@@ -253,7 +254,8 @@ void TEMP() {
     Canvas_3->SetSelected(Canvas_3);
 
     TCanvas* Canvas_4 = new TCanvas("Canvas_4", "Canvas_4", 422, 161, 944, 763);
-    Canvas_4->Range(-3, -4.625945, 27, 41.6335);
+    Canvas_4->Range(-3, 0.1, 27, 300);
+    Canvas_4->SetLogy();
     Canvas_4->SetFillColor(0);
     Canvas_4->SetBorderMode(0);
     Canvas_4->SetBorderSize(2);
