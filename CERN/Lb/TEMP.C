@@ -24,6 +24,8 @@
 #include "TInterpreter.h"
 
 void TEMP() {
+    Double_t xAxis1[13] = {0, 0.5, 1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 24};
+    Double_t NEvents = 162339839700000.0
     //=========Macro generated from canvas: Canvas_1/Canvas_1
     //=========  (Mon Dec 20 12:50:06 2021) by ROOT version 6.25/01
     TCanvas* Canvas_1 = new TCanvas("Canvas_1", "Canvas_1", 367, 161, 1295, 807);
@@ -33,7 +35,6 @@ void TEMP() {
     Canvas_1->SetBorderSize(2);
     Canvas_1->SetFrameBorderMode(0);
     Canvas_1->SetFrameBorderMode(0);
-    Double_t xAxis1[13] = {0, 0.5, 1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 24};
 
     TH1F* eff__1 = new TH1F("eff__1", "", 12, xAxis1);
     eff__1->SetBinContent(3, 0.0005337445);
@@ -107,7 +108,7 @@ void TEMP() {
     eff__1->GetZaxis()->SetTitleFont(42);
     
     Int_t ci2;
-    ci2 = TColor::GetColor("#00ff00");
+    ci2 = TColor::GetColor("#0000ff");
     eff__2->SetLineColor(ci2);
     eff__2->SetLineWidth(2);
 
@@ -121,6 +122,197 @@ void TEMP() {
     Canvas_1->Modified();
     Canvas_1->cd();
     Canvas_1->SetSelected(Canvas_1);
+
+    TCanvas* Canvas_2 = new TCanvas("Canvas_2", "Canvas_2", 422, 161, 944, 763);
+    Canvas_2->Range(-3, -2.882296e-07, 27, 2.594066e-06);
+    Canvas_2->SetFillColor(0);
+    Canvas_2->SetBorderMode(0);
+    Canvas_2->SetBorderSize(2);
+    Canvas_2->SetFrameBorderMode(0);
+    Canvas_2->SetFrameBorderMode(0);
+
+    TH1D* hBkgPerEvent__1 = new TH1D("hBkgPerEvent__1", "", 12, xAxis1);
+    hBkgPerEvent__1->SetBinContent(2, 2.10095e-06);
+    hBkgPerEvent__1->SetBinContent(3, 1.39038e-06);
+    hBkgPerEvent__1->SetBinContent(4, 2.174787e-06);
+    hBkgPerEvent__1->SetBinContent(5, 1.964767e-06);
+    hBkgPerEvent__1->SetBinContent(6, 1.324055e-06);
+    hBkgPerEvent__1->SetBinContent(7, 1.859376e-06);
+    hBkgPerEvent__1->SetBinContent(8, 2.196035e-06);
+    hBkgPerEvent__1->SetBinContent(9, 1.062691e-06);
+    hBkgPerEvent__1->SetBinContent(10, 1.670859e-06);
+    hBkgPerEvent__1->SetBinContent(11, 2.041053e-06);
+    hBkgPerEvent__1->SetBinContent(12, 2.162131e-06);
+    hBkgPerEvent__1->SetEntries(11);
+    hBkgPerEvent__1->SetStats(0);
+
+    TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "", 12, xAxis1);
+    hBkgPerEvent__2->SetBinContent(2, 2.10095e-06*0.0);
+    hBkgPerEvent__2->SetBinContent(3, 1.39038e-06*0.0);
+    hBkgPerEvent__2->SetBinContent(4, 2.174787e-06*0.0);
+    hBkgPerEvent__2->SetBinContent(5, 1.964767e-06*0.00028);
+    hBkgPerEvent__2->SetBinContent(6, 1.324055e-06*0.000802);
+    hBkgPerEvent__2->SetBinContent(7, 1.859376e-06*0.002942);
+    hBkgPerEvent__2->SetBinContent(8, 2.196035e-06*0.006728);
+    hBkgPerEvent__2->SetBinContent(9, 1.062691e-06*0.01492);
+    hBkgPerEvent__2->SetBinContent(10, 1.670859e-06*0.02216);
+    hBkgPerEvent__2->SetBinContent(11, 2.041053e-06*0.02539);
+    hBkgPerEvent__2->SetBinContent(12, 2.162131e-06*0.02582);
+    hBkgPerEvent__2->SetEntries(11);
+    hBkgPerEvent__2->SetStats(0);
+
+    hBkgPerEvent__1->SetLineColor(ci);
+    hBkgPerEvent__1->SetLineWidth(3);
+    hBkgPerEvent__1->GetXaxis()->SetTitle("p_{T}(#lambda_b^0)(GeV/c)");
+    hBkgPerEvent__1->GetXaxis()->SetLabelFont(42);
+    hBkgPerEvent__1->GetXaxis()->SetLabelOffset(0.015);
+    hBkgPerEvent__1->GetXaxis()->SetTitleSize(0.045);
+    hBkgPerEvent__1->GetXaxis()->SetTitleOffset(1);
+    hBkgPerEvent__1->GetXaxis()->SetTitleFont(42);
+    hBkgPerEvent__1->GetYaxis()->SetTitle("Bkg/nEvents");
+    hBkgPerEvent__1->GetYaxis()->CenterTitle(true);
+    hBkgPerEvent__1->GetYaxis()->SetLabelFont(42);
+    hBkgPerEvent__1->GetYaxis()->SetLabelOffset(0.01);
+    hBkgPerEvent__1->GetYaxis()->SetTitleSize(0.045);
+    hBkgPerEvent__1->GetYaxis()->SetTitleOffset(0.8);
+    hBkgPerEvent__1->GetYaxis()->SetTitleFont(42);
+    hBkgPerEvent__1->GetZaxis()->SetLabelFont(42);
+    hBkgPerEvent__1->GetZaxis()->SetTitleOffset(1);
+    hBkgPerEvent__1->GetZaxis()->SetTitleFont(42);
+    
+    hBkgPerEvent__2->SetLineColor(ci2);
+    hBkgPerEvent__2->SetLineWidth(2);
+
+    hBkgPerEvent__1->Draw("");
+    hBkgPerEvent__2->Draw("same");
+    auto legend = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend->AddEntry(hBkgPerEvent__1, "Panos' cuts", "f");
+    legend->AddEntry(hBkgPerEvent__2, "+BDT cut", "f");
+    legend->Draw("");
+
+    Canvas_2->Modified();
+    Canvas_2->cd();
+    Canvas_2->SetSelected(Canvas_2);
+
+    TCanvas* Canvas_3 = new TCanvas("Canvas_3", "Canvas_3", 422, 161, 944, 763);
+    Canvas_3->SetFillColor(0);
+    Canvas_3->SetBorderMode(0);
+    Canvas_3->SetBorderSize(2);
+    Canvas_3->SetFrameBorderMode(0);
+    Canvas_3->SetFrameBorderMode(0);
+
+    TH1F* histosignal__1 = new TH1F("histosignal__1", "", 12, xAxis1);
+    histosignal__1->SetBinContent(5, 7983.665 / NEvents);
+    histosignal__1->SetBinContent(6, 60466.08 / NEvents);
+    histosignal__1->SetBinContent(7, 153818.3 / NEvents);
+    histosignal__1->SetBinContent(8, 505957.7 / NEvents);
+    histosignal__1->SetBinContent(9, 697078.5 / NEvents);
+    histosignal__1->SetBinContent(10, 489227.4 / NEvents);
+    histosignal__1->SetBinContent(11, 281272 / NEvents);
+    histosignal__1->SetBinContent(12, 176357.4 / NEvents);
+
+    histosignal__1->SetEntries(100011);
+
+    TH1F* histosignal__2 = new TH1F("histosignal__2", "", 12, xAxis1);
+    histosignal__2->SetBinContent(5, 7983.665 * 0.5244 / NEvents);
+    histosignal__2->SetBinContent(6, 60466.08*0.6238 / NEvents);
+    histosignal__2->SetBinContent(7, 153818.3*0.7508 / NEvents);
+    histosignal__2->SetBinContent(8, 505957.7*0.8071 / NEvents);
+    histosignal__2->SetBinContent(9, 697078.5*0.8819 / NEvents);
+    histosignal__2->SetBinContent(10, 489227.4 * 0.9 / NEvents);
+    histosignal__2->SetBinContent(11, 281272 * 0.8836 / NEvents);
+    histosignal__2->SetBinContent(12, 176357.4 * 0.8776 / NEvents);
+    histosignal__2->SetEntries(100011);
+
+    histosignal__1->SetLineColor(ci);
+    histosignal__1->GetXaxis()->SetTitle("p_{T} (GeV)");
+    histosignal__1->GetXaxis()->SetRange(1, 100);
+    histosignal__1->GetXaxis()->SetLabelFont(42);
+    histosignal__1->GetXaxis()->SetTitleOffset(1);
+    histosignal__1->GetXaxis()->SetTitleFont(42);
+    histosignal__1->GetYaxis()->SetTitle("N #lambda_b^0 signal events per event");
+    histosignal__1->GetYaxis()->SetLabelFont(42);
+    histosignal__1->GetYaxis()->SetTitleFont(42);
+    histosignal__1->GetZaxis()->SetLabelFont(42);
+    histosignal__1->GetZaxis()->SetTitleOffset(1);
+    histosignal__1->GetZaxis()->SetTitleFont(42);
+    
+
+    histosignal__2->SetLineColor(ci2);
+    histosignal__2->SetLineWidth(2);
+
+    histosignal__1->Draw("");
+    histosignal__2->Draw("same");
+    auto legend = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend->AddEntry(hBkgPerEvent__1, "Panos' cuts", "f");
+    legend->AddEntry(hBkgPerEvent__2, "+BDT cut", "f");
+    legend->Draw("");
+
+    Canvas_3->Modified();
+    Canvas_3->cd();
+    Canvas_3->SetSelected(Canvas_3);
+
+    TCanvas* Canvas_4 = new TCanvas("Canvas_4", "Canvas_4", 422, 161, 944, 763);
+    Canvas_4->Range(-3, -4.625945, 27, 41.6335);
+    Canvas_4->SetFillColor(0);
+    Canvas_4->SetBorderMode(0);
+    Canvas_4->SetBorderSize(2);
+    Canvas_4->SetFrameBorderMode(0);
+    Canvas_4->SetFrameBorderMode(0);
+    Double_t xAxis3[12] = {0, 1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 24};
+
+    TH1F* histosignf__1 = new TH1F("histosignf__1", "", 11, xAxis3);
+    histosignf__1->SetBinContent(3, 0.4672185);
+    histosignf__1->SetBinContent(4, 2.829209);
+    histosignf__1->SetBinContent(5, 7.571151);
+    histosignf__1->SetBinContent(6, 30.31494);
+    histosignf__1->SetBinContent(7, 35.24529);
+    histosignf__1->SetBinContent(8, 22.76938);
+    histosignf__1->SetBinContent(9, 18.81654);
+    histosignf__1->SetBinContent(10, 9.412499);
+    histosignf__1->SetBinContent(11, 3.197298);
+    histosignf__1->SetBinContent(12, 1.019512e-09);
+    histosignf__1->SetEntries(100011);
+    
+    histosignf__2->SetBinContent(3, 0.0);
+    histosignf__2->SetBinContent(4, 0.0);
+    histosignf__2->SetBinContent(5, 14.2821);
+    histosignf__2->SetBinContent(6, 59.323);
+    histosignf__2->SetBinContent(7, 100.125);
+    histosignf__2->SetBinContent(8, 270.511);
+    histosignf__2->SetBinContent(9, 242.356);
+    histosignf__2->SetBinContent(10, 134.88);
+    histosignf__2->SetBinContent(11, 102.225);
+    histosignf__2->SetBinContent(12, 50.9764);
+    histosignf__2->SetEntries(100011);
+
+    histosignf__1->SetLineColor(ci);
+    histosignf__1->SetLineWidth(2);
+    histosignf__1->GetXaxis()->SetTitle("p_{T} (GeV)");
+    histosignf__1->GetXaxis()->SetRange(1, 100);
+    histosignf__1->GetXaxis()->SetLabelFont(42);
+    histosignf__1->GetXaxis()->SetTitleOffset(1);
+    histosignf__1->GetXaxis()->SetTitleFont(42);
+    histosignf__1->GetYaxis()->SetTitle("Lb d#sigma^{PYTHIA}/dp_{T} (#mu b/GeV)");
+    histosignf__1->GetYaxis()->SetLabelFont(42);
+    histosignf__1->GetYaxis()->SetTitleFont(42);
+    histosignf__1->GetZaxis()->SetLabelFont(42);
+    histosignf__1->GetZaxis()->SetTitleOffset(1);
+    histosignf__1->GetZaxis()->SetTitleFont(42);
+    
+    histosignf__2->SetLineColor(ci2);
+    histosignf__2->SetLineWidth(2);
+    histosignf__1->Draw("");
+    histosignf__2->Draw("same");
+
+    auto legend = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend->AddEntry(histosignf__1, "Panos' cuts", "f");
+    legend->AddEntry(histosignf__2, "+BDT cut", "f");
+    legend->Draw("");
+
+    Canvas_4->Modified();
+    Canvas_4->cd();
+    Canvas_4->SetSelected(Canvas_4);
 }
 
 /*
