@@ -302,6 +302,8 @@ void TEMP() {
     histosignf__1->GetZaxis()->SetTitleOffset(1);
     histosignf__1->GetZaxis()->SetTitleFont(42);
     
+    histosignf__2->GetYaxis()->SetRangeUser(0.1, 1000);
+
     histosignf__2->SetLineColor(ci2);
     histosignf__2->SetLineWidth(2);
     histosignf__2->Draw("");
