@@ -117,7 +117,7 @@ void TEMP() {
     legend->Draw();
 
     eff__1->Draw("");
-    eff__2->Draw("");
+    eff__2->Draw("same");
     Canvas_1->Modified();
     Canvas_1->cd();
     Canvas_1->SetSelected(Canvas_1);
