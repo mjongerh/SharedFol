@@ -114,10 +114,10 @@ void TEMP() {
 
     eff__1->Draw("");
     eff__2->Draw("same");
-    auto legend = new TLegend(0.1, 0.7, 0.48, 0.9);
-    legend->AddEntry(eff__1, "Panos' cuts", "f");
-    legend->AddEntry(eff__2, "+BDT cut", "f");
-    legend->Draw("");
+    auto legend1 = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend1->AddEntry(eff__1, "Panos' cuts", "f");
+    legend1->AddEntry(eff__2, "+BDT cut", "f");
+    legend1->Draw("");
 
     Canvas_1->Modified();
     Canvas_1->cd();
@@ -185,10 +185,10 @@ void TEMP() {
 
     hBkgPerEvent__1->Draw("");
     hBkgPerEvent__2->Draw("same");
-    auto legend = new TLegend(0.1, 0.7, 0.48, 0.9);
-    legend->AddEntry(hBkgPerEvent__1, "Panos' cuts", "f");
-    legend->AddEntry(hBkgPerEvent__2, "+BDT cut", "f");
-    legend->Draw("");
+    auto legend2 = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend2->AddEntry(hBkgPerEvent__1, "Panos' cuts", "f");
+    legend2->AddEntry(hBkgPerEvent__2, "+BDT cut", "f");
+    legend2->Draw("");
 
     Canvas_2->Modified();
     Canvas_2->cd();
@@ -243,10 +243,10 @@ void TEMP() {
 
     histosignal__1->Draw("");
     histosignal__2->Draw("same");
-    auto legend = new TLegend(0.1, 0.7, 0.48, 0.9);
-    legend->AddEntry(hBkgPerEvent__1, "Panos' cuts", "f");
-    legend->AddEntry(hBkgPerEvent__2, "+BDT cut", "f");
-    legend->Draw("");
+    auto legend3 = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend3->AddEntry(hBkgPerEvent__1, "Panos' cuts", "f");
+    legend3->AddEntry(hBkgPerEvent__2, "+BDT cut", "f");
+    legend3->Draw("");
 
     Canvas_3->Modified();
     Canvas_3->cd();
@@ -259,9 +259,8 @@ void TEMP() {
     Canvas_4->SetBorderSize(2);
     Canvas_4->SetFrameBorderMode(0);
     Canvas_4->SetFrameBorderMode(0);
-    Double_t xAxis3[12] = {0, 1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 24};
 
-    TH1F* histosignf__1 = new TH1F("histosignf__1", "", 11, xAxis3);
+    TH1F* histosignf__1 = new TH1F("histosignf__1", "", 12, xAxis1);
     histosignf__1->SetBinContent(3, 0.4672185);
     histosignf__1->SetBinContent(4, 2.829209);
     histosignf__1->SetBinContent(5, 7.571151);
@@ -274,6 +273,7 @@ void TEMP() {
     histosignf__1->SetBinContent(12, 1.019512e-09);
     histosignf__1->SetEntries(100011);
     
+    TH1F* histosignf__2 = new TH1F("histosignf__2", "", 12, xAxis1);
     histosignf__2->SetBinContent(3, 0.0);
     histosignf__2->SetBinContent(4, 0.0);
     histosignf__2->SetBinContent(5, 14.2821);
@@ -305,10 +305,10 @@ void TEMP() {
     histosignf__1->Draw("");
     histosignf__2->Draw("same");
 
-    auto legend = new TLegend(0.1, 0.7, 0.48, 0.9);
-    legend->AddEntry(histosignf__1, "Panos' cuts", "f");
-    legend->AddEntry(histosignf__2, "+BDT cut", "f");
-    legend->Draw("");
+    auto legend4 = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend4->AddEntry(histosignf__1, "Panos' cuts", "f");
+    legend4->AddEntry(histosignf__2, "+BDT cut", "f");
+    legend4->Draw("");
 
     Canvas_4->Modified();
     Canvas_4->cd();
