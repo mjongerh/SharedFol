@@ -25,7 +25,7 @@
 
 void TEMP() {
     Double_t xAxis1[13] = {0, 0.5, 1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 24};
-    Double_t NEvents = 162339839700000.0
+  Double_t NEvents = 162339839700000.0;
     //=========Macro generated from canvas: Canvas_1/Canvas_1
     //=========  (Mon Dec 20 12:50:06 2021) by ROOT version 6.25/01
     TCanvas* Canvas_1 = new TCanvas("Canvas_1", "Canvas_1", 367, 161, 1295, 807);
