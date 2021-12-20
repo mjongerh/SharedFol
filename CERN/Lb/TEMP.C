@@ -184,8 +184,8 @@ void TEMP() {
     hBkgPerEvent__2->SetLineColor(ci2);
     hBkgPerEvent__2->SetLineWidth(2);
 
-    hBkgPerEvent__1->Draw("");
-    hBkgPerEvent__2->Draw("same");
+    hBkgPerEvent__2->Draw("");
+    hBkgPerEvent__1->Draw("same");
     auto legend2 = new TLegend(0.1, 0.7, 0.48, 0.9);
     legend2->AddEntry(hBkgPerEvent__1, "Panos' cuts", "f");
     legend2->AddEntry(hBkgPerEvent__2, "+BDT cut", "f");
@@ -304,8 +304,8 @@ void TEMP() {
     
     histosignf__2->SetLineColor(ci2);
     histosignf__2->SetLineWidth(2);
-    histosignf__1->Draw("");
-    histosignf__2->Draw("same");
+    histosignf__2->Draw("");
+    histosignf__1->Draw("same");
 
     auto legend4 = new TLegend(0.1, 0.7, 0.48, 0.9);
     legend4->AddEntry(histosignf__1, "Panos' cuts", "f");
