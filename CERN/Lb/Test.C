@@ -17,10 +17,10 @@ void Test() {
   TH1F* hsig = (TH1F*)finput.Get("histosignal");
   Double_t PtBins[13] = {0., 0.5, 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
   long Nevents = 210000000000000;
-  for (Int_t i = 0; i < 11; i++) {
+  for (Int_t i = 0; i < 12; i++) {
     cout << "Pt " << PtBins[i] << endl
-         << " sig " << hsig->GetBinContent(i) << endl
-         << " bkg " << hbkg->GetBinContent(i)*Nevents << endl;
+         << " sig " << hsig->GetBinContent(i+1) << endl
+         << " bkg " << hbkg->GetBinContent(i+1)*Nevents << endl;
   }
     
     
