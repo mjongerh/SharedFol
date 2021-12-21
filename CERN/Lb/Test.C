@@ -12,7 +12,7 @@
 #include "TROOT.h"
 
 void Test() {
-  TFile finput("~/Desktop/ALICE3_HFperformance/analysis/foutputLambda_b.root"); 
+  TFile finput("./outputstrictcut/foutputLambda_b_PbPb.root"); 
   TH1F* hbkg = (TH1F*)finput.Get("hBkgPerEvent");
   TH1F* hsig = (TH1F*)finput.Get("histosignal");
   Double_t PtBins[13] = {0., 0.5, 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
