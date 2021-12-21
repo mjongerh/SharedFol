@@ -275,7 +275,7 @@ void TEMP() {
     histosignf__1->SetBinContent(12, 1.019512);
     histosignf__1->SetEntries(100011);
     
-    TH1F* histosignf__2 = new TH1F("histosignf__2", "", 12, xAxis1);
+    TH1F* histosignf__2 = new TH1F("histosignf__2", "Significance Lb in pp 14TeV", 12, xAxis1);
     histosignf__2->SetBinContent(3, 22.9432);
     histosignf__2->SetBinContent(4, 115.355);
     histosignf__2->SetBinContent(5, 211.364);
@@ -290,17 +290,17 @@ void TEMP() {
 
     histosignf__1->SetLineColor(ci);
     histosignf__1->SetLineWidth(2);
-    histosignf__1->GetXaxis()->SetTitle("p_{T} (GeV)");
-    histosignf__1->GetXaxis()->SetRange(1, 1000);
-    histosignf__1->GetXaxis()->SetLabelFont(42);
-    histosignf__1->GetXaxis()->SetTitleOffset(1);
-    histosignf__1->GetXaxis()->SetTitleFont(42);
-    histosignf__1->GetYaxis()->SetTitle("Lb d#sigma^{PYTHIA}/dp_{T} (#mu b/GeV)");
-    histosignf__1->GetYaxis()->SetLabelFont(42);
-    histosignf__1->GetYaxis()->SetTitleFont(42);
-    histosignf__1->GetZaxis()->SetLabelFont(42);
-    histosignf__1->GetZaxis()->SetTitleOffset(1);
-    histosignf__1->GetZaxis()->SetTitleFont(42);
+    histosignf__2->GetXaxis()->SetTitle("p_{T} (GeV)");
+    histosignf__2->GetXaxis()->SetRange(1, 1000);
+    histosignf__2->GetXaxis()->SetLabelFont(42);
+    histosignf__2->GetXaxis()->SetTitleOffset(1);
+    histosignf__2->GetXaxis()->SetTitleFont(42);
+    histosignf__2->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+    histosignf__2->GetYaxis()->SetLabelFont(42);
+    histosignf__2->GetYaxis()->SetTitleFont(42);
+    histosignf__2->GetZaxis()->SetLabelFont(42);
+    histosignf__2->GetZaxis()->SetTitleOffset(1);
+    histosignf__2->GetZaxis()->SetTitleFont(42);
     
     histosignf__2->GetYaxis()->SetRangeUser(0.1, 1000);
 
