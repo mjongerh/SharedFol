@@ -276,16 +276,16 @@ void TEMP() {
     histosignf__1->SetEntries(100011);
     
     TH1F* histosignf__2 = new TH1F("histosignf__2", "", 12, xAxis1);
-    //histosignf__2->SetBinContent(3, 0.0);
-    //histosignf__2->SetBinContent(4, 0.0);
-    histosignf__2->SetBinContent(5, 14.2821);
-    histosignf__2->SetBinContent(6, 59.323);
-    histosignf__2->SetBinContent(7, 100.125);
-    histosignf__2->SetBinContent(8, 270.511);
-    histosignf__2->SetBinContent(9, 242.356);
-    histosignf__2->SetBinContent(10, 134.88);
-    histosignf__2->SetBinContent(11, 102.225);
-    histosignf__2->SetBinContent(12, 50.9764);
+    histosignf__2->SetBinContent(3, 22.9432);
+    histosignf__2->SetBinContent(4, 115.355);
+    histosignf__2->SetBinContent(5, 211.364);
+    histosignf__2->SetBinContent(6, 340.51);
+    histosignf__2->SetBinContent(7, 543.251);
+    histosignf__2->SetBinContent(8, 557.119);
+    histosignf__2->SetBinContent(9, 329.195);
+    histosignf__2->SetBinContent(10, 112.282);
+    histosignf__2->SetBinContent(11, 53.5673);
+    histosignf__2->SetBinContent(12, 23.1136);
     histosignf__2->SetEntries(100011);
 
     histosignf__1->SetLineColor(ci);
