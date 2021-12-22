@@ -317,6 +317,62 @@ void TEMP() {
     Canvas_4->Modified();
     Canvas_4->cd();
     Canvas_4->SetSelected(Canvas_4);
+
+    TCanvas* Canvas_5 = new TCanvas("Canvas_5", "Canvas_1", 1143, 281, 798, 757);
+    Canvas_5->Range(-3, -17.34724, 27, 156.1252);
+    Canvas_5->SetFillColor(0);
+    Canvas_5->SetBorderMode(0);
+    Canvas_5->SetBorderSize(2);
+    Canvas_5->SetFrameBorderMode(0);
+    Canvas_5->SetFrameBorderMode(0);
+
+    TH1F* histosignf__3 = new TH1F("histosignf__3", "Significance Lb in pp 14TeV", 12, xAxis1);
+    histosignf__3->SetBinContent(3, 0.9710867);
+    histosignf__3->SetBinContent(4, 9.098567);
+    histosignf__3->SetBinContent(5, 23.91249);
+    histosignf__3->SetBinContent(6, 47.17467);
+    histosignf__3->SetBinContent(7, 101.5759);
+    histosignf__3->SetBinContent(8, 132.1695);
+    histosignf__3->SetBinContent(9, 82.77902);
+    histosignf__3->SetBinContent(10, 23.33332);
+    histosignf__3->SetBinContent(11, 25.79671);
+    histosignf__3->SetBinContent(13, 1.31619e-07);
+
+    TH1F* histosignf__4 = new TH1F("histosignf__4", "Significance Lb in PbPb 5.02TeV, Nevt=3.8E10", 12, xAxis1);
+    histosignf__4->SetBinContent(3, 10.765); //after BDT
+    histosignf__4->SetBinContent(4, 36.5129);
+    histosignf__4->SetBinContent(5, 62.2044);
+    histosignf__4->SetBinContent(6, 89.5211);
+    histosignf__4->SetBinContent(7, 149.382);
+    histosignf__4->SetBinContent(8, 178.551);
+    histosignf__4->SetBinContent(9, 128.045);
+    histosignf__4->SetBinContent(10, 75.2491);
+    histosignf__4->SetBinContent(11, 61.535);
+    histosignf__4->SetBinContent(13, 1.31619e-07);
+
+    histosignf__4->SetLineWidth(2);
+    histosignf__4->GetXaxis()->SetTitle("p_{T} (GeV)");
+    histosignf__4->GetXaxis()->SetRange(1, 100);
+    histosignf__4->GetXaxis()->SetLabelFont(42);
+    histosignf__4->GetXaxis()->SetTitleOffset(1);
+    histosignf__4->GetXaxis()->SetTitleFont(42);
+    histosignf__4->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+    histosignf__4->GetYaxis()->SetLabelFont(42);
+    histosignf__4->GetYaxis()->SetTitleFont(42);
+    histosignf__4->GetZaxis()->SetLabelFont(42);
+    histosignf__4->GetZaxis()->SetTitleOffset(1);
+    histosignf__4->GetZaxis()->SetTitleFont(42);
+    histosignf__4->Draw("");
+    histosignf__3->Draw("same");
+
+    auto legend5 = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend5->AddEntry(histosignf__1, "Panos' cuts", "f");
+    legend5->AddEntry(histosignf__2, "+BDT cut", "f");
+    legend5->Draw("");
+
+    Canvas_5->cd();
+    Canvas_5->Modified();
+    Canvas_5->SetSelected(Canvas_1);
 }
 
 /*
