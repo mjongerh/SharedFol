@@ -377,6 +377,66 @@ void TEMP() {
     Canvas_5->cd();
     Canvas_5->Modified();
     Canvas_5->SetSelected(Canvas_1);
+
+    //Lb PbPb 5.02TeV with 270E9 events
+    TCanvas* Canvas_6 = new TCanvas("Canvas_6", "Canvas_6", 1143, 281, 798, 757);
+    Canvas_6->Range(-3, -17.34724, 27, 156.1252);
+    Canvas_6->SetFillColor(0);
+    Canvas_6->SetBorderMode(0);
+    Canvas_6->SetBorderSize(2);
+    Canvas_6->SetFrameBorderMode(0);
+    Canvas_6->SetFrameBorderMode(0);
+
+    TH1F* histosignf__5 = new TH1F("histosignf__5", "Significance Lb in PbPb 5.02TeV, Nevt=270E9", 12, xAxis1);
+    histosignf__5->SetBinContent(3, 0.367045531);
+    histosignf__5->SetBinContent(4, 3.514253697);
+    histosignf__5->SetBinContent(5, 9.594621639);
+    histosignf__5->SetBinContent(6, 20.19100976);
+    histosignf__5->SetBinContent(7, 48.60625172);
+    histosignf__5->SetBinContent(8, 67.07000628);
+    histosignf__5->SetBinContent(9, 38.25250308);
+    histosignf__5->SetBinContent(10, 9.05281858);
+    histosignf__5->SetBinContent(11, 10.36718902);
+    histosignf__5->SetBinContent(13, 1.31619e-07);
+
+    TH1F* histosignf__6 = new TH1F("histosignf__6", "Significance Lb in PbPb 5.02TeV, Nevt=270E9", 12, xAxis1);
+    histosignf__6->SetBinContent(3, 9.3072); // after BDT
+    histosignf__6->SetBinContent(4, 34.467);
+    histosignf__6->SetBinContent(5, 58.307);
+    histosignf__6->SetBinContent(6, 84.742);
+    histosignf__6->SetBinContent(7, 143.651);
+    histosignf__6->SetBinContent(8, 170.870);
+    histosignf__6->SetBinContent(9, 116.969);
+    histosignf__6->SetBinContent(10, 46.463);
+    histosignf__6->SetBinContent(11, 43.430);
+    histosignf__6->SetBinContent(13, 1.31619e-07);
+
+    histosignf__5->SetLineWidth(2);
+    histosignf__5->GetXaxis()->SetTitle("p_{T} (GeV)");
+    histosignf__5->GetXaxis()->SetRange(1, 100);
+    histosignf__5->GetXaxis()->SetLabelFont(42);
+    histosignf__5->GetXaxis()->SetTitleOffset(1);
+    histosignf__5->GetXaxis()->SetTitleFont(42);
+    histosignf__5->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+    histosignf__5->GetYaxis()->SetLabelFont(42);
+    histosignf__5->GetYaxis()->SetTitleFont(42);
+    histosignf__5->GetZaxis()->SetLabelFont(42);
+    histosignf__5->GetZaxis()->SetTitleOffset(1);
+    histosignf__5->GetZaxis()->SetTitleFont(42);
+    
+    histosignf__3->SetLineColor(ci);
+    histosignf__3->SetLineWidth(2);
+    histosignf__4->Draw("");
+    histosignf__3->Draw("same");
+
+    auto legend5 = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend5->AddEntry(histosignf__3, "Panos' cuts", "f");
+    legend5->AddEntry(histosignf__4, "+BDT cut", "f");
+    legend5->Draw("");
+
+    Canvas_5->cd();
+    Canvas_5->Modified();
+    Canvas_5->SetSelected(Canvas_1);
 }
 
 /*
