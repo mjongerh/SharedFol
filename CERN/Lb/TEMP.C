@@ -427,7 +427,7 @@ void TEMP() {
     histosignf__5->SetLineColor(ci);
     histosignf__5->SetLineWidth(2);
     histosignf__6->Draw("");
-    histosignf__6->Draw("same");
+    histosignf__5->Draw("same");
 
     auto legend6 = new TLegend(0.1, 0.7, 0.48, 0.9);
     legend6->AddEntry(histosignf__3, "Panos' cuts", "f");
