@@ -424,19 +424,19 @@ void TEMP() {
     histosignf__5->GetZaxis()->SetTitleOffset(1);
     histosignf__5->GetZaxis()->SetTitleFont(42);
     
-    histosignf__3->SetLineColor(ci);
-    histosignf__3->SetLineWidth(2);
-    histosignf__4->Draw("");
-    histosignf__3->Draw("same");
+    histosignf__5->SetLineColor(ci);
+    histosignf__5->SetLineWidth(2);
+    histosignf__6->Draw("");
+    histosignf__6->Draw("same");
 
-    auto legend5 = new TLegend(0.1, 0.7, 0.48, 0.9);
-    legend5->AddEntry(histosignf__3, "Panos' cuts", "f");
-    legend5->AddEntry(histosignf__4, "+BDT cut", "f");
-    legend5->Draw("");
+    auto legend6 = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend6->AddEntry(histosignf__3, "Panos' cuts", "f");
+    legend6->AddEntry(histosignf__4, "+BDT cut", "f");
+    legend6->Draw("");
 
-    Canvas_5->cd();
-    Canvas_5->Modified();
-    Canvas_5->SetSelected(Canvas_1);
+    Canvas_6->cd();
+    Canvas_6->Modified();
+    Canvas_6->SetSelected(Canvas_1);
 }
 
 /*
