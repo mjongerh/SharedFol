@@ -30,7 +30,7 @@ void Histo_paramBDT()
     printf("tree not found");
   }
   Long64_t nentries = oldtree->GetEntries();
-  float PtEntry,, fM, BDT, fDecayLength, fDecayLengthXY, fImpactParameter0, fImpactParameter1, fCPA, fCPAXY, fChi2PCA;
+  float PtEntry, fM, BDT, fDecayLength, fDecayLengthXY, fImpactParameter0, fImpactParameter1, fCPA, fCPAXY, fChi2PCA;
   Int_t classID;
   oldtree->SetBranchAddress("fPt", &PtEntry);
   oldtree->SetBranchAddress("fM", &fM);
