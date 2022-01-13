@@ -16,7 +16,7 @@ void Test() {
   TH1F* hbkg = (TH1F*)finput.Get("hBkgPerEvent");
   TH1F* hsig = (TH1F*)finput.Get("histosignal");
   Double_t PtBins[13] = {0., 0.5, 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
-  long Nevents = 38376000000; //pp = 210000000000000;
+  long Nevents = 270000000000;//PbPb new //pp = 210000000000000; //PbPb old = 38376000000
   for (Int_t i = 0; i < 12; i++) {
     cout << "Pt " << PtBins[i] << endl
          << " sig " << hsig->GetBinContent(i+1) << endl
