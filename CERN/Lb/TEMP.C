@@ -388,27 +388,27 @@ void TEMP() {
     Canvas_6->SetFrameBorderMode(0);
 
     TH1F* histosignf__5 = new TH1F("histosignf__5", "Significance Lb in PbPb 5.02TeV, Nevt=270E9", 12, xAxis1);
-    histosignf__5->SetBinContent(3, 0.367045531);
-    histosignf__5->SetBinContent(4, 3.514253697);
-    histosignf__5->SetBinContent(5, 9.594621639);
-    histosignf__5->SetBinContent(6, 20.19100976);
-    histosignf__5->SetBinContent(7, 48.60625172);
-    histosignf__5->SetBinContent(8, 67.07000628);
-    histosignf__5->SetBinContent(9, 38.25250308);
-    histosignf__5->SetBinContent(10, 9.05281858);
-    histosignf__5->SetBinContent(11, 10.36718902);
+    histosignf__5->SetBinContent(3, 2.601193789);
+    histosignf__5->SetBinContent(4, 24.36589986);
+    histosignf__5->SetBinContent(5, 64.01166995);
+    histosignf__5->SetBinContent(6, 126.2050828);
+    histosignf__5->SetBinContent(7, 271.5007827);
+    histosignf__5->SetBinContent(8, 353.1344914);
+    histosignf__5->SetBinContent(9, 221.3154687);
+    histosignf__5->SetBinContent(10, 62.48341442);
+    histosignf__5->SetBinContent(11, 69.05447492);
     histosignf__5->SetBinContent(13, 1.31619e-07);
 
     TH1F* histosignf__6 = new TH1F("histosignf__6", "Significance Lb in PbPb 5.02TeV, Nevt=270E9", 12, xAxis1);
-    histosignf__6->SetBinContent(3, 9.3072); // after BDT
-    histosignf__6->SetBinContent(4, 34.467);
-    histosignf__6->SetBinContent(5, 58.307);
-    histosignf__6->SetBinContent(6, 84.742);
-    histosignf__6->SetBinContent(7, 143.651);
-    histosignf__6->SetBinContent(8, 170.870);
-    histosignf__6->SetBinContent(9, 116.969);
-    histosignf__6->SetBinContent(10, 46.463);
-    histosignf__6->SetBinContent(11, 43.430);
+    histosignf__6->SetBinContent(3, 28.715); // after BDT
+    histosignf__6->SetBinContent(4, 97.353);
+    histosignf__6->SetBinContent(5, 165.849);
+    histosignf__6->SetBinContent(6, 238.660);
+    histosignf__6->SetBinContent(7, 398.227);
+    histosignf__6->SetBinContent(8, 476.120);
+    histosignf__6->SetBinContent(9, 340.576);
+    histosignf__6->SetBinContent(10, 200.858);
+    histosignf__6->SetBinContent(11, 164.164);
     histosignf__6->SetBinContent(13, 1.31619e-07);
 
     histosignf__5->SetLineWidth(2);
