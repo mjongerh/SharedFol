@@ -15,8 +15,8 @@
 //Makes histograms of each parameter with respect to the BDT response of that event
 void Histo_paramBDT()
 {
-  TString oldfileDir = "~/Desktop/SharedFol/CERN/Lb/output/";
-  TString filename = oldfileDir + "Pt5.0/TMVA.root";
+  TString oldfileDir = "~/Desktop/SharedFol/CERN/Lb/outputstrictcut/";
+  TString filename = oldfileDir + "Pt7.0/TMVA.root";
   TFile* oldFile = new TFile(filename);
 
   TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 7000, 5000);
@@ -30,9 +30,10 @@ void Histo_paramBDT()
     printf("tree not found");
   }
   Long64_t nentries = oldtree->GetEntries();
-  float PtEntry, BDT, fDecayLength, fDecayLengthXY, fImpactParameter0, fImpactParameter1, fCPA, fCPAXY, fChi2PCA;
+  float PtEntry,, fM, BDT, fDecayLength, fDecayLengthXY, fImpactParameter0, fImpactParameter1, fCPA, fCPAXY, fChi2PCA;
   Int_t classID;
   oldtree->SetBranchAddress("fPt", &PtEntry);
+  oldtree->SetBranchAddress("fM", &fM);
   oldtree->SetBranchAddress("BDT", &BDT);
   oldtree->SetBranchAddress("fDecayLength", &fDecayLength);
   oldtree->SetBranchAddress("fDecayLengthXY", &fDecayLengthXY);
@@ -54,6 +55,8 @@ void Histo_paramBDT()
   }
   weight = 1.0; //Nbkg/Nsig;
 
+  TH2D* hMS = new TH2D("hMS", "SIGNAL M vs BDT response", 50, -0.8, 0.5, 50, 0, 40.0);
+  TH2D* hMB = new TH2D("hMB", "BACKGROUND M vs BDT response", 50, -0.8, 0.5, 50, 0, 40.0);
   TH2D* hDecayLengthS = new TH2D("hDecayLengthS", "SIGNAL Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 0.03);
   TH2D* hDecayLengthB = new TH2D("hDecayLengthB", "BACKGROUND Decay length vs BDT response", 50, -0.8, 0.5, 50, 0, 0.03);
   TH2D* hDecayLengthXYS = new TH2D("hDecayLengthXYS", "SIGNAL Decay lengthXY vs BDT response", 50, -0.8, 0.5, 50, 0, 0.03);
@@ -85,6 +88,7 @@ void Histo_paramBDT()
   for (Int_t i = 0; i < nentries; i++) {
     oldtree->GetEntry(i);
     if (classID == 0) {
+      hMS->Fill(BDT, fM, weight);
       hDecayLengthS->Fill(BDT, fDecayLength, weight);
       hDecayLengthXYS->Fill(BDT, fDecayLengthXY, weight);
       hImpactParameter0S->Fill(BDT, fImpactParameter0, weight);
@@ -93,6 +97,7 @@ void Histo_paramBDT()
       hCPAXYS->Fill(BDT, fCPAXY, weight);
       hChi2PCAS->Fill(BDT, TMath::Sqrt(fChi2PCA), weight);
     } else {
+      hMB->Fill(BDT, fM, weight);
       hDecayLengthB->Fill(BDT, fDecayLength);
       hDecayLengthXYB->Fill(BDT, fDecayLengthXY);
       hImpactParameter0B->Fill(BDT, fImpactParameter0);
@@ -167,4 +172,13 @@ void Histo_paramBDT()
   hDecayLengthXYB->Draw("colz");
   hDecayLengthXYB->GetXaxis()->SetTitle("BDT response");
   hDecayLengthXYB->GetYaxis()->SetTitle("decay lengthXY bkg");
+
+  c1->cd(18);
+  hMS->Draw("colz");
+  hMS->GetXaxis()->SetTitle("BDT response");
+  hMS->GetYaxis()->SetTitle("Mass sig");
+  c1->cd(19);
+  hMB->Draw("colz");
+  hMB->GetXaxis()->SetTitle("BDT response");
+  hMB->GetYaxis()->SetTitle("Mass bkg");
 }

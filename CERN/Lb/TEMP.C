@@ -132,6 +132,7 @@ void TEMP() {
     Canvas_2->SetFrameBorderMode(0);
     Canvas_2->SetFrameBorderMode(0);
 
+    // bkg per event of pp 14TeV
     TH1D* hBkgPerEvent__1 = new TH1D("hBkgPerEvent__1", "", 12, xAxis1);
     hBkgPerEvent__1->SetBinContent(2, 2.10095e-06);
     hBkgPerEvent__1->SetBinContent(3, 1.39038e-06);
@@ -148,9 +149,9 @@ void TEMP() {
     hBkgPerEvent__1->SetStats(0);
 
     TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "", 12, xAxis1);
-    //hBkgPerEvent__2->SetBinContent(2, 2.10095e-06*0.0);
-    //hBkgPerEvent__2->SetBinContent(3, 1.39038e-06*0.0);
-    //hBkgPerEvent__2->SetBinContent(4, 2.174787e-06*0.0);
+    hBkgPerEvent__2->SetBinContent(2, 2.10095e-06*0.0);
+    hBkgPerEvent__2->SetBinContent(3, 1.39038e-06*0.0);
+    hBkgPerEvent__2->SetBinContent(4, 2.174787e-06*0.0);
     hBkgPerEvent__2->SetBinContent(5, 1.964767e-06*0.00028);
     hBkgPerEvent__2->SetBinContent(6, 1.324055e-06*0.000802);
     hBkgPerEvent__2->SetBinContent(7, 1.859376e-06*0.002942);
@@ -326,7 +327,7 @@ void TEMP() {
     Canvas_5->SetFrameBorderMode(0);
     Canvas_5->SetFrameBorderMode(0);
 
-    TH1F* histosignf__3 = new TH1F("histosignf__3", "Significance Lb in pp 14TeV", 12, xAxis1);
+    TH1F* histosignf__3 = new TH1F("histosignf__3", "Significance Lb in PbPb 5.02TeV, Nevt=3.8E10", 12, xAxis1);
     histosignf__3->SetBinContent(3, 0.9710867);
     histosignf__3->SetBinContent(4, 9.098567);
     histosignf__3->SetBinContent(5, 23.91249);
