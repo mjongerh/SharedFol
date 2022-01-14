@@ -467,9 +467,9 @@ void TEMP() {
     histosignf__7->SetBinContent(7, 124.3875541);
     histosignf__7->SetBinContent(8, 152.0880488);
     histosignf__7->SetBinContent(9, 90.89947862);
-    histosignf__7->SetBinContent(10, 23.89415212);
+    histosignf__7->SetBinContent(10, 45.30123391);
     histosignf__7->SetBinContent(11, 24.97200691);
-    histosignf__7->SetBinContent(13, 1.31619e-07);
+    histosignf__7->SetBinContent(13, 8.835840788);
 
     histosignf__7->SetBinError(3, 0.194308477);
     histosignf__7->SetBinError(4, 2.645205765);
@@ -478,9 +478,9 @@ void TEMP() {
     histosignf__7->SetBinError(7, 12.34927916);
     histosignf__7->SetBinError(8, 11.83167705);
     histosignf__7->SetBinError(9, 7.320726785);
-    histosignf__7->SetBinError(10, 1.984248419);
+    histosignf__7->SetBinError(10, 3.761962422);
     histosignf__7->SetBinError(11, 1.948953026);
-    histosignf__7->SetBinError(13, 1.31619e-07);
+    histosignf__7->SetBinError(13, 0.711725044);
 
     TH1F* histosignf__8 = new TH1F("histosignf__8", "Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9", 12, xAxis1);
     histosignf__8->SetBinContent(3, 14.6981); // after BDT
@@ -490,9 +490,9 @@ void TEMP() {
     histosignf__8->SetBinContent(7, 181.512);
     histosignf__8->SetBinContent(8, 207.957);
     histosignf__8->SetBinContent(9, 146.071);
-    histosignf__8->SetBinContent(10, 81.1461);
+    histosignf__8->SetBinContent(10, 93.3654);
     histosignf__8->SetBinContent(11, 64.3722);
-    histosignf__8->SetBinContent(13, 1.31619e-07);
+    histosignf__8->SetBinContent(13, 31.6456);
 
     histosignf__8->SetBinError(3, 1.933428366); // after BDT
     histosignf__8->SetBinError(4, 8.065706427);
@@ -501,9 +501,9 @@ void TEMP() {
     histosignf__8->SetBinError(7, 18.02152923);
     histosignf__8->SetBinError(8, 16.17749439);
     histosignf__8->SetBinError(9, 11.76424342);
-    histosignf__8->SetBinError(10, 6.738990026);
+    histosignf__8->SetBinError(10, 7.753200141);
     histosignf__8->SetBinError(11, 5.023994727);
-    histosignf__8->SetBinError(13, 1.31619e-07);
+    histosignf__8->SetBinError(13, 2.549194909);
 
     histosignf__8->SetLineWidth(2);
     histosignf__8->GetXaxis()->SetTitle("p_{T} (GeV)");
