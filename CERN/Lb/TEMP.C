@@ -450,7 +450,7 @@ void TEMP() {
     Canvas_6->Modified();
     Canvas_6->SetSelected(Canvas_1);
 
-    //Lb PbPb 5.02TeV 30-50% with 55E9 events
+    //Lb PbPb 5.02TeV 30-50% with 55E9 events and variable Raa
     TCanvas* Canvas_7 = new TCanvas("Canvas_7", "Canvas_7", 1143, 281, 798, 757);
     Canvas_7->Range(-3, -17.34724, 27, 156.1252);
     Canvas_7->SetFillColor(0);
@@ -541,7 +541,7 @@ void TEMP() {
 
     Canvas_7->cd();
     Canvas_7->Modified();
-    Canvas_7->SetSelected(Canvas_1);
+    Canvas_7->SetSelected(Canvas_7);
 }
 
 /*
