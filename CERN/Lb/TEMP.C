@@ -447,7 +447,7 @@ void TEMP() {
     Canvas_7->SetFrameBorderMode(0);
     Canvas_7->SetFrameBorderMode(0);
 
-    TH1F* histosignf__7 = new TH1F("histosignf__7", "Significance Lb in PbPb 5.02TeV, 30-50%, Nevt=55E9", 12, xAxis1);
+    TH1F* histosignf__7 = new TH1F("histosignf__7", "Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9", 12, xAxis1);
     histosignf__7->SetBinContent(3, 1.476411422);
     histosignf__7->SetBinContent(4, 19.83811666);
     histosignf__7->SetBinContent(5, 47.37049454);
@@ -470,7 +470,7 @@ void TEMP() {
     histosignf__7->SetBinError(11, 1.948953026);
     histosignf__7->SetBinError(13, 1.31619e-07);
 
-    TH1F* histosignf__8 = new TH1F("histosignf__8", "Significance Lb in PbPb 5.02TeV, 30-50%, Nevt=55E9", 12, xAxis1);
+    TH1F* histosignf__8 = new TH1F("histosignf__8", "Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9", 12, xAxis1);
     histosignf__8->SetBinContent(3, 14.6981); // after BDT
     histosignf__8->SetBinContent(4, 60.4933);
     histosignf__8->SetBinContent(5, 99.1656);
