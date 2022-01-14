@@ -437,6 +437,88 @@ void TEMP() {
     Canvas_6->cd();
     Canvas_6->Modified();
     Canvas_6->SetSelected(Canvas_1);
+
+    //Lb PbPb 5.02TeV 30-50% with 55E9 events
+    TCanvas* Canvas_7 = new TCanvas("Canvas_7", "Canvas_7", 1143, 281, 798, 757);
+    Canvas_7->Range(-3, -17.34724, 27, 156.1252);
+    Canvas_7->SetFillColor(0);
+    Canvas_7->SetBorderMode(0);
+    Canvas_7->SetBorderSize(2);
+    Canvas_7->SetFrameBorderMode(0);
+    Canvas_7->SetFrameBorderMode(0);
+
+    TH1F* histosignf__7 = new TH1F("histosignf__7", "Significance Lb in PbPb 5.02TeV, 30-50%, Nevt=55E9", 12, xAxis1);
+    histosignf__7->SetBinContent(3, 1.476411422);
+    histosignf__7->SetBinContent(4, 19.83811666);
+    histosignf__7->SetBinContent(5, 47.37049454);
+    histosignf__7->SetBinContent(6, 70.70376854);
+    histosignf__7->SetBinContent(7, 124.3875541);
+    histosignf__7->SetBinContent(8, 152.0880488);
+    histosignf__7->SetBinContent(9, 90.89947862);
+    histosignf__7->SetBinContent(10, 23.89415212);
+    histosignf__7->SetBinContent(11, 24.97200691);
+    histosignf__7->SetBinContent(13, 1.31619e-07);
+
+    histosignf__7->SetBinError(3, 0.194308477);
+    histosignf__7->SetBinError(4, 2.645205765);
+    histosignf__7->SetBinError(5, 6.724885959);
+    histosignf__7->SetBinError(6, 10.16588564);
+    histosignf__7->SetBinError(7, 12.34927916);
+    histosignf__7->SetBinError(8, 11.83167705);
+    histosignf__7->SetBinError(9, 7.320726785);
+    histosignf__7->SetBinError(10, 1.984248419);
+    histosignf__7->SetBinError(11, 1.948953026);
+    histosignf__7->SetBinError(13, 1.31619e-07);
+
+    TH1F* histosignf__8 = new TH1F("histosignf__8", "Significance Lb in PbPb 5.02TeV, 30-50%, Nevt=55E9", 12, xAxis1);
+    histosignf__8->SetBinContent(3, 14.6981); // after BDT
+    histosignf__8->SetBinContent(4, 60.4933);
+    histosignf__8->SetBinContent(5, 99.1656);
+    histosignf__8->SetBinContent(6, 122.633);
+    histosignf__8->SetBinContent(7, 181.512);
+    histosignf__8->SetBinContent(8, 207.957);
+    histosignf__8->SetBinContent(9, 146.071);
+    histosignf__8->SetBinContent(10, 81.1461);
+    histosignf__8->SetBinContent(11, 64.3722);
+    histosignf__8->SetBinContent(13, 1.31619e-07);
+
+    histosignf__8->SetBinError(3, 1.933428366); // after BDT
+    histosignf__8->SetBinError(4, 8.065706427);
+    histosignf__8->SetBinError(5, 14.07779787);
+    histosignf__8->SetBinError(6, 17.63314224);
+    histosignf__8->SetBinError(7, 18.02152923);
+    histosignf__8->SetBinError(8, 16.17749439);
+    histosignf__8->SetBinError(9, 11.76424342);
+    histosignf__8->SetBinError(10, 6.738990026);
+    histosignf__8->SetBinError(11, 5.023994727);
+    histosignf__8->SetBinError(13, 1.31619e-07);
+
+    histosignf__7->SetLineWidth(2);
+    histosignf__7->GetXaxis()->SetTitle("p_{T} (GeV)");
+    histosignf__7->GetXaxis()->SetRange(1, 100);
+    histosignf__7->GetXaxis()->SetLabelFont(42);
+    histosignf__7->GetXaxis()->SetTitleOffset(1);
+    histosignf__7->GetXaxis()->SetTitleFont(42);
+    histosignf__7->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+    histosignf__7->GetYaxis()->SetLabelFont(42);
+    histosignf__7->GetYaxis()->SetTitleFont(42);
+    histosignf__7->GetZaxis()->SetLabelFont(42);
+    histosignf__7->GetZaxis()->SetTitleOffset(1);
+    histosignf__7->GetZaxis()->SetTitleFont(42);
+    
+    histosignf__7->SetLineColor(ci);
+    histosignf__7->SetLineWidth(2);
+    histosignf__8->Draw("");
+    histosignf__7->Draw("same");
+
+    auto legend7 = new TLegend(0.1, 0.7, 0.48, 0.9);
+    legend7->AddEntry(histosignf__7, "Panos' cuts", "f");
+    legend7->AddEntry(histosignf__8, "+BDT cut", "f");
+    legend7->Draw("");
+
+    Canvas_7->cd();
+    Canvas_7->Modified();
+    Canvas_7->SetSelected(Canvas_1);
 }
 
 /*
