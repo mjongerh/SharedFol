@@ -302,8 +302,19 @@ void TEMP() {
     histosignf__2->GetZaxis()->SetLabelFont(42);
     histosignf__2->GetZaxis()->SetTitleOffset(1);
     histosignf__2->GetZaxis()->SetTitleFont(42);
-    
+    histosignf__2->SetMarkerColor(4);
+    histosignf__2->SetMarkerStyle(4);
+    histosignf__2->SetMarkerSize(1.3);
     histosignf__2->GetYaxis()->SetRangeUser(0.1, 1000);
+
+    histosignf__1->SetLineColor(ci);
+    histosignf__1->SetLineWidth(2);
+    histosignf__1->SetMarkerColor(2);
+    histosignf__1->SetMarkerStyle(5);
+    histosignf__1->SetMarkerSize(1.3);
+
+    histosignf__1->SetStats(0);
+    histosignf__2->SetStats(0);
 
     histosignf__2->SetLineColor(ci2);
     histosignf__2->SetLineWidth(2);
@@ -311,13 +322,14 @@ void TEMP() {
     histosignf__1->Draw("same");
 
     auto legend4 = new TLegend(0.1, 0.7, 0.48, 0.9);
-    legend4->AddEntry(histosignf__1, "Panos' cuts", "f");
-    legend4->AddEntry(histosignf__2, "+BDT cut", "f");
+    legend4->AddEntry(histosignf__1, "Panos' cuts", "lep");
+    legend4->AddEntry(histosignf__2, "+BDT cut", "lep");
     legend4->Draw("");
 
     Canvas_4->Modified();
     Canvas_4->cd();
     Canvas_4->SetSelected(Canvas_4);
+
 
     TCanvas* Canvas_5 = new TCanvas("Canvas_5", "Canvas_1", 1143, 281, 798, 757);
     Canvas_5->Range(-3, -17.34724, 27, 156.1252);
