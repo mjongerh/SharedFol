@@ -12,14 +12,14 @@
 #include "TROOT.h"
 
 void Test() {
-  TFile finput("./outputstrictcut/foutputLambda_b_PbPb.root"); 
+  TFile finput("./outputstrictcut/foutputLambda_b_PbPb_varRaa.root"); 
   TH1F* hbkg = (TH1F*)finput.Get("hBkgPerEvent");
   TH1F* hsig = (TH1F*)finput.Get("histosignal");
   Double_t PtBins[13] = {0., 0.5, 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
-  long Nevents = 270000000000;//PbPb new //pp = 210 000 000 000 000; //PbPb old = 38 376 000 000
+  long Nevents = 55000000000;//PbPb new //pp = 210 000 000 000 000; //PbPb old = 38 376 000 000
   for (Int_t i = 0; i < 12; i++) {
     cout << "Pt " << PtBins[i] << endl
-         << " sig " << hsig->GetBinContent(i+1) << endl
+         << " sig " << hsig->GetBinContent(i + 1) << " pm " << hsig->GetBinError(i + 1) << endl
          << " bkg " << hbkg->GetBinContent(i+1)*Nevents << endl;
   }
     
