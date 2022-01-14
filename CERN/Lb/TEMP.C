@@ -521,9 +521,9 @@ void TEMP() {
     histosignf__7->Draw("same");
 
     auto legend7 = new TLegend(0.1, 0.7, 0.48, 0.9);
-    TLegendEntry* entry = legend7->AddEntry(histosignf__7, "Panos' cuts", "f");
+    TLegendEntry* entry = legend7->AddEntry(histosignf__7, "Panos' cuts", "lep");
     entry->SetMarkerStyle(5);
-    entry = legend7->AddEntry(histosignf__8, "+BDT cut", "f");
+    entry = legend7->AddEntry(histosignf__8, "+BDT cut", "lep");
     entry->SetMarkerStyle(4);
     legend7->Draw("");
 
