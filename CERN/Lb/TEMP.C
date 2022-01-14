@@ -493,21 +493,30 @@ void TEMP() {
     histosignf__8->SetBinError(11, 5.023994727);
     histosignf__8->SetBinError(13, 1.31619e-07);
 
-    histosignf__7->SetLineWidth(2);
-    histosignf__7->GetXaxis()->SetTitle("p_{T} (GeV)");
-    histosignf__7->GetXaxis()->SetRange(1, 100);
-    histosignf__7->GetXaxis()->SetLabelFont(42);
-    histosignf__7->GetXaxis()->SetTitleOffset(1);
-    histosignf__7->GetXaxis()->SetTitleFont(42);
-    histosignf__7->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
-    histosignf__7->GetYaxis()->SetLabelFont(42);
-    histosignf__7->GetYaxis()->SetTitleFont(42);
-    histosignf__7->GetZaxis()->SetLabelFont(42);
-    histosignf__7->GetZaxis()->SetTitleOffset(1);
-    histosignf__7->GetZaxis()->SetTitleFont(42);
+    histosignf__8->SetLineWidth(2);
+    histosignf__8->GetXaxis()->SetTitle("p_{T} (GeV)");
+    histosignf__8->GetXaxis()->SetRange(1, 100);
+    histosignf__8->GetXaxis()->SetLabelFont(42);
+    histosignf__8->GetXaxis()->SetTitleOffset(1);
+    histosignf__8->GetXaxis()->SetTitleFont(42);
+    histosignf__8->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+    histosignf__8->GetYaxis()->SetLabelFont(42);
+    histosignf__8->GetYaxis()->SetTitleFont(42);
+    histosignf__8->GetZaxis()->SetLabelFont(42);
+    histosignf__8->GetZaxis()->SetTitleOffset(1);
+    histosignf__8->GetZaxis()->SetTitleFont(42);
+    histosignf__8->SetMarkerColor(4);
+    histosignf__8->SetMarkerStyle(4);
+    histosignf__8->SetMarkerSize(1.3);
     
     histosignf__7->SetLineColor(ci);
     histosignf__7->SetLineWidth(2);
+    histosignf__7->SetMarkerColor(2);
+    histosignf__7->SetMarkerStyle(5);
+    histosignf__7->SetMarkerSize(1.3);
+
+    histosignf__7->SetStats(0);
+    histosignf__8->SetStats(0);
     histosignf__8->Draw("");
     histosignf__7->Draw("same");
 
