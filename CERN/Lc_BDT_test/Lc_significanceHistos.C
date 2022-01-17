@@ -132,9 +132,9 @@ void Lc_significanceHistos() {
   t_b.SetNDC();
   t_b.SetTextFont(42);
   t_b.SetTextColor(1);
-  t_b.SetTextSize(0.025);
+  t_b.SetTextSize(0.03);
   t_b.SetTextAlign(12);
-  t_b.DrawLatex(0.5, 0.75, "N_{ev} = 210.0 * 10^{12}, pp #sqrt{s}=14.0TeV, |y| <1.44");
+  t_b.DrawLatex(0.3, 0.45, "N_{ev} = 210.0 * 10^{12}, pp #sqrt{s}=14.0TeV, |y| <1.44");
 
 
 }
