@@ -117,7 +117,7 @@ int Lb_BDT(TString myMethodList = ""){
     //backgroundTree2->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-    TString outfileDir = Form("/home/mjongerh/Lb_data/outputstrictcut/Pt%.1f", ptBins[i]);
+    TString outfileDir = Form("/home/mjongerh/Lb_data/TMP/outputstrictcut/Pt%.1f", ptBins[i]);
     TString createdir = "mkdir -p " + outfileDir; //create directory if it doesn't exist yet
     gSystem->Exec(createdir);
     TString outfileName = outfileDir + "/TMVA.root";
