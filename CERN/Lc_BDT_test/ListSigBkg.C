@@ -14,7 +14,7 @@
 void ListSigBkg()
 {
   TFile finput("~/Desktop/ALICE3_HFperformance/analysis/foutputLambda_c.root");
-  TH1F* hbkg = (TH1F*)finput.Get("hBkgPerEvent");
+  TH1F* hbkg = (TH1F*)finput.Get("hbkg_fromsidebands");
   TH1F* hsig = (TH1F*)finput.Get("histosignal");
   Double_t PtBins[7] = {0, 1, 2, 4, 6, 8, 10};
   long Nevents = 210000000000000; // PbPb new 55000000000 //pp = 210 000 000 000 000; //PbPb old = 38 376 000 000
