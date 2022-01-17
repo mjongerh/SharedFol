@@ -74,7 +74,7 @@ void Lc_significanceHistos() {
   histosignf__1->SetEntries(5106);
   histosignf__1->SetStats(0);
 
-  TH1F* histosignf__2 = new TH1F("histosignf__2", "", 6, xAxis1); //pp case after BDT
+  TH1F* histosignf__2 = new TH1F("histosignf__2", "Lc significance ", 6, xAxis1); //pp case after BDT
   histosignf__2->SetBinContent(1, 10977.4);
   histosignf__2->SetBinContent(2, 25025.7);
   histosignf__2->SetBinContent(3, 40131.4);
@@ -107,6 +107,7 @@ void Lc_significanceHistos() {
   histosignf__2->SetMarkerColor(4);
   histosignf__2->SetMarkerStyle(4);
   histosignf__2->SetMarkerSize(1.3);
+  histosignf__2->GetYaxis()->SetRangeUser(100, 100000);
 
 
   histosignf__1->SetLineColor(ci);
@@ -126,7 +127,14 @@ void Lc_significanceHistos() {
   legend4->AddEntry(histosignf__1, "kinematic cuts", "lep");
   legend4->AddEntry(histosignf__2, "+BDT cut", "lep");
   legend4->Draw("");
-  t_a.DrawLatex(0.2, 0.75, "N_{ev} = 210.0 * 10^{12}, pp #sqrt{s}=14.0TeV, |y| <1.44");
+  
+  auto t_b = TLatex();
+  t_b.SetNDC();
+  t_b.SetTextFont(42);
+  t_b.SetTextColor(1);
+  t_b.SetTextSize(0.035);
+  t_b.SetTextAlign(12);
+  t_b.DrawLatex(0.2, 0.75, "N_{ev} = 210.0 * 10^{12}, pp #sqrt{s}=14.0TeV, |y| <1.44");
 
 
 }
