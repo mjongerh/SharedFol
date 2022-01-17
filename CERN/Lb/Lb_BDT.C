@@ -57,7 +57,7 @@ int Lb_BDT(TString myMethodList = ""){
   Float_t ptBins[nPtBins + 1] = {0., 0.5, 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
   Float_t TrainFraction = 0.7; //fraction of training and testing. 0.7 is 70% training 30% testing
 
-  for (Int_t i = 0; i < nPtBins; i++) { //master loop over all ptbins
+  for (Int_t i = 5; i < nPtBins; i++) { //master loop over all ptbins
     TFile* inputSignal(0);
     TString fnamesig = Form("/home/mjongerh/LbcutStrict_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder      /home/mjongerh/Lb_data/Trees/
     if (!gSystem->AccessPathName(fnamesig)) {
