@@ -57,6 +57,37 @@ void Lc_significanceHistos() {
   t_a.SetTextSize(0.035);
   t_a.SetTextAlign(12);
   t_a.DrawLatex(0.2, 0.75, "N_{ev} = 3.8 * 10^{12}, PbPb #sqrt{s}=5.02TeV, |y| <1, centr. 30-50%");
+
+
+  Double_t xAxis1[7] = {0, 1, 2, 4, 6, 8, 10};
+  TCanvas* c2 = new TCanvas("c2", "significance comparison", 200, 10, 1000, 1000);
+
+  TH1F* histosignf__1 = new TH1F("histosignf__1", "", 6, xAxis1); //pp case
+  histosignf__1->SetBinContent(1, 412.467);
+  histosignf__1->SetBinContent(2, 2105.03);
+  histosignf__1->SetBinContent(3, 6863.85);
+  histosignf__1->SetBinContent(4, 13842.8);
+  histosignf__1->SetBinContent(5, 8232.25);
+  histosignf__1->SetBinContent(6, 3634.16);
+  histosignf__1->SetBinContent(7, 1.27499e-06);
+  histosignf__1->SetEntries(5106);
+  histosignf__1->SetStats(0);
+
+
+
+  histosignf__1->SetLineWidth(2);
+  histosignf__1->GetXaxis()->SetTitle("p_{T} (GeV)");
+  histosignf__1->GetXaxis()->SetRange(1, 100);
+  histosignf__1->GetXaxis()->SetLabelFont(42);
+  histosignf__1->GetXaxis()->SetTitleOffset(1);
+  histosignf__1->GetXaxis()->SetTitleFont(42);
+  histosignf__1->GetYaxis()->SetTitle("Lc significance");
+  histosignf__1->GetYaxis()->SetLabelFont(42);
+  histosignf__1->GetYaxis()->SetTitleFont(42);
+  histosignf__1->GetZaxis()->SetLabelFont(42);
+  histosignf__1->GetZaxis()->SetTitleOffset(1);
+  histosignf__1->GetZaxis()->SetTitleFont(42);
+  histosignf__1->Draw("");
 }
 
 // OLD half-working version, to be applied on TMVA output
