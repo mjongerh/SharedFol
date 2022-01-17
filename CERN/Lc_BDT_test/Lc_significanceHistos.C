@@ -74,7 +74,7 @@ void Lc_significanceHistos() {
   histosignf__1->SetEntries(5106);
   histosignf__1->SetStats(0);
 
-  TH1F* histosignf__2 = new TH1F("histosignf__2", "Lc significance ", 6, xAxis1); //pp case after BDT
+  TH1F* histosignf__2 = new TH1F("histosignf__2", "Lc significance pp 14TeV", 6, xAxis1); //pp case after BDT
   histosignf__2->SetBinContent(1, 10977.4);
   histosignf__2->SetBinContent(2, 25025.7);
   histosignf__2->SetBinContent(3, 40131.4);
