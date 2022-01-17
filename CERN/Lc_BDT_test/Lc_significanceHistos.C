@@ -98,7 +98,7 @@ void Lc_significanceHistos() {
   histosignf__2->GetXaxis()->SetLabelFont(42);
   histosignf__2->GetXaxis()->SetTitleOffset(1);
   histosignf__2->GetXaxis()->SetTitleFont(42);
-  histosignf__2->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  histosignf__2->GetYaxis()->SetTitle("Lc significance S/sqrt(S+B)");
   histosignf__2->GetYaxis()->SetLabelFont(42);
   histosignf__2->GetYaxis()->SetTitleFont(42);
   histosignf__2->GetZaxis()->SetLabelFont(42);
@@ -107,7 +107,7 @@ void Lc_significanceHistos() {
   histosignf__2->SetMarkerColor(4);
   histosignf__2->SetMarkerStyle(4);
   histosignf__2->SetMarkerSize(1.3);
-  histosignf__2->GetYaxis()->SetRangeUser(0.1, 1000);
+
 
   histosignf__1->SetLineColor(ci);
   histosignf__1->SetLineWidth(2);
@@ -126,6 +126,8 @@ void Lc_significanceHistos() {
   legend4->AddEntry(histosignf__1, "kinematic cuts", "lep");
   legend4->AddEntry(histosignf__2, "+BDT cut", "lep");
   legend4->Draw("");
+  t_a.DrawLatex(0.2, 0.75, "N_{ev} = 210.0 * 10^{12}, pp #sqrt{s}=14.0TeV, |y| <1.44");
+
 
 }
 
