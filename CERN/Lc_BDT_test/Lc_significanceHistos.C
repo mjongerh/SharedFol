@@ -61,6 +61,7 @@ void Lc_significanceHistos() {
 
   Double_t xAxis1[7] = {0, 1, 2, 4, 6, 8, 10};
   TCanvas* c2 = new TCanvas("c2", "significance comparison", 200, 10, 1000, 1000);
+  c2->SetLogy();
 
   TH1F* histosignf__1 = new TH1F("histosignf__1", "", 6, xAxis1); //pp case
   histosignf__1->SetBinContent(1, 412.467);
@@ -73,21 +74,59 @@ void Lc_significanceHistos() {
   histosignf__1->SetEntries(5106);
   histosignf__1->SetStats(0);
 
+  TH1F* histosignf__2 = new TH1F("histosignf__2", "", 6, xAxis1); //pp case after BDT
+  histosignf__2->SetBinContent(1, 10977.4);
+  histosignf__2->SetBinContent(2, 25025.7);
+  histosignf__2->SetBinContent(3, 40131.4);
+  histosignf__2->SetBinContent(4, 24669.4);
+  histosignf__2->SetBinContent(5, 15440);
+  histosignf__2->SetBinContent(6, 7450.45);
+  histosignf__2->SetBinContent(7, 1.27499e-06);
+  histosignf__2->SetEntries(5106);
+  histosignf__2->SetStats(0);
 
 
+  Int_t ci;      // for color index setting
+  TColor* color; // for color definition with alpha
+  Int_t ci2;
+  ci2 = TColor::GetColor("#0000ff");
+  ci = TColor::GetColor("#ff0000");
+  histosignf__1->SetLineColor(ci);
   histosignf__1->SetLineWidth(2);
-  histosignf__1->GetXaxis()->SetTitle("p_{T} (GeV)");
-  histosignf__1->GetXaxis()->SetRange(1, 100);
-  histosignf__1->GetXaxis()->SetLabelFont(42);
-  histosignf__1->GetXaxis()->SetTitleOffset(1);
-  histosignf__1->GetXaxis()->SetTitleFont(42);
-  histosignf__1->GetYaxis()->SetTitle("Lc significance");
-  histosignf__1->GetYaxis()->SetLabelFont(42);
-  histosignf__1->GetYaxis()->SetTitleFont(42);
-  histosignf__1->GetZaxis()->SetLabelFont(42);
-  histosignf__1->GetZaxis()->SetTitleOffset(1);
-  histosignf__1->GetZaxis()->SetTitleFont(42);
-  histosignf__1->Draw("");
+  histosignf__2->GetXaxis()->SetTitle("p_{T} (GeV)");
+  histosignf__2->GetXaxis()->SetRange(1, 1000);
+  histosignf__2->GetXaxis()->SetLabelFont(42);
+  histosignf__2->GetXaxis()->SetTitleOffset(1);
+  histosignf__2->GetXaxis()->SetTitleFont(42);
+  histosignf__2->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  histosignf__2->GetYaxis()->SetLabelFont(42);
+  histosignf__2->GetYaxis()->SetTitleFont(42);
+  histosignf__2->GetZaxis()->SetLabelFont(42);
+  histosignf__2->GetZaxis()->SetTitleOffset(1);
+  histosignf__2->GetZaxis()->SetTitleFont(42);
+  histosignf__2->SetMarkerColor(4);
+  histosignf__2->SetMarkerStyle(4);
+  histosignf__2->SetMarkerSize(1.3);
+  histosignf__2->GetYaxis()->SetRangeUser(0.1, 1000);
+
+  histosignf__1->SetLineColor(ci);
+  histosignf__1->SetLineWidth(2);
+  histosignf__1->SetMarkerColor(2);
+  histosignf__1->SetMarkerStyle(5);
+  histosignf__1->SetMarkerSize(1.3);
+
+  histosignf__1->SetStats(0);
+  histosignf__2->SetStats(0);
+
+  histosignf__2->SetLineColor(ci2);
+  histosignf__2->SetLineWidth(2);
+  histosignf__2->Draw("");
+  histosignf__1->Draw("same");
+  auto legend4 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend4->AddEntry(histosignf__1, "kinematic cuts", "lep");
+  legend4->AddEntry(histosignf__2, "+BDT cut", "lep");
+  legend4->Draw("");
+
 }
 
 // OLD half-working version, to be applied on TMVA output
