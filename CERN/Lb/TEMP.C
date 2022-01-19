@@ -36,7 +36,7 @@ void TEMP() {
     Canvas_1->SetFrameBorderMode(0);
     Canvas_1->SetFrameBorderMode(0);
 
-    TH1F* eff__1 = new TH1F("eff__1", "", 12, xAxis1);
+    TH1F* eff__1 = new TH1F("eff__1", "recon. eff. Lb in PbPb 5.02TeV, centr. 30-50%", 12, xAxis1);
     eff__1->SetBinContent(3, 0.0005337445);
     eff__1->SetBinContent(4, 0.004258425);
     eff__1->SetBinContent(5, 0.0125);
@@ -60,7 +60,7 @@ void TEMP() {
     eff__1->SetEntries(1606.869);
     eff__1->SetStats(0);
 
-    TH1F* eff__2 = new TH1F("eff__2", "", 12, xAxis1); // After BDT cut
+    TH1F* eff__2 = new TH1F("eff__2", "recon. eff. Lb in PbPb 5.02TeV, centr. 30-50%", 12, xAxis1); // After BDT cut
     eff__2->SetBinContent(3, 0.0005337445 * 0.8185);
     eff__2->SetBinContent(4, 0.004258425 * 0.9417);
     eff__2->SetBinContent(5, 0.0125 * 0.9734);
