@@ -1,0 +1,44 @@
+[4134406:internal-dpl-clock]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 7199 messages. All is good.
+[4134406:internal-dpl-clock]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134407:internal-dpl-aod-reader]:  Trap: 0000000e   Error: 00000004   OldMask: 00000000   CR2: 420d1368
+[4134407:internal-dpl-aod-reader]: [12:14:07][ERROR] Exception caught: Couldn't get TTree "DF_0/O2trackselection" from "/home/mmazzill/pp14TeV_bbbar_10M_2T_13102021/AODRun5.0.root". Please check https://aliceo2group.github.io/analysis-framework/docs/troubleshooting/treenotfound.html for more information. 
+[4134408:internal-dpl-aod-spawner]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 8869 messages. All is good.
+[4134408:internal-dpl-aod-spawner]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134409:hf-tag-sel-collisions]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 7629 messages. All is good.
+[4134409:hf-tag-sel-collisions]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134410:alice3-pidTOF-task]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 2769 messages. All is good.
+[4134410:alice3-pidTOF-task]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134411:tpc-pid-full]: [12:14:06][WARN] CCDB: Did not find an alien token; Cannot serve objects located on alien://
+[4134411:tpc-pid-full]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 2586 messages. All is good.
+[4134411:tpc-pid-full]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134412:alice3-tof-signal-task]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 2660 messages. All is good.
+[4134412:alice3-tof-signal-task]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134413:track-extension-task]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 2370 messages. All is good.
+[4134413:track-extension-task]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134414:hf-tag-sel-tracks]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 10968 messages. All is good.
+[4134414:hf-tag-sel-tracks]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134415:hf-track-index-skims-creator]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 11814 messages. All is good.
+[4134415:hf-track-index-skims-creator]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134416:hf-cand-creator-3prong]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 10961 messages. All is good.
+[4134416:hf-cand-creator-3prong]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134417:hf-cand-creator-3prong-expressions]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 11788 messages. All is good.
+[4134417:hf-cand-creator-3prong-expressions]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134418:hf-xic-topkpi-candidate-selector]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 15135 messages. All is good.
+[4134418:hf-xic-topkpi-candidate-selector]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134419:hf-candidate-creator-xicc]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 11797 messages. All is good.
+[4134419:hf-candidate-creator-xicc]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134420:hf-candidate-creator-xicc-expressions]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 7615 messages. All is good.
+[4134420:hf-candidate-creator-xicc-expressions]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134421:hf-candidate-creator-xicc-mc]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 13037 messages. All is good.
+[4134421:hf-candidate-creator-xicc-mc]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134422:hf-xicc-to-p-k-pi-pi-candidate-selector]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 15968 messages. All is good.
+[4134422:hf-xicc-to-p-k-pi-pi-candidate-selector]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134423:hf-tree-creator-xicc-topkpipi]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 18876 messages. All is good.
+[4134423:hf-tree-creator-xicc-topkpipi]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134424:internal-dpl-aod-global-analysis-file-sink]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 7614 messages. All is good.
+[4134424:internal-dpl-aod-global-analysis-file-sink]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[4134425:internal-dpl-aod-writer]: [12:14:06][WARN] DriverClient connected successfully. Flushing message backlog of 19290 messages. All is good.
+[4134425:internal-dpl-aod-writer]: [12:14:06][WARN] Unable to communicate with driver because client is not connected. Continuing connection attempts.
+[ERROR] SEVERE: Device internal-dpl-aod-reader (4134407) had at least one message above severity error: Exception caught: Couldn't get TTree "DF_0/O2trackselection" from "/home/mmazzill/pp14TeV_bbbar_10M_2T_13102021/AODRun5.0.root". Please check https://aliceo2group.github.io/analysis-framework/docs/troubleshooting/treenotfound.html for more information. 
+[ERROR] pid 4134407 crashed with 128
+[ERROR] websocket_server_callback: Error while reading from websocket
