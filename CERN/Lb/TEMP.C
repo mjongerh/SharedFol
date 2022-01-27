@@ -26,6 +26,7 @@
 void TEMP() {
     Double_t xAxis1[13] = {0, 0.5, 1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 24};
   Double_t NEvents = 210000000000000.0;
+  Double_t NEventsPbPb = 55000000000.0;
     //=========Macro generated from canvas: Canvas_1/Canvas_1
     //=========  (Mon Dec 20 12:50:06 2021) by ROOT version 6.25/01
     TCanvas* Canvas_1 = new TCanvas("Canvas_1", "Canvas_1", 367, 161, 1295, 807);
@@ -36,7 +37,7 @@ void TEMP() {
     Canvas_1->SetFrameBorderMode(0);
     Canvas_1->SetFrameBorderMode(0);
 
-    TH1F* eff__1 = new TH1F("eff__1", "recon. eff. Lb in PbPb 5.02TeV, centr. 30-50%", 12, xAxis1);
+    TH1F* eff__1 = new TH1F("eff__1", "recon. eff. Lb", 12, xAxis1);
     eff__1->SetBinContent(3, 0.0005337445);
     eff__1->SetBinContent(4, 0.004258425);
     eff__1->SetBinContent(5, 0.0125);
@@ -60,7 +61,7 @@ void TEMP() {
     eff__1->SetEntries(1606.869);
     eff__1->SetStats(0);
 
-    TH1F* eff__2 = new TH1F("eff__2", "recon. eff. Lb in PbPb 5.02TeV, centr. 30-50%", 12, xAxis1); // After BDT cut
+    TH1F* eff__2 = new TH1F("eff__2", "recon. eff. Lb", 12, xAxis1); // After BDT cut
     eff__2->SetBinContent(3, 0.0005337445 * 0.8185);
     eff__2->SetBinContent(4, 0.004258425 * 0.9417);
     eff__2->SetBinContent(5, 0.0125 * 0.9734);
@@ -133,7 +134,7 @@ void TEMP() {
     Canvas_2->SetFrameBorderMode(0);
 
     // bkg per event of pp 14TeV
-    TH1D* hBkgPerEvent__1 = new TH1D("hBkgPerEvent__1", "", 12, xAxis1);
+    TH1D* hBkgPerEvent__1 = new TH1D("hBkgPerEvent__1", "Lb bkg per event of pp 14TeV", 12, xAxis1);
     hBkgPerEvent__1->SetBinContent(2, 2.10095e-06);
     hBkgPerEvent__1->SetBinContent(3, 1.39038e-06);
     hBkgPerEvent__1->SetBinContent(4, 2.174787e-06);
@@ -148,7 +149,7 @@ void TEMP() {
     hBkgPerEvent__1->SetEntries(11);
     hBkgPerEvent__1->SetStats(0);
 
-    TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "", 12, xAxis1);
+    TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "Lb bkg per event of pp 14TeV after BDT", 12, xAxis1);
     hBkgPerEvent__2->SetBinContent(2, 2.10095e-06*0.0);
     hBkgPerEvent__2->SetBinContent(3, 1.39038e-06*0.0);
     hBkgPerEvent__2->SetBinContent(4, 2.174787e-06*0.0);
@@ -203,42 +204,49 @@ void TEMP() {
     Canvas_3->SetFrameBorderMode(0);
     Canvas_3->SetFrameBorderMode(0);
 
-    TH1F* histosignal__1 = new TH1F("histosignal__1", "", 12, xAxis1);
-    histosignal__1->SetBinContent(5, 7983.665 / NEvents);
-    histosignal__1->SetBinContent(6, 60466.08 / NEvents);
-    histosignal__1->SetBinContent(7, 153818.3 / NEvents);
-    histosignal__1->SetBinContent(8, 505957.7 / NEvents);
-    histosignal__1->SetBinContent(9, 697078.5 / NEvents);
-    histosignal__1->SetBinContent(10, 489227.4 / NEvents);
-    histosignal__1->SetBinContent(11, 281272 / NEvents);
-    histosignal__1->SetBinContent(12, 176357.4 / NEvents);
+   TH1F* histosignal__1 = new TH1F("histosignal__1", "Lb signal pp per event", 12, xAxis1);
+    histosignal__1->SetBinContent(3, 6697.72 / NEvents);
+    histosignal__1->SetBinContent(4, 63696.8 / NEvents);
+    histosignal__1->SetBinContent(5, 177490 / NEvents);
+    histosignal__1->SetBinContent(6, 361081 / NEvents);
+    histosignal__1->SetBinContent(7, 989169 / NEvents);
+    histosignal__1->SetBinContent(8, 1.41772e+06 / NEvents);
+    histosignal__1->SetBinContent(9, 745128 / NEvents);
+    histosignal__1->SetBinContent(10, 355022 / NEvents);
+    histosignal__1->SetBinContent(11, 201716 / NEvents);
+    histosignal__1->SetBinContent(12, 78533.6 / NEvents);
 
-    histosignal__1->SetEntries(100011);
 
-    TH1F* histosignal__2 = new TH1F("histosignal__2", "", 12, xAxis1);
-    histosignal__2->SetBinContent(5, 7983.665 * 0.5244 / NEvents);
-    histosignal__2->SetBinContent(6, 60466.08*0.6238 / NEvents);
-    histosignal__2->SetBinContent(7, 153818.3*0.7508 / NEvents);
-    histosignal__2->SetBinContent(8, 505957.7*0.8071 / NEvents);
-    histosignal__2->SetBinContent(9, 697078.5*0.8819 / NEvents);
-    histosignal__2->SetBinContent(10, 489227.4 * 0.9 / NEvents);
-    histosignal__2->SetBinContent(11, 281272 * 0.8836 / NEvents);
-    histosignal__2->SetBinContent(12, 176357.4 * 0.8776 / NEvents);
-    histosignal__2->SetEntries(100011);
-
+    Int_t ci;      // for color index setting
+    TColor* color; // for color definition with alpha
+    ci = TColor::GetColor("#000099");
     histosignal__1->SetLineColor(ci);
     histosignal__1->GetXaxis()->SetTitle("p_{T} (GeV)");
     histosignal__1->GetXaxis()->SetRange(1, 100);
     histosignal__1->GetXaxis()->SetLabelFont(42);
     histosignal__1->GetXaxis()->SetTitleOffset(1);
     histosignal__1->GetXaxis()->SetTitleFont(42);
-    histosignal__1->GetYaxis()->SetTitle("N #lambda_b^0 signal events per event");
+    histosignal__1->GetYaxis()->SetTitle("Lb signal per event");
     histosignal__1->GetYaxis()->SetLabelFont(42);
     histosignal__1->GetYaxis()->SetTitleFont(42);
     histosignal__1->GetZaxis()->SetLabelFont(42);
     histosignal__1->GetZaxis()->SetTitleOffset(1);
     histosignal__1->GetZaxis()->SetTitleFont(42);
-    
+    histosignal__1->Draw("");
+
+    histosignal__1->SetEntries(100011);
+
+    TH1F* histosignal__2 = new TH1F("histosignal__2", "Lb signal pp per event after BDT cut", 12, xAxis1);
+    histosignal__2->SetBinContent(3, 6697.72 / NEvents * 0.4382);
+    histosignal__2->SetBinContent(4, 63696.8 / NEvents * 0.7008);
+    histosignal__2->SetBinContent(5, 177490 / NEvents * 0.70032);
+    histosignal__2->SetBinContent(6, 361081 / NEvents * 0.7067);
+    histosignal__2->SetBinContent(7, 989169 / NEvents * 0.8187);
+    histosignal__2->SetBinContent(8, 1.41772e+06 / NEvents * 0.8563);
+    histosignal__2->SetBinContent(9, 745128 / NEvents * 0.8819);
+    histosignal__2->SetBinContent(10, 355022 / NEvents * 0.9);
+    histosignal__2->SetBinContent(11, 201716 / NEvents * 0.8836);
+    histosignal__2->SetBinContent(12, 78533.6 / NEvents * 0.85);
 
     histosignal__2->SetLineColor(ci2);
     histosignal__2->SetLineWidth(2);
@@ -543,11 +551,108 @@ void TEMP() {
     Canvas_7->Modified();
     Canvas_7->SetSelected(Canvas_7);
 
+    TH1D* hBkgPerEvent__3 = new TH1D("hBkgPerEvent__3", "Lb bkg per event PbPb 5.02Tev 30-50%", 12, xAxis1);
+    hBkgPerEvent__3->SetBinContent(3, 6.858217e-07);
+    hBkgPerEvent__3->SetBinContent(4, 6.716679e-07);
+    hBkgPerEvent__3->SetBinContent(5, 6.899283e-07);
+    hBkgPerEvent__3->SetBinContent(6, 6.277193e-07);
+    hBkgPerEvent__3->SetBinContent(7, 7.673098e-07);
+    hBkgPerEvent__3->SetBinContent(8, 7.971997e-07);
+    hBkgPerEvent__3->SetBinContent(9, 7.170778e-07);
+    hBkgPerEvent__3->SetBinContent(10, 7.33937e-07);
+    hBkgPerEvent__3->SetBinContent(11, 7.62791e-07);
+    hBkgPerEvent__3->SetBinContent(12, 7.205936e-07);
+    hBkgPerEvent__3->SetEntries(11);
+    hBkgPerEvent__3->SetStats(0);
+
+    TH1D* hBkgPerEvent__4 = new TH1D("hBkgPerEvent__4", "Lb bkg per event PbPb 5.02Tev 30-50% after BDT cut", 12, xAxis1);
+    hBkgPerEvent__4->SetBinContent(3, 6.858217e-07 * 0.00057);
+    hBkgPerEvent__4->SetBinContent(4, 6.716679e-07 * 0.003398);
+    hBkgPerEvent__4->SetBinContent(5, 6.899283e-07 * 0.008336);
+    hBkgPerEvent__4->SetBinContent(6, 6.277193e-07 * 0.01087);
+    hBkgPerEvent__4->SetBinContent(7, 7.673098e-07 * 0.01654);
+    hBkgPerEvent__4->SetBinContent(8, 7.971997e-07 * 0.02382);
+    hBkgPerEvent__4->SetBinContent(9, 7.170778e-07 * 0.03474);
+    hBkgPerEvent__4->SetBinContent(10, 7.33937e-07 * 0.0329);
+    hBkgPerEvent__4->SetBinContent(11, 7.62791e-07 * 0.03251);
+    hBkgPerEvent__4->SetBinContent(12, 7.205936e-07 * 0.02582);
+    hBkgPerEvent__4->SetEntries(11);
+    hBkgPerEvent__4->SetStats(0);
+
+    hBkgPerEvent__3->SetLineColor(ci);
+    hBkgPerEvent__3->SetLineWidth(3);
+    hBkgPerEvent__3->GetXaxis()->SetTitle("p_{T}(GeV/c)");
+    hBkgPerEvent__3->GetXaxis()->SetLabelFont(42);
+    hBkgPerEvent__3->GetXaxis()->SetLabelOffset(0.015);
+    hBkgPerEvent__3->GetXaxis()->SetTitleSize(0.045);
+    hBkgPerEvent__3->GetXaxis()->SetTitleOffset(1);
+    hBkgPerEvent__3->GetXaxis()->SetTitleFont(42);
+    hBkgPerEvent__3->GetYaxis()->SetTitle("Bkg/nEvents");
+    hBkgPerEvent__3->GetYaxis()->CenterTitle(true);
+    hBkgPerEvent__3->GetYaxis()->SetLabelFont(42);
+    hBkgPerEvent__3->GetYaxis()->SetLabelOffset(0.01);
+    hBkgPerEvent__3->GetYaxis()->SetTitleSize(0.045);
+    hBkgPerEvent__3->GetYaxis()->SetTitleOffset(0.8);
+    hBkgPerEvent__3->GetYaxis()->SetTitleFont(42);
+    hBkgPerEvent__3->GetZaxis()->SetLabelFont(42);
+    hBkgPerEvent__3->GetZaxis()->SetTitleOffset(1);
+    hBkgPerEvent__3->GetZaxis()->SetTitleFont(42);
+
+    TH1F* histosignal__3 = new TH1F("histosignal__3", "Lb signal per event PbPb 5.02Tev 30-50%", 12, xAxis2);
+    histosignal__3->SetBinContent(3, 287.836 / NEventsPbPb);
+    histosignal__3->SetBinContent(4, 4014.78 / NEventsPbPb);
+    histosignal__3->SetBinContent(5, 10417.6 / NEventsPbPb);
+    histosignal__3->SetBinContent(6, 15872.5 / NEventsPbPb);
+    histosignal__3->SetBinContent(7, 34434.6 / NEventsPbPb);
+    histosignal__3->SetBinContent(8, 45446.8 / NEventsPbPb);
+    histosignal__3->SetBinContent(9, 22650.1 / NEventsPbPb);
+    histosignal__3->SetBinContent(10, 10218.3 / NEventsPbPb);
+    histosignal__3->SetBinContent(11, 5436.2 / NEventsPbPb);
+    histosignal__3->SetBinContent(12, 1943.32 / NEventsPbPb);
+
+    TH1F* histosignal__4 = new TH1F("histosignal__4", "Lb signal per event PbPb 5.02Tev 30-50% after BDT cut", 12, xAxis2);
+    histosignal__4->SetBinContent(3, 287.836 * 0.8185 / NEventsPbPb);
+    histosignal__4->SetBinContent(4, 4014.78 * 0.9417 / NEventsPbPb);
+    histosignal__4->SetBinContent(5, 10417.6 * 0.9734 / NEventsPbPb);
+    histosignal__4->SetBinContent(6, 15872.5 * 0.9706 / NEventsPbPb);
+    histosignal__4->SetBinContent(7, 34434.6 * 0.9767 / NEventsPbPb);
+    histosignal__4->SetBinContent(8, 45446.8 * 0.974 / NEventsPbPb);
+    histosignal__4->SetBinContent(9, 22650.1 * 0.9838 / NEventsPbPb);
+    histosignal__4->SetBinContent(10, 10218.3 * 0.9684 / NEventsPbPb);
+    histosignal__4->SetBinContent(11, 5436.2 * 0.9612 / NEventsPbPb);
+    histosignal__4->SetBinContent(12, 1943.32 * 0.8776 / NEventsPbPb);
+
+
+    histosignal__3->SetLineColor(ci);
+    histosignal__3->GetXaxis()->SetTitle("p_{T} (GeV)");
+    histosignal__3->GetXaxis()->SetRange(1, 100);
+    histosignal__3->GetXaxis()->SetLabelFont(42);
+    histosignal__3->GetXaxis()->SetTitleOffset(1);
+    histosignal__3->GetXaxis()->SetTitleFont(42);
+    histosignal__3->GetYaxis()->SetTitle("Lb d#sigma^{PYTHIA}/dp_{T} (#mu b/GeV)");
+    histosignal__3->GetYaxis()->SetLabelFont(42);
+    histosignal__3->GetYaxis()->SetTitleFont(42);
+    histosignal__3->GetZaxis()->SetLabelFont(42);
+    histosignal__3->GetZaxis()->SetTitleOffset(1);
+    histosignal__3->GetZaxis()->SetTitleFont(42);
+
+
+    /// <summary>
+    /// Write to file
+    /// </summary>
     TFile TMPFile("Lb_histograms.root", "RECREATE");
     TMPFile.WriteObject(histosignf__8, "Lb_PbPb_signBDT");
     TMPFile.WriteObject(histosignf__7, "Lb_PbPb_sign");
     TMPFile.WriteObject(histosignf__2, "Lb_pp_signBDT");
     TMPFile.WriteObject(histosignf__1, "Lb_pp_sign");
+    TMPFile.WriteObject(hBkgPerEvent__1, "Lb_pp_bkgperevent");
+    TMPFile.WriteObject(hBkgPerEvent__2, "Lb_pp_bkgpereventBDT");
+    TMPFile.WriteObject(histosignal__1, "Lb_pp_sigperevent");
+    TMPFile.WriteObject(histosignal__2, "Lb_pp_sigpereventBDT");
+    TMPFile.WriteObject(eff__1, "Lb_reconeff");
+    TMPFile.WriteObject(eff__2, "Lb_reconeffBDT");
+    TMPFile.WriteObject(histosignal__3, "Lb_PbPb_sigperevent");
+    TMPFile.WriteObject(histosignal__4, "Lb_PbPb_sigpereventBDT");
 }
 
 /*
