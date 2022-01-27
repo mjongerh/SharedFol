@@ -544,10 +544,10 @@ void TEMP() {
     Canvas_7->SetSelected(Canvas_7);
 
     TFile TMPFile("Lb_histograms.root", "RECREATE");
-    TMPFile.WriteObject(histosignf__8, "Lb_PbPb_signBDT")
-    TMPFile.WriteObject(histosignf__7, "Lb_PbPb_sign")
-    TMPFile.WriteObject(histosignf__2, "Lb_pp_signBDT")
-    TMPFile.WriteObject(histosignf__1, "Lb_pp_sign")
+    TMPFile.WriteObject(histosignf__8, "Lb_PbPb_signBDT");
+    TMPFile.WriteObject(histosignf__7, "Lb_PbPb_sign");
+    TMPFile.WriteObject(histosignf__2, "Lb_pp_signBDT");
+    TMPFile.WriteObject(histosignf__1, "Lb_pp_sign");
 }
 
 /*
