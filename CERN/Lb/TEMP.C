@@ -276,7 +276,7 @@ void TEMP() {
     histosignf__1->SetBinContent(12, 1.019512);
     histosignf__1->SetEntries(100011);
     
-    TH1F* histosignf__2 = new TH1F("histosignf__2", "Significance Lb in pp 14TeV", 12, xAxis1);
+    TH1F* histosignf__2 = new TH1F("histosignf__2", "Significance Lb in pp 14TeV, Nevt=210E12", 12, xAxis1);
     histosignf__2->SetBinContent(3, 22.9432);
     histosignf__2->SetBinContent(4, 115.355);
     histosignf__2->SetBinContent(5, 211.364);
@@ -542,6 +542,12 @@ void TEMP() {
     Canvas_7->cd();
     Canvas_7->Modified();
     Canvas_7->SetSelected(Canvas_7);
+
+    TFile TMPFile("Lb_histograms.root", "RECREATE");
+    TMPFile.WriteObject(histosignf__8, "Lb_PbPb_signBDT")
+    TMPFile.WriteObject(histosignf__7, "Lb_PbPb_sign")
+    TMPFile.WriteObject(histosignf__2, "Lb_pp_signBDT")
+    TMPFile.WriteObject(histosignf__1, "Lb_pp_sign")
 }
 
 /*
