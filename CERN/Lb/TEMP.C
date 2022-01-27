@@ -216,10 +216,6 @@ void TEMP() {
     histosignal__1->SetBinContent(11, 201716 / NEvents);
     histosignal__1->SetBinContent(12, 78533.6 / NEvents);
 
-
-    Int_t ci;      // for color index setting
-    TColor* color; // for color definition with alpha
-    ci = TColor::GetColor("#000099");
     histosignal__1->SetLineColor(ci);
     histosignal__1->GetXaxis()->SetTitle("p_{T} (GeV)");
     histosignal__1->GetXaxis()->SetRange(1, 100);
@@ -598,7 +594,7 @@ void TEMP() {
     hBkgPerEvent__3->GetZaxis()->SetTitleOffset(1);
     hBkgPerEvent__3->GetZaxis()->SetTitleFont(42);
 
-    TH1F* histosignal__3 = new TH1F("histosignal__3", "Lb signal per event PbPb 5.02Tev 30-50%", 12, xAxis2);
+    TH1F* histosignal__3 = new TH1F("histosignal__3", "Lb signal per event PbPb 5.02Tev 30-50%", 12, xAxis1);
     histosignal__3->SetBinContent(3, 287.836 / NEventsPbPb);
     histosignal__3->SetBinContent(4, 4014.78 / NEventsPbPb);
     histosignal__3->SetBinContent(5, 10417.6 / NEventsPbPb);
@@ -610,7 +606,7 @@ void TEMP() {
     histosignal__3->SetBinContent(11, 5436.2 / NEventsPbPb);
     histosignal__3->SetBinContent(12, 1943.32 / NEventsPbPb);
 
-    TH1F* histosignal__4 = new TH1F("histosignal__4", "Lb signal per event PbPb 5.02Tev 30-50% after BDT cut", 12, xAxis2);
+    TH1F* histosignal__4 = new TH1F("histosignal__4", "Lb signal per event PbPb 5.02Tev 30-50% after BDT cut", 12, xAxis1);
     histosignal__4->SetBinContent(3, 287.836 * 0.8185 / NEventsPbPb);
     histosignal__4->SetBinContent(4, 4014.78 * 0.9417 / NEventsPbPb);
     histosignal__4->SetBinContent(5, 10417.6 * 0.9734 / NEventsPbPb);
