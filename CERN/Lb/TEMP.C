@@ -267,7 +267,7 @@ void TEMP() {
     Canvas_4->SetFrameBorderMode(0);
     Canvas_4->SetFrameBorderMode(0);
 
-    TH1F* histosignf__1 = new TH1F("histosignf__1", "", 12, xAxis1);
+    TH1F* histosignf__1 = new TH1F("histosignf__1", "Significance Lb in pp 14TeV, Nevt=210E12", 12, xAxis1);
     histosignf__1->SetBinContent(3, 0.4672185);
     histosignf__1->SetBinContent(4, 2.829209);
     histosignf__1->SetBinContent(5, 7.571151);
@@ -280,7 +280,7 @@ void TEMP() {
     histosignf__1->SetBinContent(12, 1.019512);
     histosignf__1->SetEntries(100011);
     
-    TH1F* histosignf__2 = new TH1F("histosignf__2", "Significance Lb in pp 14TeV, Nevt=210E12", 12, xAxis1);
+    TH1F* histosignf__2 = new TH1F("histosignf__2", "Significance Lb in pp 14TeV, Nevt=210E12 after BDT cut", 12, xAxis1);
     histosignf__2->SetBinContent(3, 22.9432);
     histosignf__2->SetBinContent(4, 115.355);
     histosignf__2->SetBinContent(5, 211.364);
@@ -334,7 +334,34 @@ void TEMP() {
     Canvas_4->cd();
     Canvas_4->SetSelected(Canvas_4);
 
+    double factor = 6.0 / sqrt(6.0);
+    TH1F* histosignf__9 = new TH1F("histosignf__9", "Significance Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
+    histosignf__9->SetBinContent(3, 0.4672185 * factor);
+    histosignf__9->SetBinContent(4, 2.829209 * factor);
+    histosignf__9->SetBinContent(5, 7.571151 * factor);
+    histosignf__9->SetBinContent(6, 30.31494 * factor);
+    histosignf__9->SetBinContent(7, 35.24529 * factor);
+    histosignf__9->SetBinContent(8, 22.76938 * factor);
+    histosignf__9->SetBinContent(9, 18.81654 * factor);
+    histosignf__9->SetBinContent(10, 9.412499 * factor);
+    histosignf__9->SetBinContent(11, 3.197298 * factor);
+    histosignf__9->SetBinContent(12, 1.019512 * factor);
 
+    TH1F* histosignf__10 = new TH1F("histosignf__10", "Significance Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
+    histosignf__10->SetBinContent(3, 22.9432 * factor);
+    histosignf__10->SetBinContent(4, 115.355 * factor);
+    histosignf__10->SetBinContent(5, 211.364 * factor);
+    histosignf__10->SetBinContent(6, 340.51 * factor);
+    histosignf__10->SetBinContent(7, 543.251 * factor);
+    histosignf__10->SetBinContent(8, 557.119 * factor);
+    histosignf__10->SetBinContent(9, 329.195 * factor);
+    histosignf__10->SetBinContent(10, 112.282 * factor);
+    histosignf__10->SetBinContent(11, 53.5673 * factor);
+    histosignf__10->SetBinContent(12, 23.1136 * factor);
+
+    /// <summary>
+    /// PbPb histograms
+    /// </summary>
     TCanvas* Canvas_5 = new TCanvas("Canvas_5", "Canvas_1", 1143, 281, 798, 757);
     Canvas_5->Range(-3, -17.34724, 27, 156.1252);
     Canvas_5->SetFillColor(0);
@@ -547,6 +574,54 @@ void TEMP() {
     Canvas_7->Modified();
     Canvas_7->SetSelected(Canvas_7);
 
+    double sigpereventfactor = 1 / sqrt(NEventsPbPb);
+    TH1F* histosignf__11 = new TH1F("histosignf__11", "Significance/event Lb in PbPb 5.02TeV, centr. 30-50%", 12, xAxis1);
+    histosignf__11->SetBinContent(3, 1.476411422 * sigpereventfactor);
+    histosignf__11->SetBinContent(4, 19.83811666 * sigpereventfactor);
+    histosignf__11->SetBinContent(5, 47.37049454 * sigpereventfactor);
+    histosignf__11->SetBinContent(6, 70.70376854 * sigpereventfactor);
+    histosignf__11->SetBinContent(7, 124.3875541 * sigpereventfactor);
+    histosignf__11->SetBinContent(8, 152.0880488 * sigpereventfactor);
+    histosignf__11->SetBinContent(9, 90.89947862 * sigpereventfactor);
+    histosignf__11->SetBinContent(10, 45.30123391 * sigpereventfactor);
+    histosignf__11->SetBinContent(11, 24.97200691 * sigpereventfactor);
+    histosignf__11->SetBinContent(12, 8.835840788 * sigpereventfactor);
+
+    histosignf__11->SetBinError(3, 0.194308477 * sigpereventfactor);
+    histosignf__11->SetBinError(4, 2.645205765 * sigpereventfactor);
+    histosignf__11->SetBinError(5, 6.724885959 * sigpereventfactor);
+    histosignf__11->SetBinError(6, 10.16588564 * sigpereventfactor);
+    histosignf__11->SetBinError(7, 12.34927916 * sigpereventfactor);
+    histosignf__11->SetBinError(8, 11.83167705 * sigpereventfactor);
+    histosignf__11->SetBinError(9, 7.320726785 * sigpereventfactor);
+    histosignf__11->SetBinError(10, 3.761962422 * sigpereventfactor);
+    histosignf__11->SetBinError(11, 1.948953026 * sigpereventfactor);
+    histosignf__11->SetBinError(12, 0.711725044 * sigpereventfactor);
+
+    TH1F* histosignf__12 = new TH1F("histosignf__12", "Significance/event Lb in PbPb 5.02TeV, centr. 30-50%, after BDT cut", 12, xAxis1);
+    histosignf__12->SetBinContent(3, 14.6981 * sigpereventfactor); // after BDT
+    histosignf__12->SetBinContent(4, 60.4933 * sigpereventfactor);
+    histosignf__12->SetBinContent(5, 99.1656 * sigpereventfactor);
+    histosignf__12->SetBinContent(6, 122.633 * sigpereventfactor);
+    histosignf__12->SetBinContent(7, 181.512 * sigpereventfactor);
+    histosignf__12->SetBinContent(8, 207.957 * sigpereventfactor);
+    histosignf__12->SetBinContent(9, 146.071 * sigpereventfactor);
+    histosignf__12->SetBinContent(10, 93.3654 * sigpereventfactor);
+    histosignf__12->SetBinContent(11, 64.3722 * sigpereventfactor);
+    histosignf__12->SetBinContent(12, 31.6456 * sigpereventfactor);
+
+    histosignf__12->SetBinError(3, 1.933428366 * sigpereventfactor); // after BDT
+    histosignf__12->SetBinError(4, 8.065706427 * sigpereventfactor);
+    histosignf__12->SetBinError(5, 14.07779787 * sigpereventfactor);
+    histosignf__12->SetBinError(6, 17.63314224 * sigpereventfactor);
+    histosignf__12->SetBinError(7, 18.02152923 * sigpereventfactor);
+    histosignf__12->SetBinError(8, 16.17749439 * sigpereventfactor);
+    histosignf__12->SetBinError(9, 11.76424342 * sigpereventfactor);
+    histosignf__12->SetBinError(10, 7.753200141 * sigpereventfactor);
+    histosignf__12->SetBinError(11, 5.023994727 * sigpereventfactor);
+    histosignf__12->SetBinError(12, 2.549194909 * sigpereventfactor);
+
+
     TH1D* hBkgPerEvent__3 = new TH1D("hBkgPerEvent__3", "Lb bkg per event PbPb 5.02Tev 30-50%", 12, xAxis1);
     hBkgPerEvent__3->SetBinContent(3, 6.858217e-07);
     hBkgPerEvent__3->SetBinContent(4, 6.716679e-07);
@@ -639,18 +714,22 @@ void TEMP() {
     TFile TMPFile("Lb_histograms.root", "RECREATE");
     TMPFile.WriteObject(eff__1, "Lb_reconeff");
     TMPFile.WriteObject(eff__2, "Lb_reconeffBDT");
-    TMPFile.WriteObject(histosignf__2, "Lb_pp_signBDT");
-    TMPFile.WriteObject(histosignf__1, "Lb_pp_sign");
+    TMPFile.WriteObject(histosignf__9, "Lb_pp_sign");
+    TMPFile.WriteObject(histosignf__10, "Lb_pp_signBDT");
     TMPFile.WriteObject(histosignal__1, "Lb_pp_sigperevent");
     TMPFile.WriteObject(histosignal__2, "Lb_pp_sigpereventBDT");
     TMPFile.WriteObject(hBkgPerEvent__1, "Lb_pp_bkgperevent");
     TMPFile.WriteObject(hBkgPerEvent__2, "Lb_pp_bkgpereventBDT");
-    TMPFile.WriteObject(histosignf__8, "Lb_PbPb_signBDT");
     TMPFile.WriteObject(histosignf__7, "Lb_PbPb_sign");
+    TMPFile.WriteObject(histosignf__8, "Lb_PbPb_signBDT");
+    TMPFile.WriteObject(histosignf__11, "Lb_PbPb_signperevent");
+    TMPFile.WriteObject(histosignf__12, "Lb_PbPb_signpereventBDT");
     TMPFile.WriteObject(histosignal__3, "Lb_PbPb_sigperevent");
     TMPFile.WriteObject(histosignal__4, "Lb_PbPb_sigpereventBDT");
     TMPFile.WriteObject(hBkgPerEvent__3, "Lb_PbPb_bkgperevent");
     TMPFile.WriteObject(hBkgPerEvent__4, "Lb_PbPb_bkgpereventBDT");
+    TMPFile.WriteObject(histosignf__1, "Lb_pp_sign_N210E12");
+    TMPFile.WriteObject(histosignf__2, "Lb_pp_signBDT_N210E12");
 }
 
 /*
