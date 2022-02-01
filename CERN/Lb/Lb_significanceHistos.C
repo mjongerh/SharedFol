@@ -258,6 +258,15 @@ void Lb_significanceHistos()
   Canvas_3->cd();
   Canvas_3->SetSelected(Canvas_3);
   
+
+  TCanvas* Canvas_5 = new TCanvas("Canvas_5", "Significance Lb in pp 14TeV, Nevt=1.26E15", 1143, 281, 798, 757);
+  Canvas_5->Range(-3, -17.34724, 27, 156.1252);
+  Canvas_5->SetFillColor(0);
+  Canvas_5->SetBorderMode(0);
+  Canvas_5->SetBorderSize(2);
+  Canvas_5->SetFrameBorderMode(0);
+  Canvas_5->SetFrameBorderMode(0);
+
   TH1F* histosignf__9 = new TH1F("histosignf__9", "Significance Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
   histosignf__9->SetBinContent(3, 0.4672185 * factor);
   histosignf__9->SetBinContent(4, 2.829209 * factor);
@@ -281,6 +290,45 @@ void Lb_significanceHistos()
   histosignf__10->SetBinContent(10, 56.683);
   histosignf__10->SetBinContent(11, 69.4821);
   histosignf__10->SetBinContent(12, 9.70938);
+  
+  histosignf__10->SetLineWidth(2);
+  histosignf__10->GetXaxis()->SetTitle("p_{T} (GeV)");
+  histosignf__10->GetXaxis()->SetRange(1, 100);
+  histosignf__10->GetXaxis()->SetLabelFont(42);
+  histosignf__10->GetXaxis()->SetTitleOffset(1);
+  histosignf__10->GetXaxis()->SetTitleFont(42);
+  histosignf__10->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  histosignf__10->GetYaxis()->SetLabelFont(42);
+  histosignf__10->GetYaxis()->SetTitleFont(42);
+  histosignf__10->GetZaxis()->SetLabelFont(42);
+  histosignf__10->GetZaxis()->SetTitleOffset(1);
+  histosignf__10->GetZaxis()->SetTitleFont(42);
+  histosignf__10->SetMarkerColor(4);
+  histosignf__10->SetMarkerStyle(4);
+  histosignf__10->SetMarkerSize(1.3);
+
+  histosignf__9->SetLineColor(ci);
+  histosignf__9->SetLineWidth(2);
+  histosignf__9->SetMarkerColor(2);
+  histosignf__9->SetMarkerStyle(5);
+  histosignf__9->SetMarkerSize(1.3);
+
+  histosignf__9->SetStats(0);
+  histosignf__10->SetStats(0);
+  histosignf__10->Draw("");
+  histosignf__9->Draw("same");
+
+  auto legend5 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  TLegendEntry* entry = legend5->AddEntry(histosignf__9, "Panos' cuts", "lep");
+  entry->SetMarkerStyle(5);
+  entry = legend5->AddEntry(histosignf__10, "+BDT cut", "lep");
+  entry->SetMarkerStyle(4);
+  legend5->Draw("");
+
+  Canvas_5->cd();
+  Canvas_5->Modified();
+  Canvas_5->SetSelected(Canvas_5);
+
 
   double signfpereventfactorpp = 1 / sqrt(NEvents);
   TH1F* histosignf__13 = new TH1F("histosignf__9", "Significance per event Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
