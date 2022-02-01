@@ -13,14 +13,14 @@
 
 void ListSigBkg()
 {
-  TFile finput("~/Desktop/ALICE3_HFperformance/analysis/foutputLambda_b.root");
-  TH1F* hbkg = (TH1F*)finput.Get("hBkgPerEvent");
+  TFile finput("~/Desktop/ALICE3_HFperformance/analysis/foutputLambda_c.root");
+  TH1F* hbkg = (TH1F*)finput.Get("hbkg_fromsidebands");
   TH1F* hsig = (TH1F*)finput.Get("histosignal");
-  Double_t PtBins[13] = {0, 0.5, 1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 24};
-  long Nevents = 1260000000000000.0; // PbPb new 55000000000 //pp = 1260000000000000.0; //PbPb old = 38 376 000 000
-  for (Int_t i = 0; i < 12; i++) {
+  Double_t PtBins[7] = {0, 1, 2, 4, 6, 8, 10};
+  long Nevents = 210000000000000; // PbPb new 55000000000 //pp = 210 000 000 000 000; //PbPb old = 38 376 000 000
+  for (Int_t i = 0; i < 6; i++) {
     cout << "Pt " << PtBins[i] << endl
-         << " sig " << hsig->GetBinContent(i + 1)  << endl
+         << " sig " << hsig->GetBinContent(i + 1) << " pm " << hsig->GetBinError(i + 1) << endl
          << " bkg " << hbkg->GetBinContent(i + 1) * Nevents << endl;
   }
 
