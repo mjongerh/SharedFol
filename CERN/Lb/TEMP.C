@@ -25,7 +25,7 @@
 
 void TEMP() {
     Double_t xAxis1[13] = {0, 0.5, 1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 24};
-  Double_t NEvents = 210000000000000.0;
+  Double_t NEvents = 210000000000000.0; //old value
   Double_t NEventsPbPb = 55000000000.0;
     //=========Macro generated from canvas: Canvas_1/Canvas_1
     //=========  (Mon Dec 20 12:50:06 2021) by ROOT version 6.25/01
@@ -358,6 +358,31 @@ void TEMP() {
     histosignf__10->SetBinContent(10, 112.282 * factor);
     histosignf__10->SetBinContent(11, 53.5673 * factor);
     histosignf__10->SetBinContent(12, 23.1136 * factor);
+
+    double signfpereventfactorpp = 1 / sqrt(6 * NEvents);
+    TH1F* histosignf__13 = new TH1F("histosignf__9", "Significance per event Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
+    histosignf__9->SetBinContent(3, 0.4672185 * factor * signfpereventfactorpp);
+    histosignf__9->SetBinContent(4, 2.829209 * factor * signfpereventfactorpp);
+    histosignf__9->SetBinContent(5, 7.571151 * factor * signfpereventfactorpp);
+    histosignf__9->SetBinContent(6, 30.31494 * factor * signfpereventfactorpp);
+    histosignf__9->SetBinContent(7, 35.24529 * factor * signfpereventfactorpp);
+    histosignf__9->SetBinContent(8, 22.76938 * factor * signfpereventfactorpp);
+    histosignf__9->SetBinContent(9, 18.81654 * factor * signfpereventfactorpp);
+    histosignf__9->SetBinContent(10, 9.412499 * factor * signfpereventfactorpp);
+    histosignf__9->SetBinContent(11, 3.197298 * factor * signfpereventfactorpp);
+    histosignf__9->SetBinContent(12, 1.019512 * factor * signfpereventfactorpp);
+
+    TH1F* histosignf__14 = new TH1F("histosignf__10", "Significance per event Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
+    histosignf__10->SetBinContent(3, 22.9432 * factor * signfpereventfactorpp);
+    histosignf__10->SetBinContent(4, 115.355 * factor * signfpereventfactorpp);
+    histosignf__10->SetBinContent(5, 211.364 * factor * signfpereventfactorpp);
+    histosignf__10->SetBinContent(6, 340.51 * factor * signfpereventfactorpp);
+    histosignf__10->SetBinContent(7, 543.251 * factor * signfpereventfactorpp);
+    histosignf__10->SetBinContent(8, 557.119 * factor * signfpereventfactorpp);
+    histosignf__10->SetBinContent(9, 329.195 * factor * signfpereventfactorpp);
+    histosignf__10->SetBinContent(10, 112.282 * factor * signfpereventfactorpp);
+    histosignf__10->SetBinContent(11, 53.5673 * factor * signfpereventfactorpp);
+    histosignf__10->SetBinContent(12, 23.1136 * factor * signfpereventfactorpp);
 
     /// <summary>
     /// PbPb histograms
