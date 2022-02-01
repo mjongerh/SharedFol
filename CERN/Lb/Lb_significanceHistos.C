@@ -280,15 +280,15 @@ void Lb_significanceHistos()
   histosignf__9->SetBinContent(12, 1.019512 * factor);
 
   TH1F* histosignf__10 = new TH1F("histosignf__10", "Significance Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
-  histosignf__10->SetBinContent(3, 2.05);
+  histosignf__10->SetBinContent(3, 3.05);
   histosignf__10->SetBinContent(4, 13.6284);
   histosignf__10->SetBinContent(5, 34.5312);
-  histosignf__10->SetBinContent(6, 77.323);
+  histosignf__10->SetBinContent(6, 107.323);
   histosignf__10->SetBinContent(7, 173.578);
   histosignf__10->SetBinContent(8, 217.381);
   histosignf__10->SetBinContent(9, 152.259);
-  histosignf__10->SetBinContent(10, 56.683);
-  histosignf__10->SetBinContent(11, 69.4821);
+  histosignf__10->SetBinContent(10, 69.4821);
+  histosignf__10->SetBinContent(11, 56.683);
   histosignf__10->SetBinContent(12, 9.70938);
   
   histosignf__10->SetLineWidth(2);
