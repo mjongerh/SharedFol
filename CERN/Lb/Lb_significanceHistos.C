@@ -150,16 +150,16 @@ void Lb_significanceHistos()
   hBkgPerEvent__1->SetStats(0);
 
   TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "Lb bkg per event of pp 14TeV after BDT", 12, xAxis1);
-  hBkgPerEvent__1->SetBinContent(3, 122631600.0 / NEvents);
-  hBkgPerEvent__1->SetBinContent(4, 160577478.0 / NEvents);
-  hBkgPerEvent__1->SetBinContent(5, 359705551.8 / NEvents);
-  hBkgPerEvent__1->SetBinContent(6, 405232984.8 / NEvents);
-  hBkgPerEvent__1->SetBinContent(7, 894720666.6 / NEvents);
-  hBkgPerEvent__1->SetBinContent(8, 1130320317.0 / NEvents);
-  hBkgPerEvent__1->SetBinContent(9, 576970791.0 / NEvents);
-  hBkgPerEvent__1->SetBinContent(10, 727163712.0 / NEvents);
-  hBkgPerEvent__1->SetBinContent(11, 913221323.0 / NEvents);
-  hBkgPerEvent__1->SetBinContent(12, 797124913.2 / NEvents);
+  hBkgPerEvent__2->SetBinContent(3, 122631600.0 / NEvents);
+  hBkgPerEvent__2->SetBinContent(4, 160577478.0 / NEvents);
+  hBkgPerEvent__2->SetBinContent(5, 359705551.8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(6, 405232984.8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(7, 894720666.6 / NEvents);
+  hBkgPerEvent__2->SetBinContent(8, 1130320317.0 / NEvents);
+  hBkgPerEvent__2->SetBinContent(9, 576970791.0 / NEvents);
+  hBkgPerEvent__2->SetBinContent(10, 727163712.0 / NEvents);
+  hBkgPerEvent__2->SetBinContent(11, 913221323.0 / NEvents);
+  hBkgPerEvent__2->SetBinContent(12, 797124913.2 / NEvents);
   hBkgPerEvent__2->SetEntries(11);
   hBkgPerEvent__2->SetStats(0);
 
