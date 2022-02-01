@@ -61,7 +61,7 @@ void Lb_significanceHistos()
   eff__1->SetEntries(1606.869);
   eff__1->SetStats(0);
 
-  TH1F* eff__2 = new TH1F("eff__2", "recon. eff. Lb", 12, xAxis1); // After BDT cut
+  TH1F* eff__2 = new TH1F("eff__2", "recon. eff. Lb PbPb after BDT", 12, xAxis1); // After BDT cut
   eff__2->SetBinContent(3, 0.0005337445 * 0.8185);
   eff__2->SetBinContent(4, 0.004258425 * 0.9417);
   eff__2->SetBinContent(5, 0.0125 * 0.9734);
@@ -135,32 +135,31 @@ void Lb_significanceHistos()
 
   // bkg per event of pp 14TeV
   TH1D* hBkgPerEvent__1 = new TH1D("hBkgPerEvent__1", "Lb bkg per event of pp 14TeV", 12, xAxis1);
-  hBkgPerEvent__1->SetBinContent(2, 2.10095e-06);
-  hBkgPerEvent__1->SetBinContent(3, 1.39038e-06);
-  hBkgPerEvent__1->SetBinContent(4, 2.174787e-06);
-  hBkgPerEvent__1->SetBinContent(5, 1.964767e-06);
-  hBkgPerEvent__1->SetBinContent(6, 1.324055e-06);
-  hBkgPerEvent__1->SetBinContent(7, 1.859376e-06);
-  hBkgPerEvent__1->SetBinContent(8, 2.196035e-06);
-  hBkgPerEvent__1->SetBinContent(9, 1.062691e-06);
-  hBkgPerEvent__1->SetBinContent(10, 1.670859e-06);
-  hBkgPerEvent__1->SetBinContent(11, 2.041053e-06);
-  hBkgPerEvent__1->SetBinContent(12, 2.162131e-06);
+  hBkgPerEvent__1->SetBinContent(2, 2.65e+9 / NEvents);
+  hBkgPerEvent__1->SetBinContent(3, 1.75e+9/ NEvents);
+  hBkgPerEvent__1->SetBinContent(4, 2.74e+9/ NEvents);
+  hBkgPerEvent__1->SetBinContent(5, 2.48e+9/ NEvents);
+  hBkgPerEvent__1->SetBinContent(6, 1.67e+9/ NEvents);
+  hBkgPerEvent__1->SetBinContent(7, 2.34e+9/ NEvents);
+  hBkgPerEvent__1->SetBinContent(8, 2.77e+9/ NEvents);
+  hBkgPerEvent__1->SetBinContent(9, 1.34e+9/ NEvents);
+  hBkgPerEvent__1->SetBinContent(10, 2.11e+9/ NEvents);
+  hBkgPerEvent__1->SetBinContent(11, 2.57e+9/ NEvents);
+  hBkgPerEvent__1->SetBinContent(12, 2.72e+9/ NEvents);
   hBkgPerEvent__1->SetEntries(11);
   hBkgPerEvent__1->SetStats(0);
 
   TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "Lb bkg per event of pp 14TeV after BDT", 12, xAxis1);
-  hBkgPerEvent__2->SetBinContent(2, 2.10095e-06 * 0.0);
-  hBkgPerEvent__2->SetBinContent(3, 1.39038e-06 * 0.0);
-  hBkgPerEvent__2->SetBinContent(4, 2.174787e-06 * 0.0);
-  hBkgPerEvent__2->SetBinContent(5, 1.964767e-06 * 0.00028);
-  hBkgPerEvent__2->SetBinContent(6, 1.324055e-06 * 0.000802);
-  hBkgPerEvent__2->SetBinContent(7, 1.859376e-06 * 0.002942);
-  hBkgPerEvent__2->SetBinContent(8, 2.196035e-06 * 0.006728);
-  hBkgPerEvent__2->SetBinContent(9, 1.062691e-06 * 0.01492);
-  hBkgPerEvent__2->SetBinContent(10, 1.670859e-06 * 0.02216);
-  hBkgPerEvent__2->SetBinContent(11, 2.041053e-06 * 0.02539);
-  hBkgPerEvent__2->SetBinContent(12, 2.162131e-06 * 0.02582);
+  hBkgPerEvent__1->SetBinContent(3, 122631600 / NEvents);
+  hBkgPerEvent__1->SetBinContent(4, 160577478 / NEvents);
+  hBkgPerEvent__1->SetBinContent(5, 359705551.8 / NEvents);
+  hBkgPerEvent__1->SetBinContent(6, 405232984.8 / NEvents);
+  hBkgPerEvent__1->SetBinContent(7, 894720666.6 / NEvents);
+  hBkgPerEvent__1->SetBinContent(8, 1130320317 / NEvents);
+  hBkgPerEvent__1->SetBinContent(9, 576970791 / NEvents);
+  hBkgPerEvent__1->SetBinContent(10, 727163712 / NEvents);
+  hBkgPerEvent__1->SetBinContent(11, 913221323 / NEvents);
+  hBkgPerEvent__1->SetBinContent(12, 797124913.2 / NEvents);
   hBkgPerEvent__2->SetEntries(11);
   hBkgPerEvent__2->SetStats(0);
 
@@ -205,16 +204,16 @@ void Lb_significanceHistos()
   Canvas_3->SetFrameBorderMode(0);
 
   TH1F* histosignal__1 = new TH1F("histosignal__1", "Lb signal pp per event", 12, xAxis1);
-  histosignal__1->SetBinContent(3, 6697.72 * 6 / NEvents); // * 6 to correct from old to new amount of events
-  histosignal__1->SetBinContent(4, 63696.8 * 6 / NEvents);
-  histosignal__1->SetBinContent(5, 177490 * 6 / NEvents);
-  histosignal__1->SetBinContent(6, 361081 * 6 / NEvents);
-  histosignal__1->SetBinContent(7, 989169 * 6 / NEvents);
-  histosignal__1->SetBinContent(8, 1.41772e+06 * 6 / NEvents);
-  histosignal__1->SetBinContent(9, 745128 * 6 / NEvents);
-  histosignal__1->SetBinContent(10, 355022 * 6 / NEvents);
-  histosignal__1->SetBinContent(11, 201716 * 6 / NEvents);
-  histosignal__1->SetBinContent(12, 78533.6 * 6 / NEvents);
+  histosignal__1->SetBinContent(3, 40186.32 / NEvents); // * 6 to correct from old to new amount of events
+  histosignal__1->SetBinContent(4, 382180.8 / NEvents);
+  histosignal__1->SetBinContent(5, 1064940 / NEvents);
+  histosignal__1->SetBinContent(6, 2166486 / NEvents);
+  histosignal__1->SetBinContent(7, 5935014 / NEvents);
+  histosignal__1->SetBinContent(8, 8.51e+06 / NEvents);
+  histosignal__1->SetBinContent(9, 4470768 / NEvents);
+  histosignal__1->SetBinContent(10, 2130132 / NEvents);
+  histosignal__1->SetBinContent(11, 1210296 / NEvents);
+  histosignal__1->SetBinContent(12, 471201.6 / NEvents);
 
   histosignal__1->SetLineColor(ci);
   histosignal__1->GetXaxis()->SetTitle("p_{T} (GeV)");
@@ -233,16 +232,16 @@ void Lb_significanceHistos()
   histosignal__1->SetEntries(100011);
 
   TH1F* histosignal__2 = new TH1F("histosignal__2", "Lb signal pp per event after BDT cut", 12, xAxis1);
-  histosignal__2->SetBinContent(3, 6697.72 * 6 / NEvents * 0.4382);
-  histosignal__2->SetBinContent(4, 63696.8 * 6 / NEvents * 0.7008);
-  histosignal__2->SetBinContent(5, 177490 * 6 / NEvents * 0.70032);
-  histosignal__2->SetBinContent(6, 361081 * 6 / NEvents * 0.7067);
-  histosignal__2->SetBinContent(7, 989169 * 6 / NEvents * 0.8187);
-  histosignal__2->SetBinContent(8, 1.41772e+06 * 6 / NEvents * 0.8563);
-  histosignal__2->SetBinContent(9, 745128 * 6 / NEvents * 0.8819);
-  histosignal__2->SetBinContent(10, 355022 * 6 / NEvents * 0.9);
-  histosignal__2->SetBinContent(11, 201716 * 6 / NEvents * 0.8836);
-  histosignal__2->SetBinContent(12, 78533.6 * 6 / NEvents * 0.85);
+  histosignal__2->SetBinContent(3, 34962.098 / NEvents);
+  histosignal__2->SetBinContent(4, 309948.6288 / NEvents);
+  histosignal__2->SetBinContent(5, 886349.562 / NEvents);
+  histosignal__2->SetBinContent(6, 1853212.124 / NEvents);
+  histosignal__2->SetBinContent(7, 5203820.275 / NEvents);
+  histosignal__2->SetBinContent(8, 7332447.84 / NEvents);
+  histosignal__2->SetBinContent(9, 3670053.451 / NEvents);
+  histosignal__2->SetBinContent(10, 1719655.564 / NEvents);
+  histosignal__2->SetBinContent(11, 1111898.935 / NEvents);
+  histosignal__2->SetBinContent(12, 450845.6909 / NEvents);
 
   histosignal__2->SetLineColor(ci2);
   histosignal__2->SetLineWidth(2);
@@ -268,28 +267,28 @@ void Lb_significanceHistos()
   Canvas_5->SetFrameBorderMode(0);
 
   TH1F* histosignf__9 = new TH1F("histosignf__9", "Significance Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
-  histosignf__9->SetBinContent(3, 0.4672185 * factor);
-  histosignf__9->SetBinContent(4, 2.829209 * factor);
-  histosignf__9->SetBinContent(5, 7.571151 * factor);
-  histosignf__9->SetBinContent(6, 30.31494 * factor);
-  histosignf__9->SetBinContent(7, 35.24529 * factor);
-  histosignf__9->SetBinContent(8, 22.76938 * factor);
-  histosignf__9->SetBinContent(9, 18.81654 * factor);
-  histosignf__9->SetBinContent(10, 9.412499 * factor);
-  histosignf__9->SetBinContent(11, 3.197298 * factor);
-  histosignf__9->SetBinContent(12, 1.019512 * factor);
+  histosignf__9->SetBinContent(3, 0.960121204);
+  histosignf__9->SetBinContent(4, 7.300882464);
+  histosignf__9->SetBinContent(5, 21.40347928);
+  histosignf__9->SetBinContent(6, 53.04167744);
+  histosignf__9->SetBinContent(7, 122.6176088);
+  histosignf__9->SetBinContent(8, 161.7100383);
+  histosignf__9->SetBinContent(9, 122.1781281);
+  histosignf__9->SetBinContent(10, 46.42496492);
+  histosignf__9->SetBinContent(11, 23.86596022);
+  histosignf__9->SetBinContent(12, 9.027774988);
 
   TH1F* histosignf__10 = new TH1F("histosignf__10", "Significance Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
-  histosignf__10->SetBinContent(3, 4.05);
-  histosignf__10->SetBinContent(4, 23.6284);
-  histosignf__10->SetBinContent(5, 54.5312);
-  histosignf__10->SetBinContent(6, 107.323);
-  histosignf__10->SetBinContent(7, 173.578);
-  histosignf__10->SetBinContent(8, 217.381);
-  histosignf__10->SetBinContent(9, 152.259);
-  histosignf__10->SetBinContent(10, 69.4821);
-  histosignf__10->SetBinContent(11, 46.683);
-  histosignf__10->SetBinContent(12, 9.70938);
+  histosignf__10->SetBinContent(3, 3.157);
+  histosignf__10->SetBinContent(4, 24.436);
+  histosignf__10->SetBinContent(5, 46.676);
+  histosignf__10->SetBinContent(6, 91.851);
+  histosignf__10->SetBinContent(7, 173.468);
+  histosignf__10->SetBinContent(8, 217.392);
+  histosignf__10->SetBinContent(9, 152.307);
+  histosignf__10->SetBinContent(10, 63.696);
+  histosignf__10->SetBinContent(11, 36.772);
+  histosignf__10->SetBinContent(12, 15.964);
   
   histosignf__10->SetLineWidth(2);
   histosignf__10->GetXaxis()->SetTitle("p_{T} (GeV)");
@@ -332,28 +331,28 @@ void Lb_significanceHistos()
 
   double signfpereventfactorpp = 1 / sqrt(NEvents);
   TH1F* histosignf__13 = new TH1F("histosignf__9", "Significance per event Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
-  histosignf__13->SetBinContent(3, 0.4672185 * factor * signfpereventfactorpp); //factor to convert old to new amount of events
-  histosignf__13->SetBinContent(4, 2.829209 * factor * signfpereventfactorpp);
-  histosignf__13->SetBinContent(5, 7.571151 * factor * signfpereventfactorpp);
-  histosignf__13->SetBinContent(6, 30.31494 * factor * signfpereventfactorpp);
-  histosignf__13->SetBinContent(7, 35.24529 * factor * signfpereventfactorpp);
-  histosignf__13->SetBinContent(8, 22.76938 * factor * signfpereventfactorpp);
-  histosignf__13->SetBinContent(9, 18.81654 * factor * signfpereventfactorpp);
-  histosignf__13->SetBinContent(10, 9.412499 * factor * signfpereventfactorpp);
-  histosignf__13->SetBinContent(11, 3.197298 * factor * signfpereventfactorpp);
-  histosignf__13->SetBinContent(12, 1.019512 * factor * signfpereventfactorpp);
+  histosignf__13->SetBinContent(3, 0.960121204 * signfpereventfactorpp);
+  histosignf__13->SetBinContent(4, 7.300882464 * signfpereventfactorpp);
+  histosignf__13->SetBinContent(5, 21.40347928 * signfpereventfactorpp);
+  histosignf__13->SetBinContent(6, 53.04167744 * signfpereventfactorpp);
+  histosignf__13->SetBinContent(7, 122.6176088 * signfpereventfactorpp);
+  histosignf__13->SetBinContent(8, 161.7100383 * signfpereventfactorpp);
+  histosignf__13->SetBinContent(9, 122.1781281 * signfpereventfactorpp);
+  histosignf__13->SetBinContent(10, 46.42496492 * signfpereventfactorpp);
+  histosignf__13->SetBinContent(11, 23.86596022 * signfpereventfactorpp);
+  histosignf__13->SetBinContent(12, 9.027774988 * signfpereventfactorpp);
 
   TH1F* histosignf__14 = new TH1F("histosignf__10", "Significance per event Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
-  histosignf__14->SetBinContent(3, 4.05 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(4, 23.6284 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(5, 54.5312 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(6, 107.323 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(7, 173.578 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(8, 217.381 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(9, 152.259 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(10, 69.4821 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(11, 46.683 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(12, 9.70938 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(3, 3.157 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(4, 24.436 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(5, 46.676 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(6, 91.851 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(7, 173.468 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(8, 217.392 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(9, 152.307 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(10, 63.696 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(11, 36.772 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(12, 15.964 * signfpereventfactorpp);
 
   /// <summary>
   /// PbPb histograms
