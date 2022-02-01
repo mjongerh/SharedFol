@@ -150,16 +150,16 @@ void Lb_significanceHistos()
   hBkgPerEvent__1->SetStats(0);
 
   TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "Lb bkg per event of pp 14TeV after BDT", 12, xAxis1);
-  hBkgPerEvent__2->SetBinContent(3, 122631600.0 / NEvents);
-  hBkgPerEvent__2->SetBinContent(4, 160577478.0 / NEvents);
-  hBkgPerEvent__2->SetBinContent(5, 359705551.8 / NEvents);
-  hBkgPerEvent__2->SetBinContent(6, 405232984.8 / NEvents);
-  hBkgPerEvent__2->SetBinContent(7, 894720666.6 / NEvents);
-  hBkgPerEvent__2->SetBinContent(8, 1130320317.0 / NEvents);
-  hBkgPerEvent__2->SetBinContent(9, 576970791.0 / NEvents);
-  hBkgPerEvent__2->SetBinContent(10, 727163712.0 / NEvents);
-  hBkgPerEvent__2->SetBinContent(11, 913221323.0 / NEvents);
-  hBkgPerEvent__2->SetBinContent(12, 797124913.2 / NEvents);
+  hBkgPerEvent__2->SetBinContent(3, 1.23e+8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(4, 1.60577478e+8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(5, 3.59705551e+8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(6, 4.05232984e+8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(7, 8.94720666e+8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(8, 1.130320317e+8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(9, 5.76970791e+8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(10, 7.27163712e+8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(11, 9.13221323e+8 / NEvents);
+  hBkgPerEvent__2->SetBinContent(12, 7.97124913e+8 / NEvents);
   hBkgPerEvent__2->SetEntries(11);
   hBkgPerEvent__2->SetStats(0);
 
@@ -249,8 +249,8 @@ void Lb_significanceHistos()
   histosignal__1->Draw("");
   histosignal__2->Draw("same");
   auto legend3 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  legend3->AddEntry(hBkgPerEvent__1, "Panos' cuts", "f");
-  legend3->AddEntry(hBkgPerEvent__2, "+BDT cut", "f");
+  legend3->AddEntry(histosignal__1, "Panos' cuts", "f");
+  legend3->AddEntry(histosignal__2, "+BDT cut", "f");
   legend3->Draw("");
 
   Canvas_3->Modified();
