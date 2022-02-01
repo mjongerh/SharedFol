@@ -23,7 +23,7 @@
 #include "TSystem.h"
 #include "TInterpreter.h"
 
-void TEMP() {
+void TEMP() { //Lb singf histos have been moved
     Double_t xAxis1[13] = {0, 0.5, 1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 24};
   Double_t NEvents = 210000000000000.0; //old value
   Double_t NEventsPbPb = 55000000000.0;
