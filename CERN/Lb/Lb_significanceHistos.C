@@ -344,15 +344,15 @@ void Lb_significanceHistos()
   histosignf__13->SetBinContent(12, 1.019512 * factor * signfpereventfactorpp);
 
   TH1F* histosignf__14 = new TH1F("histosignf__10", "Significance per event Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
-  histosignf__14->SetBinContent(3, 2.05 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(4, 13.6284 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(5, 34.5312 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(6, 77.323 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(3, 4.05 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(4, 23.6284 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(5, 54.5312 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(6, 107.323 * signfpereventfactorpp);
   histosignf__14->SetBinContent(7, 173.578 * signfpereventfactorpp);
   histosignf__14->SetBinContent(8, 217.381 * signfpereventfactorpp);
   histosignf__14->SetBinContent(9, 152.259 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(10, 56.683 * signfpereventfactorpp);
-  histosignf__14->SetBinContent(11, 69.4821 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(10, 69.4821 * signfpereventfactorpp);
+  histosignf__14->SetBinContent(11, 46.683 * signfpereventfactorpp);
   histosignf__14->SetBinContent(12, 9.70938 * signfpereventfactorpp);
 
   /// <summary>
