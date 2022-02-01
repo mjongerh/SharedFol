@@ -319,10 +319,10 @@ void Lb_significanceHistos()
   histosignf__9->Draw("same");
 
   auto legend5 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  TLegendEntry* entry = legend5->AddEntry(histosignf__9, "Panos' cuts", "lep");
-  entry->SetMarkerStyle(5);
-  entry = legend5->AddEntry(histosignf__10, "+BDT cut", "lep");
-  entry->SetMarkerStyle(4);
+  TLegendEntry* entry1 = legend5->AddEntry(histosignf__9, "Panos' cuts", "lep");
+  entry1->SetMarkerStyle(5);
+  entry1 = legend5->AddEntry(histosignf__10, "+BDT cut", "lep");
+  entry1->SetMarkerStyle(4);
   legend5->Draw("");
 
   Canvas_5->cd();
