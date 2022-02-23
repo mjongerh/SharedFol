@@ -216,12 +216,8 @@ int Lb_BDT(TString myMethodList = ""){
     delete factory;
     delete dataloader;
     // Launch the GUI for the root macros
-    if (!gROOT->IsBatch())
-      TMVA::TMVAGui(outfileName);
-
-    int UselessParam;
-    std::cout << "Any input will continue to the next pt bin"; // Type a number and press enter
-    std::cin >> UselessParam;       // Get user input from the keyboard
+    //if (!gROOT->IsBatch())
+    //  TMVA::TMVAGui(outfileName);
   }
   return 0;
 }
