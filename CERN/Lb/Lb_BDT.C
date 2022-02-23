@@ -24,10 +24,13 @@ int Lb_BDT(TString myMethodList = ""){
 
   // Boosted Decision Trees
   Use["BDT"] = 1;  // uses Adaptive Boost
-  Use["BDTG"] = 0; // uses Gradient Boost
-  Use["BDTB"] = 0; // uses Bagging
-  Use["BDTD"] = 0; // decorrelation + Adaptive Boost
-  Use["BDTF"] = 0; // allow usage of fisher discriminant for node splitting
+  Use["BDTG"] = 1; // uses Gradient Boost
+  Use["BDTB"] = 1; // uses Bagging
+  Use["BDTD"] = 1; // decorrelation + Adaptive Boost
+  Use["BDTF"] = 1; // allow usage of fisher discriminant for node splitting
+  Use["RuleFit"] = 1; // 
+  // --- Neural Networks (all are feed-forward Multilayer Perceptrons)
+  Use["MLP"] = 1; // Recommended ANN
   std::cout << std::endl;
   std::cout << "==> Start TMVAClassification" << std::endl;
 
@@ -117,7 +120,7 @@ int Lb_BDT(TString myMethodList = ""){
     backgroundTree2->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-    TString outfileDir = Form("/home/mjongerh/Lb_data/outputmidSel/Pt%.1f", ptBins[i]);
+    TString outfileDir = Form("/home/mjongerh/Lb_data/outputSystErrTest/Pt%.1f", ptBins[i]);
     TString createdir = "mkdir -p " + outfileDir; //create directory if it doesn't exist yet
     gSystem->Exec(createdir);
     TString outfileName = outfileDir + "/TMVA.root";
@@ -177,6 +180,29 @@ int Lb_BDT(TString myMethodList = ""){
       factory->BookMethod(dataloader, TMVA::Types::kBDT, "BDT",
                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20");
 
+    if (Use["BDTG"]) // Gradient Boost
+      factory->BookMethod(dataloader, TMVA::Types::kBDT, "BDTG",
+                          "!H:!V:NTrees=1000:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=0.10:UseBaggedBoost:BaggedSampleFraction=0.5:nCuts=20:MaxDepth=3");
+
+    if (Use["BDTB"]) // Bagging
+      factory->BookMethod(dataloader, TMVA::Types::kBDT, "BDTB",
+                          "!H:!V:NTrees=400:BoostType=Bagging:SeparationType=GiniIndex:nCuts=20");
+
+    if (Use["BDTD"]) // Decorrelation + Adaptive Boost
+      factory->BookMethod(dataloader, TMVA::Types::kBDT, "BDTD",
+                          "!H:!V:NTrees=400:MinNodeSize=5%:MaxDepth=3:BoostType=AdaBoost:SeparationType=GiniIndex:nCuts=20:VarTransform=Decorrelate");
+
+    if (Use["BDTF"]) // Allow Using Fisher discriminant in node splitting for (strong) linearly correlated variables
+      factory->BookMethod(dataloader, TMVA::Types::kBDT, "BDTF",
+                          "!H:!V:NTrees=50:MinNodeSize=2.5%:UseFisherCuts:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:SeparationType=GiniIndex:nCuts=20");
+
+    // RuleFit -- TMVA implementation of Friedman's method
+    if (Use["RuleFit"])
+      factory->BookMethod(dataloader, TMVA::Types::kRuleFit, "RuleFit",
+                          "H:!V:RuleFitModule=RFTMVA:Model=ModRuleLinear:MinImp=0.001:RuleMinDist=0.001:NTrees=20:fEventsMin=0.01:fEventsMax=0.5:GDTau=-1.0:GDTauPrec=0.01:GDStep=0.01:GDNSteps=10000:GDErrScale=1.02");
+    // TMVA ANN: MLP (recommended ANN) -- all ANNs in TMVA are Multilayer Perceptrons
+    if (Use["MLP"]) factory->BookMethod(TMVA::Types::kMLP, "MLP", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=N+5:TestRate=5:!UseRegulator");
+
     // Now you can tell the factory to train, test, and evaluate the MVAs
     factory->TrainAllMethods();
     factory->TestAllMethods();
@@ -190,8 +216,12 @@ int Lb_BDT(TString myMethodList = ""){
     delete factory;
     delete dataloader;
     // Launch the GUI for the root macros
-    //if (!gROOT->IsBatch())
-    //  TMVA::TMVAGui(outfileName);
+    if (!gROOT->IsBatch())
+      TMVA::TMVAGui(outfileName);
+
+    int UselessParam;
+    std::cout << "Any input will continue to the next pt bin"; // Type a number and press enter
+    std::cin >> UselessParam;       // Get user input from the keyboard
   }
   return 0;
 }
