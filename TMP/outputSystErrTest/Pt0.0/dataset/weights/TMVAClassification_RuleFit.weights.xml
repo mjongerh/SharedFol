@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<MethodSetup Method="RuleFit::RuleFit">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.2.1 [262657]"/>
+    <Info name="ROOT Release" value="6.24/06 [399366]"/>
+    <Info name="Creator" value="mjongerh"/>
+    <Info name="Date" value="Wed Feb 23 14:57:24 2022"/>
+    <Info name="Host" value="Linux alicecerno2 5.4.0-90-generic #101-Ubuntu SMP Fri Oct 15 20:00:55 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux"/>
+    <Info name="Dir" value="/home/mjongerh/alice/SharedFol/CERN/Lb"/>
+    <Info name="Training events" value="3281"/>
+    <Info name="TrainingTime" value="7.79265094e+00"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="No">None</Option>
+    <Option name="H" modified="Yes">True</Option>
+    <Option name="CreateMVAPdfs" modified="No">False</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+    <Option name="GDTau" modified="Yes">-1.000000e+00</Option>
+    <Option name="GDTauPrec" modified="Yes">1.000000e-02</Option>
+    <Option name="GDStep" modified="Yes">1.000000e-02</Option>
+    <Option name="GDNSteps" modified="Yes">10000</Option>
+    <Option name="GDErrScale" modified="Yes">1.020000e+00</Option>
+    <Option name="LinQuantile" modified="No">2.500000e-02</Option>
+    <Option name="GDPathEveFrac" modified="No">5.000000e-01</Option>
+    <Option name="GDValidEveFrac" modified="No">5.000000e-01</Option>
+    <Option name="fEventsMin" modified="Yes">1.000000e-02</Option>
+    <Option name="fEventsMax" modified="Yes">5.000000e-01</Option>
+    <Option name="nTrees" modified="Yes">20</Option>
+    <Option name="ForestType" modified="No">adaboost</Option>
+    <Option name="RuleMinDist" modified="Yes">1.000000e-03</Option>
+    <Option name="MinImp" modified="Yes">1.000000e-03</Option>
+    <Option name="Model" modified="Yes">modrulelinear</Option>
+    <Option name="RuleFitModule" modified="Yes">rftmva</Option>
+    <Option name="RFWorkDir" modified="No">./rulefit</Option>
+    <Option name="RFNrules" modified="No">2000</Option>
+    <Option name="RFNendnodes" modified="No">4</Option>
+  </Options>
+  <Variables NVar="7">
+    <Variable VarIndex="0" Expression="fCPA" Label="fCPA" Title="fCPA" Unit="units" Internal="fCPA" Type="F" Min="9.50047493e-01" Max="9.99999940e-01"/>
+    <Variable VarIndex="1" Expression="fCPAXY" Label="fCPAXY" Title="fCPAXY" Unit="units" Internal="fCPAXY" Type="F" Min="-9.99990523e-01" Max="1.00000000e+00"/>
+    <Variable VarIndex="2" Expression="fChi2PCA" Label="fChi2PCA" Title="fChi2PCA" Unit="units" Internal="fChi2PCA" Type="F" Min="3.61386875e-12" Max="9.97164971e-05"/>
+    <Variable VarIndex="3" Expression="fDecayLength" Label="fDecayLength" Title="fDecayLength" Unit="units" Internal="fDecayLength" Type="F" Min="6.23603491e-03" Max="1.13972885e+02"/>
+    <Variable VarIndex="4" Expression="fDecayLengthXY" Label="fDecayLengthXY" Title="fDecayLengthXY" Unit="units" Internal="fDecayLengthXY" Type="F" Min="5.00400597e-03" Max="4.19688072e+01"/>
+    <Variable VarIndex="5" Expression="fImpactParameter0" Label="fImpactParameter0" Title="fImpactParameter0" Unit="units" Internal="fImpactParameter0" Type="F" Min="-6.20930791e-02" Max="9.07993913e-02"/>
+    <Variable VarIndex="6" Expression="fImpactParameter1" Label="fImpactParameter1" Title="fImpactParameter1" Unit="units" Internal="fImpactParameter1" Type="F" Min="-2.24202204e+00" Max="2.36704156e-01"/>
+  </Variables>
+  <Spectators NSpec="4">
+    <Spectator SpecIndex="0" Expression="fPtProng0" Label="fPtProng0" Title="fPtProng0" Unit="units" Internal="fPtProng0" Type="F" Min="5.00022650e-01" Max="2.94130015e+00"/>
+    <Spectator SpecIndex="1" Expression="fPtProng1" Label="fPtProng1" Title="fPtProng1" Unit="units" Internal="fPtProng1" Type="F" Min="5.00992954e-01" Max="2.78135896e+00"/>
+    <Spectator SpecIndex="2" Expression="fM" Label="fM" Title="fM" Unit="units" Internal="fM" Type="F" Min="4.62052011e+00" Max="6.61918545e+00"/>
+    <Spectator SpecIndex="3" Expression="fPt" Label="fPt" Title="fPt" Unit="Gev" Internal="fPt" Type="F" Min="6.97750691e-03" Max="4.99976635e-01"/>
+  </Spectators>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs/>
+  <Weights NRules="0" NLinear="7" LearningModel="0" ImportanceCut="1.0000000000000000e-03" LinQuantile="2.5000000000000001e-02" AverageSupport="3.9875419079548918e-01" AverageRuleSigma="4.8964199791125329e-01" Offset="0.0000000000000000e+00">
+    <Linear OK="1" Coeff="-3.8999055923106582e-02" Norm="2.7871004631646112e+01" DM="9.5144653320312500e-01" DP="9.9931395053863525e-01" Importance="1.9095575658842602e-02"/>
+    <Linear OK="0" Coeff="0.0000000000000000e+00" Norm="6.6978228328486022e-01" DM="-9.6566069126129150e-01" DP="9.9970799684524536e-01" Importance="0.0000000000000000e+00"/>
+    <Linear OK="0" Coeff="0.0000000000000000e+00" Norm="2.0367020685624961e+04" DM="4.2893537610666499e-09" DP="7.7147684351075441e-05" Importance="0.0000000000000000e+00"/>
+    <Linear OK="0" Coeff="0.0000000000000000e+00" Norm="4.5457466679816987e+00" DM="1.3887328095734119e-02" DP="4.6768876910209656e-01" Importance="0.0000000000000000e+00"/>
+    <Linear OK="0" Coeff="0.0000000000000000e+00" Norm="1.3816954254473044e+01" DM="5.1313033327460289e-03" DP="1.5094177424907684e-01" Importance="0.0000000000000000e+00"/>
+    <Linear OK="0" Coeff="0.0000000000000000e+00" Norm="4.9121437385947083e+01" DM="-1.8481684848666191e-02" DP="1.7054336145520210e-02" Importance="0.0000000000000000e+00"/>
+    <Linear OK="0" Coeff="0.0000000000000000e+00" Norm="1.8440856986093340e+02" DM="-6.8531460128724575e-03" DP="7.6926788315176964e-03" Importance="0.0000000000000000e+00"/>
+  </Weights>
+</MethodSetup>
