@@ -481,9 +481,6 @@ void Lb_significanceHistos()
   gme->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
   gme->GetYaxis()->SetLabelFont(42);
   gme->GetYaxis()->SetTitleFont(42);
-  gme->GetZaxis()->SetLabelFont(42);
-  gme->GetZaxis()->SetTitleOffset(1);
-  gme->GetZaxis()->SetTitleFont(42);
   gme->SetMarkerColor(4);
   gme->SetMarkerSize(1.3);
 
