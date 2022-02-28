@@ -466,7 +466,7 @@ void Lb_significanceHistos()
   double* aeylsys = new double[12]{0.0, 0.0, 1.406217321, 6.05601751, 10.45978246, 13.69091238, 21.94096854, 29.02971369, 24.27686046, 18.16911763, 14.6798901, 8.501549225};
   double* aeyhsys = new double[12]{0.0, 0.0, 1.406217321, 6.05601751, 10.45978246, 13.69091238, 21.94096854, 29.02971369, 24.27686046, 18.16911763, 14.6798901, 8.501549225};
 
-  TGraphMultiErrors* gme = new TGraphMultiErrors("gme", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 ", 5, ax, ay, aexl, aexh, aeylstat, aeyhstat);
+  TGraphMultiErrors* gme = new TGraphMultiErrors("gme", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 ", 12, ax, ay, aexl, aexh, aeylstat, aeyhstat);
   gme->AddYError(12, aeylsys, aeyhsys);
   gme->SetMarkerStyle(4);
   gme->SetLineColor(kRed);
