@@ -204,7 +204,7 @@ void Lb_significanceHistos()
   Canvas_3->SetFrameBorderMode(0);
 
   TH1F* histosignal__1 = new TH1F("histosignal__1", "Lb signal pp per event", 12, xAxis1);
-  histosignal__1->SetBinContent(3, 40186.32 / NEvents); // * 6 to correct from old to new amount of events
+  histosignal__1->SetBinContent(3, 40186.32 / NEvents);
   histosignal__1->SetBinContent(4, 382180.8 / NEvents);
   histosignal__1->SetBinContent(5, 1064940 / NEvents);
   histosignal__1->SetBinContent(6, 2166486 / NEvents);
@@ -453,6 +453,32 @@ void Lb_significanceHistos()
   Canvas_7->cd();
   Canvas_7->Modified();
   Canvas_7->SetSelected(Canvas_7);
+
+  //systematic error
+  TCanvas* Canvas_77 = new TCanvas("Canvas_77", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 ", 1143, 281, 798, 757);
+  14.6981 60.4933 99.1656 122.633 181.512 207.957 146.071 93.3654 64.3722 31.6456
+
+  double ax[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
+  double ay[12] = {.0, .0, 14.6981, 60.4933, 99.1656, 122.633, 181.512, 207.957, 146.071, 93.3654, 64.3722, 31.6456};
+  double aexl[12] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+  double aexh[12] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+  double* aeylstat = new double[12]{5.949280998, 9.834196424, 15.16048126, 18.50901144, 18.87938863, 17.12796321, 13.04044564, 9.579556961, 7.542965078, 6.176908112};
+  double* aeyhstat = new double[12]{5.949280998, 9.834196424, 15.16048126, 18.50901144, 18.87938863, 17.12796321, 13.04044564, 9.579556961, 7.542965078, 6.176908112};
+  double* aeylsys = new double[12]{1.406217321, 6.05601751, 10.45978246, 13.69091238, 21.94096854, 29.02971369, 24.27686046, 18.16911763, 14.6798901, 8.501549225};
+  double* aeyhsys = new double[12]{1.406217321, 6.05601751, 10.45978246, 13.69091238, 21.94096854, 29.02971369, 24.27686046, 18.16911763, 14.6798901, 8.501549225};
+
+  TGraphMultiErrors* gme = new TGraphMultiErrors("gme", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 ", 5, ax, ay, aexl, aexh, aeylstat, aeyhstat);
+  gme->AddYError(5, aeylsys, aeyhsys);
+  gme->SetMarkerStyle(20);
+  gme->SetLineColor(kRed);
+  gme->GetAttLine(0)->SetLineColor(kRed);
+  gme->GetAttLine(1)->SetLineColor(kBlue);
+  gme->GetAttFill(1)->SetFillStyle(0);
+
+  gme->Draw("a p s ; ; 5 s=0.5");
+  Canvas_77->cd();
+  Canvas_77->Modified();
+  Canvas_77->SetSelected(Canvas_77);
 
   double sigpereventfactor = 1 / sqrt(NEventsPbPb);
   TH1F* histosignf__11 = new TH1F("histosignf__11", "Significance/event Lb in PbPb 5.02TeV, centr. 30-50%", 12, xAxis1);
