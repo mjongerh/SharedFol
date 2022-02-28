@@ -456,7 +456,6 @@ void Lb_significanceHistos()
 
   //systematic error
   TCanvas* Canvas_77 = new TCanvas("Canvas_77", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 ", 1143, 281, 798, 757);
-  14.6981 60.4933 99.1656 122.633 181.512 207.957 146.071 93.3654 64.3722 31.6456
 
   double ax[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
   double ay[12] = {.0, .0, 14.6981, 60.4933, 99.1656, 122.633, 181.512, 207.957, 146.071, 93.3654, 64.3722, 31.6456};
@@ -468,12 +467,25 @@ void Lb_significanceHistos()
   double* aeyhsys = new double[12]{1.406217321, 6.05601751, 10.45978246, 13.69091238, 21.94096854, 29.02971369, 24.27686046, 18.16911763, 14.6798901, 8.501549225};
 
   TGraphMultiErrors* gme = new TGraphMultiErrors("gme", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 ", 5, ax, ay, aexl, aexh, aeylstat, aeyhstat);
-  gme->AddYError(5, aeylsys, aeyhsys);
-  gme->SetMarkerStyle(20);
+  gme->AddYError(12, aeylsys, aeyhsys);
+  gme->SetMarkerStyle(4);
   gme->SetLineColor(kRed);
   gme->GetAttLine(0)->SetLineColor(kRed);
   gme->GetAttLine(1)->SetLineColor(kBlue);
   gme->GetAttFill(1)->SetFillStyle(0);
+  gme->GetXaxis()->SetTitle("p_{T} (GeV)");
+  gme->GetXaxis()->SetRange(1, 100);
+  gme->GetXaxis()->SetLabelFont(42);
+  gme->GetXaxis()->SetTitleOffset(1);
+  gme->GetXaxis()->SetTitleFont(42);
+  gme->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  gme->GetYaxis()->SetLabelFont(42);
+  gme->GetYaxis()->SetTitleFont(42);
+  gme->GetZaxis()->SetLabelFont(42);
+  gme->GetZaxis()->SetTitleOffset(1);
+  gme->GetZaxis()->SetTitleFont(42);
+  gme->SetMarkerColor(4);
+  gme->SetMarkerSize(1.3);
 
   gme->Draw("a p s ; ; 5 s=0.5");
   Canvas_77->cd();
