@@ -328,6 +328,42 @@ void Lb_significanceHistos()
   Canvas_5->Modified();
   Canvas_5->SetSelected(Canvas_5);
 
+    // systematic error
+  TCanvas* Canvas_76 = new TCanvas("Canvas_76", "Double error Significance Lb in pp 14TeV, Nevt=1.26E15", 1143, 281, 798, 757);
+
+  double px[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
+  double py[12] = {.0, .0, 3.156707877, 24.43591843, 46.67636746, 91.85058874, 173.4679533, 217.3922808, 152.3065561, 63.69604236, 36.77164548, 15.96400849};
+  double pexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double pexh[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double* peylstat = new double[12]{0.0, 0.0, 0.231876766, 1.793473105, 3.424898467, 6.732510142, 12.707102, 15.91941221, 11.15394861, 4.673955431, 2.699812803, 1.172475893};
+  double* peyhstat = new double[12]{0.0, 0.0, 0.231876766, 1.793473105, 3.424898467, 6.732510142, 12.707102, 15.91941221, 11.15394861, 4.673955431, 2.699812803, 1.172475893};
+
+  double* peylsys = new double[12]{0.0, 0.0, 0.290650541, 2.360410569, 4.766151681, 9.950785586, 20.42055945, 29.72182605, 24.92375308, 12.27021025, 8.326135594, 4.267450527};
+  double* peyhsys = new double[12]{0.0, 0.0, 0.290650541, 2.360410569, 4.766151681, 9.950785586, 20.42055945, 29.72182605, 24.92375308, 12.27021025, 8.326135594, 4.267450527};
+
+
+  TGraphMultiErrors* gSignf_pp14p0_DoubleError = new TGraphMultiErrors("gSignf_pp14p0_DoubleError", "Double error Significance Lb in pp 14TeV, Nevt=1.26E15", 12, px, py, pexl, pexh, peylstat, peyhstat);
+  gSignf_pp14p0_DoubleError->AddYError(12, aeylsys, aeyhsys);
+  gSignf_pp14p0_DoubleError->SetMarkerStyle(4);
+  gSignf_pp14p0_DoubleError->SetLineColor(kRed);
+  gSignf_pp14p0_DoubleError->GetAttLine(0)->SetLineColor(kRed);
+  gSignf_pp14p0_DoubleError->GetAttLine(1)->SetLineColor(kBlue);
+  gSignf_pp14p0_DoubleError->GetAttFill(1)->SetFillStyle(0);
+  gSignf_pp14p0_DoubleError->GetXaxis()->SetTitle("p_{T} (GeV)");
+  gSignf_pp14p0_DoubleError->GetXaxis()->SetRange(1, 100);
+  gSignf_pp14p0_DoubleError->GetXaxis()->SetLabelFont(42);
+  gSignf_pp14p0_DoubleError->GetXaxis()->SetTitleOffset(1);
+  gSignf_pp14p0_DoubleError->GetXaxis()->SetTitleFont(42);
+  gSignf_pp14p0_DoubleError->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  gSignf_pp14p0_DoubleError->GetYaxis()->SetLabelFont(42);
+  gSignf_pp14p0_DoubleError->GetYaxis()->SetTitleFont(42);
+  gSignf_pp14p0_DoubleError->SetMarkerColor(4);
+  gSignf_pp14p0_DoubleError->SetMarkerSize(1.3);
+
+  gSignf_pp14p0_DoubleError->Draw("a p s ; ; 5 s=0.5");
+  Canvas_76->cd();
+  Canvas_76->Modified();
+  Canvas_76->SetSelected(Canvas_76);
 
   double signfpereventfactorpp = 1 / sqrt(NEvents);
   TH1F* histosignf__13 = new TH1F("histosignf__9", "Significance per event Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
@@ -461,30 +497,31 @@ void Lb_significanceHistos()
   double ay[12] = {.0, .0, 14.6981, 60.4933, 99.1656, 122.633, 181.512, 207.957, 146.071, 93.3654, 64.3722, 31.6456};
   double aexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
   double aexh[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
-  double* aeylstat = new double[12]{0.0, 0.0, 5.949280998, 9.834196424, 15.16048126, 18.50901144, 18.87938863, 17.12796321, 13.04044564, 9.579556961, 7.542965078, 6.176908112};
-  double* aeyhstat = new double[12]{0.0, 0.0, 5.949280998, 9.834196424, 15.16048126, 18.50901144, 18.87938863, 17.12796321, 13.04044564, 9.579556961, 7.542965078, 6.176908112};
-  double* aeylsys = new double[12]{0.0, 0.0, 1.406217321, 6.05601751, 10.45978246, 13.69091238, 21.94096854, 29.02971369, 24.27686046, 18.16911763, 14.6798901, 8.501549225};
-  double* aeyhsys = new double[12]{0.0, 0.0, 1.406217321, 6.05601751, 10.45978246, 13.69091238, 21.94096854, 29.02971369, 24.27686046, 18.16911763, 14.6798901, 8.501549225};
+  double* aeylstat = new double[12]{0.0, 0.0, 3.609747297, 14.41750555, 24.09456893, 29.80527872, 39.76540754, 43.81564322, 31.42925376, 21.44841255, 15.6963688, 8.928587797};
+  double* aeyhstat = new double[12]{0.0, 0.0, 3.609747297, 14.41750555, 24.09456893, 29.80527872, 39.76540754, 43.81564322, 31.42925376, 21.44841255, 15.6963688, 8.928587797};
 
-  TGraphMultiErrors* gme = new TGraphMultiErrors("gme", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 ", 12, ax, ay, aexl, aexh, aeylstat, aeyhstat);
-  gme->AddYError(12, aeylsys, aeyhsys);
-  gme->SetMarkerStyle(4);
-  gme->SetLineColor(kRed);
-  gme->GetAttLine(0)->SetLineColor(kRed);
-  gme->GetAttLine(1)->SetLineColor(kBlue);
-  gme->GetAttFill(1)->SetFillStyle(0);
-  gme->GetXaxis()->SetTitle("p_{T} (GeV)");
-  gme->GetXaxis()->SetRange(1, 100);
-  gme->GetXaxis()->SetLabelFont(42);
-  gme->GetXaxis()->SetTitleOffset(1);
-  gme->GetXaxis()->SetTitleFont(42);
-  gme->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
-  gme->GetYaxis()->SetLabelFont(42);
-  gme->GetYaxis()->SetTitleFont(42);
-  gme->SetMarkerColor(4);
-  gme->SetMarkerSize(1.3);
+  double* aeylsys = new double[12]{0.0, 0.0, 0.761874517, 3.125306703, 5.388095341, 7.008237369, 11.19358083, 14.84942778, 12.65377299, 10.16648735, 8.85908569, 6.005354614};
+  double* aeyhsys = new double[12]{0.0, 0.0, 0.761874517, 3.125306703, 5.388095341, 7.008237369, 11.19358083, 14.84942778, 12.65377299, 10.16648735, 8.85908569, 6.005354614};
 
-  gme->Draw("a p s ; ; 5 s=0.5");
+  TGraphMultiErrors* gSignf_PbPb5p02_DoubleError = new TGraphMultiErrors("gSignf_PbPb5p02_DoubleError", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 ", 12, ax, ay, aexl, aexh, aeylstat, aeyhstat);
+  gSignf_PbPb5p02_DoubleError->AddYError(12, aeylsys, aeyhsys);
+  gSignf_PbPb5p02_DoubleError->SetMarkerStyle(4);
+  gSignf_PbPb5p02_DoubleError->SetLineColor(kRed);
+  gSignf_PbPb5p02_DoubleError->GetAttLine(0)->SetLineColor(kRed);
+  gSignf_PbPb5p02_DoubleError->GetAttLine(1)->SetLineColor(kBlue);
+  gSignf_PbPb5p02_DoubleError->GetAttFill(1)->SetFillStyle(0);
+  gSignf_PbPb5p02_DoubleError->GetXaxis()->SetTitle("p_{T} (GeV)");
+  gSignf_PbPb5p02_DoubleError->GetXaxis()->SetRange(1, 100);
+  gSignf_PbPb5p02_DoubleError->GetXaxis()->SetLabelFont(42);
+  gSignf_PbPb5p02_DoubleError->GetXaxis()->SetTitleOffset(1);
+  gSignf_PbPb5p02_DoubleError->GetXaxis()->SetTitleFont(42);
+  gSignf_PbPb5p02_DoubleError->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  gSignf_PbPb5p02_DoubleError->GetYaxis()->SetLabelFont(42);
+  gSignf_PbPb5p02_DoubleError->GetYaxis()->SetTitleFont(42);
+  gSignf_PbPb5p02_DoubleError->SetMarkerColor(4);
+  gSignf_PbPb5p02_DoubleError->SetMarkerSize(1.3);
+
+  gSignf_PbPb5p02_DoubleError->Draw("a p s ; ; 5 s=0.5");
   Canvas_77->cd();
   Canvas_77->Modified();
   Canvas_77->SetSelected(Canvas_77);
@@ -642,4 +679,5 @@ void Lb_significanceHistos()
   TMPFile.WriteObject(histosignal__4, "Lb_PbPb_sigpereventBDT");
   TMPFile.WriteObject(hBkgPerEvent__3, "Lb_PbPb_bkgperevent");
   TMPFile.WriteObject(hBkgPerEvent__4, "Lb_PbPb_bkgpereventBDT");
+  TMPFile.WriteObject(gSignf_PbPb5p02_DoubleError, "Lb_PbPb5p02_signfDoubleError");
 }
