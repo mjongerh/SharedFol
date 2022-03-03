@@ -343,7 +343,7 @@ void Lb_significanceHistos()
 
 
   TGraphMultiErrors* gSignf_pp14p0_DoubleError = new TGraphMultiErrors("gSignf_pp14p0_DoubleError", "Double error Significance Lb in pp 14TeV, Nevt=1.26E15", 12, px, py, pexl, pexh, peylstat, peyhstat);
-  gSignf_pp14p0_DoubleError->AddYError(12, aeylsys, aeyhsys);
+  gSignf_pp14p0_DoubleError->AddYError(12, peylsys, peyhsys);
   gSignf_pp14p0_DoubleError->SetMarkerStyle(4);
   gSignf_pp14p0_DoubleError->SetLineColor(kRed);
   gSignf_pp14p0_DoubleError->GetAttLine(0)->SetLineColor(kRed);
