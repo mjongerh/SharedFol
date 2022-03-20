@@ -42,6 +42,6 @@ void Test() {
 
     gStyle->SetPalette(1);
     dt->Draw("surf1");
-    dt2->Draw("surf2");
+    dt2->Draw("same");
     return c;
 }
