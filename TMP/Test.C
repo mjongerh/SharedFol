@@ -43,5 +43,7 @@ void Test() {
     gStyle->SetPalette(1);
     dt->Draw("surf1");
     dt2->Draw("samesurf1");
+    gPad->Modified();
+    gPad->Update();
     return c;
 }
