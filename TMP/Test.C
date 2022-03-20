@@ -18,6 +18,8 @@
 
 void Test() {
     TCanvas* c = new TCanvas("c", "Graph2D example", 0, 0, 600, 400);
+    auto mg = new TMultiGraph();
+
     Double_t x, y, z;
     Int_t np = 100;
     TGraph2D* dt = new TGraph2D();
@@ -39,10 +41,12 @@ void Test() {
       dt2->SetPoint(N, x, y, z);
     }
 
-
+    mg->Add(dt);
+    mg->Add(dt2);
+    mg->Draw();
     gStyle->SetPalette(1);
-    dt->Draw("surf1");
-    dt2->Draw("samesurf1");
+ /*   dt->Draw("surf1");
+    dt2->Draw("samesurf1");*/
     gPad->Modified();
     gPad->Update();
     return c;
