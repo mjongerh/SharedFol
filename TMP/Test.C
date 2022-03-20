@@ -22,14 +22,26 @@ void Test() {
     Int_t np = 100;
     TGraph2D* dt = new TGraph2D();
     dt->SetTitle("Graph title; X axis title; Y axis title; Z axis title");
-    TRandom* r = new TRandom();
     for (Int_t N = 0; N < np; N++) {
       x = N % 10 ;
       y = (int)(N / 10);
       z = 2*x;
       dt->SetPoint(N, x, y, z);
     }
+    
+    
+    TGraph2D* dt2 = new TGraph2D();
+    dt2->SetTitle("Graph title; X axis title; Y axis title; Z axis title");
+    for (Int_t N = 0; N < np; N++) {
+      x = N % 10 ;
+      y = (int)(N / 10);
+      z = -2*x+10;
+      dt2->SetPoint(N, x, y, z);
+    }
+
+
     gStyle->SetPalette(1);
     dt->Draw("surf1");
+    dt2->Draw("surf2");
     return c;
 }
