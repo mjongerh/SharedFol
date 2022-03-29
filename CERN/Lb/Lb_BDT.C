@@ -62,7 +62,7 @@ int Lb_BDT(TString myMethodList = ""){
 
   for (Int_t i = 0; i < 12; i++) { //nPtBins //master loop over all ptbins
     TFile* inputSignal(0);
-    TString fnamesig = Form("/home/mjongerh/Lb_data/LbmidcutSel_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder      /home/mjongerh/Lb_data/Trees/
+    TString fnamesig = Form("/home/mjongerh/Lb_data/LbStrictPIDcutSel_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder      /home/mjongerh/Lb_data/Trees/
     if (!gSystem->AccessPathName(fnamesig)) {
       inputSignal = TFile::Open(fnamesig); // check if file in local directory exists
     }
@@ -73,7 +73,7 @@ int Lb_BDT(TString myMethodList = ""){
     std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal->GetName() << std::endl;
 
     TFile* inputBackground(0);
-    TString fnamebkg = Form("/home/mjongerh/Lb_data/LbmidcutSel_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
+    TString fnamebkg = Form("/home/mjongerh/Lb_data/LbStrictPIDcutSel_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg);
     }
@@ -82,45 +82,45 @@ int Lb_BDT(TString myMethodList = ""){
       exit(1);
     }
      //Second set of data files
-    TFile* inputSignal2(0);
-    TString fnamesig2 = Form("/home/mjongerh/Lb_data/LbGunPanoscutSel_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder      /home/mjongerh/Lb_data/Trees/
-    if (!gSystem->AccessPathName(fnamesig2)) {
-      inputSignal2 = TFile::Open(fnamesig2); // check if file in local directory exists
-    }
-    if (!inputSignal2) {
-      std::cout << "ERROR: could not open signal file" << std::endl;
-      exit(1);
-    }
-    std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal->GetName() << std::endl;
+    //TFile* inputSignal2(0);
+    //TString fnamesig2 = Form("/home/mjongerh/Lb_data/LbGunPanoscutSel_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder      /home/mjongerh/Lb_data/Trees/
+    //if (!gSystem->AccessPathName(fnamesig2)) {
+    //  inputSignal2 = TFile::Open(fnamesig2); // check if file in local directory exists
+    //}
+    //if (!inputSignal2) {
+    //  std::cout << "ERROR: could not open signal file" << std::endl;
+    //  exit(1);
+    //}
+    //std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal2->GetName() << std::endl;
 
-    TFile* inputBackground2(0);
-    TString fnamebkg2 = Form("/home/mjongerh/Lb_data/LbGunPanoscutSel_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
-    if (!gSystem->AccessPathName(fnamebkg2)) {
-      inputBackground2 = TFile::Open(fnamebkg2);
-    }
-    if (!inputBackground2) {
-      std::cout << "ERROR: could not open bkg file" << std::endl;
-      exit(1);
-    }
-    std::cout << "--- TMVAClassification       : Using input background file: " << inputBackground->GetName() << std::endl;
+    //TFile* inputBackground2(0);
+    //TString fnamebkg2 = Form("/home/mjongerh/Lb_data/LbGunPanoscutSel_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
+    //if (!gSystem->AccessPathName(fnamebkg2)) {
+    //  inputBackground2 = TFile::Open(fnamebkg2);
+    //}
+    //if (!inputBackground2) {
+    //  std::cout << "ERROR: could not open bkg file" << std::endl;
+    //  exit(1);
+    //}
+    //std::cout << "--- TMVAClassification       : Using input background file: " << inputBackground2->GetName() << std::endl;
 
     // Register the training and test trees
     TTree* signalTree = (TTree*)inputSignal->Get("O2hfcandlbfull");
     TTree* backgroundTree = (TTree*)inputBackground->Get("O2hfcandlbfull");
-    TTree* signalTree2 = (TTree*)inputSignal2->Get("O2hfcandlbfull");
-    TTree* backgroundTree2 = (TTree*)inputBackground2->Get("O2hfcandlbfull");
+    //TTree* signalTree2 = (TTree*)inputSignal2->Get("O2hfcandlbfull");
+    //TTree* backgroundTree2 = (TTree*)inputBackground2->Get("O2hfcandlbfull");
 
     signalTree->Print();
     backgroundTree->Print();
     signalTree->AutoSave();
     backgroundTree->AutoSave();
-    signalTree2->Print();
-    backgroundTree2->Print();
-    signalTree2->AutoSave();
-    backgroundTree2->AutoSave();
+    //signalTree2->Print();
+    //backgroundTree2->Print();
+    //signalTree2->AutoSave();
+    //backgroundTree2->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-    TString outfileDir = Form("/home/mjongerh/Lb_data/outputSystErrTest/Pt%.1f", ptBins[i]);
+    TString outfileDir = Form("/home/mjongerh/Lb_data/outputPIDTest/Pt%.1f", ptBins[i]);
     TString createdir = "mkdir -p " + outfileDir; //create directory if it doesn't exist yet
     gSystem->Exec(createdir);
     TString outfileName = outfileDir + "/TMVA.root";
@@ -174,26 +174,26 @@ int Lb_BDT(TString myMethodList = ""){
     // You can add an arbitrary number of signal or background trees
     if (signalTree->GetEntries() != 0) dataloader->AddSignalTree(signalTree, signalWeight);
     if (backgroundTree->GetEntries() != 0) dataloader->AddBackgroundTree(backgroundTree, backgroundWeight);
-    if (signalTree2->GetEntries() != 0) dataloader->AddSignalTree(signalTree2, signalWeight);
-    if (backgroundTree2->GetEntries() != 0) dataloader->AddBackgroundTree(backgroundTree2, backgroundWeight);
+    //if (signalTree2->GetEntries() != 0) dataloader->AddSignalTree(signalTree2, signalWeight);
+    //if (backgroundTree2->GetEntries() != 0) dataloader->AddBackgroundTree(backgroundTree2, backgroundWeight);
 
     // Apply additional cuts on the signal and background samples (can be different)
     TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
     TCut mycutb = ""; // for example: TCut mycutb = "abs(var1)<0.5";
 
     //case 1 input file
-    //int NsigTrain = (signalTree->GetEntries()) * TrainFraction;
-    //long long Nmaxbkg = 500000;
-    //int NbkgTrain = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * TrainFraction));
-    //int NsigTest = (signalTree->GetEntries()) * (1.0 - TrainFraction);
-    //int NbkgTest = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * (1.0 - TrainFraction)));
+    int NsigTrain = (signalTree->GetEntries()) * TrainFraction;
+    long long Nmaxbkg = 500000;
+    int NbkgTrain = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * TrainFraction));
+    int NsigTest = (signalTree->GetEntries()) * (1.0 - TrainFraction);
+    int NbkgTest = min(Nmaxbkg, (long long)(backgroundTree->GetEntries() * (1.0 - TrainFraction)));
     
     //case 2 input files
-    int NsigTrain = (signalTree->GetEntries() + signalTree2->GetEntries()) * TrainFraction;
-    long long Nmaxbkg = 500000;
-    int NbkgTrain = min(Nmaxbkg, (long long)((backgroundTree->GetEntries() + backgroundTree2->GetEntries()) * TrainFraction));
-    int NsigTest = (signalTree->GetEntries() + signalTree2->GetEntries()) * (1.0 - TrainFraction);
-    int NbkgTest = min(Nmaxbkg, (long long)((backgroundTree->GetEntries() + backgroundTree2->GetEntries()) * (1.0 - TrainFraction)));
+    //int NsigTrain = (signalTree->GetEntries() + signalTree2->GetEntries()) * TrainFraction;
+    //long long Nmaxbkg = 500000;
+    //int NbkgTrain = min(Nmaxbkg, (long long)((backgroundTree->GetEntries() + backgroundTree2->GetEntries()) * TrainFraction));
+    //int NsigTest = (signalTree->GetEntries() + signalTree2->GetEntries()) * (1.0 - TrainFraction);
+    //int NbkgTest = min(Nmaxbkg, (long long)((backgroundTree->GetEntries() + backgroundTree2->GetEntries()) * (1.0 - TrainFraction)));
     dataloader->PrepareTrainingAndTestTree(mycuts, NsigTrain, NbkgTrain, NsigTest, NbkgTest, "SplitMode=Random:NormMode=NumEvents:!V");
 
     // Boosted Decision Trees
