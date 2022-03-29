@@ -24,13 +24,13 @@ int Lb_BDT(TString myMethodList = ""){
 
   // Boosted Decision Trees
   Use["BDT"] = 1;  // uses Adaptive Boost
-  Use["BDTG"] = 1; // uses Gradient Boost
-  Use["BDTB"] = 1; // uses Bagging
-  Use["BDTD"] = 1; // decorrelation + Adaptive Boost
-  Use["BDTF"] = 1; // allow usage of fisher discriminant for node splitting
-  Use["RuleFit"] = 1; // 
+  Use["BDTG"] = 0; // uses Gradient Boost
+  Use["BDTB"] = 0; // uses Bagging
+  Use["BDTD"] = 0; // decorrelation + Adaptive Boost
+  Use["BDTF"] = 0; // allow usage of fisher discriminant for node splitting
+  Use["RuleFit"] = 0; // 
   // --- Neural Networks (all are feed-forward Multilayer Perceptrons)
-  Use["MLP"] = 1; // Recommended ANN
+  Use["MLP"] = 0; // Recommended ANN
   std::cout << std::endl;
   std::cout << "==> Start TMVAClassification" << std::endl;
 
@@ -138,6 +138,27 @@ int Lb_BDT(TString myMethodList = ""){
     dataloader->AddVariable("fDecayLengthXY", "fDecayLengthXY", "units", 'F');
     dataloader->AddVariable("fImpactParameter0", "fImpactParameter0", "units", 'F');
     dataloader->AddVariable("fImpactParameter1", "fImpactParameter1", "units", 'F');
+    // Lc param
+    dataloader->AddVariable("fLcM", "fLcM", "units", 'F');
+    dataloader->AddVariable("fLcCt", "fLcCt", "units", 'F');
+    dataloader->AddVariable("fLcY", "fLcY", "units", 'F');
+    dataloader->AddVariable("fLcE", "fLcE", "units", 'F');
+    dataloader->AddVariable("fLcEta", "fLcEta", "units", 'F');
+    dataloader->AddVariable("fLcCPA", "fLcCPA", "units", 'F');
+    dataloader->AddVariable("fLcCPAXY", "fLcCPAXY", "units", 'F');
+    dataloader->AddVariable("fLcChi2PCA", "fLcChi2PCA", "units", 'F');
+    dataloader->AddVariable("fLcDecayLength", "fLcDecayLength", "units", 'F');
+    dataloader->AddVariable("fLcDecayLengthXY", "fLcDecayLengthXY", "units", 'F');
+
+    // PID params
+    dataloader->AddVariable("fNSigRICHPi0", "fNSigRICHPi0", "units", 'F'); //direct daughter pion
+    dataloader->AddVariable("fNSigTOFPi0", "fNSigTOFPi0", "units", 'F');
+    dataloader->AddVariable("fNSigRICHTrk1Pi", "fNSigRICHTrk1Pi", "units", 'F'); //granddaughter pi/p
+    dataloader->AddVariable("fNSigRICHTrk1Pr", "fNSigRICHTrk1Pr", "units", 'F');
+    dataloader->AddVariable("NSigRICHTrk2Ka", "NSigRICHTrk2Ka", "units", 'F'); //granddaughter Kaon
+    dataloader->AddVariable("fNSigRICHTrk3Pi", "fNSigRICHTrk3Pi", "units", 'F'); //granddaughter p/Pi
+    dataloader->AddVariable("fNSigRICHTrk3Pr", "fNSigRICHTrk3Pr", "units", 'F');
+
 
 
     //Spectator variables
