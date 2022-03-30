@@ -657,6 +657,80 @@ void Lb_significanceHistos()
   histosignal__3->GetZaxis()->SetTitleOffset(1);
   histosignal__3->GetZaxis()->SetTitleFont(42);
 
+
+      // systematic error
+  TCanvas* Canvas_767 = new TCanvas("Canvas_767", "Double error Significance Lb in pp 14TeV, Nevt=1.26E15 Pythia+FONLL", 1143, 281, 798, 757);
+
+  double qx[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
+  double qy[12] = {.0, .0, 2.247977833, 17.38240744, 33.16832892, 65.22914526, 123.1248754, 154.1877467, 108.0468962, 45.25064117, 26.21948484, 11.47582911};
+  double qexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double qexh[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double* qeylstat = new double[12]{0.0, 0.0, 0.165132548, 1.276135814, 2.43460628, 4.784354651, 9.02687913, 11.30159835, 7.919930435, 3.321583994, 1.925398048, 0.842908737};
+  double* qeyhstat = new double[12]{0.0, 0.0, 0.165132548, 1.276135814, 2.43460628, 4.784354651, 9.02687913, 11.30159835, 7.919930435, 3.321583994, 1.925398048, 0.842908737};
+
+  double* qeylsys = new double[12]{0.0, 0.0, 0.931432007, 7.239611145, 13.88274367, 27.40537246, 51.91121175, 65.39543215, 46.06540126, 19.32675688, 11.15306163, 4.815361434};
+  double* qeyhsys = new double[12]{0.0, 0.0, 0.931432007, 7.239611145, 13.88274367, 27.40537246, 51.91121175, 65.39543215, 46.06540126, 19.32675688, 11.15306163, 4.815361434};
+
+  TGraphMultiErrors* gSignf_pp14p0_DoubleErrorPF = new TGraphMultiErrors("gSignf_pp14p0_DoubleErrorPF", "Double error Significance Lb in pp 14TeV, Nevt=1.26E15 Pythia+FONLL", 12, qx, qy, qexl, qexh, qeylstat, qeyhstat);
+  gSignf_pp14p0_DoubleErrorPF->AddYError(12, peylsys, peyhsys);
+  gSignf_pp14p0_DoubleErrorPF->SetMarkerStyle(4);
+  gSignf_pp14p0_DoubleErrorPF->SetLineColor(kRed);
+  gSignf_pp14p0_DoubleErrorPF->GetAttLine(0)->SetLineColor(kRed);
+  gSignf_pp14p0_DoubleErrorPF->GetAttLine(1)->SetLineColor(kBlue);
+  gSignf_pp14p0_DoubleErrorPF->GetAttFill(1)->SetFillStyle(0);
+  gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (GeV)");
+  gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetRange(1, 100);
+  gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetLabelFont(42);
+  gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitleOffset(1);
+  gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitleFont(42);
+  gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetLabelFont(42);
+  gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetTitleFont(42);
+  gSignf_pp14p0_DoubleErrorPF->SetMarkerColor(4);
+  gSignf_pp14p0_DoubleErrorPF->SetMarkerSize(1.3);
+
+  gSignf_pp14p0_DoubleErrorPF->Draw("a p s ; ; 5 s=0.5");
+  Canvas_767->cd();
+  Canvas_767->Modified();
+  Canvas_767->SetSelected(Canvas_767);
+
+    // systematic error
+  TCanvas* Canvas_777 = new TCanvas("Canvas_777", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 Pythia+FONLL", 1143, 281, 798, 757);
+
+  double rx[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
+  double ry[12] = {.0, .0, 12.19458422, 50.68258144, 83.06790941, 102.8136469, 152.228166, 174.2279332, 121.9157496, 76.83452449, 52.21965438, 24.8959652};
+  double rexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double rexh[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double* reylstat = new double[12]{0.0, 0.0, 0.498827571, 1.944758912, 3.179678298, 3.901967477, 5.750767295, 6.606106908, 4.741957492, 3.273729683, 2.432208484, 1.366626312};
+  double* reyhstat = new double[12]{0.0, 0.0, 0.498827571, 1.944758912, 3.179678298, 3.901967477, 5.750767295, 6.606106908, 4.741957492, 3.273729683, 2.432208484, 1.366626312};
+
+  double* reylsys = new double[12]{0.0, 0.0, 3.418445998, 13.6839039, 22.98240627, 28.50249386, 37.71740403, 41.57336254, 30.03195466, 20.59823968, 14.98242866, 8.227062708};
+  double* reyhsys = new double[12]{0.0, 0.0, 3.418445998, 13.6839039, 22.98240627, 28.50249386, 37.71740403, 41.57336254, 30.03195466, 20.59823968, 14.98242866, 8.227062708};
+
+  TGraphMultiErrors* gSignf_PbPb5p02_DoubleErrorPF = new TGraphMultiErrors("gSignf_PbPb5p02_DoubleErrorPF", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 Pythia+FONLL", 12, rx, ry, rexl, rexh, reylstat, reyhstat);
+  gSignf_PbPb5p02_DoubleErrorPF->AddYError(12, aeylsys, aeyhsys);
+  gSignf_PbPb5p02_DoubleErrorPF->SetMarkerStyle(4);
+  gSignf_PbPb5p02_DoubleErrorPF->SetLineColor(kRed);
+  gSignf_PbPb5p02_DoubleErrorPF->GetAttLine(0)->SetLineColor(kRed);
+  gSignf_PbPb5p02_DoubleErrorPF->GetAttLine(1)->SetLineColor(kBlue);
+  gSignf_PbPb5p02_DoubleErrorPF->GetAttFill(1)->SetFillStyle(0);
+  gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (GeV)");
+  gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetRange(1, 100);
+  gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetLabelFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitleOffset(1);
+  gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitleFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  gSignf_PbPb5p02_DoubleErrorPF->GetYaxis()->SetLabelFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF->GetYaxis()->SetTitleFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF->SetMarkerColor(4);
+  gSignf_PbPb5p02_DoubleErrorPF->SetMarkerSize(1.3);
+
+  gSignf_PbPb5p02_DoubleErrorPF->Draw("a p s ; ; 5 s=0.5");
+  Canvas_777->cd();
+  Canvas_777->Modified();
+  Canvas_777->SetSelected(Canvas_777);
+
+
   /// <summary>
   /// Write to file
   /// </summary>
@@ -679,5 +753,7 @@ void Lb_significanceHistos()
   TMPFile.WriteObject(histosignal__4, "Lb_PbPb_sigpereventBDT");
   TMPFile.WriteObject(hBkgPerEvent__3, "Lb_PbPb_bkgperevent");
   TMPFile.WriteObject(hBkgPerEvent__4, "Lb_PbPb_bkgpereventBDT");
-  TMPFile.WriteObject(gSignf_PbPb5p02_DoubleError, "Lb_PbPb5p02_signfDoubleError");
+  TMPFile.WriteObject(gSignf_PbPb5p02_DoubleError, "Lb_PbPb5p02_signfDoubleError"); //only PYTHIA
+  TMPFile.WriteObject(gSignf_pp14p0_DoubleErrorPF, "Lb_Signf_pp14p0_DoubleErrorPF"); //both PYTHIA and FONLL
+  TMPFile.WriteObject(gSignf_PbPb5p02_DoubleErrorPF, "Lb_Signf_PbPb5p02_DoubleErrorPF");//both PYTHIA and FONLL
 }
