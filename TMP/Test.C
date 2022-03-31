@@ -74,12 +74,12 @@ int Test() {
   std::cout << "--- Processing: " << theTree->GetEntries() << " events" << std::endl;
 
   for (Long64_t ievt = 0; ievt < theTree->GetEntries(); ievt++) {
-    if (ievt % 10000 == 0)
-      std::cout << "--- ... Processing event: " << ievt << std::endl;
+    if (ievt % 10000 == 0) std::cout << "--- ... Processing event: " << ievt << std::endl;
 
     theTree->GetEntry(ievt);
     // Return the MVA outputs and fill into histograms
-      histBdt->Fill(reader->EvaluateMVA("BDT"));
+    //histBdt->Fill(reader->EvaluateMVA("BDT"));
+    histBdt->Fill(reader->EvaluateRegression("BDT"));
   }
   TFile* target = new TFile("TMVAtest.root", "RECREATE");
   histBdt->Write();
