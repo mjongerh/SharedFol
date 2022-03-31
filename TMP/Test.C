@@ -24,7 +24,7 @@ int Test() {
   TString dir = "~/Desktop/SharedFol/CERN/Lb/Pt4.0/";
   TString prefix = "dataset/weights/TMVAClassification"; //prefix for weights file
   TString TypeMVA = "BDT";
-  TString fname = "~/Desktop/SharedFol/CERN/Lb/LbmidcutSel_data/Trees/Lb_binnedsignal_Pt4.0.root"; //filename of test tree
+  TString fname = "~/Desktop/SharedFol/CERN/Lb/LbmidcutSel_data/Trees/Lb_binned_signal_Pt4.0.root"; //filename of test tree
   TString treename = "O2hfcandlbfull"; //name of tree inside the file
 
   TFile* input(0);
