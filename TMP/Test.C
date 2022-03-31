@@ -86,4 +86,5 @@ int Test() {
   std::cout << "--- Created root file: \"TMVAtest.root\" containing the MVA output histograms" << std::endl;
   delete reader;
   std::cout << "==> TMVAClassificationApplication is done!" << std::endl;
+  return 0;
 }
