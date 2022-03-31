@@ -18,7 +18,7 @@
 #include "TMVA/Reader.h"
 #include "TMVA/MethodCuts.h"
 
-int Test() {
+int Test(TString myMethodList = ""){
   TMVA::Tools::Instance();
   //Input
   TString dir = "/home/maurice/Desktop/SharedFol/CERN/Lb/outputmidSel/Pt4.0/"; //Directory of TMVA output+dataset
@@ -86,5 +86,24 @@ int Test() {
   std::cout << "--- Created root file: \"TMVAtest.root\" containing the MVA output histograms" << std::endl;
   delete reader;
   std::cout << "==> TMVAClassificationApplication is done!" << std::endl;
+
+  TString temporary = dir + "TMVA.root";
+  void TMVA::mvaeffs(weightfile, temporary, 1000, 1000, kTRUE, "S/sqrt(S+B)");
+
+  return 0;
+}
+
+int main(int argc, char** argv)
+{
+  TString methodList;
+  for (int i = 1; i < argc; i++) {
+    TString regMethod(argv[i]);
+    if (regMethod == "-b" || regMethod == "--batch")
+      continue;
+    if (!methodList.IsNull())
+      methodList += TString(",");
+    methodList += regMethod;
+  }
+  Test(methodList);
   return 0;
 }
