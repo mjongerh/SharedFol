@@ -87,8 +87,12 @@ int Test(TString myMethodList = ""){
   delete reader;
   std::cout << "==> TMVAClassificationApplication is done!" << std::endl;
 
+  // Use macro to extract BDT results @Nev
+  //$ root -l -b -q mymacro.C | tee outputfile.log
+  //This cammand saves console output to a file
   TString temporary = dir + "TMVA.root";
   TMVA::mvaeffs("dataset", temporary, 1000, 1000, kTRUE, "S/sqrt(S+B)");
+  TMVA::mvaeffs("dataset", temporary, 10000, 10000, kTRUE, "S/sqrt(S+B)");
 
   return 0;
 }
