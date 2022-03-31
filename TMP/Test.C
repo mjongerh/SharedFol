@@ -79,7 +79,7 @@ int Test() {
 
     theTree->GetEntry(ievt);
     // Return the MVA outputs and fill into histograms
-      histBdt->Fill(reader->EvaluateMVA("BDT method"));
+      histBdt->Fill(reader->EvaluateMVA("BDT"));
   }
   TFile* target = new TFile("TMVAtest.root", "RECREATE");
   histBdt->Write();
