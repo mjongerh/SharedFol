@@ -33,7 +33,7 @@ int Test() {
     input = TFile::Open(fname); // check if file exists
   } else {
     std::cout << "File can not be found" << std::endl;
-    exit(1)
+    exit(1);
   }
   std::cout << "--- TMVAClassificationApp    : Using input file: " << input->GetName() << std::endl;
   TMVA::Reader* reader = new TMVA::Reader("!Color:!Silent");
@@ -56,7 +56,7 @@ int Test() {
   reader->AddSpectator("fPt", &fPt);
 
   // Book method in the reader
-  TString weightfile = dir + prefix + "_" + TypeMVA + ".weights.xml"
+  TString weightfile = dir + prefix + "_" + TypeMVA + ".weights.xml";
   reader->BookMVA("BDT", weightfile);
 
   TH1F *histBdt = new TH1F("MVA_BDT", "MVA_BDT", 100, -0.8, 0.8);
