@@ -88,7 +88,7 @@ int Test(TString myMethodList = ""){
   std::cout << "==> TMVAClassificationApplication is done!" << std::endl;
 
   TString temporary = dir + "TMVA.root";
-  TMVA::mvaeffs(weightfile, temporary, 1000, 1000, kTRUE, "S/sqrt(S+B)");
+  TMVA::mvaeffs("dataset", temporary, 1000, 1000, kTRUE, "S/sqrt(S+B)");
 
   return 0;
 }
