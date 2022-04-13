@@ -18,8 +18,7 @@
 #include "TMVA/Reader.h"
 #include "TMVA/MethodCuts.h"
 
-int Test(TString myMethodList = "")
-{
+int SignificanceLooper(TString myMethodList = ""){
   TMVA::Tools::Instance();
   //Input
   TString dir = "/home/maurice/Desktop/SharedFol/CERN/Lb/outputmidSel/"; //Directory of TMVA output+dataset
