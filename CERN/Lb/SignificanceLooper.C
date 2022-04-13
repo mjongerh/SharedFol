@@ -42,7 +42,7 @@ int Test(TString myMethodList = "")
     TString fname = dir + Form("Pt%.1f_pp.pdf", ptBins[i])
     canvas1->SaveAs(fname);
     TMVA::mvaeffs("dataset", temporary, Nsigpbpb[i], Nbkgpbpb[i], kTRUE, "S/sqrt(S+B)");
-    TString fname = dir + Form("Pt%.1f_pbpb.pdf", ptBins[i])
+    fname = dir + Form("Pt%.1f_pbpb.pdf", ptBins[i])
     canvas1->SaveAs(fname);
     /* example on how to save as pdf
     root -b 
