@@ -41,14 +41,12 @@ int SignificanceLooper(TString myMethodList = ""){
     //$ root -l -b -q mymacro.C | tee outputfile.log
     //This cammand saves console output to a file
     TString temporary = dir + Form("Pt%.1f/", ptBins[i]) + "TMVA.root";
+    gSystem->Exec("echo " + Form("Following data is for pp in Pt range %.1f up to %.1f", ptBins[i], ptBins[i + 1]));
     TMVA::mvaeffs("dataset", temporary, Nsigpp[i], Nbkgpp[i], kTRUE, "S/sqrt(S+B)");
-    //TString fname = dir + Form("Pt%.1f_pp.pdf", ptBins[i]);
-    //canvas1->SaveAs(fname);
     gSystem->Exec("mv ./dataset/plots/mvaeffs_BDT.png " + plotdir + Form("mvaeffs_BDT_pp_Pt%.1f.png", ptBins[i]));
 
+    gSystem->Exec("echo " + Form("Following data is for PbPb in Pt range %.1f up to %.1f", ptBins[i], ptBins[i + 1]));
     TMVA::mvaeffs("dataset", temporary, Nsigpbpb[i], Nbkgpbpb[i], kTRUE, "S/sqrt(S+B)");
-    //fname = dir + Form("Pt%.1f_pbpb.pdf", ptBins[i]);
-    //canvas1->SaveAs(fname);
     gSystem->Exec("mv ./dataset/plots/mvaeffs_BDT.png " + plotdir + Form("mvaeffs_BDT_PbPb_Pt%.1f.png", ptBins[i]));
 
     /* example on how to save as pdf
