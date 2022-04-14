@@ -44,12 +44,12 @@ int SignificanceLooper(TString myMethodList = ""){
     TMVA::mvaeffs("dataset", temporary, Nsigpp[i], Nbkgpp[i], kTRUE, "S/sqrt(S+B)");
     //TString fname = dir + Form("Pt%.1f_pp.pdf", ptBins[i]);
     //canvas1->SaveAs(fname);
-    gSystem->Exec("mv ./dataset/plots/mvaeffs.png " + plotdir + Form("mvaeffs_pp_Pt%.1f.png", ptBins[i]));
+    gSystem->Exec("mv ./dataset/plots/mvaeffs_BDT.png " + plotdir + Form("mvaeffs_BDT_pp_Pt%.1f.png", ptBins[i]));
 
     TMVA::mvaeffs("dataset", temporary, Nsigpbpb[i], Nbkgpbpb[i], kTRUE, "S/sqrt(S+B)");
     //fname = dir + Form("Pt%.1f_pbpb.pdf", ptBins[i]);
     //canvas1->SaveAs(fname);
-    gSystem->Exec("mv ./dataset/plots/mvaeffs.png " + plotdir + Form("mvaeffs_PbPb_Pt%.1f.png", ptBins[i]));
+    gSystem->Exec("mv ./dataset/plots/mvaeffs_BDT.png " + plotdir + Form("mvaeffs_BDT_PbPb_Pt%.1f.png", ptBins[i]));
 
     /* example on how to save as pdf
     root -b 
