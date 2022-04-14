@@ -38,11 +38,11 @@ int SignificanceLooper(TString myMethodList = ""){
     //This cammand saves console output to a file
     TString temporary = dir + Form("Pt%.1f/", ptBins[i]) + "TMVA.root";
     TMVA::mvaeffs("dataset", temporary, Nsigpp[i], Nbkgpp[i], kTRUE, "S/sqrt(S+B)");
-    TString fname = dir + Form("Pt%.1f_pp.pdf", ptBins[i])
-    canvas1->SaveAs(fname);
+    TString fname = dir + Form("Pt%.1f_pp.pdf", ptBins[i]);
+    //canvas1->SaveAs(fname);
     TMVA::mvaeffs("dataset", temporary, Nsigpbpb[i], Nbkgpbpb[i], kTRUE, "S/sqrt(S+B)");
     fname = dir + Form("Pt%.1f_pbpb.pdf", ptBins[i])
-    canvas1->SaveAs(fname);
+    //canvas1->SaveAs(fname);
     /* example on how to save as pdf
     root -b 
     root [0] gSystem->Load("libTMVAGui");
