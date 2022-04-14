@@ -23,7 +23,10 @@ int SignificanceLooper(TString myMethodList = ""){
   gSystem->Load("libTMVAGui");
   //Input
   TString dir = "/home/maurice/Desktop/SharedFol/CERN/Lb/outputmidSel/"; //Directory of TMVA output+dataset
+  TString plotdir = dir + "Plots/";                                             // Directory of TMVA output+dataset
+  gSystem->Exec("mkdir -p " + plotdir);
   TString TypeMVA = "BDT";
+
   const Int_t nPtBins = 12;
   Float_t ptBins[nPtBins + 1] = {0., 0.5, 1., 2., 3., 4., 5., 7., 10., 13., 16., 20., 24.};
   Float_t Nsigpp[nPtBins] = {0.0, 0.0, 28616.60108, 271787.3595, 756479.2554, 153754.227, 4209037.834, 602752.96, 3168660.553, 1512760.83, 862833.2325, 338699.3472};
@@ -39,11 +42,15 @@ int SignificanceLooper(TString myMethodList = ""){
     //This cammand saves console output to a file
     TString temporary = dir + Form("Pt%.1f/", ptBins[i]) + "TMVA.root";
     TMVA::mvaeffs("dataset", temporary, Nsigpp[i], Nbkgpp[i], kTRUE, "S/sqrt(S+B)");
-    TString fname = dir + Form("Pt%.1f_pp.pdf", ptBins[i]);
-    canvas1->SaveAs(fname);
+    //TString fname = dir + Form("Pt%.1f_pp.pdf", ptBins[i]);
+    //canvas1->SaveAs(fname);
+    gSystem->Exec("mv ./dataset/plots/mvaeffs.png " + plotdir + Form("mvaeffs_pp_Pt%.1f.png", ptBins[i]));
+
     TMVA::mvaeffs("dataset", temporary, Nsigpbpb[i], Nbkgpbpb[i], kTRUE, "S/sqrt(S+B)");
-    fname = dir + Form("Pt%.1f_pbpb.pdf", ptBins[i]);
-    canvas1->SaveAs(fname);
+    //fname = dir + Form("Pt%.1f_pbpb.pdf", ptBins[i]);
+    //canvas1->SaveAs(fname);
+    gSystem->Exec("mv ./dataset/plots/mvaeffs.png " + plotdir + Form("mvaeffs_PbPb_Pt%.1f.png", ptBins[i]));
+
     /* example on how to save as pdf
     root -b 
     root [0] gSystem->Load("libTMVAGui");
