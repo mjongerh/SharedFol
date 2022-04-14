@@ -41,7 +41,7 @@ int SignificanceLooper(TString myMethodList = ""){
     TString fname = dir + Form("Pt%.1f_pp.pdf", ptBins[i]);
     //canvas1->SaveAs(fname);
     TMVA::mvaeffs("dataset", temporary, Nsigpbpb[i], Nbkgpbpb[i], kTRUE, "S/sqrt(S+B)");
-    fname = dir + Form("Pt%.1f_pbpb.pdf", ptBins[i])
+    fname = dir + Form("Pt%.1f_pbpb.pdf", ptBins[i]);
     //canvas1->SaveAs(fname);
     /* example on how to save as pdf
     root -b 
@@ -53,17 +53,17 @@ int SignificanceLooper(TString myMethodList = ""){
   return 0;
 }
 
-int main(int argc, char** argv)
-{
-  TString methodList;
-  for (int i = 1; i < argc; i++) {
-    TString regMethod(argv[i]);
-    if (regMethod == "-b" || regMethod == "--batch")
-      continue;
-    if (!methodList.IsNull())
-      methodList += TString(",");
-    methodList += regMethod;
-  }
-  Test(methodList);
-  return 0;
-}
+//int main(int argc, char** argv)
+//{
+//  TString methodList;
+//  for (int i = 1; i < argc; i++) {
+//    TString regMethod(argv[i]);
+//    if (regMethod == "-b" || regMethod == "--batch")
+//      continue;
+//    if (!methodList.IsNull())
+//      methodList += TString(",");
+//    methodList += regMethod;
+//  }
+//  Test(methodList);
+//  return 0;
+//}
