@@ -19,7 +19,8 @@
 #include "TMVA/MethodCuts.h"
 
 int SignificanceLooper(TString myMethodList = ""){
-  TMVA::Tools::Instance();
+  //TMVA::Tools::Instance();
+  gSystem->Load("libTMVAGui");
   //Input
   TString dir = "/home/maurice/Desktop/SharedFol/CERN/Lb/outputmidSel/"; //Directory of TMVA output+dataset
   TString TypeMVA = "BDT";
