@@ -39,7 +39,7 @@ int SignificanceLooper(TString myMethodList = ""){
   for (size_t i = 2; i < nPtBins; i++) {
     // Use macro to extract BDT results @Nev
     //$ root -l -b -q mymacro.C | tee outputfile.log
-    //This cammand saves console output to a file
+    //This cammand saves console output to a file. -b batch mode does not work for TMVA gui plots/tasks
     TString temporary = dir + Form("Pt%.1f/", ptBins[i]) + "TMVA.root";
     TString echo = (TString) "echo " + (TString)Form("Following data is for pp in Pt range %.1f up to %.1f", ptBins[i], ptBins[i + 1]);
     gSystem->Exec(echo);
