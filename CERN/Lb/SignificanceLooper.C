@@ -41,12 +41,12 @@ int SignificanceLooper(TString myMethodList = ""){
     //$ root -l -b -q mymacro.C | tee outputfile.log
     //This cammand saves console output to a file
     TString temporary = dir + Form("Pt%.1f/", ptBins[i]) + "TMVA.root";
-    TString echo = (char*)"echo " + Form("Following data is for pp in Pt range %.1f up to %.1f", ptBins[i], ptBins[i + 1]);
+    TString echo = (TString) "echo " + (TString)Form("Following data is for pp in Pt range %.1f up to %.1f", ptBins[i], ptBins[i + 1]);
     gSystem->Exec(echo);
     TMVA::mvaeffs("dataset", temporary, Nsigpp[i], Nbkgpp[i], kTRUE, "S/sqrt(S+B)");
     gSystem->Exec("mv ./dataset/plots/mvaeffs_BDT.png " + plotdir + Form("mvaeffs_BDT_pp_Pt%.1f.png", ptBins[i]));
     
-    echo = (char *)"echo " + Form("Following data is for PbPb in Pt range %.1f up to %.1f", ptBins[i], ptBins[i + 1]);
+    echo = (TString) "echo " + (TString)Form("Following data is for PbPb in Pt range %.1f up to %.1f", ptBins[i], ptBins[i + 1]);
     gSystem->Exec(echo);
     TMVA::mvaeffs("dataset", temporary, Nsigpbpb[i], Nbkgpbpb[i], kTRUE, "S/sqrt(S+B)");
     gSystem->Exec("mv ./dataset/plots/mvaeffs_BDT.png " + plotdir + Form("mvaeffs_BDT_PbPb_Pt%.1f.png", ptBins[i]));
