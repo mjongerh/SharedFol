@@ -19,7 +19,7 @@ void Histo_paramBDT()
   TString filename = oldfileDir + "Pt7.0/TMVA.root";
   TFile* oldFile = new TFile(filename);
 
-  TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 7000, 5000);
+  TCanvas* c1 = new TCanvas("c1", "A Simple Graph Example", 200, 10, 3000, 2000);
   c1->Divide(5, 5);
   c1->cd(1);
 
