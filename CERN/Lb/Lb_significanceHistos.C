@@ -116,7 +116,7 @@ void Lb_significanceHistos()
   eff__1->Draw("");
   eff__2->Draw("same");
   auto legend1 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  legend1->AddEntry(eff__1, "Panos' cuts", "f");
+  legend1->AddEntry(eff__1, "pre-cuts", "f");
   legend1->AddEntry(eff__2, "+BDT cut", "f");
   legend1->Draw("");
 
@@ -188,7 +188,7 @@ void Lb_significanceHistos()
   hBkgPerEvent__2->Draw("");
   hBkgPerEvent__1->Draw("same");
   auto legend2 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  legend2->AddEntry(hBkgPerEvent__1, "Panos' cuts", "f");
+  legend2->AddEntry(hBkgPerEvent__1, "pre-cuts", "f");
   legend2->AddEntry(hBkgPerEvent__2, "+BDT cut", "f");
   legend2->Draw("");
 
@@ -249,7 +249,7 @@ void Lb_significanceHistos()
   histosignal__1->Draw("");
   histosignal__2->Draw("same");
   auto legend3 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  legend3->AddEntry(histosignal__1, "Panos' cuts", "f");
+  legend3->AddEntry(histosignal__1, "pre-cuts", "f");
   legend3->AddEntry(histosignal__2, "+BDT cut", "f");
   legend3->Draw("");
 
@@ -267,28 +267,28 @@ void Lb_significanceHistos()
   Canvas_5->SetFrameBorderMode(0);
 
   TH1F* histosignf__9 = new TH1F("histosignf__9", "Significance Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
-  histosignf__9->SetBinContent(3, 0.960121204);
-  histosignf__9->SetBinContent(4, 7.300882464);
-  histosignf__9->SetBinContent(5, 21.40347928);
-  histosignf__9->SetBinContent(6, 53.04167744);
-  histosignf__9->SetBinContent(7, 122.6176088);
-  histosignf__9->SetBinContent(8, 161.7100383);
-  histosignf__9->SetBinContent(9, 122.1781281);
-  histosignf__9->SetBinContent(10, 46.42496492);
-  histosignf__9->SetBinContent(11, 23.86596022);
-  histosignf__9->SetBinContent(12, 9.027774988);
+  histosignf__9->SetBinContent(3, 0.960121204/1.41);
+  histosignf__9->SetBinContent(4, 7.300882464/1.41);
+  histosignf__9->SetBinContent(5, 21.40347928/1.41);
+  histosignf__9->SetBinContent(6, 53.04167744/1.41);
+  histosignf__9->SetBinContent(7, 122.6176088/1.41);
+  histosignf__9->SetBinContent(8, 161.7100383/1.41);
+  histosignf__9->SetBinContent(9, 122.1781281/1.41);
+  histosignf__9->SetBinContent(10, 46.42496492/1.41);
+  histosignf__9->SetBinContent(11, 23.86596022/1.41);
+  histosignf__9->SetBinContent(12, 9.027774988/1.41);
 
   TH1F* histosignf__10 = new TH1F("histosignf__10", "Significance Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
-  histosignf__10->SetBinContent(3, 3.157);
-  histosignf__10->SetBinContent(4, 24.436);
-  histosignf__10->SetBinContent(5, 46.676);
-  histosignf__10->SetBinContent(6, 91.851);
-  histosignf__10->SetBinContent(7, 173.468);
-  histosignf__10->SetBinContent(8, 217.392);
-  histosignf__10->SetBinContent(9, 152.307);
-  histosignf__10->SetBinContent(10, 63.696);
-  histosignf__10->SetBinContent(11, 36.772);
-  histosignf__10->SetBinContent(12, 15.964);
+  histosignf__10->SetBinContent(3, 3.157/1.41);
+  histosignf__10->SetBinContent(4, 24.436/1.41);
+  histosignf__10->SetBinContent(5, 46.676/1.41);
+  histosignf__10->SetBinContent(6, 91.851/1.41);
+  histosignf__10->SetBinContent(7, 173.468/1.41);
+  histosignf__10->SetBinContent(8, 217.392/1.41);
+  histosignf__10->SetBinContent(9, 152.307/1.41);
+  histosignf__10->SetBinContent(10, 63.696/1.41);
+  histosignf__10->SetBinContent(11, 36.772/1.41);
+  histosignf__10->SetBinContent(12, 15.964/1.41);
   
   histosignf__10->SetLineWidth(2);
   histosignf__10->GetXaxis()->SetTitle("p_{T} (GeV)");
@@ -318,7 +318,7 @@ void Lb_significanceHistos()
   histosignf__9->Draw("same");
 
   auto legend5 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  TLegendEntry* entry1 = legend5->AddEntry(histosignf__9, "Panos' cuts", "lep");
+  TLegendEntry* entry1 = legend5->AddEntry(histosignf__9, "pre-cuts", "lep");
   entry1->SetMarkerStyle(5);
   entry1 = legend5->AddEntry(histosignf__10, "+BDT cut", "lep");
   entry1->SetMarkerStyle(4);
@@ -330,7 +330,7 @@ void Lb_significanceHistos()
 
     // systematic error
   TCanvas* Canvas_76 = new TCanvas("Canvas_76", "Double error Significance Lb in pp 14TeV, Nevt=1.26E15", 1143, 281, 798, 757);
-
+  //only pythia
   double px[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
   double py[12] = {.0, .0, 3.156707877, 24.43591843, 46.67636746, 91.85058874, 173.4679533, 217.3922808, 152.3065561, 63.69604236, 36.77164548, 15.96400849};
   double pexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
@@ -407,50 +407,50 @@ void Lb_significanceHistos()
   Canvas_7->SetFrameBorderMode(0);
 
   TH1F* histosignf__7 = new TH1F("histosignf__7", "Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9", 12, xAxis1);
-  histosignf__7->SetBinContent(3, 1.476411422);
-  histosignf__7->SetBinContent(4, 19.83811666);
-  histosignf__7->SetBinContent(5, 47.37049454);
-  histosignf__7->SetBinContent(6, 70.70376854);
-  histosignf__7->SetBinContent(7, 124.3875541);
-  histosignf__7->SetBinContent(8, 152.0880488);
-  histosignf__7->SetBinContent(9, 90.89947862);
-  histosignf__7->SetBinContent(10, 45.30123391);
-  histosignf__7->SetBinContent(11, 24.97200691);
-  histosignf__7->SetBinContent(12, 8.835840788);
+  histosignf__7->SetBinContent(3, 1.476411422/1.2); // div by 1.2 to onclude FONLL, otherwise only PYTHIA
+  histosignf__7->SetBinContent(4, 19.83811666/1.2);
+  histosignf__7->SetBinContent(5, 47.37049454/1.2);
+  histosignf__7->SetBinContent(6, 70.70376854/1.2);
+  histosignf__7->SetBinContent(7, 124.3875541/1.2);
+  histosignf__7->SetBinContent(8, 152.0880488/1.2);
+  histosignf__7->SetBinContent(9, 90.89947862/1.2);
+  histosignf__7->SetBinContent(10, 45.30123391/1.2);
+  histosignf__7->SetBinContent(11, 24.97200691/1.2);
+  histosignf__7->SetBinContent(12, 8.835840788/1.2);
 
-  histosignf__7->SetBinError(3, 0.194308477);
-  histosignf__7->SetBinError(4, 2.645205765);
-  histosignf__7->SetBinError(5, 6.724885959);
-  histosignf__7->SetBinError(6, 10.16588564);
-  histosignf__7->SetBinError(7, 12.34927916);
-  histosignf__7->SetBinError(8, 11.83167705);
-  histosignf__7->SetBinError(9, 7.320726785);
-  histosignf__7->SetBinError(10, 3.761962422);
-  histosignf__7->SetBinError(11, 1.948953026);
-  histosignf__7->SetBinError(12, 0.711725044);
+  //histosignf__7->SetBinError(3, 0.194308477); // errors not updates to scale
+  //histosignf__7->SetBinError(4, 2.645205765);
+  //histosignf__7->SetBinError(5, 6.724885959);
+  //histosignf__7->SetBinError(6, 10.16588564);
+  //histosignf__7->SetBinError(7, 12.34927916);
+  //histosignf__7->SetBinError(8, 11.83167705);
+  //histosignf__7->SetBinError(9, 7.320726785);
+  //histosignf__7->SetBinError(10, 3.761962422);
+  //histosignf__7->SetBinError(11, 1.948953026);
+  //histosignf__7->SetBinError(12, 0.711725044);
 
   TH1F* histosignf__8 = new TH1F("histosignf__8", "Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9", 12, xAxis1);
-  histosignf__8->SetBinContent(3, 14.6981); // after BDT
-  histosignf__8->SetBinContent(4, 60.4933);
-  histosignf__8->SetBinContent(5, 99.1656);
-  histosignf__8->SetBinContent(6, 122.633);
-  histosignf__8->SetBinContent(7, 181.512);
-  histosignf__8->SetBinContent(8, 207.957);
-  histosignf__8->SetBinContent(9, 146.071);
-  histosignf__8->SetBinContent(10, 93.3654);
-  histosignf__8->SetBinContent(11, 64.3722);
-  histosignf__8->SetBinContent(12, 31.6456);
+  histosignf__8->SetBinContent(3, 14.6981/1.2); // after BDT
+  histosignf__8->SetBinContent(4, 60.4933/1.2);
+  histosignf__8->SetBinContent(5, 99.1656/1.2);
+  histosignf__8->SetBinContent(6, 122.633/1.2);
+  histosignf__8->SetBinContent(7, 181.512/1.2);
+  histosignf__8->SetBinContent(8, 207.957/1.2);
+  histosignf__8->SetBinContent(9, 146.071/1.2);
+  histosignf__8->SetBinContent(10, 93.3654/1.2);
+  histosignf__8->SetBinContent(11, 64.3722/1.2);
+  histosignf__8->SetBinContent(12, 31.6456/1.2);
 
-  histosignf__8->SetBinError(3, 1.933428366); // after BDT
-  histosignf__8->SetBinError(4, 8.065706427);
-  histosignf__8->SetBinError(5, 14.07779787);
-  histosignf__8->SetBinError(6, 17.63314224);
-  histosignf__8->SetBinError(7, 18.02152923);
-  histosignf__8->SetBinError(8, 16.17749439);
-  histosignf__8->SetBinError(9, 11.76424342);
-  histosignf__8->SetBinError(10, 7.753200141);
-  histosignf__8->SetBinError(11, 5.023994727);
-  histosignf__8->SetBinError(12, 2.549194909);
+  //histosignf__8->SetBinError(3, 1.933428366); // after BDT
+  //histosignf__8->SetBinError(4, 8.065706427); // errors not updates to scale
+  //histosignf__8->SetBinError(5, 14.07779787);
+  //histosignf__8->SetBinError(6, 17.63314224);
+  //histosignf__8->SetBinError(7, 18.02152923);
+  //histosignf__8->SetBinError(8, 16.17749439);
+  //histosignf__8->SetBinError(9, 11.76424342);
+  //histosignf__8->SetBinError(10, 7.753200141);
+  //histosignf__8->SetBinError(11, 5.023994727);
+  //histosignf__8->SetBinError(12, 2.549194909);
 
   histosignf__8->SetLineWidth(2);
   histosignf__8->GetXaxis()->SetTitle("p_{T} (GeV)");
@@ -480,7 +480,7 @@ void Lb_significanceHistos()
   histosignf__7->Draw("same");
 
   auto legend7 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  TLegendEntry* entry = legend7->AddEntry(histosignf__7, "Panos' cuts", "lep");
+  TLegendEntry* entry = legend7->AddEntry(histosignf__7, "pre-cuts", "lep");
   entry->SetMarkerStyle(5);
   entry = legend7->AddEntry(histosignf__8, "+BDT cut", "lep");
   entry->SetMarkerStyle(4);
