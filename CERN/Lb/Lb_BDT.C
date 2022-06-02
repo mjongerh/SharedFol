@@ -140,10 +140,10 @@ int Lb_BDT(TString myMethodList = ""){
     dataloader->AddVariable("fImpactParameter1", "fImpactParameter1", "units", 'F');
     // Lc param
     dataloader->AddVariable("fLcM", "fLcM", "units", 'F');
-    dataloader->AddVariable("fLcCt", "fLcCt", "units", 'F');
-    dataloader->AddVariable("fLcY", "fLcY", "units", 'F');
-    dataloader->AddVariable("fLcE", "fLcE", "units", 'F');
-    dataloader->AddVariable("fLcEta", "fLcEta", "units", 'F');
+    //dataloader->AddVariable("fLcCt", "fLcCt", "units", 'F');
+    //dataloader->AddVariable("fLcY", "fLcY", "units", 'F');
+    //dataloader->AddVariable("fLcE", "fLcE", "units", 'F');
+    //dataloader->AddVariable("fLcEta", "fLcEta", "units", 'F');
     dataloader->AddVariable("fLcCPA", "fLcCPA", "units", 'F');
     dataloader->AddVariable("fLcCPAXY", "fLcCPAXY", "units", 'F');
     dataloader->AddVariable("fLcChi2PCA", "fLcChi2PCA", "units", 'F');
