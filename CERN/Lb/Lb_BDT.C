@@ -24,10 +24,10 @@ int Lb_BDT(TString myMethodList = ""){
 
   // Boosted Decision Trees
   Use["BDT"] = 1;  // uses Adaptive Boost
-  Use["BDTG"] = 0; // uses Gradient Boost
+  Use["BDTG"] = 1; // uses Gradient Boost
   Use["BDTB"] = 0; // uses Bagging
   Use["BDTD"] = 0; // decorrelation + Adaptive Boost
-  Use["BDTF"] = 0; // allow usage of fisher discriminant for node splitting
+  Use["BDTF"] = 1; // allow usage of fisher discriminant for node splitting
   Use["RuleFit"] = 0; // 
   // --- Neural Networks (all are feed-forward Multilayer Perceptrons)
   Use["MLP"] = 0; // Recommended ANN
@@ -62,7 +62,7 @@ int Lb_BDT(TString myMethodList = ""){
 
   for (Int_t i = 0; i < 12; i++) { //nPtBins //master loop over all ptbins
     TFile* inputSignal(0);
-    TString fnamesig = Form("/home/mjongerh/Lb_data/LbStrictPIDcutSel_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder      /home/mjongerh/Lb_data/Trees/
+    TString fnamesig = Form("~/Desktop/SharedFol/CERN/Lb/LbStrictCutSelPID_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); //Signal Input folder      /home/mjongerh/Lb_data/Trees/
     if (!gSystem->AccessPathName(fnamesig)) {
       inputSignal = TFile::Open(fnamesig); // check if file in local directory exists
     }
@@ -73,7 +73,7 @@ int Lb_BDT(TString myMethodList = ""){
     std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal->GetName() << std::endl;
 
     TFile* inputBackground(0);
-    TString fnamebkg = Form("/home/mjongerh/Lb_data/LbStrictPIDcutSel_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
+    TString fnamebkg = Form("~/Desktop/SharedFol/CERN/Lb/LbStrictCutSelPID_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); //Background Input folder
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg);
     }
@@ -120,7 +120,7 @@ int Lb_BDT(TString myMethodList = ""){
     //backgroundTree2->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-    TString outfileDir = Form("/home/mjongerh/Lb_data/outputPIDTest/Pt%.1f", ptBins[i]);
+    TString outfileDir = Form("~/Desktop/SharedFol/CERN/Lb/outputStrictPID/Pt%.1f", ptBins[i]);
     TString createdir = "mkdir -p " + outfileDir; //create directory if it doesn't exist yet
     gSystem->Exec(createdir);
     TString outfileName = outfileDir + "/TMVA.root";
@@ -151,13 +151,19 @@ int Lb_BDT(TString myMethodList = ""){
     dataloader->AddVariable("fLcDecayLengthXY", "fLcDecayLengthXY", "units", 'F');
 
     // PID params
-    dataloader->AddVariable("fNSigRICHPi0", "fNSigRICHPi0", "units", 'F'); //direct daughter pion
+    //dataloader->AddVariable("fNSigRICHPi0", "fNSigRICHPi0", "units", 'F'); //direct daughter pion
     dataloader->AddVariable("fNSigTOFPi0", "fNSigTOFPi0", "units", 'F');
-    dataloader->AddVariable("fNSigRICHTrk1Pi", "fNSigRICHTrk1Pi", "units", 'F'); //granddaughter pi/p
-    dataloader->AddVariable("fNSigRICHTrk1Pr", "fNSigRICHTrk1Pr", "units", 'F');
-    dataloader->AddVariable("NSigRICHTrk2Ka", "NSigRICHTrk2Ka", "units", 'F'); //granddaughter Kaon
-    dataloader->AddVariable("fNSigRICHTrk3Pi", "fNSigRICHTrk3Pi", "units", 'F'); //granddaughter p/Pi
-    dataloader->AddVariable("fNSigRICHTrk3Pr", "fNSigRICHTrk3Pr", "units", 'F');
+    //dataloader->AddVariable("fNSigRICHTrk1Pi", "fNSigRICHTrk1Pi", "units", 'F'); //granddaughter pi/p
+    //dataloader->AddVariable("fNSigRICHTrk1Pr", "fNSigRICHTrk1Pr", "units", 'F');
+    //dataloader->AddVariable("NSigRICHTrk2Ka", "NSigRICHTrk2Ka", "units", 'F'); //granddaughter Kaon
+    //dataloader->AddVariable("fNSigRICHTrk3Pi", "fNSigRICHTrk3Pi", "units", 'F'); //granddaughter p/Pi
+    //dataloader->AddVariable("fNSigRICHTrk3Pr", "fNSigRICHTrk3Pr", "units", 'F');
+
+    dataloader->AddVariable("fNSigTOFTrk1Pr", "fNSigTOFTrk1Pr", "units", 'F'); //grandaughters
+    dataloader->AddVariable("fNSigTOFTrk1Pi", "fNSigTOFTrk1Pi", "units", 'F');
+    dataloader->AddVariable("fNSigTOFTrk2Ka", "fNSigTOFTrk2Ka", "units", 'F');
+    dataloader->AddVariable("fNSigTOFTrk3Pi", "fNSigTOFTrk3Pi", "units", 'F');
+    dataloader->AddVariable("fNSigTOFTrk3Pr", "fNSigTOFTrk3Pr", "units", 'F');
 
 
 
