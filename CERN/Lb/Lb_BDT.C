@@ -149,6 +149,9 @@ int Lb_BDT(TString myMethodList = ""){
     dataloader->AddVariable("fLcChi2PCA", "fLcChi2PCA", "units", 'F');
     dataloader->AddVariable("fLcDecayLength", "fLcDecayLength", "units", 'F');
     dataloader->AddVariable("fLcDecayLengthXY", "fLcDecayLengthXY", "units", 'F');
+    dataloader->AddVariable("fLcImpactParameter0", "fLcImpactParameter0", "units", 'F');
+    dataloader->AddVariable("fLcImpactParameter1", "fLcImpactParameter1", "units", 'F');
+    dataloader->AddVariable("fLcImpactParameter2", "fLcImpactParameter2", "units", 'F');
 
     // PID params
     //dataloader->AddVariable("fNSigRICHPi0", "fNSigRICHPi0", "units", 'F'); //direct daughter pion
