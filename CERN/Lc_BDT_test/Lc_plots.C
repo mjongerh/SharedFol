@@ -64,6 +64,15 @@ void Lc_plots()
   hBkgPerEvent__2->GetZaxis()->SetTitleFont(42);
   hBkgPerEvent__2->Draw("");
 
+  auto t_b = TLatex();
+  t_b.SetNDC();
+  t_b.SetTextFont(42);
+  t_b.SetTextColor(1);
+  t_b.SetTextSize(0.035);
+  t_b.SetTextAlign(12);
+  t_b.DrawLatex(0.2, 0.75, "PbPb #sqrt{s}=5.02TeV, |y| <1, centr. 30-50% #splitline Lambda_{c}^{+} #rightarrow pK#pi");
+
+
   TCanvas* Canvas_2 = new TCanvas("Canvas_2", "Canvas_1", 367, 161, 1295, 807);
   Canvas_2->SetLogy();
   TH1F* histosignal__1 = new TH1F("histosignal__1", "#Lambda_{c}^{+} signal per event ", 10, xAxis2);
@@ -109,5 +118,13 @@ void Lc_plots()
   histosignal__1->GetZaxis()->SetTitleOffset(1);
   histosignal__1->GetZaxis()->SetTitleFont(42);
   histosignal__1->Draw("");
+
+  auto t_s = TLatex();
+  t_s.SetNDC();
+  t_s.SetTextFont(42);
+  t_s.SetTextColor(1);
+  t_s.SetTextSize(0.035);
+  t_s.SetTextAlign(12);
+  t_s.DrawLatex(0.2, 0.75, "PbPb #sqrt{s}=5.02TeV, |y| <1, centr. 30-50% #splitline Lambda_{c}^{+} #rightarrow pK#pi");
 
 }
