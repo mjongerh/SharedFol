@@ -73,16 +73,16 @@ void Lc_plots()
   histosignal__1->SetBinContent(7, 1.48177e+09/3.8e10);
   histosignal__1->SetBinContent(8, 7.71874e+08/3.8e10);
   histosignal__1->SetBinContent(9, 1.46573e+08/3.8e10);
-  histosignal__1->SetBinContent(10, 1.36606e+07/3.8e10));
-  histosignal__1->SetBinError(2, 25476.9/3.8e10));
-  histosignal__1->SetBinError(3, 14678.1/3.8e10));
-  histosignal__1->SetBinError(4, 9457.04/3.8e10));
-  histosignal__1->SetBinError(5, 7514.49/3.8e10));
-  histosignal__1->SetBinError(6, 8792.39/3.8e10));
-  histosignal__1->SetBinError(7, 6455.13/3.8e10));
-  histosignal__1->SetBinError(8, 9924.99/3.8e10));
-  histosignal__1->SetBinError(9, 33541.4/3.8e10));
-  histosignal__1->SetBinError(10, 177081/3.8e10));
+  histosignal__1->SetBinContent(10, 1.36606e+07/3.8e10);
+  histosignal__1->SetBinError(2, 25476.9/3.8e10);
+  histosignal__1->SetBinError(3, 14678.1/3.8e10);
+  histosignal__1->SetBinError(4, 9457.04/3.8e10);
+  histosignal__1->SetBinError(5, 7514.49/3.8e10);
+  histosignal__1->SetBinError(6, 8792.39/3.8e10);
+  histosignal__1->SetBinError(7, 6455.13/3.8e10);
+  histosignal__1->SetBinError(8, 9924.99/3.8e10);
+  histosignal__1->SetBinError(9, 33541.4/3.8e10);
+  histosignal__1->SetBinError(10, 177081/3.8e10);
 
   auto ci2 = TColor::GetColor("#0000ff");
 
