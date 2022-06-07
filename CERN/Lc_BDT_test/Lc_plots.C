@@ -154,11 +154,11 @@ void Lc_plots()
 
   TH1F* hMS = new TH1F("hMS", "SIGNAL M", 50, 1.0, 3.0);
   TH1F* hMB = new TH1F("hMB", "BACKGROUND M", 50, 1.0, 3.0);
-  TH1F* hDecayLengthS = new TH1F("hDecayLengthS", "SIGNAL Decay length", 50, 0.0, 0.4);
+  TH1F* hDecayLengthS = new TH1F("hDecayLengthS", "Decay length", 50, 0.0, 0.4);
   TH1F* hDecayLengthB = new TH1F("hDecayLengthB", "BACKGROUND Decay", 50, 0.0, 0.4);
-  TH1F* hImpactParameter0S = new TH1F("hImpactParameter0S", "SIGNAL Impact param0", 50, -0.1, 0.1);
+  TH1F* hImpactParameter0S = new TH1F("hImpactParameter0S", "Impact param0", 50, -0.1, 0.1);
   TH1F* hImpactParameter0B = new TH1F("hImpactParameter0B", "BACKGROUND Impact param0", 50, -0.1, 0.1);
-  TH1F* hCPAS = new TH1F("hCPAS", "SIGNAL CPA", 40, 0.95, 1.01);
+  TH1F* hCPAS = new TH1F("hCPAS", "CPA", 40, 0.95, 1.01);
   TH1F* hCPAB = new TH1F("hCPAB", "BACKGROUND CPA", 40, 0.95, 1.01);
 
 
@@ -235,14 +235,14 @@ void Lc_plots()
   ci = TColor::GetColor("#0000ee");
   hCPAS->SetLineColor(ci);
   hCPAS->SetLineWidth(2);
-  hCPAS->GetXaxis()->SetTitle("fCPA  [units]");
+  hCPAS->GetXaxis()->SetTitle("CPA");
   hCPAS->GetXaxis()->SetLabelFont(42);
   hCPAS->GetXaxis()->SetLabelOffset(0.012);
   hCPAS->GetXaxis()->SetLabelSize(0.048);
   hCPAS->GetXaxis()->SetTitleSize(0.054);
   hCPAS->GetXaxis()->SetTitleOffset(1.25);
   hCPAS->GetXaxis()->SetTitleFont(42);
-  hCPAS->GetYaxis()->SetTitle("(1/N) dN_{ }/^{ }0.00512 units");
+  hCPAS->GetYaxis()->SetTitle("(1/N) dN_{ }/^{ }0.00512");
   hCPAS->GetYaxis()->SetLabelFont(42);
   hCPAS->GetYaxis()->SetLabelOffset(0.012);
   hCPAS->GetYaxis()->SetLabelSize(0.048);
@@ -259,7 +259,7 @@ void Lc_plots()
   hCPAB->SetFillStyle(3554);
   hCPAB->SetLineColor(2);
   hCPAB->SetLineWidth(2);
-  hCPAB->GetXaxis()->SetTitle("fCPA  [units]");
+  hCPAB->GetXaxis()->SetTitle("CPA");
   hCPAB->GetXaxis()->SetRange(20, 41);
   hCPAB->GetXaxis()->SetLabelFont(42);
   hCPAB->GetXaxis()->SetTitleOffset(1);
@@ -307,12 +307,6 @@ void Lc_plots()
   leg->Draw();
 
 
-  TText* text = new TText(0.98, 0.14, "U/O-flow (S,B): (0.0, 0.0)% / (0.0, 0.0)%");
-  text->SetNDC();
-  text->SetTextSize(0.04);
-  text->SetTextAngle(90);
-  text->Draw();
-
   TPaveText* pt = new TPaveText(0.01, 0.9288942, 0.4139386, 0.995, "blNDC");
   pt->SetName("title");
   pt->SetBorderSize(1);
@@ -358,14 +352,14 @@ void Lc_plots()
   ci = TColor::GetColor("#0000ee");
   hDecayLengthS->SetLineColor(ci);
   hDecayLengthS->SetLineWidth(2);
-  hDecayLengthS->GetXaxis()->SetTitle("fDecayLength  [units]");
+  hDecayLengthS->GetXaxis()->SetTitle("DecayLength [mm]");
   hDecayLengthS->GetXaxis()->SetLabelFont(42);
   hDecayLengthS->GetXaxis()->SetLabelOffset(0.012);
   hDecayLengthS->GetXaxis()->SetLabelSize(0.048);
   hDecayLengthS->GetXaxis()->SetTitleSize(0.054);
   hDecayLengthS->GetXaxis()->SetTitleOffset(1.25);
   hDecayLengthS->GetXaxis()->SetTitleFont(42);
-  hDecayLengthS->GetYaxis()->SetTitle("(1/N) dN_{ }/^{ }0.108 units");
+  hDecayLengthS->GetYaxis()->SetTitle("(1/N) dN_{ }/^{ }0.108");
   hDecayLengthS->GetYaxis()->SetLabelFont(42);
   hDecayLengthS->GetYaxis()->SetLabelOffset(0.012);
   hDecayLengthS->GetYaxis()->SetLabelSize(0.048);
@@ -382,12 +376,12 @@ void Lc_plots()
   hDecayLengthB->SetFillStyle(3554);
   hDecayLengthB->SetLineColor(2);
   hDecayLengthB->SetLineWidth(2);
-  hDecayLengthB->GetXaxis()->SetTitle("fDecayLength  [units]");
+  hDecayLengthB->GetXaxis()->SetTitle("DecayLength [mm]");
   hDecayLengthB->GetXaxis()->SetRange(1, 40);
   hDecayLengthB->GetXaxis()->SetLabelFont(42);
   hDecayLengthB->GetXaxis()->SetTitleOffset(1);
   hDecayLengthB->GetXaxis()->SetTitleFont(42);
-  hDecayLengthB->GetYaxis()->SetTitle("dN_{ }/^{ }0.108 units");
+  hDecayLengthB->GetYaxis()->SetTitle("dN_{ }/^{ }0.108");
   hDecayLengthB->GetYaxis()->SetLabelFont(42);
   hDecayLengthB->GetYaxis()->SetTitleFont(42);
   hDecayLengthB->GetZaxis()->SetLabelFont(42);
@@ -441,14 +435,14 @@ void Lc_plots()
   ci = TColor::GetColor("#0000ee");
   hImpactParameter0S->SetLineColor(ci);
   hImpactParameter0S->SetLineWidth(2);
-  hImpactParameter0S->GetXaxis()->SetTitle("fImpactParameter0  [units]");
+  hImpactParameter0S->GetXaxis()->SetTitle("ImpactParameter0 [mm]");
   hImpactParameter0S->GetXaxis()->SetLabelFont(42);
   hImpactParameter0S->GetXaxis()->SetLabelOffset(0.012);
   hImpactParameter0S->GetXaxis()->SetLabelSize(0.048);
   hImpactParameter0S->GetXaxis()->SetTitleSize(0.054);
   hImpactParameter0S->GetXaxis()->SetTitleOffset(1.25);
   hImpactParameter0S->GetXaxis()->SetTitleFont(42);
-  hImpactParameter0S->GetYaxis()->SetTitle("(1/N) dN_{ }/^{ }0.00842 units");
+  hImpactParameter0S->GetYaxis()->SetTitle("(1/N) dN_{ }/^{ }0.00842");
   hImpactParameter0S->GetYaxis()->SetLabelFont(42);
   hImpactParameter0S->GetYaxis()->SetLabelOffset(0.012);
   hImpactParameter0S->GetYaxis()->SetLabelSize(0.048);
@@ -464,12 +458,12 @@ void Lc_plots()
   hImpactParameter0B->SetFillStyle(3554);
   hImpactParameter0B->SetLineColor(2);
   hImpactParameter0B->SetLineWidth(2);
-  hImpactParameter0B->GetXaxis()->SetTitle("fImpactParameter0  [units]");
+  hImpactParameter0B->GetXaxis()->SetTitle("ImpactParameter0 [mm]");
   hImpactParameter0B->GetXaxis()->SetRange(8, 32);
   hImpactParameter0B->GetXaxis()->SetLabelFont(42);
   hImpactParameter0B->GetXaxis()->SetTitleOffset(1);
   hImpactParameter0B->GetXaxis()->SetTitleFont(42);
-  hImpactParameter0B->GetYaxis()->SetTitle("dN_{ }/^{ }0.00842 units");
+  hImpactParameter0B->GetYaxis()->SetTitle("dN_{ }/^{ }0.00842");
   hImpactParameter0B->GetYaxis()->SetLabelFont(42);
   hImpactParameter0B->GetYaxis()->SetTitleFont(42);
   hImpactParameter0B->GetZaxis()->SetLabelFont(42);
