@@ -144,14 +144,9 @@ void Lc_plots()
   Int_t classID;
   oldtree->SetBranchAddress("fPt", &PtEntry);
   oldtree->SetBranchAddress("fM", &fM);
-  oldtree->SetBranchAddress("BDT", &BDT);
   oldtree->SetBranchAddress("fDecayLength", &fDecayLength);
-  oldtree->SetBranchAddress("fDecayLengthXY", &fDecayLengthXY);
   oldtree->SetBranchAddress("fImpactParameter0", &fImpactParameter0);
-  oldtree->SetBranchAddress("fImpactParameter1", &fImpactParameter1);
   oldtree->SetBranchAddress("fCPA", &fCPA);
-  oldtree->SetBranchAddress("fCPAXY", &fCPAXY);
-  oldtree->SetBranchAddress("fChi2PCA", &fChi2PCA);
   oldtree->SetBranchAddress("classID", &classID);
 
   Float_t weight;
@@ -163,8 +158,8 @@ void Lc_plots()
   TH1F* hDecayLengthB = new TH1F("hDecayLengthB", "BACKGROUND Decay", 50, 0.0, 0.4);
   TH1F* hImpactParameter0S = new TH1F("hImpactParameter0S", "SIGNAL Impact param0", 50, -0.1, 0.1);
   TH1F* hImpactParameter0B = new TH1F("hImpactParameter0B", "BACKGROUND Impact param0", 50, -0.1, 0.1);
-  TH1F* hCPAS = new TH1F("hCPAS", "SIGNAL CPA", 50, 0.9, 1.0);
-  TH1F* hCPAB = new TH1F("hCPAB", "BACKGROUND CPA", 50, 0.9, 1.0);
+  TH1F* hCPAS = new TH1F("hCPAS", "SIGNAL CPA", 50, 0.9, 1.05);
+  TH1F* hCPAB = new TH1F("hCPAB", "BACKGROUND CPA", 50, 0.9, 1.05);
 
 
   for (Int_t i = 0; i < nentries; i++) {
@@ -175,10 +170,10 @@ void Lc_plots()
       hImpactParameter0S->Fill(fImpactParameter0, weight);
       hCPAS->Fill(fCPA, weight);
     } else {
-      hMB->Fill(fM);
-      hDecayLengthB->Fill(fDecayLength);
-      hImpactParameter0B->Fill(fImpactParameter0);
-      hCPAB->Fill(fCPA);
+      hMB->Fill(fM, weight);
+      hDecayLengthB->Fill(fDecayLength), weight;
+      hImpactParameter0B->Fill(fImpactParameter0, weight);
+      hCPAB->Fill(fCPA, weight);
     }
   }
   hMS->Scale(1 / hMS->GetEntries());
