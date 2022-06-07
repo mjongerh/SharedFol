@@ -70,7 +70,7 @@ void Lc_plots()
   t_b.SetTextColor(1);
   t_b.SetTextSize(0.035);
   t_b.SetTextAlign(12);
-  t_b.DrawLatex(0.2, 0.75, "#splitline{PbPb #sqrt{s}=5.02TeV, |y| <1, centr. 30-50%}{#Lambda_{c}^{+} #rightarrow pK#pi}");
+  t_b.DrawLatex(0.2, 0.75, "#splitline{PbPb #sqrt{s}=5.02TeV, |y| <1}{#Lambda_{c}^{+} #rightarrow p + K^{-} + #pi^{+}, centr. 30-50%}");
 
 
   TCanvas* Canvas_2 = new TCanvas("Canvas_2", "Canvas_1", 367, 161, 1295, 807);
@@ -125,6 +125,6 @@ void Lc_plots()
   t_s.SetTextColor(1);
   t_s.SetTextSize(0.035);
   t_s.SetTextAlign(12);
-  t_s.DrawLatex(0.2, 0.75, "#splitline{PbPb #sqrt{s}=5.02TeV, |y| <1, centr. 30-50%}{#Lambda_{c}^{+} #rightarrow pK#pi}");
+  t_s.DrawLatex(0.2, 0.75, "#splitline{PbPb #sqrt{s}=5.02TeV, |y| <1}{#Lambda_{c}^{+} #rightarrow p + K^{-} + #pi^{+}, centr. 30-50%}");
 
 }
