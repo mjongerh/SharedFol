@@ -155,14 +155,6 @@ void Lc_plots()
   oldtree->SetBranchAddress("classID", &classID);
 
   Float_t weight;
-  Int_t Nsig, Nbkg;
-  for (Int_t i = 0; i < nentries; i++) {
-    oldtree->GetEntry(i);
-    if (classID == 0)
-      Nsig++;
-    else
-      Nbkg++;
-  }
   weight = 1.0; // Nbkg/Nsig;
 
   TH1F* hMS = new TH1F("hMS", "SIGNAL M", 50, 1.0, 3.0);
@@ -178,25 +170,25 @@ void Lc_plots()
   for (Int_t i = 0; i < nentries; i++) {
     oldtree->GetEntry(i);
     if (classID == 0) {
-      hMS->Fill(BDT, fM, weight);
-      hDecayLengthS->Fill(BDT, fDecayLength, weight);
-      hImpactParameter0S->Fill(BDT, fImpactParameter0, weight);
-      hCPAS->Fill(BDT, fCPA, weight);
+      hMS->Fill(fM, weight);
+      hDecayLengthS->Fill(fDecayLength, weight);
+      hImpactParameter0S->Fill(fImpactParameter0, weight);
+      hCPAS->Fill(fCPA, weight);
     } else {
-      hMB->Fill(BDT, fM, weight);
-      hDecayLengthB->Fill(BDT, fDecayLength);
-      hImpactParameter0B->Fill(BDT, fImpactParameter0);
-      hCPAB->Fill(BDT, fCPA);
+      hMB->Fill(fM);
+      hDecayLengthB->Fill(fDecayLength);
+      hImpactParameter0B->Fill(fImpactParameter0);
+      hCPAB->Fill(fCPA);
     }
   }
-  hMS.Scale(1 / hMS.GetEntries());
-  hMB.Scale(1 / hMB.GetEntries());
-  hDecayLengthS.Scale(1 / hDecayLengthS.GetEntries());
-  hDecayLengthB.Scale(1 / hDecayLengthB.GetEntries());
-  hImpactParameter0S.Scale(1 / hImpactParameter0S.GetEntries());
-  hImpactParameter0B.Scale(1 / hImpactParameter0B.GetEntries());
-  hCPAS.Scale(1 / hCPAS.GetEntries());
-  hCPAB.Scale(1 / hCPAB.GetEntries());
+  hMS->Scale(1 / hMS->GetEntries());
+  hMB->Scale(1 / hMB->GetEntries());
+  hDecayLengthS->Scale(1 / hDecayLengthS->GetEntries());
+  hDecayLengthB->Scale(1 / hDecayLengthB->GetEntries());
+  hImpactParameter0S->Scale(1 / hImpactParameter0S->GetEntries());
+  hImpactParameter0B->Scale(1 / hImpactParameter0B->GetEntries());
+  hCPAS->Scale(1 / hCPAS->GetEntries());
+  hCPAB->Scale(1 / hCPAB->GetEntries());
 
 
   /////
