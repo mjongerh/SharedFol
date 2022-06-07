@@ -1,3 +1,27 @@
+#include <cstdlib>
+#include <iostream>
+#include <map>
+#include <string>
+
+#include "TChain.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TString.h"
+#include "TObjString.h"
+#include "TSystem.h"
+#include "TROOT.h"
+
+#include "TInterpreter.h"
+#include "TCanvas.h"
+#include "TFile.h"
+#include "TH2.h"
+#include "TNtuple.h"
+#include "TPaveLabel.h"
+#include "TPaveText.h"
+#include "TFrame.h"
+#include "TSystem.h"
+#include "TInterpreter.h"
+
 void Lc_plots()
 {
 
