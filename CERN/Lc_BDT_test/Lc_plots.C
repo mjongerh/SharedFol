@@ -158,8 +158,8 @@ void Lc_plots()
   TH1F* hDecayLengthB = new TH1F("hDecayLengthB", "BACKGROUND Decay", 50, 0.0, 0.4);
   TH1F* hImpactParameter0S = new TH1F("hImpactParameter0S", "SIGNAL Impact param0", 50, -0.1, 0.1);
   TH1F* hImpactParameter0B = new TH1F("hImpactParameter0B", "BACKGROUND Impact param0", 50, -0.1, 0.1);
-  TH1F* hCPAS = new TH1F("hCPAS", "SIGNAL CPA", 100, 0.95, 1.05);
-  TH1F* hCPAB = new TH1F("hCPAB", "BACKGROUND CPA", 100, 0.95, 1.05);
+  TH1F* hCPAS = new TH1F("hCPAS", "SIGNAL CPA", 40, 0.95, 1.01);
+  TH1F* hCPAB = new TH1F("hCPAB", "BACKGROUND CPA", 40, 0.95, 1.01);
 
 
   for (Int_t i = 0; i < nentries; i++) {
