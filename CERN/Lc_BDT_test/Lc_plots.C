@@ -196,7 +196,6 @@ void Lc_plots()
   gStyle->SetOptStat(0);
   canvas3->Range(0, 0, 1, 1);
 
-  Int_t ci;      // for color index setting
   TColor* color; // for color definition with alpha
   ci = TColor::GetColor("#f0f0f0");
   canvas3->SetFillColor(ci);
