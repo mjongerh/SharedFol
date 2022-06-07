@@ -182,8 +182,8 @@ void Lc_plots()
   hDecayLengthB->Scale(1 / hDecayLengthB->GetEntries());
   hImpactParameter0S->Scale(1 / hImpactParameter0S->GetEntries());
   hImpactParameter0B->Scale(1 / hImpactParameter0B->GetEntries());
-  //hCPAS->Scale(1 / hCPAS->GetEntries());
-  //hCPAB->Scale(1 / hCPAB->GetEntries());
+  hCPAS->Scale(1 / hCPAS->GetEntries());
+  hCPAB->Scale(1 / hCPAB->GetEntries());
 
 
   /////
