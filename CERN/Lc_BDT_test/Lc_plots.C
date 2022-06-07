@@ -28,7 +28,9 @@ void Lc_plots()
   Double_t xAxis2[11] = {0, 1, 2, 3, 4, 5, 6, 8, 12, 24, 36};
 
   TCanvas* Canvas_1 = new TCanvas("Canvas_1", "Canvas_1", 367, 161, 1295, 807);
-  TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "", 10, xAxis2);
+  Canvas_1->SetLogy();
+
+  TH1D* hBkgPerEvent__2 = new TH1D("hBkgPerEvent__2", "#Lambda_{c}^{+} background per event", 10, xAxis2);
   hBkgPerEvent__2->SetBinContent(2, 0.0721559);
   hBkgPerEvent__2->SetBinContent(3, 0.0470498);
   hBkgPerEvent__2->SetBinContent(4, 0.0161972);
@@ -63,7 +65,8 @@ void Lc_plots()
   hBkgPerEvent__2->Draw("");
 
   TCanvas* Canvas_2 = new TCanvas("Canvas_2", "Canvas_1", 367, 161, 1295, 807);
-  TH1F* histosignal__1 = new TH1F("histosignal__1", "", 10, xAxis2);
+  Canvas_2->SetLogy();
+  TH1F* histosignal__1 = new TH1F("histosignal__1", "#Lambda_{c}^{+} signal per event ", 10, xAxis2);
   histosignal__1->SetBinContent(1, 4.92914e+08/3.8e10);
   histosignal__1->SetBinContent(2, 2.21432e+09/3.8e10);
   histosignal__1->SetBinContent(3, 3.10382e+09/3.8e10);
