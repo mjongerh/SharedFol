@@ -41,7 +41,7 @@ void Lc_plots()
   hBkgPerEvent__2->SetEntries(9);
   hBkgPerEvent__2->SetStats(0);
 
-  ci = TColor::GetColor("#ff0000");
+  auto ci = TColor::GetColor("#ff0000");
   hBkgPerEvent__2->SetLineColor(ci);
   hBkgPerEvent__2->SetLineWidth(3);
   hBkgPerEvent__2->GetXaxis()->SetTitle("p_{T}(#Lambda_{c}^{+})(GeV/c)");
@@ -84,7 +84,7 @@ void Lc_plots()
   histosignal__1->SetBinError(9, 33541.4/3.8e10));
   histosignal__1->SetBinError(10, 177081/3.8e10));
 
-  ci2 = TColor::GetColor("#0000ff");
+  auto ci2 = TColor::GetColor("#0000ff");
 
   histosignal__1->SetLineColor(ci2);
   histosignal__1->SetLineWidth(3);
