@@ -529,11 +529,7 @@ void Lc_plots()
   fImpactParameter0__Signal_Id__9->GetZaxis()->SetTitleOffset(1);
   fImpactParameter0__Signal_Id__9->GetZaxis()->SetTitleFont(42);
   fImpactParameter0__Signal_Id__9->Draw("sameaxis");
-  text = new TText(0.98, 0.14, "U/O-flow (S,B): (0.0, 0.1)% / (0.0, 0.1)%");
-  text->SetNDC();
-  text->SetTextSize(0.04);
-  text->SetTextAngle(90);
-  text->Draw();
+
 
   pt = new TPaveText(0.01, 0.9288942, 0.673897, 0.995, "blNDC");
   pt->SetName("title");
@@ -786,11 +782,7 @@ void Lc_plots()
   fImpactParameter1__Signal_Id__12->GetZaxis()->SetTitleOffset(1);
   fImpactParameter1__Signal_Id__12->GetZaxis()->SetTitleFont(42);
   fImpactParameter1__Signal_Id__12->Draw("sameaxis");
-  text = new TText(0.98, 0.14, "U/O-flow (S,B): (0.0, 0.1)% / (0.0, 0.1)%");
-  text->SetNDC();
-  text->SetTextSize(0.04);
-  text->SetTextAngle(90);
-  text->Draw();
+
 
   pt = new TPaveText(0.01, 0.9288942, 0.6698976, 0.995, "blNDC");
   pt->SetName("title");
@@ -1043,11 +1035,7 @@ void Lc_plots()
   fImpactParameter2__Signal_Id__15->GetZaxis()->SetTitleOffset(1);
   fImpactParameter2__Signal_Id__15->GetZaxis()->SetTitleFont(42);
   fImpactParameter2__Signal_Id__15->Draw("sameaxis");
-  text = new TText(0.98, 0.14, "U/O-flow (S,B): (0.0, 0.1)% / (0.0, 0.1)%");
-  text->SetNDC();
-  text->SetTextSize(0.04);
-  text->SetTextAngle(90);
-  text->Draw();
+
 
   pt = new TPaveText(0.01, 0.9288942, 0.673897, 0.995, "blNDC");
   pt->SetName("title");
@@ -1270,11 +1258,7 @@ void Lc_plots()
   fCPAXY__Signal_Id__18->GetZaxis()->SetTitleOffset(1);
   fCPAXY__Signal_Id__18->GetZaxis()->SetTitleFont(42);
   fCPAXY__Signal_Id__18->Draw("sameaxis");
-  text = new TText(0.98, 0.14, "U/O-flow (S,B): (0.0, 0.7)% / (0.0, 0.0)%");
-  text->SetNDC();
-  text->SetTextSize(0.04);
-  text->SetTextAngle(90);
-  text->Draw();
+
 
   pt = new TPaveText(0.01, 0.9288942, 0.4659303, 0.995, "blNDC");
   pt->SetName("title");
