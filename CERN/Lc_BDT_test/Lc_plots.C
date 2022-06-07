@@ -159,10 +159,10 @@ void Lc_plots()
 
   TH1F* hMS = new TH1F("hMS", "SIGNAL M", 50, 1.0, 3.0);
   TH1F* hMB = new TH1F("hMB", "BACKGROUND M", 50, 1.0, 3.0);
-  TH1F* hDecayLengthS = new TH1F("hDecayLengthS", "SIGNAL Decay length", 50, 0.0, 1.0);
-  TH1F* hDecayLengthB = new TH1F("hDecayLengthB", "BACKGROUND Decay", 50, 0.0, 1.0);
-  TH1F* hImpactParameter0S = new TH1F("hImpactParameter0S", "SIGNAL Impact param0", 50, -0.2, 0.2);
-  TH1F* hImpactParameter0B = new TH1F("hImpactParameter0B", "BACKGROUND Impact param0", 50, -0.2, 0.2);
+  TH1F* hDecayLengthS = new TH1F("hDecayLengthS", "SIGNAL Decay length", 50, 0.0, 0.4);
+  TH1F* hDecayLengthB = new TH1F("hDecayLengthB", "BACKGROUND Decay", 50, 0.0, 0.4);
+  TH1F* hImpactParameter0S = new TH1F("hImpactParameter0S", "SIGNAL Impact param0", 50, -0.1, 0.1);
+  TH1F* hImpactParameter0B = new TH1F("hImpactParameter0B", "BACKGROUND Impact param0", 50, -0.1, 0.1);
   TH1F* hCPAS = new TH1F("hCPAS", "SIGNAL CPA", 50, 0.9, 1.0);
   TH1F* hCPAB = new TH1F("hCPAB", "BACKGROUND CPA", 50, 0.9, 1.0);
 
@@ -187,8 +187,8 @@ void Lc_plots()
   hDecayLengthB->Scale(1 / hDecayLengthB->GetEntries());
   hImpactParameter0S->Scale(1 / hImpactParameter0S->GetEntries());
   hImpactParameter0B->Scale(1 / hImpactParameter0B->GetEntries());
-  hCPAS->Scale(1 / hCPAS->GetEntries());
-  hCPAB->Scale(1 / hCPAB->GetEntries());
+  //hCPAS->Scale(1 / hCPAS->GetEntries());
+  //hCPAB->Scale(1 / hCPAB->GetEntries());
 
 
   /////
