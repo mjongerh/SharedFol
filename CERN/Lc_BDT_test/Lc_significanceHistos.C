@@ -46,6 +46,7 @@ void Lc_significanceHistos() {
   SignfAfterBDT->SetTitle("Significance after BDT cut");
   //SignfAfterBDT->Draw();
   OldSignificance->SetTitle("Significance #Lambda_{c}^{+}");
+  OldSignificance->GetYaxis()->SetTitle("Significance (3#sigma)");
   OldSignificance->SetLineColor(kRed);
   OldSignificance->Draw("same");
   //c1->BuildLegend();
