@@ -22,7 +22,7 @@ int SignificanceLooper(TString myMethodList = ""){
   //TMVA::Tools::Instance();
   gSystem->Load("libTMVAGui");
   //Input
-  TString dir = "/home/maurice/Desktop/SharedFol/CERN/Lb/outputmidSel/"; //Directory of TMVA output+dataset
+  TString dir = "/home/maurice/Desktop/SharedFol/CERN/Lb/outputStrictPID2/"; //Directory of TMVA output+dataset
   TString plotdir = dir + "Plots/";                                             // Directory of TMVA output+dataset
   gSystem->Exec("mkdir -p " + plotdir);
   TString TypeMVA = "BDT";

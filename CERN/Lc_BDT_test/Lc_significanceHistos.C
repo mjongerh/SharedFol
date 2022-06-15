@@ -44,11 +44,12 @@ void Lc_significanceHistos() {
   SignfAfterBDT->GetYaxis()->SetTitle("significance S/sqrt(S+B)");
   SignfAfterBDT->SetLineColor(kBlue);
   SignfAfterBDT->SetTitle("Significance after BDT cut");
-  SignfAfterBDT->Draw();
-  OldSignificance->SetTitle("Significance before BDT cut");
+  //SignfAfterBDT->Draw();
+  OldSignificance->SetTitle("Significance #Lambda_{c}^{+}");
+  OldSignificance->GetYaxis()->SetTitle("Significance (3#sigma)");
   OldSignificance->SetLineColor(kRed);
   OldSignificance->Draw("same");
-  c1->BuildLegend();
+  //c1->BuildLegend();
 
   auto t_a = TLatex();
   t_a.SetNDC();
@@ -56,7 +57,7 @@ void Lc_significanceHistos() {
   t_a.SetTextColor(1);
   t_a.SetTextSize(0.035);
   t_a.SetTextAlign(12);
-  t_a.DrawLatex(0.2, 0.75, "N_{ev} = 3.8 * 10^{12}, PbPb #sqrt{s}=5.02TeV, |y| <1, centr. 30-50%");
+  t_a.DrawLatex(0.2, 0.75, "#splitline{PbPb #sqrt{s}=5.02TeV,N_{ev} = 3.8 * 10^{12}, |y| <1}{#Lambda_{c}^{+} #rightarrow p + K^{-} + #pi^{+}, centr. 30-50%}");
 
 
   Double_t xAxis1[7] = {0, 1, 2, 4, 6, 8, 10};
