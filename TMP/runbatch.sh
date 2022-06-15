@@ -1,6 +1,6 @@
 #!/bin/bash
-#export ALIBUILD_WORK_DIR="/data/alice/mjongerh/alice/sw"
-source /data/alice/mjongerh/alice/sw
+export ALIBUILD_WORK_DIR="/data/alice/mjongerh/alice/sw"
+#source /data/alice/mjongerh/alice/sw
 cd /data/alice/mjongerh/alice/DelphesO2/examples/scripts
 
 eval $(alienv enter DelphesO2/latest-master-o2)
