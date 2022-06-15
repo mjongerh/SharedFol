@@ -4,7 +4,7 @@ then
   exit 
 fi
 
-outdir=/dcache/alice/mjongerh/${1}/
+outdir=/data/alice/mjongerh/alice/data/${1}/
 if [ ! -d ${outdir} ]
 then
   mkdir -p ${outdir}
