@@ -7,11 +7,12 @@ then
 fi
 
 scriptdir=/data/alice/mjongerh/alice/DelphesO2/examples/scripts/
-for i in {1..2}
+for i in {${1}..${2}}
 do
-	cp runbatch.sh ${outdir}runbatch.sh
-	cd ${outdir}
+	mkdir -p ${outdir}/Job${i}/
+	cp runbatch.sh ${outdir}/Job${i}/runbatch.sh
+	cd ${outdir}/Job${i}/
 	echo ${i}
-	qsub -o ${outdir}/logs/logOut -e ${outdir}/logs/logErr -q short runbatch.sh
+	qsub -o ${outdir}/Job${i}/logs/logOut -e ${outdir}/Job${i}/logs/logErr -q short runbatch.sh
 	cd ${currentdir}
 done
