@@ -13,5 +13,9 @@ fi
 
 cp runbatch.sh ${outdir}
 cd ${outdir}
-qsub -o ${outdir}/logs/logOut -e ${outdir}/logs/logErr -q short -t ${2}-${3} runbatch.sh
+for i in {1..2}
+do
+	qsub -o ${outdir}/logs/logOut -e ${outdir}/logs/logErr -q short -t ${2}-${3} runbatch.sh ${i}
+done
+
 cd -
