@@ -1,5 +1,5 @@
 
-outdir=/data/alice/mjongerh/alice/data/${1}/
+outdir=/data/alice/mjongerh/alice/data/BatchTest/
 if [ ! -d ${outdir} ]
 then
   mkdir -p ${outdir}
