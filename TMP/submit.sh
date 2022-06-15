@@ -1,8 +1,3 @@
-if [ $# -lt 3 ]
-then
-  echo "Specify outdir in dcache, and job array range"
-  exit 
-fi
 
 outdir=/data/alice/mjongerh/alice/data/${1}/
 if [ ! -d ${outdir} ]
