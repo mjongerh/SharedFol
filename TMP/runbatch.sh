@@ -2,9 +2,10 @@
 export ALIBUILD_WORK_DIR="/data/alice/mjongerh/alice/sw"
 eval "`alienv shell-helper`"
 #source /data/alice/mjongerh/alice/sw
-cd /data/alice/mjongerh/alice/DelphesO2/examples/scripts
+cd /data/alice/mjongerh/alice
 
-eval $(alienv printenv DelphesO2/latest-master-o2)
+eval "alienv printenv DelphesO2/latest-master-o2"
+cd /data/alice/mjongerh/alice/DelphesO2/examples/scripts
 
 echo ${TMPDIR}
 echo ${PBS_O_WORKDIR}
