@@ -4,7 +4,7 @@ eval "`alienv shell-helper`"
 #source /data/alice/mjongerh/alice/sw
 cd /data/alice/mjongerh/alice/DelphesO2/examples/scripts
 
-eval $(alienv enter DelphesO2/latest-master-o2)
+eval $(alienv printenv DelphesO2/latest-master-o2)
 
 echo ${TMPDIR}
 echo ${PBS_O_WORKDIR}
