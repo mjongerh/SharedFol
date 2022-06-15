@@ -5,7 +5,8 @@ eval "`alienv shell-helper`"
 cd /data/alice/mjongerh/alice
 
 #eval "alienv printenv DelphesO2/latest-master-o2"
-eval "alienv printenv VO_ALICE@DelphesO2::v20210929-1, VO_ALICE@O2::v21.14-1"
+#eval "alienv printenv VO_ALICE@DelphesO2::v20210929-1, VO_ALICE@O2::v21.14-1"
+alienv enter DelphesO2/latest-master-o2
 cd /data/alice/mjongerh/alice/DelphesO2/examples/scripts
 
 echo ${TMPDIR}
