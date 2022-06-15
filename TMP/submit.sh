@@ -5,7 +5,7 @@ then
   mkdir -p ${outdir}/logs/
 fi
 
-scriptdir=/data/alice/mjongerh/alice/DelphesO2/examples/scripts/
+scriptdir=/data/alice/mjongerh/alice/SharedFol/TMP
 for i in {1..2}
 do
 	cd ${scriptdir}
