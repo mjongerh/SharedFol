@@ -16,6 +16,6 @@ outdir=${PBS_O_WORKDIR}/job_${PBS_ARRAYID}
 
 mkdir -p ${outdir}
 echo "Attempting to run job"
-eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 10 --njobs 1 --nevents 500"
+eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 10 --njobs 10 --nevents 500"
 echo "Attempt done"
 #eval "./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 1 --njobs 1 --nevents 500"
