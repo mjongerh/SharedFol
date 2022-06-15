@@ -1,5 +1,6 @@
 #!/bin/bash
 export ALIBUILD_WORK_DIR="/data/alice/mjongerh/alice/sw"
+eval "`alienv shell-helper`"
 #source /data/alice/mjongerh/alice/sw
 cd /data/alice/mjongerh/alice/DelphesO2/examples/scripts
 
