@@ -28,7 +28,7 @@ cd ${tempfol}
 echo "Attempting to run job"
 eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 3 --njobs 1 --nevents 500"
 echo "Attempt 1 done"
-SleepTimer=${JOB_ID} % 17
+SleepTimer=$(expr ${JOB_ID} % 17 )
 if [ ! -f ../AODRun5.0.root ]; then 
         echo "Failed, trying again"
         sleep ${SleepTimer}
@@ -40,7 +40,7 @@ if [ ! -f ../AODRun5.0.root ]; then
         eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 3 --njobs 1 --nevents 500" 
 fi 
 if [ ! -f ../AODRun5.0.root ]; then 
-        echo "Failed yet again. Third time's the charm" 
+        echo "Failed yet again. Fourth time's the charm" 
         sleep ${SleepTimer}
         eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 3 --njobs 1 --nevents 500" 
 fi 
