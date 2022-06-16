@@ -12,4 +12,5 @@ do
 	echo ${i}
 	qsub -o ${outdir}/logs/logOut_${i} -e ${outdir}/logs/logErr${i} -q long7 runbatch.sh
 	cd ${currentdir}
+	sleep 17
 done
