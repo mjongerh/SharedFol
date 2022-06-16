@@ -6,10 +6,10 @@ then
 fi
 
 scriptdir=/data/alice/mjongerh/alice/SharedFol/TMP
-for i in {1..1}
+for i in {1..50}
 do
 	cd ${scriptdir}
 	echo ${i}
-	qsub -o ${outdir}/logs/logOut_${i} -e ${outdir}/logs/logErr${i} -q short runbatch.sh
+	qsub -o ${outdir}/logs/logOut_${i} -e ${outdir}/logs/logErr${i} -q long7 runbatch.sh
 	cd ${currentdir}
 done
