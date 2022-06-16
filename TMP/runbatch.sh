@@ -26,15 +26,16 @@ cp /data/alice/mjongerh/alice/DelphesO2/examples/scripts/* ${tempfol}
 # run job from temp folder + send output to job folder
 cd ${tempfol}
 echo "Attempting to run job"
-eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 1 --njobs 1 --nevents 5000"
+eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 3 --njobs 1 --nevents 500"
 echo "Attempt done"
 
 # once done, delete temp folder
+echo "cleaning temp folder"
 cd ${outdir}
 rm -r ./temp
 
 # job complete
-
+echo "Job complete"
 
 #cd /data/alice/mjongerh/alice/DelphesO2/examples/scripts
 
