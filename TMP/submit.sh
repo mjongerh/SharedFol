@@ -10,7 +10,7 @@ for i in {1..50}
 do
 	cd ${scriptdir}
 	echo ${i}
-	qsub -o ${outdir}/logs/logOut_${i} -e ${outdir}/logs/logErr${i} -q long7 runbatch.sh
+	qsub -o ${outdir}/logs/logOut_${i} -e ${outdir}/logs/logErr${i} -q generic7 runbatch.sh
 	cd ${currentdir}
 	sleep 17
 done
