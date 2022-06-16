@@ -11,6 +11,6 @@ do
 	cd ${scriptdir}
 	echo ${i}
 	qsub -o ${outdir}/logs/logOut_${i} -e ${outdir}/logs/logErr${i} -q short runbatch.sh
-	sleep 10
+	sleep 50
 	cd ${currentdir}
 done
