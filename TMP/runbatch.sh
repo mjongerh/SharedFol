@@ -32,7 +32,7 @@ echo "Attempt done"
 # once done, delete temp folder
 echo "cleaning temp folder"
 cd ${outdir}
-rm -r ./temp
+#rm -r ./temp
 
 # job complete
 echo "Job complete"
