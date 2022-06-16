@@ -6,7 +6,7 @@ then
 fi
 
 scriptdir=/data/alice/mjongerh/alice/SharedFol/TMP
-for i in {1..2}
+for i in {1..1}
 do
 	cd ${scriptdir}
 	echo ${i}
