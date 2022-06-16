@@ -1,4 +1,4 @@
-outdir=/data/alice/mjongerh/alice/data/BatchTest/
+outdir=/data/alice/mjongerh/alice/data/pp14TeV_bbbar_50M_2T/
 if [ ! -d ${outdir} ]
 then
   mkdir -p ${outdir}
