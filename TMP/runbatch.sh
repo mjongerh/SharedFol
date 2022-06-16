@@ -27,12 +27,31 @@ cp /data/alice/mjongerh/alice/DelphesO2/examples/scripts/* ${tempfol}
 cd ${tempfol}
 echo "Attempting to run job"
 eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 3 --njobs 1 --nevents 500"
-echo "Attempt done"
+echo "Attempt 1 done"
+SleepTimer=${JOB_ID} % 17
+if [ ! -f ../AODRun5.0.root ]; then 
+        echo "Failed, trying again"
+        sleep ${SleepTimer}
+        eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 3 --njobs 1 --nevents 500"
+fi 
+if [ ! -f ../AODRun5.0.root ]; then 
+        echo "Failed yet again. Third time's the charm" 
+        sleep ${SleepTimer}
+        eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 3 --njobs 1 --nevents 500" 
+fi 
+if [ ! -f ../AODRun5.0.root ]; then 
+        echo "Failed yet again. Third time's the charm" 
+        sleep ${SleepTimer}
+        eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 3 --njobs 1 --nevents 500" 
+fi 
+if [ ! -f ../AODRun5.0.root ]; then 
+        echo "Forget it. Clean tree output up, this is bogus, sorry" 
+fi 
 
 # once done, delete temp folder
 echo "cleaning temp folder"
 cd ${outdir}
-#rm -r ./temp
+rm -r ./temp
 
 # job complete
 echo "Job complete"
