@@ -13,11 +13,11 @@ echo ${PBS_O_WORKDIR}
 
 # create job folder
 JOB_ID=$(echo $PBS_JOBID | cut -d'.' -f 1)
-outdir=/data/alice/mjongerh/alice/data/BatchTest/Job_${JOB_ID}/
+outdir=/data/alice/mjongerh/alice/data/pp14TeV_bbbar_50M_2T/Job_${JOB_ID}/
 mkdir -p ${outdir}
 
 # create temp subfolder
-tempfol=/data/alice/mjongerh/alice/data/BatchTest/Job_${JOB_ID}/temp/
+tempfol=/data/alice/mjongerh/alice/data/pp14TeV_bbbar_50M_2T/Job_${JOB_ID}/temp/
 mkdir -p ${tempfol}
 
 # cp /scripts into temp folder
