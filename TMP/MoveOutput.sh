@@ -1,5 +1,5 @@
 outdir=/data/alice/mjongerh/alice/data/pp14TeV_bbbar_50M_2T/
-j = 0
+let j = 0
 for i in {10460010..10460011} #83
 do
 	#statements
