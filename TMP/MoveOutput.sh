@@ -6,10 +6,10 @@ do
 	for f in {0..2} #199
 	do
 	#statements
-	echo ${outdir}/Job_${i}/AODRun5.${f}.root
+	echo ${outdir}Job_${i}/AODRun5.${f}.root
 	echo ${outdir}AODRun5.${j}.root
-	if [ ! -f ${outdir}/Job_${i}/AODRun5.${f}.root ]; then 
-        	cp ${outdir}/Job_${i}/AODRun5.${f}.root ${outdir}AODRun5.${j}.root
+	if [ ! -f ${outdir}Job_${i}/AODRun5.${f}.root ]; then 
+        	cp ${outdir}Job_${i}/AODRun5.${f}.root ${outdir}AODRun5.${j}.root
 			let j+=1
 	fi
     done
