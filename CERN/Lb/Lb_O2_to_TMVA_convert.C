@@ -20,7 +20,7 @@ void Lb_O2_to_TMVA_convert()
   TString oldfileName = "/data/alice/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2.root";
   TString tempfileName = "/data/alice/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_TMP.root";
   //TString newfileName = "/home/mjongerh/alice/Run3Analysisvalidation/codeHF/AnalysisResults_trees_O2_converted.root";
-  TString newfileDir = "/data/alice/mjongerh/alice/data/BatchTest/Job_10458937/";
+  TString newfileDir = "/data/alice/mjongerh/alice/data/LbTrees_50M/";
   TString newfileNamePrefix = "Lb_binned";
   
   TString createdir = "mkdir -p " + newfileDir; //create directory if it doesn't exist yet
