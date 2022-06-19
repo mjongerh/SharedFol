@@ -27,7 +27,7 @@ int Lb_BDT(TString myMethodList = ""){
   Use["BDTG"] = 1; // uses Gradient Boost
   Use["BDTB"] = 0; // uses Bagging
   Use["BDTD"] = 0; // decorrelation + Adaptive Boost
-  Use["BDTF"] = 1; // allow usage of fisher discriminant for node splitting
+  Use["BDTF"] = 0; // allow usage of fisher discriminant for node splitting
   Use["RuleFit"] = 0; // 
   // --- Neural Networks (all are feed-forward Multilayer Perceptrons)
   Use["MLP"] = 0; // Recommended ANN
