@@ -27,7 +27,7 @@ int Lb_BDT(TString myMethodList = ""){
   Use["BDTG"] = 1; // uses Gradient Boost
   Use["BDTB"] = 0; // uses Bagging
   Use["BDTD"] = 0; // decorrelation + Adaptive Boost
-  Use["BDTF"] = 0; // allow usage of fisher discriminant for node splitting
+  Use["BDTF"] = 1; // allow usage of fisher discriminant for node splitting
   Use["RuleFit"] = 0; // 
   // --- Neural Networks (all are feed-forward Multilayer Perceptrons)
   Use["MLP"] = 0; // Recommended ANN
@@ -120,7 +120,7 @@ int Lb_BDT(TString myMethodList = ""){
     backgroundTree2->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-    TString outfileDir = Form("~/Desktop/SharedFol/CERN/Lb/outputLbTrees_60M/Pt%.1f", ptBins[i]);
+    TString outfileDir = Form("~/Desktop/SharedFol/CERN/Lb/outputLbTrees_60M_NoRICH/Pt%.1f", ptBins[i]);
     TString createdir = "mkdir -p " + outfileDir; //create directory if it doesn't exist yet
     gSystem->Exec(createdir);
     TString outfileName = outfileDir + "/TMVA.root";
@@ -154,13 +154,13 @@ int Lb_BDT(TString myMethodList = ""){
     dataloader->AddVariable("fLcImpactParameter2", "fLcImpactParameter2", "units", 'F');
 
     // PID params
-    dataloader->AddVariable("fNSigRICHPi0", "fNSigRICHPi0", "units", 'F'); //direct daughter pion
+    //dataloader->AddVariable("fNSigRICHPi0", "fNSigRICHPi0", "units", 'F'); //direct daughter pion
     dataloader->AddVariable("fNSigTOFPi0", "fNSigTOFPi0", "units", 'F');
-    dataloader->AddVariable("fNSigRICHTrk1Pi", "fNSigRICHTrk1Pi", "units", 'F'); //granddaughter pi/p
-    dataloader->AddVariable("fNSigRICHTrk1Pr", "fNSigRICHTrk1Pr", "units", 'F');
-    dataloader->AddVariable("fNSigRICHTrk2Ka", "fNSigRICHTrk2Ka", "units", 'F'); //granddaughter Kaon
-    dataloader->AddVariable("fNSigRICHTrk3Pi", "fNSigRICHTrk3Pi", "units", 'F'); //granddaughter p/Pi
-    dataloader->AddVariable("fNSigRICHTrk3Pr", "fNSigRICHTrk3Pr", "units", 'F');
+    //dataloader->AddVariable("fNSigRICHTrk1Pi", "fNSigRICHTrk1Pi", "units", 'F'); //granddaughter pi/p
+    //dataloader->AddVariable("fNSigRICHTrk1Pr", "fNSigRICHTrk1Pr", "units", 'F');
+    //dataloader->AddVariable("fNSigRICHTrk2Ka", "fNSigRICHTrk2Ka", "units", 'F'); //granddaughter Kaon
+    //dataloader->AddVariable("fNSigRICHTrk3Pi", "fNSigRICHTrk3Pi", "units", 'F'); //granddaughter p/Pi
+    //dataloader->AddVariable("fNSigRICHTrk3Pr", "fNSigRICHTrk3Pr", "units", 'F');
 
     dataloader->AddVariable("fNSigTOFTrk1Pr", "fNSigTOFTrk1Pr", "units", 'F'); //grandaughters
     dataloader->AddVariable("fNSigTOFTrk1Pi", "fNSigTOFTrk1Pi", "units", 'F');
