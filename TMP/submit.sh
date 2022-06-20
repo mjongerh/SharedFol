@@ -1,4 +1,5 @@
-outdir=/data/alice/mjongerh/alice/data/pp14TeV_bbbar_50M_2T
+#outdir=/data/alice/mjongerh/alice/data/pp14TeV_bbbar_50M_2T
+outdir=/data/alice/mjongerh/alice/data/Lb_BRtest
 if [ ! -d ${outdir} ]
 then
   mkdir -p ${outdir}
@@ -6,7 +7,7 @@ then
 fi
 
 scriptdir=/data/alice/mjongerh/alice/SharedFol/TMP
-for i in {1..50}
+for i in {1..1}
 do
 	cd ${scriptdir}
 	echo ${i}

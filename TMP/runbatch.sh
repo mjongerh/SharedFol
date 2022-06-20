@@ -13,7 +13,8 @@ echo ${PBS_O_WORKDIR}
 
 # create job folder
 JOB_ID=$(echo $PBS_JOBID | cut -d'.' -f 1)
-outdir=/data/alice/mjongerh/alice/data/pp14TeV_bbbar_50M_2T/Job_${JOB_ID}/
+#outdir=/data/alice/mjongerh/alice/data/pp14TeV_bbbar_50M_2T/Job_${JOB_ID}/
+outdir=/data/alice/mjongerh/alice/data/Lb_BRtest/Job_${JOB_ID}/
 mkdir -p ${outdir}
 
 # create temp subfolder
@@ -26,23 +27,23 @@ cp /data/alice/mjongerh/alice/DelphesO2/examples/scripts/* ${tempfol}
 # run job from temp folder + send output to job folder
 cd ${tempfol}
 echo "Attempting to run job"
-eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 200 --njobs 1 --nevents 5000"
+eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 20 --njobs 1 --nevents 5000"
 echo "Attempt 1 done"
 SleepTimer=$(expr ${JOB_ID} % 17 + 3)
 if [ ! -f ../AODRun5.0.root ]; then 
         echo "Failed, trying again"
         sleep ${SleepTimer}
-        eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 200 --njobs 1 --nevents 5000"
+        eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 20 --njobs 1 --nevents 5000"
 fi 
 if [ ! -f ../AODRun5.0.root ]; then 
         echo "Failed yet again. Third time's the charm" 
         sleep ${SleepTimer}
-        eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 200 --njobs 1 --nevents 5000" 
+        eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 20 --njobs 1 --nevents 5000" 
 fi 
 if [ ! -f ../AODRun5.0.root ]; then 
         echo "Failed yet again. Fourth time's the charm" 
         sleep ${SleepTimer}
-        eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 200 --njobs 1 --nevents 5000" 
+        eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 20 --njobs 1 --nevents 5000" 
 fi 
 if [ ! -f ../AODRun5.0.root ]; then 
         echo "Forget it. Clean tree output up, this is bogus, sorry" 
