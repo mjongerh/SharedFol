@@ -215,7 +215,7 @@ void Lb_significanceHistos()
   histosignal__1->SetBinContent(11, 1210296 / NEvents);
   histosignal__1->SetBinContent(12, 471201.6 / NEvents);
 
-  histosignal__1->SetLineColor(kblue);
+  histosignal__1->SetLineColor(kBlue);
   histosignal__1->SetLineWidth(3);
   histosignal__1->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV)");
   histosignal__1->GetXaxis()->SetRange(1, 100);
