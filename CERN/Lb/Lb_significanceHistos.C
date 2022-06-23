@@ -215,6 +215,17 @@ void Lb_significanceHistos()
   histosignal__1->SetBinContent(11, 1210296 / NEvents);
   histosignal__1->SetBinContent(12, 471201.6 / NEvents);
 
+  histosignal__1->SetBinError(3, histosignal__1->GetBinContent(3) * sqrt(0.1717));
+  histosignal__1->SetBinError(4, histosignal__1->GetBinContent(4) * sqrt(0.1737));
+  histosignal__1->SetBinError(5, histosignal__1->GetBinContent(5) * sqrt(0.1755));
+  histosignal__1->SetBinError(6, histosignal__1->GetBinContent(6) * sqrt(0.1771));
+  histosignal__1->SetBinError(7, histosignal__1->GetBinContent(7) * sqrt(0.1785));
+  histosignal__1->SetBinError(8, histosignal__1->GetBinContent(8) * sqrt(0.1807));
+  histosignal__1->SetBinError(9, histosignal__1->GetBinContent(9) * sqrt(0.1826));
+  histosignal__1->SetBinError(10, histosignal__1->GetBinContent(10) * sqrt(0.1827));
+  histosignal__1->SetBinError(11, histosignal__1->GetBinContent(11) * sqrt(0.1811));
+  histosignal__1->SetBinError(12, histosignal__1->GetBinContent(12) * sqrt(0.1761));
+
   histosignal__1->SetLineColor(kBlue);
   histosignal__1->SetLineWidth(3);
   histosignal__1->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV/c)");
@@ -632,6 +643,17 @@ void Lb_significanceHistos()
   histosignal__3->SetBinContent(10, 10218.3 / NEventsPbPb);
   histosignal__3->SetBinContent(11, 5436.2 / NEventsPbPb);
   histosignal__3->SetBinContent(12, 1943.32 / NEventsPbPb);
+
+  histosignal__3->SetBinError(3, histosignal__3->GetBinContent(3) * sqrt(0.1717));
+  histosignal__3->SetBinError(4, histosignal__3->GetBinContent(4) * sqrt(0.1737));
+  histosignal__3->SetBinError(5, histosignal__3->GetBinContent(5) * sqrt(0.1755));
+  histosignal__3->SetBinError(6, histosignal__3->GetBinContent(6) * sqrt(0.1771));
+  histosignal__3->SetBinError(7, histosignal__3->GetBinContent(7) * sqrt(0.1785));
+  histosignal__3->SetBinError(8, histosignal__3->GetBinContent(8) * sqrt(0.1807));
+  histosignal__3->SetBinError(9, histosignal__3->GetBinContent(9) * sqrt(0.1826));
+  histosignal__3->SetBinError(10, histosignal__3->GetBinContent(10) * sqrt(0.1827));
+  histosignal__3->SetBinError(11, histosignal__3->GetBinContent(11) * sqrt(0.1811));
+  histosignal__3->SetBinError(12, histosignal__3->GetBinContent(12) * sqrt(0.1761));
 
   TH1F* histosignal__4 = new TH1F("histosignal__4", "Lb signal per event PbPb 5.02Tev 30-50% after BDT cut", 12, xAxis1);
   histosignal__4->SetBinContent(3, 287.836 * 0.8185 / NEventsPbPb);
