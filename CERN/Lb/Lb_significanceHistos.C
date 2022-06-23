@@ -165,7 +165,7 @@ void Lb_significanceHistos()
 
   hBkgPerEvent__1->SetLineColor(ci);
   hBkgPerEvent__1->SetLineWidth(3);
-  hBkgPerEvent__1->GetXaxis()->SetTitle("p_{T}(#lambda_{b}^{0})(GeV/c)");
+  hBkgPerEvent__1->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0})(GeV/c)");
   hBkgPerEvent__1->GetXaxis()->SetLabelFont(42);
   hBkgPerEvent__1->GetXaxis()->SetLabelOffset(0.015);
   hBkgPerEvent__1->GetXaxis()->SetTitleSize(0.045);
