@@ -134,7 +134,7 @@ void Lb_significanceHistos()
   Canvas_2->SetFrameBorderMode(0);
 
   // bkg per event of pp 14TeV
-  TH1D* hBkgPerEvent__1 = new TH1D("hBkgPerEvent__1", "Lb bkg per event of pp 14TeV", 12, xAxis1);
+  TH1D* hBkgPerEvent__1 = new TH1D("hBkgPerEvent__1", "#Lambda_{b}^{0} background yield p-p #sqrt{s}=14.0TeV", 12, xAxis1);
   hBkgPerEvent__1->SetBinContent(2, 2.65e+9 / NEvents);
   hBkgPerEvent__1->SetBinContent(3, 1.75e+9/ NEvents);
   hBkgPerEvent__1->SetBinContent(4, 2.74e+9/ NEvents);
@@ -165,13 +165,13 @@ void Lb_significanceHistos()
 
   hBkgPerEvent__1->SetLineColor(ci);
   hBkgPerEvent__1->SetLineWidth(3);
-  hBkgPerEvent__1->GetXaxis()->SetTitle("p_{T}(#lambda_b^0)(GeV/c)");
+  hBkgPerEvent__1->GetXaxis()->SetTitle("p_{T}(#lambda_{b}^{0})(GeV/c)");
   hBkgPerEvent__1->GetXaxis()->SetLabelFont(42);
   hBkgPerEvent__1->GetXaxis()->SetLabelOffset(0.015);
   hBkgPerEvent__1->GetXaxis()->SetTitleSize(0.045);
   hBkgPerEvent__1->GetXaxis()->SetTitleOffset(1);
   hBkgPerEvent__1->GetXaxis()->SetTitleFont(42);
-  hBkgPerEvent__1->GetYaxis()->SetTitle("Bkg/nEvents");
+  hBkgPerEvent__1->GetYaxis()->SetTitle("#Lambda_{b}^{0} background events per collision");
   hBkgPerEvent__1->GetYaxis()->CenterTitle(true);
   hBkgPerEvent__1->GetYaxis()->SetLabelFont(42);
   hBkgPerEvent__1->GetYaxis()->SetLabelOffset(0.01);
@@ -203,7 +203,7 @@ void Lb_significanceHistos()
   Canvas_3->SetFrameBorderMode(0);
   Canvas_3->SetFrameBorderMode(0);
 
-  TH1F* histosignal__1 = new TH1F("histosignal__1", "Lb signal pp per event", 12, xAxis1);
+  TH1F* histosignal__1 = new TH1F("histosignal__1", "#Lambda_{b}^{0} signal yield p-p #sqrt{s}=14.0TeV", 12, xAxis1);
   histosignal__1->SetBinContent(3, 40186.32 / NEvents);
   histosignal__1->SetBinContent(4, 382180.8 / NEvents);
   histosignal__1->SetBinContent(5, 1064940 / NEvents);
@@ -215,13 +215,14 @@ void Lb_significanceHistos()
   histosignal__1->SetBinContent(11, 1210296 / NEvents);
   histosignal__1->SetBinContent(12, 471201.6 / NEvents);
 
-  histosignal__1->SetLineColor(ci);
-  histosignal__1->GetXaxis()->SetTitle("p_{T} (GeV)");
+  histosignal__1->SetLineColor(kblue);
+  histosignal__1->SetLineWidth(3);
+  histosignal__1->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV)");
   histosignal__1->GetXaxis()->SetRange(1, 100);
   histosignal__1->GetXaxis()->SetLabelFont(42);
   histosignal__1->GetXaxis()->SetTitleOffset(1);
   histosignal__1->GetXaxis()->SetTitleFont(42);
-  histosignal__1->GetYaxis()->SetTitle("Lb signal per event");
+  histosignal__1->GetYaxis()->SetTitle("#Lambda_{b}^{0} signal events per collision");
   histosignal__1->GetYaxis()->SetLabelFont(42);
   histosignal__1->GetYaxis()->SetTitleFont(42);
   histosignal__1->GetZaxis()->SetLabelFont(42);
@@ -573,7 +574,7 @@ void Lb_significanceHistos()
   histosignf__12->SetBinError(11, 5.023994727 * sigpereventfactor);
   histosignf__12->SetBinError(12, 2.549194909 * sigpereventfactor);
 
-  TH1D* hBkgPerEvent__3 = new TH1D("hBkgPerEvent__3", "Lb bkg per event PbPb 5.02Tev 30-50%", 12, xAxis1);
+  TH1D* hBkgPerEvent__3 = new TH1D("hBkgPerEvent__3", "#Lambda_{b}^{0} background yield Pb-Pb #sqrt{s}=5.02TeV 30-50%", 12, xAxis1);
   hBkgPerEvent__3->SetBinContent(3, 6.858217e-07);
   hBkgPerEvent__3->SetBinContent(4, 6.716679e-07);
   hBkgPerEvent__3->SetBinContent(5, 6.899283e-07);
@@ -603,13 +604,13 @@ void Lb_significanceHistos()
 
   hBkgPerEvent__3->SetLineColor(ci);
   hBkgPerEvent__3->SetLineWidth(3);
-  hBkgPerEvent__3->GetXaxis()->SetTitle("p_{T}(GeV/c)");
+  hBkgPerEvent__3->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV)");
   hBkgPerEvent__3->GetXaxis()->SetLabelFont(42);
   hBkgPerEvent__3->GetXaxis()->SetLabelOffset(0.015);
   hBkgPerEvent__3->GetXaxis()->SetTitleSize(0.045);
   hBkgPerEvent__3->GetXaxis()->SetTitleOffset(1);
   hBkgPerEvent__3->GetXaxis()->SetTitleFont(42);
-  hBkgPerEvent__3->GetYaxis()->SetTitle("Bkg/nEvents");
+  hBkgPerEvent__3->GetYaxis()->SetTitle("#Lambda_{b}^{0} background events per collision");
   hBkgPerEvent__3->GetYaxis()->CenterTitle(true);
   hBkgPerEvent__3->GetYaxis()->SetLabelFont(42);
   hBkgPerEvent__3->GetYaxis()->SetLabelOffset(0.01);
@@ -620,7 +621,7 @@ void Lb_significanceHistos()
   hBkgPerEvent__3->GetZaxis()->SetTitleOffset(1);
   hBkgPerEvent__3->GetZaxis()->SetTitleFont(42);
 
-  TH1F* histosignal__3 = new TH1F("histosignal__3", "Lb signal per event PbPb 5.02Tev 30-50%", 12, xAxis1);
+  TH1F* histosignal__3 = new TH1F("histosignal__3", "#Lambda_{b}^{0} signal yield Pb-Pb #sqrt{s}=5.02TeV 30-50%", 12, xAxis1);
   histosignal__3->SetBinContent(3, 287.836 / NEventsPbPb);
   histosignal__3->SetBinContent(4, 4014.78 / NEventsPbPb);
   histosignal__3->SetBinContent(5, 10417.6 / NEventsPbPb);
@@ -644,13 +645,14 @@ void Lb_significanceHistos()
   histosignal__4->SetBinContent(11, 5436.2 * 0.9612 / NEventsPbPb);
   histosignal__4->SetBinContent(12, 1943.32 * 0.8776 / NEventsPbPb);
 
-  histosignal__3->SetLineColor(ci);
-  histosignal__3->GetXaxis()->SetTitle("p_{T} (GeV)");
+  histosignal__3->SetLineColor(kBlue);
+  histosignal__3->SetLineWidth(3);
+  histosignal__3->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV)");
   histosignal__3->GetXaxis()->SetRange(1, 100);
   histosignal__3->GetXaxis()->SetLabelFont(42);
   histosignal__3->GetXaxis()->SetTitleOffset(1);
   histosignal__3->GetXaxis()->SetTitleFont(42);
-  histosignal__3->GetYaxis()->SetTitle("Lb d#sigma^{PYTHIA}/dp_{T} (#mu b/GeV)");
+  histosignal__3->GetYaxis()->SetTitle("#Lambda_{b}^{0} signal events per collision");
   histosignal__3->GetYaxis()->SetLabelFont(42);
   histosignal__3->GetYaxis()->SetTitleFont(42);
   histosignal__3->GetZaxis()->SetLabelFont(42);
