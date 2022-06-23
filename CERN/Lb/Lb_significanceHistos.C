@@ -217,7 +217,7 @@ void Lb_significanceHistos()
 
   histosignal__1->SetLineColor(kBlue);
   histosignal__1->SetLineWidth(3);
-  histosignal__1->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV)");
+  histosignal__1->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV/c)");
   histosignal__1->GetXaxis()->SetRange(1, 100);
   histosignal__1->GetXaxis()->SetLabelFont(42);
   histosignal__1->GetXaxis()->SetTitleOffset(1);
@@ -604,7 +604,7 @@ void Lb_significanceHistos()
 
   hBkgPerEvent__3->SetLineColor(ci);
   hBkgPerEvent__3->SetLineWidth(3);
-  hBkgPerEvent__3->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV)");
+  hBkgPerEvent__3->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV/c)");
   hBkgPerEvent__3->GetXaxis()->SetLabelFont(42);
   hBkgPerEvent__3->GetXaxis()->SetLabelOffset(0.015);
   hBkgPerEvent__3->GetXaxis()->SetTitleSize(0.045);
@@ -647,7 +647,7 @@ void Lb_significanceHistos()
 
   histosignal__3->SetLineColor(kBlue);
   histosignal__3->SetLineWidth(3);
-  histosignal__3->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV)");
+  histosignal__3->GetXaxis()->SetTitle("p_{T}(#Lambda_{b}^{0}) (GeV/c)");
   histosignal__3->GetXaxis()->SetRange(1, 100);
   histosignal__3->GetXaxis()->SetLabelFont(42);
   histosignal__3->GetXaxis()->SetTitleOffset(1);
