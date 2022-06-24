@@ -724,7 +724,7 @@ void Lb_significanceHistos()
   double* qeylsys = new double[12]{0.0, 0.0, 0.931432007, 7.239611145, 13.88274367, 27.40537246, 51.91121175, 65.39543215, 46.06540126, 19.32675688, 11.15306163, 4.815361434};
   double* qeyhsys = new double[12]{0.0, 0.0, 0.931432007, 7.239611145, 13.88274367, 27.40537246, 51.91121175, 65.39543215, 46.06540126, 19.32675688, 11.15306163, 4.815361434};
 
-  TGraphMultiErrors* gSignf_pp14p0_DoubleErrorPF = new TGraphMultiErrors("gSignf_pp14p0_DoubleErrorPF", "Double error Significance Lb in pp 14TeV, Nevt=1.26E15 Pythia+FONLL", 12, qx, qy, qexl, qexh, qeylstat, qeyhstat);
+  TGraphMultiErrors* gSignf_pp14p0_DoubleErrorPF = new TGraphMultiErrors("gSignf_pp14p0_DoubleErrorPF", "", 12, qx, qy, qexl, qexh, qeylstat, qeyhstat);
   gSignf_pp14p0_DoubleErrorPF->AddYError(12, peylsys, peyhsys);
   gSignf_pp14p0_DoubleErrorPF->SetMarkerStyle(4);
   gSignf_pp14p0_DoubleErrorPF->SetLineColor(kRed);
@@ -736,7 +736,7 @@ void Lb_significanceHistos()
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetLabelFont(42);
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitleOffset(1);
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitleFont(42);
-  gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3$sigma)");
+  gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
   gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetLabelFont(42);
   gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetTitleFont(42);
   gSignf_pp14p0_DoubleErrorPF->SetMarkerColor(4);
@@ -783,29 +783,30 @@ void Lb_significanceHistos()
   double* reylsys = new double[12]{0.0, 0.0, 3.418445998, 13.6839039, 22.98240627, 28.50249386, 37.71740403, 41.57336254, 30.03195466, 20.59823968, 14.98242866, 8.227062708};
   double* reyhsys = new double[12]{0.0, 0.0, 3.418445998, 13.6839039, 22.98240627, 28.50249386, 37.71740403, 41.57336254, 30.03195466, 20.59823968, 14.98242866, 8.227062708};
 
-  TGraphMultiErrors* gSignf_PbPb5p02_DoubleErrorPF = new TGraphMultiErrors("gSignf_PbPb5p02_DoubleErrorPF", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 Pythia+FONLL", 12, rx, ry, rexl, rexh, reylstat, reyhstat);
+  TGraphMultiErrors* gSignf_PbPb5p02_DoubleErrorPF = new TGraphMultiErrors("gSignf_PbPb5p02_DoubleErrorPF", "", 12, rx, ry, rexl, rexh, reylstat, reyhstat);
   gSignf_PbPb5p02_DoubleErrorPF->AddYError(12, aeylsys, aeyhsys);
   gSignf_PbPb5p02_DoubleErrorPF->SetMarkerStyle(4);
   gSignf_PbPb5p02_DoubleErrorPF->SetLineColor(kRed);
   gSignf_PbPb5p02_DoubleErrorPF->GetAttLine(0)->SetLineColor(kRed);
   gSignf_PbPb5p02_DoubleErrorPF->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_PbPb5p02_DoubleErrorPF->GetAttFill(1)->SetFillStyle(0);
-  gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (GeV)");
+  gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
   gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetRange(1, 100);
   gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetLabelFont(42);
   gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitleOffset(1);
   gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitleFont(42);
-  gSignf_PbPb5p02_DoubleErrorPF->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  gSignf_PbPb5p02_DoubleErrorPF->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
   gSignf_PbPb5p02_DoubleErrorPF->GetYaxis()->SetLabelFont(42);
   gSignf_PbPb5p02_DoubleErrorPF->GetYaxis()->SetTitleFont(42);
   gSignf_PbPb5p02_DoubleErrorPF->SetMarkerColor(4);
   gSignf_PbPb5p02_DoubleErrorPF->SetMarkerSize(1.3);
 
   gSignf_PbPb5p02_DoubleErrorPF->Draw("a p s ; ; 5 s=0.5");
+  histosignf__7->Draw("hist same");
 
     auto legend101 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  legend101->AddEntry(histosignf__9, "pre-cuts", "f");
-  legend101->AddEntry(gSignf_pp14p0_DoubleErrorPF, "+BDT cut", "f");
+  legend101->AddEntry(histosignf__7, "pre-cuts", "f");
+  legend101->AddEntry(gSignf_PbPb5p02_DoubleErrorPF, "+BDT cut", "lep");
   legend101->Draw("");
 
   auto t_c = TLatex();
@@ -814,8 +815,14 @@ void Lb_significanceHistos()
   t_c.SetTextColor(1);
   t_c.SetTextSize(0.035);
   t_c.SetTextAlign(12);
-  t_c.DrawLatex(0.2, 0.75, "#splitline{Pb-Pb #sqrt{s}=5.02TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}{ N_{evt}=55E9 L_{int}=35nb^{-1} centr. 30-50%}");
-
+  t_c.DrawLatex(0.2, 0.75, "#splitline{Pb-Pb #sqrt{s}=5.02TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
+  auto t_cs = TLatex();
+  t_cs.SetNDC();
+  t_cs.SetTextFont(42);
+  t_cs.SetTextColor(1);
+  t_cs.SetTextSize(0.035);
+  t_cs.SetTextAlign(12);
+  t_cs.DrawLatex(0.4, 0.55, "#splitline{ N_{evt}=55E9 L_{int}=35nb^{-1} centr. 30-50%}{}");
 
 
   Canvas_777->cd();
