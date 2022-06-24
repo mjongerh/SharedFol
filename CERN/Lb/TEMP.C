@@ -103,7 +103,7 @@ int Lb_BDT(TString myMethodList = "")
     //  std::cout << "ERROR: could not open bkg file" << std::endl;
     //  exit(1);
     //}
-    std::cout << "--- TMVAClassification       : Using input background file: " << inputBackground2->GetName() << std::endl;
+    //std::cout << "--- TMVAClassification       : Using input background file: " << inputBackground2->GetName() << std::endl;
 
     // Register the training and test trees
     TTree* signalTree = (TTree*)inputSignal->Get("O2hfcandlbfull");
