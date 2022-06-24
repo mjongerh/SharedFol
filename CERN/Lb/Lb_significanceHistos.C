@@ -278,17 +278,30 @@ void Lb_significanceHistos()
   Canvas_5->SetFrameBorderMode(0);
   Canvas_5->SetFrameBorderMode(0);
 
-  TH1F* histosignf__9 = new TH1F("histosignf__9", "Significance Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
-  histosignf__9->SetBinContent(3, 0.960121204/1.41);
-  histosignf__9->SetBinContent(4, 7.300882464/1.41);
-  histosignf__9->SetBinContent(5, 21.40347928/1.41);
-  histosignf__9->SetBinContent(6, 53.04167744/1.41);
-  histosignf__9->SetBinContent(7, 122.6176088/1.41);
-  histosignf__9->SetBinContent(8, 161.7100383/1.41);
-  histosignf__9->SetBinContent(9, 122.1781281/1.41);
-  histosignf__9->SetBinContent(10, 46.42496492/1.41);
-  histosignf__9->SetBinContent(11, 23.86596022/1.41);
-  histosignf__9->SetBinContent(12, 9.027774988/1.41);
+  TH1F* histosignf__9 = new TH1F("histosignf__9", "#Lambda_{b}^{0} significance p-p #sqrt{s}=14.0TeV, Nevt=1.26E15", 12, xAxis1);
+    histosignf__9->SetBinContent(3, 6.84E-01)
+    histosignf__9->SetBinContent(4, 5.19E+00);
+    histosignf__9->SetBinContent(5, 1.52E+01);
+    histosignf__9->SetBinContent(6, 3.76E+01);
+    histosignf__9->SetBinContent(7, 8.69E+01);
+    histosignf__9->SetBinContent(8, 1.14E+02);
+    histosignf__9->SetBinContent(9, 8.65E+01);
+    histosignf__9->SetBinContent(10, 3.30E+01);
+    histosignf__9->SetBinContent(11, 1.70E+01);
+    histosignf__9->SetBinContent(12, 6.49E+00);
+             
+             
+
+    histosignf__9->SetBinError(3,  sqrt(pow(0.280879212,2) + pow(0.050227726, 2)));
+    histosignf__9->SetBinError(4,  sqrt(pow(2.142395703,2) + pow(0.38139712), 2)));
+    histosignf__9->SetBinError(5,  sqrt(pow(6.296031414,2) + pow(1.116627482, 2)));
+    histosignf__9->SetBinError(6,  sqrt(pow(15.62671055,2) + pow(2.762959635, 2)));
+    histosignf__9->SetBinError(7,  sqrt(pow(36.15358918,2) + pow(6.377042234, 2)));
+    histosignf__9->SetBinError(8,  sqrt(pow(47.75482834,2) + pow(8.399906833, 2)));
+    histosignf__9->SetBinError(9,  sqrt(pow(36.05526537,2) + pow(6.346664854, 2)));
+    histosignf__9->SetBinError(10, sqrt(pow(13.65866820,2) + pow(2.420405603, 2)));
+    histosignf__9->SetBinError(11, sqrt(pow(6.960821744,2) + pow(1.249548841, 2)));
+    histosignf__9->SetBinError(12, sqrt(pow(2.582050103,2) + pow(0.476671378, 2)));
 
   TH1F* histosignf__10 = new TH1F("histosignf__10", "Significance Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
   histosignf__10->SetBinContent(3, 3.157/1.41);
@@ -303,12 +316,12 @@ void Lb_significanceHistos()
   histosignf__10->SetBinContent(12, 15.964/1.41);
   
   histosignf__10->SetLineWidth(2);
-  histosignf__10->GetXaxis()->SetTitle("p_{T} (GeV)");
+  histosignf__10->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
   histosignf__10->GetXaxis()->SetRange(1, 100);
   histosignf__10->GetXaxis()->SetLabelFont(42);
   histosignf__10->GetXaxis()->SetTitleOffset(1);
   histosignf__10->GetXaxis()->SetTitleFont(42);
-  histosignf__10->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  histosignf__10->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
   histosignf__10->GetYaxis()->SetLabelFont(42);
   histosignf__10->GetYaxis()->SetTitleFont(42);
   histosignf__10->GetZaxis()->SetLabelFont(42);
@@ -327,7 +340,7 @@ void Lb_significanceHistos()
   histosignf__9->SetStats(0);
   histosignf__10->SetStats(0);
   histosignf__10->Draw("");
-  histosignf__9->Draw("same");
+  //histosignf__9->Draw("same");
 
   auto legend5 = new TLegend(0.1, 0.7, 0.48, 0.9);
   TLegendEntry* entry1 = legend5->AddEntry(histosignf__9, "pre-cuts", "lep");
