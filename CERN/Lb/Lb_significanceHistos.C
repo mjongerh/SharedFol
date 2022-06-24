@@ -731,12 +731,12 @@ void Lb_significanceHistos()
   gSignf_pp14p0_DoubleErrorPF->GetAttLine(0)->SetLineColor(kRed);
   gSignf_pp14p0_DoubleErrorPF->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_pp14p0_DoubleErrorPF->GetAttFill(1)->SetFillStyle(0);
-  gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (GeV)");
+  gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetRange(1, 100);
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetLabelFont(42);
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitleOffset(1);
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitleFont(42);
-  gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetTitle("Lb significance S/sqrt(S+B)");
+  gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3$sigma)");
   gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetLabelFont(42);
   gSignf_pp14p0_DoubleErrorPF->GetYaxis()->SetTitleFont(42);
   gSignf_pp14p0_DoubleErrorPF->SetMarkerColor(4);
@@ -756,14 +756,14 @@ void Lb_significanceHistos()
   t_b.SetTextColor(1);
   t_b.SetTextSize(0.035);
   t_b.SetTextAlign(12);
-  t_b.DrawLatex(0.2, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
+  t_b.DrawLatex(0.4, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
     auto t_bs = TLatex();
   t_bs.SetNDC();
   t_bs.SetTextFont(42);
   t_bs.SetTextColor(1);
   t_bs.SetTextSize(0.035);
   t_bs.SetTextAlign(12);
-  t_bs.DrawLatex(0.4, 0.75, "#splitline{ N_{evt}=1.26E15 centr. 30-50%}{}");
+  t_bs.DrawLatex(0.4, 0.55, "#splitline{ N_{evt}=1.26E15 centr. 30-50%}{}");
 
 
   Canvas_767->cd();
