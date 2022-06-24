@@ -16,7 +16,7 @@
 #include "TMVA/Tools.h"
 #include "TMVA/TMVAGui.h"
 
-int Lb_BDT(TString myMethodList = "")
+int TEMP(TString myMethodList = "")
 {
   TMVA::Tools::Instance();
 
@@ -268,5 +268,5 @@ int main(int argc, char** argv)
       methodList += TString(",");
     methodList += regMethod;
   }
-  return Lb_BDT(methodList);
+  return TEMP(methodList);
 }
