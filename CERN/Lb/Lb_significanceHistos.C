@@ -293,7 +293,7 @@ void Lb_significanceHistos()
              
 
     histosignf__9->SetBinError(3,  sqrt(pow(0.280879212,2) + pow(0.050227726, 2)));
-    histosignf__9->SetBinError(4,  sqrt(pow(2.142395703,2) + pow(0.38139712), 2)));
+    histosignf__9->SetBinError(4,  sqrt(pow(2.142395703,2) + pow(0.381397120, 2)));
     histosignf__9->SetBinError(5,  sqrt(pow(6.296031414,2) + pow(1.116627482, 2)));
     histosignf__9->SetBinError(6,  sqrt(pow(15.62671055,2) + pow(2.762959635, 2)));
     histosignf__9->SetBinError(7,  sqrt(pow(36.15358918,2) + pow(6.377042234, 2)));
