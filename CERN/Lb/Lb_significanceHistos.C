@@ -796,10 +796,10 @@ void Lb_significanceHistos()
 
   gSignf_PbPb5p02_DoubleErrorPF->Draw("a p s ; ; 5 s=0.5");
 
-    auto legend100 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  legend100->AddEntry(histosignf__9, "pre-cuts", "f");
-  legend100->AddEntry(gSignf_pp14p0_DoubleErrorPF, "+BDT cut", "f");
-  legend100->Draw("");
+    auto legend101 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend101->AddEntry(histosignf__9, "pre-cuts", "f");
+  legend101->AddEntry(gSignf_pp14p0_DoubleErrorPF, "+BDT cut", "f");
+  legend101->Draw("");
 
   auto t_c = TLatex();
   t_c.SetNDC();
