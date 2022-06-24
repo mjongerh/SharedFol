@@ -756,7 +756,7 @@ void Lb_significanceHistos()
   t_b.SetTextColor(1);
   t_b.SetTextSize(0.035);
   t_b.SetTextAlign(12);
-  t_b.DrawLatex(0.2, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}, N_{evt}=1.26E15 centr. 30-50%}");
+  t_b.DrawLatex(0.2, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}{ N_{evt}=1.26E15 centr. 30-50%}");
 
 
   Canvas_767->cd();
@@ -807,7 +807,7 @@ void Lb_significanceHistos()
   t_c.SetTextColor(1);
   t_c.SetTextSize(0.035);
   t_c.SetTextAlign(12);
-  t_c.DrawLatex(0.2, 0.75, "#splitline{Pb-Pb #sqrt{s}=5.02TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}, N_{evt}=55E9 L_{int}=35nb^{-1} centr. 30-50%}");
+  t_c.DrawLatex(0.2, 0.75, "#splitline{Pb-Pb #sqrt{s}=5.02TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}{ N_{evt}=55E9 L_{int}=35nb^{-1} centr. 30-50%}");
 
 
 
