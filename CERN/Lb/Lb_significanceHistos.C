@@ -279,7 +279,7 @@ void Lb_significanceHistos()
   Canvas_5->SetFrameBorderMode(0);
 
   TH1F* histosignf__9 = new TH1F("histosignf__9", "#Lambda_{b}^{0} significance p-p #sqrt{s}=14.0TeV, Nevt=1.26E15", 12, xAxis1);
-    histosignf__9->SetBinContent(3, 6.84E-01)
+    histosignf__9->SetBinContent(3, 6.84E-01);
     histosignf__9->SetBinContent(4, 5.19E+00);
     histosignf__9->SetBinContent(5, 1.52E+01);
     histosignf__9->SetBinContent(6, 3.76E+01);
