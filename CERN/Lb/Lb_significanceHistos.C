@@ -333,6 +333,14 @@ void Lb_significanceHistos()
 
   histosignf__9->SetLineColor(ci);
   histosignf__9->SetLineWidth(2);
+  histosignf__9->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  histosignf__9->GetXaxis()->SetRange(1, 100);
+  histosignf__9->GetXaxis()->SetLabelFont(42);
+  histosignf__9->GetXaxis()->SetTitleOffset(1);
+  histosignf__9->GetXaxis()->SetTitleFont(42);
+  histosignf__9->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
+  histosignf__9->GetYaxis()->SetLabelFont(42);
+  histosignf__9->GetYaxis()->SetTitleFont(42);
   histosignf__9->SetMarkerColor(2);
   histosignf__9->SetMarkerStyle(5);
   histosignf__9->SetMarkerSize(1.3);
@@ -442,17 +450,17 @@ void Lb_significanceHistos()
   histosignf__7->SetBinContent(10, 45.30123391/1.2);
   histosignf__7->SetBinContent(11, 24.97200691/1.2);
   histosignf__7->SetBinContent(12, 8.835840788/1.2);
-
-  //histosignf__7->SetBinError(3, 0.194308477); // errors not updates to scale
-  //histosignf__7->SetBinError(4, 2.645205765);
-  //histosignf__7->SetBinError(5, 6.724885959);
-  //histosignf__7->SetBinError(6, 10.16588564);
-  //histosignf__7->SetBinError(7, 12.34927916);
-  //histosignf__7->SetBinError(8, 11.83167705);
-  //histosignf__7->SetBinError(9, 7.320726785);
-  //histosignf__7->SetBinError(10, 3.761962422);
-  //histosignf__7->SetBinError(11, 1.948953026);
-  //histosignf__7->SetBinError(12, 0.711725044);
+           
+    histosignf__7->SetBinError(3, 1.982622278);
+    histosignf__7->SetBinError(4, 9.931590026);
+    histosignf__7->SetBinError(5, 19.47172447);
+    histosignf__7->SetBinError(6, 26.30293284);
+    histosignf__7->SetBinError(7, 37.3740752);
+    histosignf__7->SetBinError(8, 42.32361324);
+    histosignf__7->SetBinError(9, 27.40184512);
+    histosignf__7->SetBinError(10, 15.07235721);
+    histosignf__7->SetBinError(11, 8.79846947);
+    histosignf__7->SetBinError(12, 3.607303771);
 
   TH1F* histosignf__8 = new TH1F("histosignf__8", "Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9", 12, xAxis1);
   histosignf__8->SetBinContent(3, 14.6981/1.2); // after BDT
@@ -495,6 +503,14 @@ void Lb_significanceHistos()
 
   histosignf__7->SetLineColor(ci);
   histosignf__7->SetLineWidth(2);
+  histosignf__7->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  histosignf__7->GetXaxis()->SetRange(1, 100);
+  histosignf__7->GetXaxis()->SetLabelFont(42);
+  histosignf__7->GetXaxis()->SetTitleOffset(1);
+  histosignf__7->GetXaxis()->SetTitleFont(42);
+  histosignf__7->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
+  histosignf__7->GetYaxis()->SetLabelFont(42);
+  histosignf__7->GetYaxis()->SetTitleFont(42);
   histosignf__7->SetMarkerColor(2);
   histosignf__7->SetMarkerStyle(5);
   histosignf__7->SetMarkerSize(1.3);
