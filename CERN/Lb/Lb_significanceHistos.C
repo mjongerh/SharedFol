@@ -743,11 +743,11 @@ void Lb_significanceHistos()
   gSignf_pp14p0_DoubleErrorPF->SetMarkerSize(1.3);
 
   gSignf_pp14p0_DoubleErrorPF->Draw("a p s ; ; 5 s=0.5");
-  histosignf__9->Draw("same");
+  histosignf__9->Draw("hist same");
 
   auto legend100 = new TLegend(0.1, 0.7, 0.48, 0.9);
   legend100->AddEntry(histosignf__9, "pre-cuts", "f");
-  legend100->AddEntry(gSignf_pp14p0_DoubleErrorPF, "+BDT cut", "f");
+  legend100->AddEntry(gSignf_pp14p0_DoubleErrorPF, "+BDT cut", "lep");
   legend100->Draw("");
 
     auto t_b = TLatex();
@@ -756,7 +756,14 @@ void Lb_significanceHistos()
   t_b.SetTextColor(1);
   t_b.SetTextSize(0.035);
   t_b.SetTextAlign(12);
-  t_b.DrawLatex(0.2, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}{ N_{evt}=1.26E15 centr. 30-50%}");
+  t_b.DrawLatex(0.2, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
+    auto t_bs = TLatex();
+  t_bs.SetNDC();
+  t_bs.SetTextFont(42);
+  t_bs.SetTextColor(1);
+  t_bs.SetTextSize(0.035);
+  t_bs.SetTextAlign(12);
+  t_bs.DrawLatex(0.4, 0.75, "#splitline{ N_{evt}=1.26E15 centr. 30-50%}{}");
 
 
   Canvas_767->cd();
