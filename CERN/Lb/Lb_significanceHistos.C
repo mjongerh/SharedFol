@@ -348,7 +348,7 @@ void Lb_significanceHistos()
   histosignf__9->SetStats(0);
   histosignf__10->SetStats(0);
   histosignf__10->Draw("");
-  //histosignf__9->Draw("same");
+  histosignf__9->Draw("same");
 
   auto legend5 = new TLegend(0.1, 0.7, 0.48, 0.9);
   TLegendEntry* entry1 = legend5->AddEntry(histosignf__9, "pre-cuts", "lep");
@@ -743,6 +743,22 @@ void Lb_significanceHistos()
   gSignf_pp14p0_DoubleErrorPF->SetMarkerSize(1.3);
 
   gSignf_pp14p0_DoubleErrorPF->Draw("a p s ; ; 5 s=0.5");
+  histosignf__9->Draw("same");
+
+  auto legend100 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend100->AddEntry(histosignf__9, "pre-cuts", "f");
+  legend100->AddEntry(gSignf_pp14p0_DoubleErrorPF, "+BDT cut", "f");
+  legend100->Draw("");
+
+    auto t_b = TLatex();
+  t_b.SetNDC();
+  t_b.SetTextFont(42);
+  t_b.SetTextColor(1);
+  t_b.SetTextSize(0.035);
+  t_b.SetTextAlign(12);
+  t_b.DrawLatex(0.2, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}, N_{evt}=1.26E15 centr. 30-50%}");
+
+
   Canvas_767->cd();
   Canvas_767->Modified();
   Canvas_767->SetSelected(Canvas_767);
@@ -779,6 +795,22 @@ void Lb_significanceHistos()
   gSignf_PbPb5p02_DoubleErrorPF->SetMarkerSize(1.3);
 
   gSignf_PbPb5p02_DoubleErrorPF->Draw("a p s ; ; 5 s=0.5");
+
+    auto legend100 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend100->AddEntry(histosignf__9, "pre-cuts", "f");
+  legend100->AddEntry(gSignf_pp14p0_DoubleErrorPF, "+BDT cut", "f");
+  legend100->Draw("");
+
+  auto t_c = TLatex();
+  t_c.SetNDC();
+  t_c.SetTextFont(42);
+  t_c.SetTextColor(1);
+  t_c.SetTextSize(0.035);
+  t_c.SetTextAlign(12);
+  t_c.DrawLatex(0.2, 0.75, "#splitline{Pb-Pb #sqrt{s}=5.02TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}, N_{evt}=55E9 L_{int}=35nb^{-1} centr. 30-50%}");
+
+
+
   Canvas_777->cd();
   Canvas_777->Modified();
   Canvas_777->SetSelected(Canvas_777);

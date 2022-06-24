@@ -270,3 +270,16 @@ int main(int argc, char** argv)
   }
   return TEMP(methodList);
 }
+
+
+	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
+Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
+\hline
+\hline
+1	&	ImpactParameter0	&	 $2.88\cdot 10^{-1}$	&	ImpactParameter0	&	$3.07\cdot 10^{-1}$	&	CPA	                &	$3.16\cdot 10^{-1}$ \\
+2	&	ImpactParameter1	&	 $2.08\cdot 10^{-1}$	&	ImpactParameter1	&	$2.27\cdot 10^{-1}$	&	CPAXY	            &	$2.42\cdot 10^{-1}$ \\
+3	&	DecayLength		    &    $1.73\cdot 10^{-1}$	&	DecayLength	        &	$2.03\cdot 10^{-1}$	&	ImpactParameter0	&	$1.43\cdot 10^{-1}$ \\
+4	&	DecayLengthXY		&    $1.37\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.55\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.12\cdot 10^{-1}$ \\
+5	&	CPA		            &    $1.33\cdot 10^{-1}$	&	CPA	                &	$7.30\cdot 10^{-2}$	&	DecayLength	        &	$1.10\cdot 10^{-1}$ \\
+6	&	CPAXY		        &    $5.80\cdot 10^{-2}$	&	CPAXY	            &	$3.02\cdot 10^{-2}$	&	ImpactParameter1	&	$7.68\cdot 10^{-2}$ \\
+7	&	Chi2PCA		        &    $3.77\cdot 10^{-3}$	&	Chi2PCA	            &	$4.88\cdot 10^{-3}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$ \\
