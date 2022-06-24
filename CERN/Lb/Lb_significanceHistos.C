@@ -439,17 +439,17 @@ void Lb_significanceHistos()
   Canvas_7->SetFrameBorderMode(0);
   Canvas_7->SetFrameBorderMode(0);
 
-  TH1F* histosignf__7 = new TH1F("histosignf__7", "Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9", 12, xAxis1);
-  histosignf__7->SetBinContent(3, 1.476411422/1.2); // div by 1.2 to onclude FONLL, otherwise only PYTHIA
-  histosignf__7->SetBinContent(4, 19.83811666/1.2);
-  histosignf__7->SetBinContent(5, 47.37049454/1.2);
-  histosignf__7->SetBinContent(6, 70.70376854/1.2);
-  histosignf__7->SetBinContent(7, 124.3875541/1.2);
-  histosignf__7->SetBinContent(8, 152.0880488/1.2);
-  histosignf__7->SetBinContent(9, 90.89947862/1.2);
-  histosignf__7->SetBinContent(10, 45.30123391/1.2);
-  histosignf__7->SetBinContent(11, 24.97200691/1.2);
-  histosignf__7->SetBinContent(12, 8.835840788/1.2);
+  TH1F* histosignf__7 = new TH1F("histosignf__7", "#Lambda_{b}^{0} significance Pb-Pb #sqrt{s}=5.02TeV, centr. 30-50%, Nevt=55E9", 12, xAxis1);
+    histosignf__7->SetBinContent(3, 1.052497731); 
+    histosignf__7->SetBinContent(4, 14.31192447);
+    histosignf__7->SetBinContent(5, 34.75113157);
+    histosignf__7->SetBinContent(6, 52.64245352);
+    histosignf__7->SetBinContent(7, 94.61181487);
+    histosignf__7->SetBinContent(8, 116.7758725);
+    histosignf__7->SetBinContent(9, 68.14692431);
+    histosignf__7->SetBinContent(10, 33.15097017);
+    histosignf__7->SetBinContent(11, 18.10340957);
+    histosignf__7->SetBinContent(12, 6.387377534);
            
     histosignf__7->SetBinError(3, 1.982622278);
     histosignf__7->SetBinError(4, 9.931590026);
