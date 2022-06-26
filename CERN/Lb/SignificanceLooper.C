@@ -22,7 +22,7 @@ int SignificanceLooper(TString myMethodList = ""){
   //TMVA::Tools::Instance();
   gSystem->Load("libTMVAGui");
   //Input
-  TString dir = "/home/maurice/Desktop/SharedFol/CERN/Lb/outputLbTrees_60M_NoRICH/"; //Directory of TMVA output+dataset
+  TString dir = "/home/maurice/Desktop/SharedFol/CERN/Lb/outputLbTrees_60M/"; //Directory of TMVA output+dataset
   TString plotdir = dir + "Plots/";                                             // Directory of TMVA output+dataset
   gSystem->Exec("mkdir -p " + plotdir);
   TString TypeMVA = "BDT";
@@ -47,14 +47,14 @@ int SignificanceLooper(TString myMethodList = ""){
     TMVA::mvaeffs("dataset", temporary, Nsigpp[i], Nbkgpp[i], kTRUE, "S/sqrt(S+B)");
     gSystem->Exec("mv ./dataset/plots/mvaeffs_BDT.png " + plotdir + Form("mvaeffs_BDTA_pp_Pt%.1f.png", ptBins[i]));
     gSystem->Exec("mv ./dataset/plots/mvaeffs_BDTG.png " + plotdir + Form("mvaeffs_BDTG_pp_Pt%.1f.png", ptBins[i]));
-    gSystem->Exec("mv ./dataset/plots/mvaeffs_BDTF.png " + plotdir + Form("mvaeffs_BDTF_pp_Pt%.1f.png", ptBins[i]));
+    //gSystem->Exec("mv ./dataset/plots/mvaeffs_BDTF.png " + plotdir + Form("mvaeffs_BDTF_pp_Pt%.1f.png", ptBins[i]));
     
     echo = (TString) "echo " + (TString)Form("Following data is for PbPb in Pt range %.1f up to %.1f", ptBins[i], ptBins[i + 1]);
     gSystem->Exec(echo);
     TMVA::mvaeffs("dataset", temporary, Nsigpbpb[i], Nbkgpbpb[i], kTRUE, "S/sqrt(S+B)");
     gSystem->Exec("mv ./dataset/plots/mvaeffs_BDT.png " + plotdir + Form("mvaeffs_BDTA_PbPb_Pt%.1f.png", ptBins[i]));
     gSystem->Exec("mv ./dataset/plots/mvaeffs_BDTG.png " + plotdir + Form("mvaeffs_BDTG_PbPb_Pt%.1f.png", ptBins[i]));
-    gSystem->Exec("mv ./dataset/plots/mvaeffs_BDTF.png " + plotdir + Form("mvaeffs_BDTF_PbPb_Pt%.1f.png", ptBins[i]));
+    //gSystem->Exec("mv ./dataset/plots/mvaeffs_BDTF.png " + plotdir + Form("mvaeffs_BDTF_PbPb_Pt%.1f.png", ptBins[i]));
 
     /* example on how to save as pdf
     root -b 
