@@ -271,15 +271,78 @@ int main(int argc, char** argv)
   return TEMP(methodList);
 }
 
-//
-//	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
-//Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
-//\hline
-//\hline
-//1	&	ImpactParameter0	&	 $2.88\cdot 10^{-1}$	&	ImpactParameter0	&	$3.07\cdot 10^{-1}$	&	CPA	                &	$3.16\cdot 10^{-1}$ \\
-//2	&	ImpactParameter1	&	 $2.08\cdot 10^{-1}$	&	ImpactParameter1	&	$2.27\cdot 10^{-1}$	&	CPAXY	            &	$2.42\cdot 10^{-1}$ \\
-//3	&	DecayLength		    &    $1.73\cdot 10^{-1}$	&	DecayLength	        &	$2.03\cdot 10^{-1}$	&	ImpactParameter0	&	$1.43\cdot 10^{-1}$ \\
-//4	&	DecayLengthXY		&    $1.37\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.55\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.12\cdot 10^{-1}$ \\
-//5	&	CPA		            &    $1.33\cdot 10^{-1}$	&	CPA	                &	$7.30\cdot 10^{-2}$	&	DecayLength	        &	$1.10\cdot 10^{-1}$ \\
-//6	&	CPAXY		        &    $5.80\cdot 10^{-2}$	&	CPAXY	            &	$3.02\cdot 10^{-2}$	&	ImpactParameter1	&	$7.68\cdot 10^{-2}$ \\
-//7	&	Chi2PCA		        &    $3.77\cdot 10^{-3}$	&	Chi2PCA	            &	$4.88\cdot 10^{-3}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$ \\
+
+	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
+Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
+\hline
+\hline
+1	&	ImpactParameter0	&	 $2.88\cdot 10^{-1}$	&	ImpactParameter0	&	$3.07\cdot 10^{-1}$	&	CPA	                &	$3.16\cdot 10^{-1}$ \\
+2	&	ImpactParameter1	&	 $2.08\cdot 10^{-1}$	&	ImpactParameter1	&	$2.27\cdot 10^{-1}$	&	CPAXY	            &	$2.42\cdot 10^{-1}$ \\
+3	&	DecayLength		    &    $1.73\cdot 10^{-1}$	&	DecayLength	        &	$2.03\cdot 10^{-1}$	&	ImpactParameter0	&	$1.43\cdot 10^{-1}$ \\
+4	&	DecayLengthXY		&    $1.37\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.55\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.12\cdot 10^{-1}$ \\
+5	&	CPA		            &    $1.33\cdot 10^{-1}$	&	CPA	                &	$7.30\cdot 10^{-2}$	&	DecayLength	        &	$1.10\cdot 10^{-1}$ \\
+6	&	CPAXY		        &    $5.80\cdot 10^{-2}$	&	CPAXY	            &	$3.02\cdot 10^{-2}$	&	ImpactParameter1	&	$7.68\cdot 10^{-2}$ \\
+7	&	Chi2PCA		        &    $3.77\cdot 10^{-3}$	&	Chi2PCA	            &	$4.88\cdot 10^{-3}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$ \\
+
+
+
+	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
+Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
+\hline
+\hline
+1	&	LcM	                &	$9.22\cdot 10^{-2}$	&	LcM	                &	$1.08\cdot 10^{-1}$ \\
+2	&	NSigTOFTrk3Pr	    &	$6.91\cdot 10^{-2}$	&	LcCPA	            &	$5.62\cdot 10^{-2}$ \\
+3	&	LcCPA	            &	$6.39\cdot 10^{-2}$	&	NSigTOFTrk3Pr	    &	$5.19\cdot 10^{-2}$ \\
+4	&	LcDecayLengthXY	    &	$4.95\cdot 10^{-2}$	&	LcImpactParameter1	&	$4.64\cdot 10^{-2}$ \\
+5	&	LcImpactParameter1	&	$4.78\cdot 10^{-2}$	&	LcDecayLength	    &	$4.57\cdot 10^{-2}$ \\
+6	&	LcDecayLength	    &	$4.47\cdot 10^{-2}$	&	LcDecayLengthXY	    &	$4.56\cdot 10^{-2}$ \\
+7	&	LcImpactParameter0	&	$4.25\cdot 10^{-2}$	&	LcImpactParameter0	&	$4.48\cdot 10^{-2}$ \\
+8	&	CPA	                &	$4.23\cdot 10^{-2}$	&	NSigRICHTrk3Pr	    &	$4.30\cdot 10^{-2}$ \\
+9	&	ImpactParameter0	&	$4.14\cdot 10^{-2}$	&	NSigRICHTrk3Pi	    &	$4.12\cdot 10^{-2}$ \\
+10	&	LcImpactParameter2	&	$3.89\cdot 10^{-2}$	&	NSigTOFTrk1Pr	    &	$4.12\cdot 10^{-2}$ \\
+11	&	NSigTOFTrk1Pr	    &	$3.77\cdot 10^{-2}$	&	ImpactParameter0	&	$4.12\cdot 10^{-2}$ \\
+12	&	NSigRICHTrk3Pr	    &	$3.74\cdot 10^{-2}$	&	NSigTOFTrk3Pi	    &	$4.06\cdot 10^{-2}$ \\
+13	&	NSigRICHTrk3Pi	    &	$3.64\cdot 10^{-2}$	&	LcImpactParameter2	&	$3.89\cdot 10^{-2}$ \\
+14	&	LcCPAXY	            &	$3.61\cdot 10^{-2}$	&	NSigRICHPi0	        &	$3.74\cdot 10^{-2}$ \\
+15	&	NSigTOFTrk1Pi	    &	$3.38\cdot 10^{-2}$	&	NSigRICHTrk1Pr	    &	$3.69\cdot 10^{-2}$ \\
+16	&	ImpactParameter1	&	$3.29\cdot 10^{-2}$	&	NSigRICHTrk1Pi	    &	$3.41\cdot 10^{-2}$ \\
+17	&	NSigRICHTrk1Pr	    &	$3.26\cdot 10^{-2}$	&	LcCPAXY	            &	$3.40\cdot 10^{-2}$ \\
+18	&	NSigTOFTrk3Pi	    &	$3.24\cdot 10^{-2}$	&	ImpactParameter1	&	$3.06\cdot 10^{-2}$ \\
+19	&	NSigRICHTrk1Pi	    &	$3.23\cdot 10^{-2}$	&	NSigRICHTrk2Ka	    &	$2.74\cdot 10^{-2}$ \\
+20	&	NSigRICHTrk2Ka	    &	$2.83\cdot 10^{-2}$	&	NSigTOFTrk1Pi	    &	$2.72\cdot 10^{-2}$ \\
+21	&	NSigRICHPi0	        &	$2.56\cdot 10^{-2}$	&	DecayLength	        &	$2.52\cdot 10^{-2}$ \\
+22	&	CPAXY	            &	$2.09\cdot 10^{-2}$	&	CPA	                &	$2.11\cdot 10^{-2}$ \\
+23	&	NSigTOFPi0	        &	$2.02\cdot 10^{-2}$	&	DecayLengthXY	    &	$2.03\cdot 10^{-2}$ \\
+24	&	DecayLength	        &	$1.97\cdot 10^{-2}$	&	LcChi2PCA	        &	$1.92\cdot 10^{-2}$ \\
+25	&	LcChi2PCA	        &	$1.83\cdot 10^{-2}$	&	NSigTOFPi0	        &	$1.86\cdot 10^{-2}$ \\
+26	&	DecayLengthXY	    &	$1.28\cdot 10^{-2}$	&	NSigTOFTrk2Ka	    &	$1.53\cdot 10^{-2}$ \\
+27	&	NSigTOFTrk2Ka	    &	$1.05\cdot 10^{-2}$	&	CPAXY	            &	$8.53\cdot 10^{-3}$ \\
+28	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$ \\
+
+
+	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
+Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
+\hline
+\hline
+1	&	LcM	                &	$1.06\cdot 10^{-1}$	&	LcM	                &	$1.40\cdot 10^{-1}$	&	CPA	                &	$1.93\cdot 10^{-1}$ \\
+2	&	NSigTOFTrk3Pr	    &	$9.12\cdot 10^{-2}$	&	LcCPA	            &	$7.30\cdot 10^{-2}$	&	LcM	                &	$1.17\cdot 10^{-1}$ \\
+3	&	LcCPA	            &	$7.64\cdot 10^{-2}$	&	NSigTOFTrk3Pr	    &	$6.94\cdot 10^{-2}$	&	LcDecayLengthXY	    &	$9.93\cdot 10^{-2}$ \\
+4	&	LcDecayLengthXY	    &	$6.24\cdot 10^{-2}$	&	LcDecayLength	    &	$6.34\cdot 10^{-2}$	&	NSigTOFTrk3Pr	    &	$8.89\cdot 10^{-2}$ \\
+5	&	LcDecayLength	    &	$5.72\cdot 10^{-2}$	&	LcDecayLengthXY	    &	$6.03\cdot 10^{-2}$	&	DecayLengthXY	    &	$7.36\cdot 10^{-2}$ \\
+6	&	LcImpactParameter1	&	$5.69\cdot 10^{-2}$	&	LcImpactParameter1	&	$5.89\cdot 10^{-2}$	&	DecayLength	        &	$6.69\cdot 10^{-2}$ \\
+7	&	LcImpactParameter2	&	$5.24\cdot 10^{-2}$	&	NSigTOFTrk1Pr	    &	$5.49\cdot 10^{-2}$	&	LcChi2PCA	        &	$6.18\cdot 10^{-2}$ \\
+8	&	ImpactParameter0	&	$5.21\cdot 10^{-2}$	&	LcImpactParameter0	&	$5.46\cdot 10^{-2}$	&	LcDecayLength	    &	$6.13\cdot 10^{-2}$ \\
+9	&	LcImpactParameter0	&	$5.16\cdot 10^{-2}$	&	ImpactParameter0	&	$5.06\cdot 10^{-2}$	&	NSigTOFTrk3Pi	    &	$5.19\cdot 10^{-2}$ \\
+10	&	NSigTOFTrk1Pr	    &	$5.08\cdot 10^{-2}$	&	LcImpactParameter2	&	$4.90\cdot 10^{-2}$	&	CPAXY	            &	$4.68\cdot 10^{-2}$ \\
+11	&	CPA	                &	$4.88\cdot 10^{-2}$	&	NSigTOFTrk3Pi	    &	$4.54\cdot 10^{-2}$	&	NSigTOFTrk1Pr	    &	$2.83\cdot 10^{-2}$ \\
+12	&	LcCPAXY	            &	$4.79\cdot 10^{-2}$	&	ImpactParameter1	&	$4.47\cdot 10^{-2}$	&	ImpactParameter0	&	$2.46\cdot 10^{-2}$ \\
+13	&	NSigTOFTrk3Pi	    &	$4.63\cdot 10^{-2}$	&	LcCPAXY	            &	$4.47\cdot 10^{-2}$	&	LcCPA	            &	$2.19\cdot 10^{-2}$ \\
+14	&	ImpactParameter1	&	$3.72\cdot 10^{-2}$	&	DecayLength	        &	$3.30\cdot 10^{-2}$	&	NSigTOFTrk1Pi	    &	$1.73\cdot 10^{-2}$ \\
+15	&	NSigTOFTrk1Pi	    &	$3.25\cdot 10^{-2}$	&	CPA	                &	$2.97\cdot 10^{-2}$	&	LcImpactParameter0	&	$1.62\cdot 10^{-2}$ \\
+16	&	DecayLength	        &	$2.78\cdot 10^{-2}$	&	DecayLengthXY	    &	$2.69\cdot 10^{-2}$	&	NSigTOFPi0	        &	$9.84\cdot 10^{-3}$ \\
+17	&	NSigTOFPi0	        &	$2.60\cdot 10^{-2}$	&	NSigTOFTrk1Pi	    &	$2.61\cdot 10^{-2}$	&	LcImpactParameter2	&	$8.31\cdot 10^{-3}$ \\
+18	&	DecayLengthXY	    &	$2.55\cdot 10^{-2}$	&	LcChi2PCA	        &	$2.39\cdot 10^{-2}$	&	LcImpactParameter1	&	$7.90\cdot 10^{-3}$ \\
+19	&	CPAXY	            &	$1.95\cdot 10^{-2}$	&	NSigTOFPi0	        &	$2.26\cdot 10^{-2}$	&	ImpactParameter1	&	$4.50\cdot 10^{-3}$ \\
+20	&	LcChi2PCA	        &	$1.95\cdot 10^{-2}$	&	CPAXY	            &	$1.77\cdot 10^{-2}$	&	Chi2PCA	            &	$9.80\cdot 10^{-4}$ \\
+21	&	NSigTOFTrk2Ka	    &	$1.16\cdot 10^{-2}$	&	NSigTOFTrk2Ka	    &	$1.18\cdot 10^{-2}$	&	LcCPAXY	            &	$3.87\cdot 10^{-6}$ \\
+22	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$	&	NSigTOFTrk2Ka	    &	$5.71\cdot 10^{-11}$\\
