@@ -63,7 +63,7 @@ int TEMP(TString myMethodList = "")
 
   for (Int_t i = 0; i < 12; i++) { // nPtBins //master loop over all ptbins
     TFile* inputSignal(0);
-    TString fnamesig = Form("/home/maurice/Desktop/SharedFol/CERN/Lb/LbStrictCutSelPID_data/LbStrictPIDcutSel_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); // Signal Input folder      /home/mjongerh/Lb_data/Trees/
+    TString fnamesig = Form("/home/maurice/Desktop/SharedFol/CERN/Lb/LbmidcutSel_data/Trees/Lb_binned_signal_Pt%.1f.root", ptBins[i]); // Signal Input folder      /home/mjongerh/Lb_data/Trees/
     if (!gSystem->AccessPathName(fnamesig)) {
       inputSignal = TFile::Open(fnamesig); // check if file in local directory exists
     }
@@ -74,7 +74,7 @@ int TEMP(TString myMethodList = "")
     std::cout << "--- TMVAClassification       : Using input signal file: " << inputSignal->GetName() << std::endl;
 
     TFile* inputBackground(0);
-    TString fnamebkg = Form("/home/maurice/Desktop/SharedFol/CERN/Lb/LbStrictCutSelPID_data/LbStrictPIDcutSel_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); // Background Input folder
+    TString fnamebkg = Form("/home/maurice/Desktop/SharedFol/CERN/Lb/LbmidcutSel_data/Trees/Lb_binned_bkg_Pt%.1f.root", ptBins[i]); // Background Input folder
     if (!gSystem->AccessPathName(fnamebkg)) {
       inputBackground = TFile::Open(fnamebkg);
     }
@@ -121,7 +121,7 @@ int TEMP(TString myMethodList = "")
     //backgroundTree2->AutoSave();
 
     // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-    TString outfileDir = Form("~/Desktop/SharedFol/CERN/Lb/outputTEMP/Pt%.1f", ptBins[i]);
+    TString outfileDir = Form("~/Desktop/SharedFol/CERN/Lb/outputMidSel/Pt%.1f", ptBins[i]);
     TString createdir = "mkdir -p " + outfileDir; // create directory if it doesn't exist yet
     gSystem->Exec(createdir);
     TString outfileName = outfileDir + "/TMVA.root";
@@ -271,15 +271,15 @@ int main(int argc, char** argv)
   return TEMP(methodList);
 }
 
-
-	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
-Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
-\hline
-\hline
-1	&	ImpactParameter0	&	 $2.88\cdot 10^{-1}$	&	ImpactParameter0	&	$3.07\cdot 10^{-1}$	&	CPA	                &	$3.16\cdot 10^{-1}$ \\
-2	&	ImpactParameter1	&	 $2.08\cdot 10^{-1}$	&	ImpactParameter1	&	$2.27\cdot 10^{-1}$	&	CPAXY	            &	$2.42\cdot 10^{-1}$ \\
-3	&	DecayLength		    &    $1.73\cdot 10^{-1}$	&	DecayLength	        &	$2.03\cdot 10^{-1}$	&	ImpactParameter0	&	$1.43\cdot 10^{-1}$ \\
-4	&	DecayLengthXY		&    $1.37\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.55\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.12\cdot 10^{-1}$ \\
-5	&	CPA		            &    $1.33\cdot 10^{-1}$	&	CPA	                &	$7.30\cdot 10^{-2}$	&	DecayLength	        &	$1.10\cdot 10^{-1}$ \\
-6	&	CPAXY		        &    $5.80\cdot 10^{-2}$	&	CPAXY	            &	$3.02\cdot 10^{-2}$	&	ImpactParameter1	&	$7.68\cdot 10^{-2}$ \\
-7	&	Chi2PCA		        &    $3.77\cdot 10^{-3}$	&	Chi2PCA	            &	$4.88\cdot 10^{-3}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$ \\
+//
+//	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
+//Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
+//\hline
+//\hline
+//1	&	ImpactParameter0	&	 $2.88\cdot 10^{-1}$	&	ImpactParameter0	&	$3.07\cdot 10^{-1}$	&	CPA	                &	$3.16\cdot 10^{-1}$ \\
+//2	&	ImpactParameter1	&	 $2.08\cdot 10^{-1}$	&	ImpactParameter1	&	$2.27\cdot 10^{-1}$	&	CPAXY	            &	$2.42\cdot 10^{-1}$ \\
+//3	&	DecayLength		    &    $1.73\cdot 10^{-1}$	&	DecayLength	        &	$2.03\cdot 10^{-1}$	&	ImpactParameter0	&	$1.43\cdot 10^{-1}$ \\
+//4	&	DecayLengthXY		&    $1.37\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.55\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.12\cdot 10^{-1}$ \\
+//5	&	CPA		            &    $1.33\cdot 10^{-1}$	&	CPA	                &	$7.30\cdot 10^{-2}$	&	DecayLength	        &	$1.10\cdot 10^{-1}$ \\
+//6	&	CPAXY		        &    $5.80\cdot 10^{-2}$	&	CPAXY	            &	$3.02\cdot 10^{-2}$	&	ImpactParameter1	&	$7.68\cdot 10^{-2}$ \\
+//7	&	Chi2PCA		        &    $3.77\cdot 10^{-3}$	&	Chi2PCA	            &	$4.88\cdot 10^{-3}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$ \\
