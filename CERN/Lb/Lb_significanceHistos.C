@@ -1070,6 +1070,38 @@ void Lb_significanceHistos()
 
 
   // histo without error, just for comparison
+  TH1F* histosignf__1099 = new TH1F("histosignf__1099", "Significance pp precut", 12, xAxis1);
+  TH1F* histosignf__1098 = new TH1F("histosignf__1098", "Significance pp simple", 12, xAxis1);
+  TH1F* histosignf__1097 = new TH1F("histosignf__1097", "Significance pp noRICH", 12, xAxis1);
+  TH1F* histosignf__1096 = new TH1F("histosignf__1096", "Significance pp withRICH", 12, xAxis1);
+  TH1F* histosignf__2099 = new TH1F("histosignf__2099", "Significance pbpb precut", 12, xAxis1);
+  TH1F* histosignf__2098 = new TH1F("histosignf__2098", "Significance pbpb simple", 12, xAxis1);
+  TH1F* histosignf__2097 = new TH1F("histosignf__2097", "Significance pbpb noRICH", 12, xAxis1);
+  TH1F* histosignf__2096 = new TH1F("histosignf__2096", "Significance pbpb withRICH", 12, xAxis1);
+  for (int i = 0; i < 12; i++) {
+    histosignf__1099->SetBinContent(i, histosignf__9->GetBinContent(i));
+      histosignf__1098->SetBinContent(i,  qy[i]);
+      histosignf__1097->SetBinContent(i, wy[i]);
+      histosignf__1096->SetBinContent(i, qry[i]);
+      histosignf__2099->SetBinContent(i, histosignf__9->GetBinContent(i));
+      histosignf__2098->SetBinContent(i, ry[i]);
+      histosignf__2097->SetBinContent(i, ey[i]);
+      histosignf__2096->SetBinContent(i, rty[i]);
+  }
+
+  TCanvas* Canvas_957 = new TCanvas("Canvas_957", "pp comparison", 1143, 281, 798, 757);
+
+  histosignf__1099->Draw("hist");
+  histosignf__1098->Draw("hist same");
+  histosignf__1097->Draw("hist same");
+  histosignf__1096->Draw("hist same");
+
+  TCanvas* Canvas_956 = new TCanvas("Canvas_956", "pbpb comparison", 1143, 281, 798, 757);
+
+  histosignf__2099->Draw("hist");
+  histosignf__2098->Draw("hist same");
+  histosignf__2097->Draw("hist same");
+  histosignf__2096->Draw("hist same");
 
 
   /// <summary>
