@@ -1113,10 +1113,10 @@ void Lb_significanceHistos()
   histosignf__1099->SetLineWidth(2);
   histosignf__1099->Draw("hist same");
   auto legend10152 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  legend10152->AddEntry(histosignf__1099, "pre-cuts", "f");
-  legend10152->AddEntry(histosignf__1097, "+BDT cut", "f");
-  legend10152->AddEntry(histosignf__1098, "+TOF & #Lambda_{c}^{+}", "f");
   legend10152->AddEntry(histosignf__1096, "+RICH", "f");
+  legend10152->AddEntry(histosignf__1097, "+TOF & #Lambda_{c}^{+}", "f");
+  legend10152->AddEntry(histosignf__1098, "+BDT cut", "f");
+  legend10152->AddEntry(histosignf__1099, "pre-cuts", "f");
   legend10152->Draw("");
 
   TCanvas* Canvas_956 = new TCanvas("Canvas_956", "pbpb comparison", 1143, 281, 798, 757);
@@ -1142,10 +1142,11 @@ void Lb_significanceHistos()
   histosignf__2099->SetLineWidth(2);
   histosignf__2099->Draw("hist same");
   auto legend10153 = new TLegend(0.1, 0.7, 0.48, 0.9);
-  legend10153->AddEntry(histosignf__2099, "pre-cuts", "f");
-  legend10153->AddEntry(histosignf__2097, "+BDT cut", "f");
-  legend10153->AddEntry(histosignf__2098, "+TOF & #Lambda_{c}^{+}", "f");
   legend10153->AddEntry(histosignf__2096, "+RICH", "f");
+  legend10153->AddEntry(histosignf__2097, "+TOF & #Lambda_{c}^{+}", "f");
+  legend10153->AddEntry(histosignf__2098, "+BDT cut", "f");
+  legend10153->AddEntry(histosignf__2099, "pre-cuts", "f");
+
   legend10153->Draw("");
 
   /// <summary>
