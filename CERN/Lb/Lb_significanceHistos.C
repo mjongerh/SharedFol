@@ -399,7 +399,7 @@ void Lb_significanceHistos()
   Canvas_76->SetSelected(Canvas_76);
 
   double signfpereventfactorpp = 1 / sqrt(NEvents);
-  TH1F* histosignf__13 = new TH1F("histosignf__9", "Significance per event Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
+  TH1F* histosignf__13 = new TH1F("histosignf__13", "Significance per event Lb in pp 14TeV, Nevt=1.26E15", 12, xAxis1);
   histosignf__13->SetBinContent(3, 0.960121204 * signfpereventfactorpp);
   histosignf__13->SetBinContent(4, 7.300882464 * signfpereventfactorpp);
   histosignf__13->SetBinContent(5, 21.40347928 * signfpereventfactorpp);
@@ -411,7 +411,7 @@ void Lb_significanceHistos()
   histosignf__13->SetBinContent(11, 23.86596022 * signfpereventfactorpp);
   histosignf__13->SetBinContent(12, 9.027774988 * signfpereventfactorpp);
 
-  TH1F* histosignf__14 = new TH1F("histosignf__10", "Significance per event Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
+  TH1F* histosignf__14 = new TH1F("histosignf__14", "Significance per event Lb in pp 14TeV, Nevt=1.26E15 after BDT cut", 12, xAxis1);
   histosignf__14->SetBinContent(3, 3.157 * signfpereventfactorpp);
   histosignf__14->SetBinContent(4, 24.436 * signfpereventfactorpp);
   histosignf__14->SetBinContent(5, 46.676 * signfpereventfactorpp);
@@ -1067,6 +1067,9 @@ void Lb_significanceHistos()
   Canvas_7771->cd();
   Canvas_7771->Modified();
   Canvas_7771->SetSelected(Canvas_777);
+
+
+  // histo without error, just for comparison
 
 
   /// <summary>
