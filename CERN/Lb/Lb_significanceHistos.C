@@ -1073,11 +1073,13 @@ void Lb_significanceHistos()
   TH1F* histosignf__1099 = new TH1F("histosignf__1099", "Significance pp precut", 12, xAxis1);
   TH1F* histosignf__1098 = new TH1F("histosignf__1098", "Significance pp simple", 12, xAxis1);
   TH1F* histosignf__1097 = new TH1F("histosignf__1097", "Significance pp noRICH", 12, xAxis1);
-  TH1F* histosignf__1096 = new TH1F("histosignf__1096", "Significance pp withRICH", 12, xAxis1);
+  TH1F* histosignf__1096 = new TH1F("histosignf__1096", "", 12, xAxis1);//Significance pp withRICH
+  histosignf__1096->SetStats(0);
   TH1F* histosignf__2099 = new TH1F("histosignf__2099", "Significance pbpb precut", 12, xAxis1);
   TH1F* histosignf__2098 = new TH1F("histosignf__2098", "Significance pbpb simple", 12, xAxis1);
   TH1F* histosignf__2097 = new TH1F("histosignf__2097", "Significance pbpb noRICH", 12, xAxis1);
-  TH1F* histosignf__2096 = new TH1F("histosignf__2096", "Significance pbpb withRICH", 12, xAxis1);
+  TH1F* histosignf__2096 = new TH1F("histosignf__2096", "", 12, xAxis1);//Significance pbpb withRICH
+  histosignf__2096->SetStats(0);
   for (int i = 0; i < 12; i++) {
     histosignf__1099->SetBinContent(i, histosignf__9->GetBinContent(i+1));
       histosignf__1098->SetBinContent(i,  qy[i]);
@@ -1118,6 +1120,21 @@ void Lb_significanceHistos()
   legend10152->AddEntry(histosignf__1098, "+BDT cut", "f");
   legend10152->AddEntry(histosignf__1099, "pre-cuts", "f");
   legend10152->Draw("");
+  auto t_bkx = TLatex();
+  t_bkx.SetNDC();
+  t_bkx.SetTextFont(42);
+  t_bkx.SetTextColor(1);
+  t_bkx.SetTextSize(0.035);
+  t_bkx.SetTextAlign(12);
+  t_bkx.DrawLatex(0.4, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
+  auto t_bskx = TLatex();
+  t_bskx.SetNDC();
+  t_bskx.SetTextFont(42);
+  t_bskx.SetTextColor(1);
+  t_bskx.SetTextSize(0.035);
+  t_bskx.SetTextAlign(12);
+  t_bskx.DrawLatex(0.4, 0.55, "#splitline{ N_{evt}=1.26E15}{}");
+
 
   TCanvas* Canvas_956 = new TCanvas("Canvas_956", "pbpb comparison", 1143, 281, 798, 757);
 
@@ -1146,8 +1163,25 @@ void Lb_significanceHistos()
   legend10153->AddEntry(histosignf__2097, "+TOF & #Lambda_{c}^{+}", "f");
   legend10153->AddEntry(histosignf__2098, "+BDT cut", "f");
   legend10153->AddEntry(histosignf__2099, "pre-cuts", "f");
-
   legend10153->Draw("");
+  auto t_chx = TLatex();
+  t_chx.SetNDC();
+  t_chx.SetTextFont(42);
+  t_chx.SetTextColor(1);
+  t_chx.SetTextSize(0.035);
+  t_chx.SetTextAlign(12);
+  t_chx.DrawLatex(0.2, 0.75, "#splitline{Pb-Pb #sqrt{s}=5.02TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
+  auto t_cshx = TLatex();
+  t_cshx.SetNDC();
+  t_cshx.SetTextFont(42);
+  t_cshx.SetTextColor(1);
+  t_cshx.SetTextSize(0.035);
+  t_cshx.SetTextAlign(12);
+  t_cshx.DrawLatex(0.4, 0.55, "#splitline{ N_{evt}=55E9 L_{int}=35nb^{-1} centr. 30-50%}{}");
+
+  Canvas_956->cd();
+  Canvas_956->Modified();
+  Canvas_956->SetSelected(Canvas_956);
 
   /// <summary>
   /// Write to file
