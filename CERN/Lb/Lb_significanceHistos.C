@@ -725,7 +725,7 @@ void Lb_significanceHistos()
   double* qeyhsys = new double[12]{0.0, 0.0, 0.931432007, 7.239611145, 13.88274367, 27.40537246, 51.91121175, 65.39543215, 46.06540126, 19.32675688, 11.15306163, 4.815361434};
 
   TGraphMultiErrors* gSignf_pp14p0_DoubleErrorPF = new TGraphMultiErrors("gSignf_pp14p0_DoubleErrorPF", "", 12, qx, qy, qexl, qexh, qeylstat, qeyhstat);
-  gSignf_pp14p0_DoubleErrorPF->AddYError(12, peylsys, peyhsys);
+  gSignf_pp14p0_DoubleErrorPF->AddYError(12, qeylsys, qeyhsys);
   gSignf_pp14p0_DoubleErrorPF->SetMarkerStyle(4);
   gSignf_pp14p0_DoubleErrorPF->SetLineColor(kRed);
   gSignf_pp14p0_DoubleErrorPF->GetAttLine(0)->SetLineColor(kRed);
@@ -774,17 +774,17 @@ void Lb_significanceHistos()
   TCanvas* Canvas_777 = new TCanvas("Canvas_777", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 Pythia+FONLL", 1143, 281, 798, 757);
 
   double rx[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
-  double ry[12] = {.0, .0, 12.19458422, 50.68258144, 83.06790941, 102.8136469, 152.228166, 174.2279332, 121.9157496, 76.83452449, 52.21965438, 24.8959652};
+  double ry[12] = {.0, .0, 10.53138848, 47.59785125, 78.2755259, 98.04878522, 146.1235665, 166.3721578, 112.393948, 63.16209067, 38.87973579, 15.79879017};
   double rexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
   double rexh[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
-  double* reylstat = new double[12]{0.0, 0.0, 0.498827571, 1.944758912, 3.179678298, 3.901967477, 5.750767295, 6.606106908, 4.741957492, 3.273729683, 2.432208484, 1.366626312};
-  double* reyhstat = new double[12]{0.0, 0.0, 0.498827571, 1.944758912, 3.179678298, 3.901967477, 5.750767295, 6.606106908, 4.741957492, 3.273729683, 2.432208484, 1.366626312};
+  double* reylstat = new double[12]{0.0, 0.0, 0.517950512, 2.023541317, 3.304875507, 4.036405911, 5.930019533, 6.82956974, 4.954829091, 3.32312327, 2.276792053, 1.042507524};
+  double* reyhstat = new double[12]{0.0, 0.0, 0.517950512, 2.023541317, 3.304875507, 4.036405911, 5.930019533, 6.82956974, 4.954829091, 3.32312327, 2.276792053, 1.042507524};
 
-  double* reylsys = new double[12]{0.0, 0.0, 3.418445998, 13.6839039, 22.98240627, 28.50249386, 37.71740403, 41.57336254, 30.03195466, 20.59823968, 14.98242866, 8.227062708};
-  double* reyhsys = new double[12]{0.0, 0.0, 3.418445998, 13.6839039, 22.98240627, 28.50249386, 37.71740403, 41.57336254, 30.03195466, 20.59823968, 14.98242866, 8.227062708};
+  double* reylsys = new double[12]{0.0, 0.0, 3.508106335, 14.04812827, 23.55185961, 29.11258076, 38.62781437, 42.76967847, 31.17703499, 20.86527346, 14.13594724, 6.488719761};
+  double* reyhsys = new double[12]{0.0, 0.0, 3.508106335, 14.04812827, 23.55185961, 29.11258076, 38.62781437, 42.76967847, 31.17703499, 20.86527346, 14.13594724, 6.488719761};
 
   TGraphMultiErrors* gSignf_PbPb5p02_DoubleErrorPF = new TGraphMultiErrors("gSignf_PbPb5p02_DoubleErrorPF", "", 12, rx, ry, rexl, rexh, reylstat, reyhstat);
-  gSignf_PbPb5p02_DoubleErrorPF->AddYError(12, aeylsys, aeyhsys);
+  gSignf_PbPb5p02_DoubleErrorPF->AddYError(12, reylsys, reyhsys);
   gSignf_PbPb5p02_DoubleErrorPF->SetMarkerStyle(4);
   gSignf_PbPb5p02_DoubleErrorPF->SetLineColor(kRed);
   gSignf_PbPb5p02_DoubleErrorPF->GetAttLine(0)->SetLineColor(kRed);
