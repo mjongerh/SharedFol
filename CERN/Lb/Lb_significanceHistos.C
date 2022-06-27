@@ -1101,16 +1101,16 @@ void Lb_significanceHistos()
   histosignf__1096->GetYaxis()->SetLabelFont(42);
   histosignf__1096->GetYaxis()->SetTitleFont(42);
   histosignf__1096->SetLineColor(kGreen-2);
-  histosignf__1096->SetLineWidth(2)
+  histosignf__1096->SetLineWidth(2);
   histosignf__1096->Draw("hist");
   histosignf__1098->SetLineColor(kViolet-5);
-  histosignf__1098->SetLineWidth(2)
+  histosignf__1098->SetLineWidth(2);
   histosignf__1098->Draw("hist same");
   histosignf__1097->SetLineColor(kBlue);
-  histosignf__1097->SetLineWidth(2)
+  histosignf__1097->SetLineWidth(2);
   histosignf__1097->Draw("hist same");
   histosignf__1099->SetLineColor(kRed);
-  histosignf__1099->SetLineWidth(2)
+  histosignf__1099->SetLineWidth(2);
   histosignf__1099->Draw("hist same");
   auto legend10152 = new TLegend(0.1, 0.7, 0.48, 0.9);
   legend10152->AddEntry(histosignf__1099, "pre-cuts", "f");
@@ -1130,16 +1130,16 @@ void Lb_significanceHistos()
   histosignf__2096->GetYaxis()->SetLabelFont(42);
   histosignf__2096->GetYaxis()->SetTitleFont(42);
   histosignf__2096->SetLineColor(kGreen-2);
-  histosignf__2096->SetLineWidth(2)
+  histosignf__2096->SetLineWidth(2);
   histosignf__2096->Draw("hist");
   histosignf__2098->SetLineColor(kViolet-5);
-  histosignf__2098->SetLineWidth(2)
+  histosignf__2098->SetLineWidth(2);
   histosignf__2098->Draw("hist same");
   histosignf__2097->SetLineColor(kBlue);
-  histosignf__2097->SetLineWidth(2)
+  histosignf__2097->SetLineWidth(2);
   histosignf__2097->Draw("hist same");
   histosignf__2099->SetLineColor(kRed);
-  histosignf__2099->SetLineWidth(2)
+  histosignf__2099->SetLineWidth(2);
   histosignf__2099->Draw("hist same");
   auto legend10153 = new TLegend(0.1, 0.7, 0.48, 0.9);
   legend10153->AddEntry(histosignf__2099, "pre-cuts", "f");
