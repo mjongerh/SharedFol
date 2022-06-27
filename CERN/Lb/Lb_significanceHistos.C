@@ -829,6 +829,249 @@ void Lb_significanceHistos()
   Canvas_777->Modified();
   Canvas_777->SetSelected(Canvas_777);
 
+  // NO RICH version
+  // systematic error
+  TCanvas* Canvas_7676 = new TCanvas("Canvas_7676", "", 1143, 281, 798, 757);
+   //Double error Significance Lb in pp 14TeV, Nevt=1.26E15 Pythia+FONLL        
+
+  double wx[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
+  double wy[12] = {.0, .0, 4.333333333, 41.66666667, 96.33333333, 230.2106667, 441.2543333, 549.9155, 344.417, 140.3333333, 81.66666667, 24.13333333};
+  double wexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double wexh[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double* weylstat = new double[12]{0.0, 0.0, 0.293370286, 2.617414374, 7.146264695, 16.24392548, 24.72272803, 27.96945512, 18.05670748, 5.619723259, 4.906274088, 1.362669749};
+  double* weyhstat = new double[12]{0.0, 0.0, 0.293370286, 2.617414374, 7.146264695, 16.24392548, 24.72272803, 27.96945512, 18.05670748, 5.619723259, 4.906274088, 1.362669749};
+
+  double* weylsys = new double[12]{0.0, 0.0, 1.654758418, 14.84878182, 40.74981723, 93.04720498, 163.4720416, 161.8421172, 105.0248461, 32.69856351, 28.42008557, 7.784647461};
+  double* weyhsys = new double[12]{0.0, 0.0, 1.654758418, 14.84878182, 40.74981723, 93.04720498, 163.4720416, 161.8421172, 105.0248461, 32.69856351, 28.42008557, 7.784647461};
+
+  TGraphMultiErrors* gSignf_pp14p0_DoubleErrorPF_noRICH = new TGraphMultiErrors("gSignf_pp14p0_DoubleErrorPF_noRICH", "", 12, wx, wy, wexl, wexh, weylstat, weyhstat);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->AddYError(12, weylsys, weyhsys);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->SetMarkerStyle(4);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->SetLineColor(kRed);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetAttLine(0)->SetLineColor(kRed);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetAttLine(1)->SetLineColor(kBlue);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetAttFill(1)->SetFillStyle(0);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetRange(1, 100);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetLabelFont(42);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetTitleOffset(1);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetTitleFont(42);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetYaxis()->SetLabelFont(42);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetYaxis()->SetTitleFont(42);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->SetMarkerColor(4);
+  gSignf_pp14p0_DoubleErrorPF_noRICH->SetMarkerSize(1.3);
+
+  gSignf_pp14p0_DoubleErrorPF_noRICH->Draw("a p s ; ; 5 s=0.5");
+  histosignf__9->Draw("hist same");
+
+  auto legend160 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend160->AddEntry(histosignf__9, "pre-cuts", "f");
+  legend160->AddEntry(gSignf_pp14p0_DoubleErrorPF_noRICH, "+BDT cut", "lep");
+  legend160->Draw("");
+
+  auto t_bb = TLatex();
+  t_bb.SetNDC();
+  t_bb.SetTextFont(42);
+  t_bb.SetTextColor(1);
+  t_bb.SetTextSize(0.035);
+  t_bb.SetTextAlign(12);
+  t_bb.DrawLatex(0.4, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
+  auto t_bsb = TLatex();
+  t_bsb.SetNDC();
+  t_bsb.SetTextFont(42);
+  t_bsb.SetTextColor(1);
+  t_bsb.SetTextSize(0.035);
+  t_bsb.SetTextAlign(12);
+  t_bsb.DrawLatex(0.4, 0.55, "#splitline{ N_{evt}=1.26E15}{}");
+
+  Canvas_7676->cd();
+  Canvas_7676->Modified();
+  Canvas_7676->SetSelected(Canvas_7676);
+            
+  // systematic error
+  TCanvas* Canvas_7777 = new TCanvas("Canvas_7777", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 Pythia+FONLL", 1143, 281, 798, 757);
+
+                                                     
+                                                     
+
+
+  double ex[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
+  double ey[12] = {.0, .0, 6.217593333, 45.5884, 77.2791, 98.38476667, 152.2145.144666728166, 168.2886667, 110.707, 67.54046667, 41.98943333, 18.5022};
+  double eexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double eexh[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double* eeylstat = new double[12]{0.0, 0.0, 0.346297799, 1.991136995, 3.271036865, 3.988571017, 5.858828941, 6.606106908, 4.743372726, 3.186871604, 2.175365016, 1.084337696};
+  double* eeyhstat = new double[12]{0.0, 0.0, 0.346297799, 1.991136995, 3.271036865, 3.988571017, 5.858828941, 6.606106908, 4.743372726, 3.186871604, 2.175365016, 1.084337696};
+          
+  double* eeylsys = new double[12]{0.0, 0.0, 2.75108602, 13.8977264, 23.39715662, 28.89461937, 38.26549817, 42.07688767, 30.0395425, 20.13006082, 13.58736982, 6.709551841};
+  double* eeyhsys = new double[12]{0.0, 0.0, 2.75108602, 13.8977264, 23.39715662, 28.89461937, 38.26549817, 42.07688767, 30.0395425, 20.13006082, 13.58736982, 6.709551841};
+
+  TGraphMultiErrors* gSignf_PbPb5p02_DoubleErrorPF_noRICH = new TGraphMultiErrors("gSignf_PbPb5p02_DoubleErrorPF_noRICH", "", 12, ex, ey, eexl, eexh, eeylstat, eeyhstat);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->AddYError(12, eeylsys, eeyhsys);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->SetMarkerStyle(4);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->SetLineColor(kRed);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetAttLine(0)->SetLineColor(kRed);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetAttLine(1)->SetLineColor(kBlue);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetAttFill(1)->SetFillStyle(0);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetRange(1, 100);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetLabelFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetTitleOffset(1);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetTitleFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetYaxis()->SetLabelFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetYaxis()->SetTitleFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->SetMarkerColor(4);
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->SetMarkerSize(1.3);
+
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->Draw("a p s ; ; 5 s=0.5");
+  histosignf__7->Draw("hist same");
+
+  auto legend161 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend161->AddEntry(histosignf__7, "pre-cuts", "f");
+  legend161->AddEntry(gSignf_PbPb5p02_DoubleErrorPF_noRICH, "+BDT cut", "lep");
+  legend161->Draw("");
+
+  auto t_cg = TLatex();
+  t_cg.SetNDC();
+  t_cg.SetTextFont(42);
+  t_cg.SetTextColor(1);
+  t_cg.SetTextSize(0.035);
+  t_cg.SetTextAlign(12);
+  t_cg.DrawLatex(0.2, 0.75, "#splitline{Pb-Pb #sqrt{s}=5.02TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
+  auto t_csg = TLatex();
+  t_csg.SetNDC();
+  t_csg.SetTextFont(42);
+  t_csg.SetTextColor(1);
+  t_csg.SetTextSize(0.035);
+  t_csg.SetTextAlign(12);
+  t_csg.DrawLatex(0.4, 0.55, "#splitline{ N_{evt}=55E9 L_{int}=35nb^{-1} centr. 30-50%}{}");
+
+  Canvas_7777->cd();
+  Canvas_7777->Modified();
+  Canvas_7777->SetSelected(Canvas_777);
+
+  /// with RICH version
+  // systematic error
+  TCanvas* Canvas_7679 = new TCanvas("Canvas_7679", "Double error Significance Lb in pp 14TeV, Nevt=1.26E15 Pythia+FONLL", 1143, 281, 798, 757);
+
+  
+
+
+
+  double qrx[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
+  double qry[12] = {.0, .0, 3.2, 42, 92.5, 227, 474, 593.5, 402, 155, 74, 26};
+  double qrexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double qrexh[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double* qreylstat = new double[12]{0.0, 0.0, 0.293370286, 2.617414374, 7.146264695, 16.24392548, 24.72272803, 27.96945512, 18.05670748, 5.619723259, 4.906274088, 1.362669749};
+  double* qreyhstat = new double[12]{0.0, 0.0, 0.293370286, 2.617414374, 7.146264695, 16.24392548, 24.72272803, 27.96945512, 18.05670748, 5.619723259, 4.906274088, 1.362669749};
+
+  double* qreylsys = new double[12]{0.0, 0.0, 1.654758418, 14.84878182, 40.74981723, 93.0472049, 8 163.4720416, 161.8421172, 105.0248461, 32.69856351, 28.42008557, 7.784647461};
+  double* qreyhsys = new double[12]{0.0, 0.0, 1.654758418, 14.84878182, 40.74981723, 93.0472049, 8 163.4720416, 161.8421172, 105.0248461, 32.69856351, 28.42008557, 7.784647461};
+
+  TGraphMultiErrors* gSignf_pp14p0_DoubleErrorPF_withRICH = new TGraphMultiErrors("gSignf_pp14p0_DoubleErrorPF_withRICH", "", 12, qrx, qry, qrexl, qrexh, qreylstat, qreyhstat);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->AddYError(12, qreylsys, qreyhsys);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->SetMarkerStyle(4);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->SetLineColor(kRed);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetAttLine(0)->SetLineColor(kRed);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetAttLine(1)->SetLineColor(kBlue);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetAttFill(1)->SetFillStyle(0);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetRange(1, 100);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetLabelFont(42);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetTitleOffset(1);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetTitleFont(42);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetYaxis()->SetLabelFont(42);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetYaxis()->SetTitleFont(42);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->SetMarkerColor(4);
+  gSignf_pp14p0_DoubleErrorPF_withRICH->SetMarkerSize(1.3);
+
+  gSignf_pp14p0_DoubleErrorPF_withRICH->Draw("a p s ; ; 5 s=0.5");
+  histosignf__9->Draw("hist same");
+
+  auto legend1008 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend1008->AddEntry(histosignf__9, "pre-cuts", "f");
+  legend1008->AddEntry(gSignf_pp14p0_DoubleErrorPF_withRICH, "+BDT cut", "lep");
+  legend1008->Draw("");
+
+  auto t_bk = TLatex();
+  t_bk.SetNDC();
+  t_bk.SetTextFont(42);
+  t_bk.SetTextColor(1);
+  t_bk.SetTextSize(0.035);
+  t_bk.SetTextAlign(12);
+  t_bk.DrawLatex(0.4, 0.75, "#splitline{p-p #sqrt{s}=14.0TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
+  auto t_bsk = TLatex();
+  t_bsk.SetNDC();
+  t_bsk.SetTextFont(42);
+  t_bsk.SetTextColor(1);
+  t_bsk.SetTextSize(0.035);
+  t_bsk.SetTextAlign(12);
+  t_bsk.DrawLatex(0.4, 0.55, "#splitline{ N_{evt}=1.26E15}{}");
+
+  Canvas_7679->cd();
+  Canvas_7679->Modified();
+  Canvas_7679->SetSelected(Canvas_767);
+
+  // systematic error
+  TCanvas* Canvas_7771 = new TCanvas("Canvas_7771", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 Pythia+FONLL", 1143, 281, 798, 757);
+
+  double rtx[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
+  double rty[12] = {.0, .0, 7.596816171, 47.88286971, 80.41398629, 100.8179246, 150.059601, 172.8457813, 117.8572564, 73.65353296, 48.42827298, 21.78019873};
+  double rtexl[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double rtexh[12] = {0.25, 0.25, 0.5, 0.5, 0.5, 0.5, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0};
+  double* rteylstat = new double[12]{0.0, 0.0, 0.434636135, 1.951335715, 3.215254369, 3.943453091, 5.793981898, 6.663121978, 4.724234699, 3.1090431, 2.231894747, 1.211287077};
+  double* rteyhstat = new double[12]{0.0, 0.0, 0.434636135, 1.951335715, 3.215254369, 3.943453091, 5.793981898, 6.663121978, 4.724234699, 3.1090431, 2.231894747, 1.211287077};
+
+  double* rteylsys = new double[12]{0.0, 0.0, 3.907607552, 15.78515386, 23.143399, 28.68992776, 37.93631478, 41.87803419, 29.93696269, 19.71215446, 13.89271176, 7.386845551};
+  double* rteyhsys = new double[12]{0.0, 0.0, 3.907607552, 15.78515386, 23.143399, 28.68992776, 37.93631478, 41.87803419, 29.93696269, 19.71215446, 13.89271176, 7.386845551};
+
+  TGraphMultiErrors* gSignf_PbPb5p02_DoubleErrorPF_withRICH = new TGraphMultiErrors("gSignf_PbPb5p02_DoubleErrorPF_withRICH", "", 12, rtx, rty, rtexl, rtexh, rteylstat, rteyhstat);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->AddYError(12, rteylsys, rteyhsys);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->SetMarkerStyle(4);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->SetLineColor(kRed);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetAttLine(0)->SetLineColor(kRed);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetAttLine(1)->SetLineColor(kBlue);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetAttFill(1)->SetFillStyle(0);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetRange(1, 100);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetLabelFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetTitleOffset(1);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetTitleFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetYaxis()->SetLabelFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetYaxis()->SetTitleFont(42);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->SetMarkerColor(4);
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->SetMarkerSize(1.3);
+
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->Draw("a p s ; ; 5 s=0.5");
+  histosignf__7->Draw("hist same");
+
+  auto legend1015 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend1015->AddEntry(histosignf__7, "pre-cuts", "f");
+  legend1015->AddEntry(gSignf_PbPb5p02_DoubleErrorPF_withRICH, "+BDT cut", "lep");
+  legend1015->Draw("");
+
+  auto t_ch = TLatex();
+  t_ch.SetNDC();
+  t_ch.SetTextFont(42);
+  t_ch.SetTextColor(1);
+  t_ch.SetTextSize(0.035);
+  t_ch.SetTextAlign(12);
+  t_ch.DrawLatex(0.2, 0.75, "#splitline{Pb-Pb #sqrt{s}=5.02TeV, |y| <1.44}{#Lambda_{b}^{0} #rightarrow p + K^{-} + #pi^{+} + #pi^{-}}");
+  auto t_csh = TLatex();
+  t_csh.SetNDC();
+  t_csh.SetTextFont(42);
+  t_csh.SetTextColor(1);
+  t_csh.SetTextSize(0.035);
+  t_csh.SetTextAlign(12);
+  t_csh.DrawLatex(0.4, 0.55, "#splitline{ N_{evt}=55E9 L_{int}=35nb^{-1} centr. 30-50%}{}");
+
+  Canvas_7771->cd();
+  Canvas_7771->Modified();
+  Canvas_7771->SetSelected(Canvas_777);
+
 
   /// <summary>
   /// Write to file
@@ -855,4 +1098,8 @@ void Lb_significanceHistos()
   TMPFile.WriteObject(gSignf_PbPb5p02_DoubleError, "Lb_PbPb5p02_signfDoubleError"); //only PYTHIA
   TMPFile.WriteObject(gSignf_pp14p0_DoubleErrorPF, "Lb_Signf_pp14p0_DoubleErrorPF"); //both PYTHIA and FONLL
   TMPFile.WriteObject(gSignf_PbPb5p02_DoubleErrorPF, "Lb_Signf_PbPb5p02_DoubleErrorPF");//both PYTHIA and FONLL
+  TMPFile.WriteObject(gSignf_pp14p0_DoubleErrorPF_noRICH, "Lb_Signf_pp14p0_DoubleErrorPF_noRICH"); // both PYTHIA and FONLL
+  TMPFile.WriteObject(gSignf_PbPb5p02_DoubleErrorPF_noRICH, "Lb_Signf_PbPb5p02_DoubleErrorPF_noRICH"); // both PYTHIA and FONLL
+  TMPFile.WriteObject(gSignf_pp14p0_DoubleErrorPF_withRICH, "Lb_Signf_pp14p0_DoubleErrorPF_withRICH");            // both PYTHIA and FONLL
+  TMPFile.WriteObject(gSignf_PbPb5p02_DoubleErrorPF_withRICH, "Lb_Signf_PbPb5p02_DoubleErrorPF_withRICH");      // both PYTHIA and FONLL
 }
