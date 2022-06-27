@@ -831,7 +831,7 @@ void Lb_significanceHistos()
 
   // NO RICH version
   // systematic error
-  TCanvas* Canvas_7676 = new TCanvas("Canvas_7676", "", 1143, 281, 798, 757);
+  TCanvas* Canvas_7676 = new TCanvas("Canvas_7676", "pp no rich", 1143, 281, 798, 757);
    //Double error Significance Lb in pp 14TeV, Nevt=1.26E15 Pythia+FONLL        
 
   double wx[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
@@ -890,11 +890,7 @@ void Lb_significanceHistos()
   Canvas_7676->SetSelected(Canvas_7676);
             
   // systematic error
-  TCanvas* Canvas_7777 = new TCanvas("Canvas_7777", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 Pythia+FONLL", 1143, 281, 798, 757);
-
-                                                     
-                                                     
-
+  TCanvas* Canvas_7777 = new TCanvas("Canvas_7777", "pbpb no rich", 1143, 281, 798, 757);
 
   double ex[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
   double ey[12] = {.0, .0, 6.217593333, 45.5884, 77.2791, 98.38476667, 145.1447, 168.2886667, 110.707, 67.54046667, 41.98943333, 18.5022};
@@ -953,7 +949,7 @@ void Lb_significanceHistos()
 
   /// with RICH version
   // systematic error
-  TCanvas* Canvas_7679 = new TCanvas("Canvas_7679", "Double error Significance Lb in pp 14TeV, Nevt=1.26E15 Pythia+FONLL", 1143, 281, 798, 757);
+  TCanvas* Canvas_7679 = new TCanvas("Canvas_7679", "pp with rich", 1143, 281, 798, 757);
 
   
 
@@ -1015,7 +1011,7 @@ void Lb_significanceHistos()
   Canvas_7679->SetSelected(Canvas_767);
 
   // systematic error
-  TCanvas* Canvas_7771 = new TCanvas("Canvas_7771", "Double error Significance Lb in PbPb 5.02TeV, centr. 30-50%, Nevt=55E9 Pythia+FONLL", 1143, 281, 798, 757);
+  TCanvas* Canvas_7771 = new TCanvas("Canvas_7771", "pbpb with rich", 1143, 281, 798, 757);
 
   double rtx[12] = {0.25, 0.75, 1.5, 2.5, 3.5, 4.5, 6, 8.5, 11.5, 14.5, 18, 22};
   double rty[12] = {.0, .0, 7.596816171, 47.88286971, 80.41398629, 100.8179246, 150.059601, 172.8457813, 117.8572564, 73.65353296, 48.42827298, 21.78019873};
