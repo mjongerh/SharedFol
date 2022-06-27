@@ -1090,19 +1090,63 @@ void Lb_significanceHistos()
   }
 
   TCanvas* Canvas_957 = new TCanvas("Canvas_957", "pp comparison", 1143, 281, 798, 757);
+  
 
-  histosignf__1099->Draw("hist");
+  histosignf__1096->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  histosignf__1096->GetXaxis()->SetRange(0, 25);
+  histosignf__1096->GetXaxis()->SetLabelFont(42);
+  histosignf__1096->GetXaxis()->SetTitleOffset(1);
+  histosignf__1096->GetXaxis()->SetTitleFont(42);
+  histosignf__1096->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
+  histosignf__1096->GetYaxis()->SetLabelFont(42);
+  histosignf__1096->GetYaxis()->SetTitleFont(42);
+  histosignf__1096->SetLineColor(kGreen-2);
+  histosignf__1096->SetLineWidth(2)
+  histosignf__1096->Draw("hist");
+  histosignf__1098->SetLineColor(kViolet-5);
+  histosignf__1098->SetLineWidth(2)
   histosignf__1098->Draw("hist same");
+  histosignf__1097->SetLineColor(kBlue);
+  histosignf__1097->SetLineWidth(2)
   histosignf__1097->Draw("hist same");
-  histosignf__1096->Draw("hist same");
+  histosignf__1099->SetLineColor(kRed);
+  histosignf__1099->SetLineWidth(2)
+  histosignf__1099->Draw("hist same");
+  auto legend10152 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend10152->AddEntry(histosignf__1099, "pre-cuts", "f");
+  legend10152->AddEntry(histosignf__1097, "+BDT cut", "f");
+  legend10152->AddEntry(histosignf__1098, "+TOF & #Lambda_{c}^{+}", "f");
+  legend10152->AddEntry(histosignf__1096, "+RICH", "f");
+  legend10152->Draw("");
 
   TCanvas* Canvas_956 = new TCanvas("Canvas_956", "pbpb comparison", 1143, 281, 798, 757);
 
-  histosignf__2099->Draw("hist");
+  histosignf__2096->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  histosignf__2096->GetXaxis()->SetRange(0, 25);
+  histosignf__2096->GetXaxis()->SetLabelFont(42);
+  histosignf__2096->GetXaxis()->SetTitleOffset(1);
+  histosignf__2096->GetXaxis()->SetTitleFont(42);
+  histosignf__2096->GetYaxis()->SetTitle("#Lambda_{b}^{0} significance (3#sigma)");
+  histosignf__2096->GetYaxis()->SetLabelFont(42);
+  histosignf__2096->GetYaxis()->SetTitleFont(42);
+  histosignf__2096->SetLineColor(kGreen-2);
+  histosignf__2096->SetLineWidth(2)
+  histosignf__2096->Draw("hist");
+  histosignf__2098->SetLineColor(kViolet-5);
+  histosignf__2098->SetLineWidth(2)
   histosignf__2098->Draw("hist same");
+  histosignf__2097->SetLineColor(kBlue);
+  histosignf__2097->SetLineWidth(2)
   histosignf__2097->Draw("hist same");
-  histosignf__2096->Draw("hist same");
-
+  histosignf__2099->SetLineColor(kRed);
+  histosignf__2099->SetLineWidth(2)
+  histosignf__2099->Draw("hist same");
+  auto legend10153 = new TLegend(0.1, 0.7, 0.48, 0.9);
+  legend10153->AddEntry(histosignf__2099, "pre-cuts", "f");
+  legend10153->AddEntry(histosignf__2097, "+BDT cut", "f");
+  legend10153->AddEntry(histosignf__2098, "+TOF & #Lambda_{c}^{+}", "f");
+  legend10153->AddEntry(histosignf__2096, "+RICH", "f");
+  legend10153->Draw("");
 
   /// <summary>
   /// Write to file
