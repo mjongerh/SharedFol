@@ -867,7 +867,7 @@ void Lb_significanceHistos()
 
   auto legend160 = new TLegend(0.1, 0.7, 0.48, 0.9);
   legend160->AddEntry(histosignf__9, "pre-cuts", "f");
-  legend160->AddEntry(gSignf_pp14p0_DoubleErrorPF_noRICH, "+BDT cut", "lep");
+  legend160->AddEntry(gSignf_pp14p0_DoubleErrorPF_noRICH, "+BDT without RICH cut", "lep");
   legend160->Draw("");
 
   auto t_bb = TLatex();
@@ -925,7 +925,7 @@ void Lb_significanceHistos()
 
   auto legend161 = new TLegend(0.1, 0.7, 0.48, 0.9);
   legend161->AddEntry(histosignf__7, "pre-cuts", "f");
-  legend161->AddEntry(gSignf_PbPb5p02_DoubleErrorPF_noRICH, "+BDT cut", "lep");
+  legend161->AddEntry(gSignf_PbPb5p02_DoubleErrorPF_noRICH, "+BDT without RICH cut", "lep");
   legend161->Draw("");
 
   auto t_cg = TLatex();
@@ -988,7 +988,7 @@ void Lb_significanceHistos()
 
   auto legend1008 = new TLegend(0.1, 0.7, 0.48, 0.9);
   legend1008->AddEntry(histosignf__9, "pre-cuts", "f");
-  legend1008->AddEntry(gSignf_pp14p0_DoubleErrorPF_withRICH, "+BDT cut", "lep");
+  legend1008->AddEntry(gSignf_pp14p0_DoubleErrorPF_withRICH, "+BDT with RICH cut", "lep");
   legend1008->Draw("");
 
   auto t_bk = TLatex();
@@ -1046,7 +1046,7 @@ void Lb_significanceHistos()
 
   auto legend1015 = new TLegend(0.1, 0.7, 0.48, 0.9);
   legend1015->AddEntry(histosignf__7, "pre-cuts", "f");
-  legend1015->AddEntry(gSignf_PbPb5p02_DoubleErrorPF_withRICH, "+BDT cut", "lep");
+  legend1015->AddEntry(gSignf_PbPb5p02_DoubleErrorPF_withRICH, "+BDT with RICH cut", "lep");
   legend1015->Draw("");
 
   auto t_ch = TLatex();
