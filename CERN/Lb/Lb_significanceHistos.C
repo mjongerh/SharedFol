@@ -382,7 +382,7 @@ void Lb_significanceHistos()
   gSignf_pp14p0_DoubleError->GetAttLine(0)->SetLineColor(kRed);
   gSignf_pp14p0_DoubleError->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_pp14p0_DoubleError->GetAttFill(1)->SetFillStyle(0);
-  gSignf_pp14p0_DoubleError->GetXaxis()->SetTitle("p_{T} (GeV)");
+  gSignf_pp14p0_DoubleError->GetXaxis()->SetTitle("p_{T} (GeV/c)");
   gSignf_pp14p0_DoubleError->GetXaxis()->SetRange(1, 100);
   gSignf_pp14p0_DoubleError->GetXaxis()->SetLabelFont(42);
   gSignf_pp14p0_DoubleError->GetXaxis()->SetTitleOffset(1);
@@ -486,7 +486,7 @@ void Lb_significanceHistos()
   //histosignf__8->SetBinError(12, 2.549194909);
 
   histosignf__8->SetLineWidth(2);
-  histosignf__8->GetXaxis()->SetTitle("p_{T} (GeV)");
+  histosignf__8->GetXaxis()->SetTitle("p_{T} (GeV/c)");
   histosignf__8->GetXaxis()->SetRange(1, 100);
   histosignf__8->GetXaxis()->SetLabelFont(42);
   histosignf__8->GetXaxis()->SetTitleOffset(1);
@@ -551,7 +551,7 @@ void Lb_significanceHistos()
   gSignf_PbPb5p02_DoubleError->GetAttLine(0)->SetLineColor(kRed);
   gSignf_PbPb5p02_DoubleError->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_PbPb5p02_DoubleError->GetAttFill(1)->SetFillStyle(0);
-  gSignf_PbPb5p02_DoubleError->GetXaxis()->SetTitle("p_{T} (GeV)");
+  gSignf_PbPb5p02_DoubleError->GetXaxis()->SetTitle("p_{T} (GeV/c)");
   gSignf_PbPb5p02_DoubleError->GetXaxis()->SetRange(1, 100);
   gSignf_PbPb5p02_DoubleError->GetXaxis()->SetLabelFont(42);
   gSignf_PbPb5p02_DoubleError->GetXaxis()->SetTitleOffset(1);
