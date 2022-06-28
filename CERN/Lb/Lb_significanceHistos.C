@@ -316,7 +316,7 @@ void Lb_significanceHistos()
   histosignf__10->SetBinContent(12, 15.964/1.41);
   
   histosignf__10->SetLineWidth(2);
-  histosignf__10->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  histosignf__10->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   histosignf__10->GetXaxis()->SetRange(1, 100);
   histosignf__10->GetXaxis()->SetLabelFont(42);
   histosignf__10->GetXaxis()->SetTitleOffset(1);
@@ -333,7 +333,7 @@ void Lb_significanceHistos()
 
   histosignf__9->SetLineColor(ci);
   histosignf__9->SetLineWidth(2);
-  histosignf__9->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  histosignf__9->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   histosignf__9->GetXaxis()->SetRange(1, 100);
   histosignf__9->GetXaxis()->SetLabelFont(42);
   histosignf__9->GetXaxis()->SetTitleOffset(1);
@@ -503,7 +503,7 @@ void Lb_significanceHistos()
 
   histosignf__7->SetLineColor(ci);
   histosignf__7->SetLineWidth(2);
-  histosignf__7->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  histosignf__7->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   histosignf__7->GetXaxis()->SetRange(1, 100);
   histosignf__7->GetXaxis()->SetLabelFont(42);
   histosignf__7->GetXaxis()->SetTitleOffset(1);
@@ -731,7 +731,7 @@ void Lb_significanceHistos()
   gSignf_pp14p0_DoubleErrorPF->GetAttLine(0)->SetLineColor(kRed);
   gSignf_pp14p0_DoubleErrorPF->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_pp14p0_DoubleErrorPF->GetAttFill(1)->SetFillStyle(0);
-  gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetRange(1, 100);
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetLabelFont(42);
   gSignf_pp14p0_DoubleErrorPF->GetXaxis()->SetTitleOffset(1);
@@ -790,7 +790,7 @@ void Lb_significanceHistos()
   gSignf_PbPb5p02_DoubleErrorPF->GetAttLine(0)->SetLineColor(kRed);
   gSignf_PbPb5p02_DoubleErrorPF->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_PbPb5p02_DoubleErrorPF->GetAttFill(1)->SetFillStyle(0);
-  gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetRange(1, 100);
   gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetLabelFont(42);
   gSignf_PbPb5p02_DoubleErrorPF->GetXaxis()->SetTitleOffset(1);
@@ -851,7 +851,7 @@ void Lb_significanceHistos()
   gSignf_pp14p0_DoubleErrorPF_noRICH->GetAttLine(0)->SetLineColor(kRed);
   gSignf_pp14p0_DoubleErrorPF_noRICH->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_pp14p0_DoubleErrorPF_noRICH->GetAttFill(1)->SetFillStyle(0);
-  gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetRange(1, 100);
   gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetLabelFont(42);
   gSignf_pp14p0_DoubleErrorPF_noRICH->GetXaxis()->SetTitleOffset(1);
@@ -909,7 +909,7 @@ void Lb_significanceHistos()
   gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetAttLine(0)->SetLineColor(kRed);
   gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetAttFill(1)->SetFillStyle(0);
-  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetRange(1, 100);
   gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetLabelFont(42);
   gSignf_PbPb5p02_DoubleErrorPF_noRICH->GetXaxis()->SetTitleOffset(1);
@@ -972,7 +972,7 @@ void Lb_significanceHistos()
   gSignf_pp14p0_DoubleErrorPF_withRICH->GetAttLine(0)->SetLineColor(kRed);
   gSignf_pp14p0_DoubleErrorPF_withRICH->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_pp14p0_DoubleErrorPF_withRICH->GetAttFill(1)->SetFillStyle(0);
-  gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetRange(1, 100);
   gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetLabelFont(42);
   gSignf_pp14p0_DoubleErrorPF_withRICH->GetXaxis()->SetTitleOffset(1);
@@ -1030,7 +1030,7 @@ void Lb_significanceHistos()
   gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetAttLine(0)->SetLineColor(kRed);
   gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetAttLine(1)->SetLineColor(kBlue);
   gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetAttFill(1)->SetFillStyle(0);
-  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetRange(1, 100);
   gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetLabelFont(42);
   gSignf_PbPb5p02_DoubleErrorPF_withRICH->GetXaxis()->SetTitleOffset(1);
@@ -1094,7 +1094,7 @@ void Lb_significanceHistos()
   TCanvas* Canvas_957 = new TCanvas("Canvas_957", "pp comparison", 1143, 281, 798, 757);
   
 
-  histosignf__1096->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  histosignf__1096->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   histosignf__1096->GetXaxis()->SetRange(0, 25);
   histosignf__1096->GetXaxis()->SetLabelFont(42);
   histosignf__1096->GetXaxis()->SetTitleOffset(1);
@@ -1138,7 +1138,7 @@ void Lb_significanceHistos()
 
   TCanvas* Canvas_956 = new TCanvas("Canvas_956", "pbpb comparison", 1143, 281, 798, 757);
 
-  histosignf__2096->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV)");
+  histosignf__2096->GetXaxis()->SetTitle("p_{T} (#Lambda_{b}^{0}) (GeV/c)");
   histosignf__2096->GetXaxis()->SetRange(0, 25);
   histosignf__2096->GetXaxis()->SetLabelFont(42);
   histosignf__2096->GetXaxis()->SetTitleOffset(1);
