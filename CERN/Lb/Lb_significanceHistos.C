@@ -1082,13 +1082,13 @@ void Lb_significanceHistos()
   histosignf__2096->SetStats(0);
   for (int i = 0; i < 12; i++) {
     histosignf__1099->SetBinContent(i, histosignf__9->GetBinContent(i+1));
-      histosignf__1098->SetBinContent(i,  qy[i]);
-      histosignf__1097->SetBinContent(i, wy[i]);
-      histosignf__1096->SetBinContent(i, qry[i]);
-      histosignf__2099->SetBinContent(i, histosignf__9->GetBinContent(i+1));
-      histosignf__2098->SetBinContent(i, ry[i]);
-      histosignf__2097->SetBinContent(i, ey[i]);
-      histosignf__2096->SetBinContent(i, rty[i]);
+      histosignf__1098->SetBinContent(i+1,  qy[i]);
+      histosignf__1097->SetBinContent(i+1, wy[i]);
+      histosignf__1096->SetBinContent(i+1, qry[i]);
+      histosignf__2099->SetBinContent(i+1, histosignf__9->GetBinContent(i+1));
+      histosignf__2098->SetBinContent(i+1, ry[i]);
+      histosignf__2097->SetBinContent(i+1, ey[i]);
+      histosignf__2096->SetBinContent(i+1, rty[i]);
   }
 
   TCanvas* Canvas_957 = new TCanvas("Canvas_957", "pp comparison", 1143, 281, 798, 757);
