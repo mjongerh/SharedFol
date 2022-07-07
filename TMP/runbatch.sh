@@ -29,7 +29,7 @@ cd ${tempfol}
 echo "Attempting to run job"
 eval "alienv setenv DelphesO2/latest-master-o2 -c ./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 20 --njobs 1 --nevents 5000"
 echo "Attempt 1 done"
-SleepTimer=$(expr ${JOB_ID} % 17 + 3)
+SleepTimer=$(expr ${JOB_ID} % 17 + 3)  # add some random delays, since entering an environment by 2 job at the same time makes it crash
 if [ ! -f ../AODRun5.0.root ]; then 
         echo "Failed, trying again"
         sleep ${SleepTimer}
@@ -58,6 +58,3 @@ rm -r ./temp
 echo "Job complete"
 
 #cd /data/alice/mjongerh/alice/DelphesO2/examples/scripts
-
-
-#eval "./createO2tables.py default_configfile.ini --entry BBBAR_BDforced -l -c --output-path ${outdir} --nruns 1 --njobs 1 --nevents 500"

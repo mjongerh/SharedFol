@@ -271,115 +271,119 @@ int main(int argc, char** argv)
   return TEMP(methodList);
 }
 
+///
+//ROC ints as function of pt
+//simple
+pt1 
+: dataset       BDTF           : 0.877
+: dataset       BDTG           : 0.887
+: dataset       BDT            : 0.768
+pt2 
+: Name:         Method:          ROC-integ
+: dataset       BDTF           : 0.839
+: dataset       BDTG           : 0.835
+: dataset       BDT            : 0.831
+: dataset BDTF : 0.809
+: dataset BDTG : 0.794
+: dataset BDT : 0.789
 
-	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
-Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
-\hline
-\hline
-1	&	ImpactParameter0	&	 $2.88\cdot 10^{-1}$	&	ImpactParameter0	&	$3.07\cdot 10^{-1}$	&	CPA	                &	$3.16\cdot 10^{-1}$ \\
-2	&	ImpactParameter1	&	 $2.08\cdot 10^{-1}$	&	ImpactParameter1	&	$2.27\cdot 10^{-1}$	&	CPAXY	            &	$2.42\cdot 10^{-1}$ \\
-3	&	DecayLength		    &    $1.73\cdot 10^{-1}$	&	DecayLength	        &	$2.03\cdot 10^{-1}$	&	ImpactParameter0	&	$1.43\cdot 10^{-1}$ \\
-4	&	DecayLengthXY		&    $1.37\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.55\cdot 10^{-1}$	&	DecayLengthXY	    &	$1.12\cdot 10^{-1}$ \\
-5	&	CPA		            &    $1.33\cdot 10^{-1}$	&	CPA	                &	$7.30\cdot 10^{-2}$	&	DecayLength	        &	$1.10\cdot 10^{-1}$ \\
-6	&	CPAXY		        &    $5.80\cdot 10^{-2}$	&	CPAXY	            &	$3.02\cdot 10^{-2}$	&	ImpactParameter1	&	$7.68\cdot 10^{-2}$ \\
-7	&	Chi2PCA		        &    $3.77\cdot 10^{-3}$	&	Chi2PCA	            &	$4.88\cdot 10^{-3}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$ \\
+: dataset       BDT            : 0.789
+: dataset       BDTF           : 0.789
+: dataset       BDTG           : 0.787
+pt5
+: dataset BDTG : 0.779
+: dataset BDT : 0.778
+: dataset BDTF : 0.769
 
+: dataset BDTG : 0.761
+: dataset BDTF : 0.745
+: dataset BDT : 0.739
 
+: dataset       BDTG           : 0.564
+: dataset       BDT            : 0.560
+: dataset       BDTF           : 0.559
+pt13
+: dataset BDT : 0.548
+: dataset BDTF : 0.546
+: dataset BDTG : 0.537
 
-	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
-Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
-\hline
-\hline
-1	&	LcM	                &	$9.22\cdot 10^{-2}$	&	LcM	                &	$1.08\cdot 10^{-1}$ \\
-2	&	NSigTOFTrk3Pr	    &	$6.91\cdot 10^{-2}$	&	LcCPA	            &	$5.62\cdot 10^{-2}$ \\
-3	&	LcCPA	            &	$6.39\cdot 10^{-2}$	&	NSigTOFTrk3Pr	    &	$5.19\cdot 10^{-2}$ \\
-4	&	LcDecayLengthXY	    &	$4.95\cdot 10^{-2}$	&	LcImpactParameter1	&	$4.64\cdot 10^{-2}$ \\
-5	&	LcImpactParameter1	&	$4.78\cdot 10^{-2}$	&	LcDecayLength	    &	$4.57\cdot 10^{-2}$ \\
-6	&	LcDecayLength	    &	$4.47\cdot 10^{-2}$	&	LcDecayLengthXY	    &	$4.56\cdot 10^{-2}$ \\
-7	&	LcImpactParameter0	&	$4.25\cdot 10^{-2}$	&	LcImpactParameter0	&	$4.48\cdot 10^{-2}$ \\
-8	&	CPA	                &	$4.23\cdot 10^{-2}$	&	NSigRICHTrk3Pr	    &	$4.30\cdot 10^{-2}$ \\
-9	&	ImpactParameter0	&	$4.14\cdot 10^{-2}$	&	NSigRICHTrk3Pi	    &	$4.12\cdot 10^{-2}$ \\
-10	&	LcImpactParameter2	&	$3.89\cdot 10^{-2}$	&	NSigTOFTrk1Pr	    &	$4.12\cdot 10^{-2}$ \\
-11	&	NSigTOFTrk1Pr	    &	$3.77\cdot 10^{-2}$	&	ImpactParameter0	&	$4.12\cdot 10^{-2}$ \\
-12	&	NSigRICHTrk3Pr	    &	$3.74\cdot 10^{-2}$	&	NSigTOFTrk3Pi	    &	$4.06\cdot 10^{-2}$ \\
-13	&	NSigRICHTrk3Pi	    &	$3.64\cdot 10^{-2}$	&	LcImpactParameter2	&	$3.89\cdot 10^{-2}$ \\
-14	&	LcCPAXY	            &	$3.61\cdot 10^{-2}$	&	NSigRICHPi0	        &	$3.74\cdot 10^{-2}$ \\
-15	&	NSigTOFTrk1Pi	    &	$3.38\cdot 10^{-2}$	&	NSigRICHTrk1Pr	    &	$3.69\cdot 10^{-2}$ \\
-16	&	ImpactParameter1	&	$3.29\cdot 10^{-2}$	&	NSigRICHTrk1Pi	    &	$3.41\cdot 10^{-2}$ \\
-17	&	NSigRICHTrk1Pr	    &	$3.26\cdot 10^{-2}$	&	LcCPAXY	            &	$3.40\cdot 10^{-2}$ \\
-18	&	NSigTOFTrk3Pi	    &	$3.24\cdot 10^{-2}$	&	ImpactParameter1	&	$3.06\cdot 10^{-2}$ \\
-19	&	NSigRICHTrk1Pi	    &	$3.23\cdot 10^{-2}$	&	NSigRICHTrk2Ka	    &	$2.74\cdot 10^{-2}$ \\
-20	&	NSigRICHTrk2Ka	    &	$2.83\cdot 10^{-2}$	&	NSigTOFTrk1Pi	    &	$2.72\cdot 10^{-2}$ \\
-21	&	NSigRICHPi0	        &	$2.56\cdot 10^{-2}$	&	DecayLength	        &	$2.52\cdot 10^{-2}$ \\
-22	&	CPAXY	            &	$2.09\cdot 10^{-2}$	&	CPA	                &	$2.11\cdot 10^{-2}$ \\
-23	&	NSigTOFPi0	        &	$2.02\cdot 10^{-2}$	&	DecayLengthXY	    &	$2.03\cdot 10^{-2}$ \\
-24	&	DecayLength	        &	$1.97\cdot 10^{-2}$	&	LcChi2PCA	        &	$1.92\cdot 10^{-2}$ \\
-25	&	LcChi2PCA	        &	$1.83\cdot 10^{-2}$	&	NSigTOFPi0	        &	$1.86\cdot 10^{-2}$ \\
-26	&	DecayLengthXY	    &	$1.28\cdot 10^{-2}$	&	NSigTOFTrk2Ka	    &	$1.53\cdot 10^{-2}$ \\
-27	&	NSigTOFTrk2Ka	    &	$1.05\cdot 10^{-2}$	&	CPAXY	            &	$8.53\cdot 10^{-3}$ \\
-28	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$ \\
+: dataset BDTG : 0.579
+: dataset BDT : 0.573
+: dataset BDTF : 0.566
 
+: dataset BDT : 0.633
+: dataset BDTG : 0.584
+: dataset BDTF : 0.563
 
-	&	BDT		& & 		BDTG		& &		BDTF	 &	\\
-Rank &	Variable	&	        Importance	&	Variable	&	Importance	&	Variable	&	Importance	\\
-\hline
-\hline
-1	&	LcM	                &	$1.06\cdot 10^{-1}$	&	LcM	                &	$1.40\cdot 10^{-1}$	&	CPA	                &	$1.93\cdot 10^{-1}$ \\
-2	&	NSigTOFTrk3Pr	    &	$9.12\cdot 10^{-2}$	&	LcCPA	            &	$7.30\cdot 10^{-2}$	&	LcM	                &	$1.17\cdot 10^{-1}$ \\
-3	&	LcCPA	            &	$7.64\cdot 10^{-2}$	&	NSigTOFTrk3Pr	    &	$6.94\cdot 10^{-2}$	&	LcDecayLengthXY	    &	$9.93\cdot 10^{-2}$ \\
-4	&	LcDecayLengthXY	    &	$6.24\cdot 10^{-2}$	&	LcDecayLength	    &	$6.34\cdot 10^{-2}$	&	NSigTOFTrk3Pr	    &	$8.89\cdot 10^{-2}$ \\
-5	&	LcDecayLength	    &	$5.72\cdot 10^{-2}$	&	LcDecayLengthXY	    &	$6.03\cdot 10^{-2}$	&	DecayLengthXY	    &	$7.36\cdot 10^{-2}$ \\
-6	&	LcImpactParameter1	&	$5.69\cdot 10^{-2}$	&	LcImpactParameter1	&	$5.89\cdot 10^{-2}$	&	DecayLength	        &	$6.69\cdot 10^{-2}$ \\
-7	&	LcImpactParameter2	&	$5.24\cdot 10^{-2}$	&	NSigTOFTrk1Pr	    &	$5.49\cdot 10^{-2}$	&	LcChi2PCA	        &	$6.18\cdot 10^{-2}$ \\
-8	&	ImpactParameter0	&	$5.21\cdot 10^{-2}$	&	LcImpactParameter0	&	$5.46\cdot 10^{-2}$	&	LcDecayLength	    &	$6.13\cdot 10^{-2}$ \\
-9	&	LcImpactParameter0	&	$5.16\cdot 10^{-2}$	&	ImpactParameter0	&	$5.06\cdot 10^{-2}$	&	NSigTOFTrk3Pi	    &	$5.19\cdot 10^{-2}$ \\
-10	&	NSigTOFTrk1Pr	    &	$5.08\cdot 10^{-2}$	&	LcImpactParameter2	&	$4.90\cdot 10^{-2}$	&	CPAXY	            &	$4.68\cdot 10^{-2}$ \\
-11	&	CPA	                &	$4.88\cdot 10^{-2}$	&	NSigTOFTrk3Pi	    &	$4.54\cdot 10^{-2}$	&	NSigTOFTrk1Pr	    &	$2.83\cdot 10^{-2}$ \\
-12	&	LcCPAXY	            &	$4.79\cdot 10^{-2}$	&	ImpactParameter1	&	$4.47\cdot 10^{-2}$	&	ImpactParameter0	&	$2.46\cdot 10^{-2}$ \\
-13	&	NSigTOFTrk3Pi	    &	$4.63\cdot 10^{-2}$	&	LcCPAXY	            &	$4.47\cdot 10^{-2}$	&	LcCPA	            &	$2.19\cdot 10^{-2}$ \\
-14	&	ImpactParameter1	&	$3.72\cdot 10^{-2}$	&	DecayLength	        &	$3.30\cdot 10^{-2}$	&	NSigTOFTrk1Pi	    &	$1.73\cdot 10^{-2}$ \\
-15	&	NSigTOFTrk1Pi	    &	$3.25\cdot 10^{-2}$	&	CPA	                &	$2.97\cdot 10^{-2}$	&	LcImpactParameter0	&	$1.62\cdot 10^{-2}$ \\
-16	&	DecayLength	        &	$2.78\cdot 10^{-2}$	&	DecayLengthXY	    &	$2.69\cdot 10^{-2}$	&	NSigTOFPi0	        &	$9.84\cdot 10^{-3}$ \\
-17	&	NSigTOFPi0	        &	$2.60\cdot 10^{-2}$	&	NSigTOFTrk1Pi	    &	$2.61\cdot 10^{-2}$	&	LcImpactParameter2	&	$8.31\cdot 10^{-3}$ \\
-18	&	DecayLengthXY	    &	$2.55\cdot 10^{-2}$	&	LcChi2PCA	        &	$2.39\cdot 10^{-2}$	&	LcImpactParameter1	&	$7.90\cdot 10^{-3}$ \\
-19	&	CPAXY	            &	$1.95\cdot 10^{-2}$	&	NSigTOFPi0	        &	$2.26\cdot 10^{-2}$	&	ImpactParameter1	&	$4.50\cdot 10^{-3}$ \\
-20	&	LcChi2PCA	        &	$1.95\cdot 10^{-2}$	&	CPAXY	            &	$1.77\cdot 10^{-2}$	&	Chi2PCA	            &	$9.80\cdot 10^{-4}$ \\
-21	&	NSigTOFTrk2Ka	    &	$1.16\cdot 10^{-2}$	&	NSigTOFTrk2Ka	    &	$1.18\cdot 10^{-2}$	&	LcCPAXY	            &	$3.87\cdot 10^{-6}$ \\
-22	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$	&	Chi2PCA	            &	$0.00\cdot 10^{+0}$	&	NSigTOFTrk2Ka	    &	$5.71\cdot 10^{-11}$\\
+//rich
+: dataset BDT : 0.964
+: dataset BDTG : 0.886
 
-// pbpb no RICH
-1
---- Classifier   (  #signal, #backgr.)  Optimal-cut  S/sqrt(S+B)      NSig      NBkg   EffSig   EffBkg
---- --------------------------------------------------------------------------------------------------
----        BDT:  (204.96747,37720.199)      -0.3908      5.23094  111.8004  345.0018   0.5455 0.009146
----       BDTG:  (204.96747,37720.199)      -0.9997      4.44122  149.0672  977.5052   0.7273  0.02591
+: dataset BDT : 0.991
+: dataset BDTG : 0.987
 
-2
----        BDT:  (2855.1055,36941.699)      -0.0968      45.9435  2562.274  548.0362   0.8974  0.01484
----       BDTG:  (2855.1055,36941.699)      -0.7609      44.1077  2586.677  852.5008    0.906  0.02308
-3
----        BDT:  (7400.1338,37946.102)      -0.0776      77.4279  7104.128  1314.207     0.96  0.03463
----       BDTG:  (7400.1338,37946.102)      -0.2470      77.4042  7084.395  1292.377   0.9573  0.03406
-4
----        BDT:  (11264.655,34524.602)      -0.0499       98.775  10799.17  1154.097   0.9587  0.03343
----       BDTG:  (11264.655,34524.602)      -0.1153      99.2809  10938.82  1200.917   0.9711  0.03478
-5
----        BDT:  (24420.588,    42202)      -0.0394      147.364  23566.72  2008.203    0.965  0.04759
----       BDTG:  (24420.588,    42202)      -0.0936      148.528  23896.07  1988.386   0.9785  0.04712
-7
----        BDT:  (32203.332,    43846)      -0.0473       169.51  31299.21  2794.836   0.9719  0.06374
----       BDTG:  (32203.332,    43846)      -0.0528      171.475  31560.93  2315.415   0.9801  0.05281
-10
----        BDT:  (16053.277,39439.301)      -0.0444      114.261     15162  2446.214   0.9445  0.06202
----       BDTG:  (16053.277,39439.301)       0.0308      115.625  15407.87  2349.478   0.9598  0.05957
-13
----        BDT:  (7256.7539,40660.543)      -0.0381      70.1605  6367.104  1868.569   0.8774  0.04596
----       BDTG:  (7256.7539,40660.543)       0.3807      71.3423  6384.548  1624.218   0.8798  0.03995
-16
----        BDT:  (3875.5264,  41953.5)      -0.0423      44.9514  3168.856  1800.709   0.8177  0.04292
----       BDTG:  (3875.5264,  41953.5)       0.4555       45.655  3124.225  1558.597   0.8061  0.03715
+: dataset BDT : 0.989
+: dataset BDTG : 0.988
 
-20
----        BDT:  (1396.8569,46428.551)      -0.0687      18.6934   970.507  1724.872   0.6948  0.03715
----       BDTG:  (1396.8569,46428.551)       0.3550       19.701  981.7268  1501.443   0.7028  0.03234
+: dataset BDTG : 0.988
+: dataset BDT : 0.988
+
+: dataset BDTG : 0.987
+: dataset BDT : 0.985
+
+: dataset BDTG : 0.986
+: dataset BDT : 0.984
+
+: dataset BDTG : 0.981
+: dataset BDT : 0.979
+
+: dataset BDTG : 0.978
+: dataset BDT : 0.977
+
+: dataset BDTG : 0.976
+: dataset BDT : 0.972
+
+: dataset BDTG : 0.964
+: dataset BDT : 0.957
+
+//norich
+: dataset BDTF : 0.976
+: dataset BDT : 0.949
+: dataset BDTG : 0.951
+
+dataset BDTF : 0.992
+: dataset BDT : 0.991
+: dataset BDTG : 0.988
+
+: dataset BDTG : 0.990
+: dataset BDT : 0.989
+: dataset BDTF : 0.985
+
+: dataset BDTG : 0.989
+: dataset BDT : 0.988
+: dataset BDTF : 0.987
+
+: dataset BDTG : 0.986
+: dataset BDT : 0.985
+: dataset BDTF : 0.972
+
+: dataset BDTG : 0.984
+: dataset BDT : 0.982
+: dataset BDTF : 0.977
+
+: dataset BDTG : 0.976
+: dataset BDT : 0.974
+: dataset BDTF : 0.965
+
+: dataset BDTG : 0.972
+: dataset BDT : 0.970
+: dataset BDTF : 0.967
+
+: dataset BDTG : 0.963
+: dataset BDT : 0.962
+: dataset BDTF : 0.953
+
+: dataset BDTG : 0.952
+: dataset BDTF : 0.952
+: dataset BDT : 0.951
 

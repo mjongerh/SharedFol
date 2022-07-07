@@ -1081,11 +1081,11 @@ void Lb_significanceHistos()
   TH1F* histosignf__2096 = new TH1F("histosignf__2096", "", 12, xAxis1);//Significance pbpb withRICH
   histosignf__2096->SetStats(0);
   for (int i = 0; i < 12; i++) {
-    histosignf__1099->SetBinContent(i, histosignf__9->GetBinContent(i+1));
+      histosignf__1099->SetBinContent(i+1, histosignf__9->GetBinContent(i+1));
       histosignf__1098->SetBinContent(i+1,  qy[i]);
       histosignf__1097->SetBinContent(i+1, wy[i]);
       histosignf__1096->SetBinContent(i+1, qry[i]);
-      histosignf__2099->SetBinContent(i+1, histosignf__9->GetBinContent(i+1));
+      histosignf__2099->SetBinContent(i+1, histosignf__7->GetBinContent(i+1));
       histosignf__2098->SetBinContent(i+1, ry[i]);
       histosignf__2097->SetBinContent(i+1, ey[i]);
       histosignf__2096->SetBinContent(i+1, rty[i]);

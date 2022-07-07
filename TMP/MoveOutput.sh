@@ -1,9 +1,11 @@
+# Moves all AOD files from a batch submission into 1 output folder
+
 outdir=/data/alice/mjongerh/alice/data/pp14TeV_bbbar_50M_2T/
 j=0
-for i in {10460010..10460083} #83
+for i in {10460010..10460083} #start and end number of folder names
 do
 	#statements
-	for f in {0..199} #199
+	for f in {0..199} #number of AOD files per job/folder
 	do
 	#statements
 	echo ${outdir}Job_${i}/AODRun5.${f}.root
